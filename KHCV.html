@@ -10,47 +10,31 @@
     	<link rel="stylesheet" href="mystyles.css"/>
 
 
-<style>
-		table {
-    border-collapse: collapse;
-}
-.styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-/* Styling the header */
-.styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-/* Moving onto the table cells */
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-/* And the table rows */
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-/* make the active row look different */
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-}
-</style>
+<style type="text/css">
+        .studentInfo {
+            width: 500px;
+            border-collapse: collapse;
+        }
+ 
+            .studentInfo td {
+                border: 1px solid black;
+            }
+ 
+                .studentInfo td:nth-child(even) {
+                    background-color: #E4FFB7;
+                }
+ 
+                .studentInfo td:nth-child(odd) {
+                    background-color: #EFFFD2;
+                }
+ 
+            .studentInfo tr:first-child td {
+                text-align: center;
+                font-weight: bolder;
+                background-color: #80B327;
+                color: white;
+            }
+    </style>
 
   </head>
 </head>
@@ -64,7 +48,11 @@
 		<p><a href="https://sangnguyen86.github.io/TLNL/rules.html">3. NỘI QUY QUY ĐỊNH</a></p>
 
 <!-- BẢNG KẾ HOẠCH CÔNG VIỆC-->
-		<table>
+	<table class="studentInfo">
+       <tbody><tr>
+           <td colspan="6">STUDENTS MARK SHEET</td>
+       </tr>
+		
   			<tr>
     				<th>MÁY</th>
     				<th>NỘI DUNG THỰC HIỆN</th>
@@ -231,7 +219,7 @@
 				<td>***</td> 
   			</tr>
 			
-		</table>
+		</tbody></table>
 	</body>
 </html>
 
