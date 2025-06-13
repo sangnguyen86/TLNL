@@ -108,6 +108,7 @@ input[type=”text” i]{
 table {
   				font-family: arial, sans-serif;
   				border-collapse: collapse;
+				
 				border-color: red;
   				width: 100%;
 				}
