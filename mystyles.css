@@ -1,3 +1,17 @@
+/* table */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+
+
+
+th,td {
+  padding: 20px;
+}
 
 body {
   margin: 0;
@@ -104,10 +118,6 @@ input[type=”text” i]{
   .header-right {
     float: none;
   }
-  
-table, th, td {border: 1px solid;
-		border-color: red;
-  				
-				}
+
 
 			 
