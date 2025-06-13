@@ -105,13 +105,9 @@ input[type=”text” i]{
     float: none;
   }
   
-table, th, td {
-  				
-  				border: 1px solid;
-				
-				border-color: red;
+table, th, td {border: 1px solid;
+		border-color: red;
   				
 				}
 
 			 
-}
