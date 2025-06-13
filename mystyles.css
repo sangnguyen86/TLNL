@@ -105,28 +105,13 @@ input[type=”text” i]{
     float: none;
   }
   
-table {
-  				font-family: arial, sans-serif;
-  				border-collapse: collapse;
+table, th, td {
+  				
+  				border: 1px solid;
 				
 				border-color: red;
-  				width: 100%;
+  				
 				}
 
-			 th {
-  				border: 1px solid #dddddd;
-				 border-color: red;
-  				text-align: center;
-  				padding: 8px;
-				}
-			td {
-  				border: 1px solid #dddddd;
-				border-color: red;
-  				text-align: left;
-  				padding: 8px;
-				}
-
-			tr:nth-child(even) {
-  				background-color: #dddddd;
-				}
+			 
 }
