@@ -201,9 +201,9 @@ input[type=”text” i]{
 }
 /* Định dạng các liên kết trong thanh điều hướng */
 .navbar a {
-   float: left; /* Đặt liên kết vào một hàng ngang */
+   float: right; /* Đặt liên kết vào một hàng ngang */
    display: block; /* Hiển thị là khối để có thể định dạng */
-   color: #fff; /* Màu chữ */
+   color: white; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
    padding: 14px 16px; /* Khoảng cách giữa các liên kết */
    text-decoration: none; /* Loại bỏ gạch dưới liên kết */
