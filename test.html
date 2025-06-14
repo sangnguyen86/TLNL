@@ -20,14 +20,19 @@
           				<!--/form-->
 				<!--/div-->
 				<!-- DATE & TIME -->
-				<p style="font-size:12px;">id=dateTime>clock</p>
-  				<script>
-   					 options = {dateStyle: "full",timeStyle: "long",timeZone: 'Asia/Ho_Chi_Minh'};
-     					const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-US', options).format(new Date())   
-    					clock()
-    					setInterval(clock, 1000);
+				<p id="datetime"></p>
 
-  				</script>
+				<script>
+				function updateDateTime() {
+  				const now = new Date();
+  				const date = now.toLocaleDateString();
+  				const time = now.toLocaleTimeString();
+  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;
+					}
+
+					updateDateTime(); // Hiển thị ngay khi trang load
+				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+				</script>
 			</div>
 	   
 <!-- LINK TO ANOTHER PAGES-->	      
