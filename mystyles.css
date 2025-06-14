@@ -56,19 +56,19 @@ header {
 
 
 .main-heading {
-  max-width: 800px;
+  max-width: 100%;
   text-align: center;
   margin: auto;
 }
 
 
 .main-heading h1 {
-  font-size: 50px;
+  font-size: 25px;
 }
 
 
 .main-heading p {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 26px;
 }
 
