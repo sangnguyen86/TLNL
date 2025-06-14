@@ -17,8 +17,17 @@
         			<!--div class="search-container"-->
           				<!--form action="/action_page.php"-->
             					<!--input type="text" placeholder="Search.." name="search"-->
-          				<1--/form-->
+          				<!--/form-->
 				<!--/div-->
+				<!-- DATE & TIME -->
+				<p style="font-size:12px;">id=dateTime>clock</p>
+  				<script>
+   					 options = {dateStyle: "full",timeStyle: "long",timeZone: 'Asia/Ho_Chi_Minh'};
+     					const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-US', options).format(new Date())   
+    					clock()
+    					setInterval(clock, 1000);
+
+  				</script>
 			</div>
 	   
 <!-- LINK TO ANOTHER PAGES-->	      
@@ -45,14 +54,7 @@
 	
  <!-- CLOCK CODE -->
 </style>
-  <h1 font-size: 12px; id=dateTime>clock</h1>
-  <script>
-    options = {dateStyle: "full",timeStyle: "long",timeZone: 'Asia/Ho_Chi_Minh'};
-     const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-US', options).format(new Date())   
-    clock()
-    setInterval(clock, 1000);
-
-  </script>
+  
 
 
 
