@@ -1,6 +1,4 @@
-			 
-/* Let's target the main <table> element first*/
-styled-table {
+.styled-table {
     border-collapse: collapse;/* border-collapse to ensure there is no space between the cell borders*/
     margin: 25px 0;
     font-size: 0.9em;
@@ -9,7 +7,7 @@ styled-table {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);/* add a subtle transparent shadow around the table*/
 }
 
-// TABLE STYLE
+
 /* Styling the header
 For the header, we can simply change the background color and apply some basic styles to the text: */
 
