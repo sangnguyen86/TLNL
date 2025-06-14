@@ -5,25 +5,20 @@
   	background-color: white;
 	}
 */ bỏ qua style cho body
-/* HEADER STYLE*/
-
+/* TIÊU ĐỀ*/
 header {
-  	margin: 0;
+  	margin: 0; /* canh lề*/
   	font-family: Arial, Helvetica, sans-serif;
-  	background-color: #123;
+  	background-color: #240;
   	color: white;
   	min-height: 25vh;
-  	padding: 0px;
+  	padding: 0px; /* khoảng cách giữa nội dung của một phần tử và viền (border) của phần tử đó*/
 	}
-
-
 	.main-heading {
   			max-width: 100%;
   			text-align: center;
   			margin: auto;
 			}
-
-
 	.main-heading h1 {
   			font-size: 25px;
 			}
@@ -33,14 +28,14 @@ header {
 			}
 /* SCROLLING TEXT IN HEADER*/
 
-	#scroll-container {
+.scroll-container {
   				border: 3px solid black;
   				border-radius: 5px;
   				height: 50px;
   				overflow: hidden;
 			}
 
-	#scroll-text {
+.scroll-text {
 			color: red;
   			height: 100%;
   			text-align: center;
