@@ -194,5 +194,27 @@ input[type=”text” i]{
    		 		float: none;
   				}
 
-
+/* Định dạng thanh điều hướng */
+.navbar {
+   background-color: #333; /* Màu nền */
+   overflow: hidden;
+}
+/* Định dạng các liên kết trong thanh điều hướng */
+.navbar a {
+   float: left; /* Đặt liên kết vào một hàng ngang */
+   display: block; /* Hiển thị là khối để có thể định dạng */
+   color: #fff; /* Màu chữ */
+   text-align: center; /* Canh giữa văn bản */
+   padding: 14px 16px; /* Khoảng cách giữa các liên kết */
+   text-decoration: none; /* Loại bỏ gạch dưới liên kết */
+}
+/* Định dạng khi rê chuột qua liên kết */
+.navbar a:hover {
+   background-color: #555; /* Màu nền khi rê chuột qua */
+}
+/* Định dạng khi trạng thái được chọn */
+.navbar a.active {
+   background-color: #4CAF50; /* Màu nền khi được chọn */
+   color: white; /* Màu chữ khi được chọn */
+}
 			 
