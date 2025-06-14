@@ -195,7 +195,7 @@ input[type=”text” i]{
   				}
 
 /* Định dạng thanh điều hướng */
-.navbar {
+#navbar {
    background-color: #333; /* Màu nền */
    overflow: hidden;
 }
