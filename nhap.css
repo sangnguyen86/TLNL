@@ -1,0 +1,224 @@
+
+/* BODY STYLE */
+/*body {
+  	margin: 0;
+  	background-color: white;
+	}
+*/ bỏ qua style cho body
+/* TIÊU ĐỀ*/
+header {
+  	margin: 0; /* canh lề*/
+  	font-family: Arial, Helvetica, sans-serif;
+  	background-color: #240;
+  	color: white;
+  	min-height: 25vh;
+  	padding: 0px; /* khoảng cách giữa nội dung của một phần tử và viền (border) của phần tử đó*/
+	}
+	.main-heading {
+  			max-width: 100%;
+  			text-align: center;
+  			margin: auto;
+			}
+	.main-heading h1 {
+  			font-size: 25px;
+			}
+	.main-heading p {
+  			font-size: 14px;
+  			line-height: 26px;
+			}
+/* SCROLLING TEXT IN HEADER*/
+
+.scroll-container {
+  				border: 3px solid black;
+  				border-radius: 5px;
+  				height: 50px;
+  				overflow: hidden;
+			}
+
+.scroll-text {
+			color: red;
+  			height: 100%;
+  			text-align: center;
+  
+  			/* animation properties */
+  			-moz-transform: translateY(100%);
+  			-webkit-transform: translateY(100%);
+  			transform: translateY(100%);
+  
+  			-moz-animation: my-animation 5s linear infinite;
+  			-webkit-animation: my-animation 5s linear infinite;
+  			animation: my-animation 5s linear infinite;
+			}
+
+			/* for Firefox */
+			@-moz-keyframes my-animation {
+  				from { -moz-transform: translateY(100%); }
+  				to { -moz-transform: translateY(-100%); }
+				}
+
+			/* for Chrome */
+			@-webkit-keyframes my-animation {
+  				from { -webkit-transform: translateY(100%); }
+  				to { -webkit-transform: translateY(-100%); }
+				}
+
+			@keyframes my-animation {
+  				from {
+    					-moz-transform: translateY(100%);
+    					-webkit-transform: translateY(100%);
+    					transform: translateY(100%);
+ 					 }
+  				to {
+    					-moz-transform: translateY(-100%);
+    					-webkit-transform: translateY(-100%);
+    					transform: translateY(-100%);
+  					}
+				}
+
+	.header {
+  		overflow: hidden;
+  		background-color: #0b1622;
+  		padding: 10px 20px;
+		}
+
+
+	.header img {
+  			width: 50px;
+		}
+
+
+	.header a {
+  			float: left;
+  			color: rgb(255, 255, 255);
+  			text-align: center;
+  			padding: 12px;
+  			text-decoration: none;
+  			font-size: 18px;
+  			line-height: 25px;
+  			border-radius: 4px;
+		}
+
+
+
+
+input[type=”text” i]{
+  			padding: 8px 20px;
+  			border-radius: 50px;
+  			background-color: #123;
+ 			border-color: white;
+  			margin-right: 30px;
+  			border: 0;
+			}
+
+
+	.book-button{
+  			padding: 10px 30px;
+  			border-radius: 50px;
+			}
+
+
+
+
+	.header a.logo {
+  	font-size: 25px;
+  	font-weight: bold;
+  	padding: 0 !important;
+			}
+
+		.header-right {
+  		float: right;
+  		display: flex;
+  		align-items: right;
+			}
+		.header-bottom {
+  		float: bottom;
+  		display: flex;
+  		align-items: right;
+			}
+
+		@media screen and (max-width: 500px) {
+  			.header a {
+    				float: none;
+    				display: block;
+    				text-align: left;
+ 			 	}
+
+ 		 	.header-right {
+   		 		float: none;
+  				}
+			.header-bottom {
+   		 		float: none;
+  				}
+
+/* Định dạng thanh điều hướng */
+#navbar {
+   background-color: #333; /* Màu nền */
+   overflow: hidden;
+}
+/* Định dạng các liên kết trong thanh điều hướng */
+.navbar a {
+   float: right; /* Đặt liên kết vào một hàng ngang */
+   display: block; /* Hiển thị là khối để có thể định dạng */
+   color: white; /* Màu chữ */
+   text-align: center; /* Canh giữa văn bản */
+   padding: 14px 16px; /* Khoảng cách giữa các liên kết */
+   text-decoration: none; /* Loại bỏ gạch dưới liên kết */
+}
+/* Định dạng khi rê chuột qua liên kết */
+.navbar a:hover {
+   background-color: #555; /* Màu nền khi rê chuột qua */
+}
+/* Định dạng khi trạng thái được chọn */
+.navbar a.active {
+   background-color: #4CAF50; /* Màu nền khi được chọn */
+   color: white; /* Màu chữ khi được chọn */
+}
+			 
+/* Let's target the main <table> element first*/
+.styled-table {
+    border-collapse: collapse;/* border-collapse to ensure there is no space between the cell borders*/
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);/* add a subtle transparent shadow around the table*/
+}
+
+// TABLE STYLE
+/* Styling the header
+For the header, we can simply change the background color and apply some basic styles to the text: */
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+/*Moving onto the table cells
+Let's space things out a bit: */
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+/* And the table rows...
+For these, we want to do 3 things:
+
+Add a bottom border to each row for separation
+Add a lighter background to every second row to help readability
+Add a dark border to the very last row to signify the end of the table */
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+/* Lastly, let's make the active row look different
+For this, we're just going to make changes to the text: */
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
