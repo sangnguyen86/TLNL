@@ -62,7 +62,7 @@
   	timeZone: 'Asia/Ho_Chi_Minh'
     		};
     /* const clock = () => dateTime.innerText=new Intl.DateTimeFormat('vi-VN', options).format(new Date())*/
-	    const clock = () => dateTime.innerText=new Intl.DateTimeFormat('vi-VN', { timeStyle: 'long' }).format(new Date())
+	    const clock = () => dateTime.innerText=new Intl.DateTimeFormat('vi-VN', { dateStyle: 'long', timeStyle: 'long' }).format(new Date())
 	  
     clock()
     setInterval(clock, 1000);
