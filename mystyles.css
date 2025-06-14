@@ -71,7 +71,16 @@ header {
   font-size: 14px;
   line-height: 26px;
 }
+.main-heading scrolling-text {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: scroll-text 10s linear infinite;
+}
 
+@keyframes scroll-text {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 
 .header {
   overflow: hidden;
