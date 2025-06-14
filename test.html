@@ -52,17 +52,12 @@
   <h1 id=dateTime>clock</h1>
   <script>
     options = {
-      	weekday: 'long',
-  	year: 'numeric',
-  	month: 'long',
-  	day: 'numeric',
-  	hour: 'numeric',
-  	minute: 'numeric',
-  	second: 'numeric',
+      	dateStyle: "full",
+    	timeStyle: "long",
   	timeZone: 'Asia/Ho_Chi_Minh'
     		};
-    /* const clock = () => dateTime.innerText=new Intl.DateTimeFormat('vi-VN', options).format(new Date())*/
-	    const clock = () => dateTime.innerText=new Intl.DateTimeFormat('vi-VN', { dateStyle: 'long', timeStyle: 'long' }).format(new Date())
+     const clock = () => dateTime.innerText=new Intl.DateTimeFormat('vi-VN', options).format(new Date())
+	   /* const clock = () => dateTime.innerText=new Intl.DateTimeFormat('vi-VN', { dateStyle: 'long', timeStyle: 'long' }).format(new Date())*/
 	  
     clock()
     setInterval(clock, 1000);
