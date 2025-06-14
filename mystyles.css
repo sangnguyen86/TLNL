@@ -74,7 +74,7 @@ header {
 .scrolling-text {
   overflow: hidden;
   white-space: nowrap;
-  animation: scroll-text 10s linear infinite;
+  animation: scroll-text 30s linear infinite;
 }
 
 @keyframes scroll-text {
