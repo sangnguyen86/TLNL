@@ -55,7 +55,7 @@
       year: 'numeric', month: 'long', day: 'numeric',
       hour: 'numeric', minute: 'numeric', second: 'numeric'
     };
-    const clock = () => Intl.DateTimeFormat('vi-VN', {month: 'long',day: 'numeric',weekday: 'long',year: 'numeric',timeZone: 'Asia/Ho_Chi_Minh',}).format(Date.now()); 
+    const clock = () => dateTime.innerText=new => Intl.DateTimeFormat('vi-VN', {month: 'long',day: 'numeric',weekday: 'long',year: 'numeric',timeZone: 'Asia/Ho_Chi_Minh',}).format(Date.now()) 
     clock()
     setInterval(clock, 1000);
   </script>
