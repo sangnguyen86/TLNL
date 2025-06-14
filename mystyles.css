@@ -71,7 +71,9 @@ header {
   font-size: 14px;
   line-height: 26px;
 }
-.scrolling-text {
+/* SCROLLING TEXT WITH*/
+/* SCROLLING UP*/
+scrolling-text {
   overflow: hidden;
   white-space: nowrap;
   animation: scroll-text 30s linear infinite;
