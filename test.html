@@ -49,16 +49,10 @@
   </header>
  <!-- CLOCK CODE -->
 </style>
-  <h1 id=dateTime>clock</h1>
+  <h1 font-size: 12px; id=dateTime>clock</h1>
   <script>
-    options = {
-      	dateStyle: "full",
-    	timeStyle: "long",
-  	timeZone: 'Asia/Ho_Chi_Minh'
-    		};
-     const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-US', options).format(new Date())
-	   /* const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeStyle: 'long' }).format(new Date())*/
-	  
+    options = {dateStyle: "full",timeStyle: "long",timeZone: 'Asia/Ho_Chi_Minh'};
+     const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-US', options).format(new Date())   
     clock()
     setInterval(clock, 1000);
 
