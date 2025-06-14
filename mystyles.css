@@ -172,20 +172,26 @@ input[type=”text” i]{
 		.header-right {
   		float: right;
   		display: flex;
-  		align-items: center;
+  		align-items: right;
 			}
-
+		.header-bottom {
+  		float: right;
+  		display: flex;
+  		align-items: right;
+			}
 
 		@media screen and (max-width: 500px) {
   			.header a {
-    			float: none;
-    			display: block;
-    			text-align: left;
- 			 }
+    				float: none;
+    				display: block;
+    				text-align: left;
+ 			 	}
 
-
- 		 .header-right {
-   		 float: none;
+ 		 	.header-right {
+   		 		float: none;
+  				}
+			.header-bottom {
+   		 		float: none;
   				}
 
 
