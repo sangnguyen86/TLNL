@@ -1,17 +1,58 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title> PHÂN CÔNG CÔNG VIỆC KHÁC </title>
+<html lang="vi">
+<head>
+    	<meta charset="UTF-8" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    	<title>CƠ ĐIỆN</title>
+    	<!--Import Styles CSS file-->
+    	<link rel="stylesheet" href="mystyles.css"/>
+</head>
+<body>    
+	<header>
+    		<div class="header">
+      			<a href="#" class="logo"><img src="KHATOCO_LOGO.png" alt="CSS Header"></a>
+      			<div class="header-right">
+        			<!--div class="search-container"-->
+          				<!--form action="/action_page.php"-->
+            					<!--input type="text" placeholder="Search.." name="search"-->
+          				<!--/form-->
+				<!--/div-->
+				<!-- DATE & TIME -->
+				<p id="datetime"></p>
 
-	</head>
+				<script>
+				function updateDateTime() {
+  				const now = new Date();
+  				const date = now.toLocaleDateString();
+  				const time = now.toLocaleTimeString();
+  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;
+					}
+
+					updateDateTime(); // Hiển thị ngay khi trang load
+				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+				</script>
+			</div>
+	   
+
+         		<!--button class="book-button">BOOK</button-->
+     </div>
+<!-- THANH ĐIỀU HƯỚNG-->	     
+		<div class="navbar">
+				<a class="active" href=""https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">HÀNG NGÀY</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY</a>
+		</div>
+<!-- HEADING -->
+    		<div class="main-heading">
+      			<h1><span id="HELLO_THIS_IS_MY_FIRST_HEADER-3">PHÂN CÔNG VIỆC KHÁC</span></h1>
+      			
+    		</div>
+  	</header>
 <body>
-	<p><a href="https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNHC</a></p>
-	<p><a href="https://sangnguyen86.github.io/TLNL/KHCV.html">1. KẾ HOẠCH CÔNG VIỆC</a></p>
-	<p><a href="https://sangnguyen86.github.io/TLNL/dailytask.html">2. CÔNG VIỆC HÀNG NGÀY</a></p>
-	<p><a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">3. PHÂN CÔNG VÀO XƯỞNG</a></p>
 
-
-	<h1 style="color:blue; text-align:center;font-family:Times New Roman;font-size:25px;"> HỌC VẬN HÀNH CÁC MÁY DÂY CHUYỀN SẢN XUẤT</h1>
 
 <p style="color:black; text-align:left;font-family:Times New Roman;font-size:20px;text-indent: 50px;">Từ ngày 01/06/2025 đến 31/08/2015, phân công vào xưởng: Đức Duy (ca A) và anh Tấn Khải (ca B) </p>	
 <p style="color:black; text-align:left;font-family:Times New Roman;font-size:20px;text-indent: 50px;">- Học vận hành các cụm máy, thay vận hành nghỉ phép.</p>	
