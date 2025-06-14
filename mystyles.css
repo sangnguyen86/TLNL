@@ -82,6 +82,7 @@ header {
 }
 
 #scroll-text {
+	color: red;
   height: 100%;
   text-align: center;
   
