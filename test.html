@@ -10,8 +10,53 @@
     	<link rel="stylesheet" href="mystyles.css"/>
 </head>
 <body>    
-	<header>
-    		
+<header>
+    		<div class="header">
+      			<a href="#" class="logo"><img src="KHATOCO_LOGO.png" alt="CSS Header"></a>
+      			<div class="header-right">
+        			<!--div class="search-container"-->
+          				<!--form action="/action_page.php"-->
+            					<!--input type="text" placeholder="Search.." name="search"-->
+          				<!--/form-->
+				<!--/div-->
+				<!-- DATE & TIME -->
+				<p id="datetime"></p>
+
+				<script>
+				function updateDateTime() {
+  				const now = new Date();
+  				const date = now.toLocaleDateString();
+  				const time = now.toLocaleTimeString();
+  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;
+					}
+
+					updateDateTime(); // Hiển thị ngay khi trang load
+				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+				</script>
+			</div>
+	   
+
+         		<!--button class="book-button">BOOK</button-->
+     </div>
+<!-- THANH ĐIỀU HƯỚNG-->	     
+		<div class="navbar">
+				<a class="active" href=""https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">HÀNG NGÀY</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY</a>
+		</div>
+<!-- HEADING -->
+    		<div class="main-heading">
+      			<h1><span id="HELLO_THIS_IS_MY_FIRST_HEADER-3">CÔNG VIỆC</span></h1>
+      			<p>.</p>
+			<div id="scroll-container">
+  				<div id="scroll-text">
+    					THỨ 2 NGÀY 16/06/2025 BẢO DƯỠNG CỤM MÁY TÁCH ĐẬP VÀ MÁY SẤY CỌNG.<br>
+					NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG.<br>
+    				</div>
+			</div>
+    		</div>
   	</header>
 	
 <table class="styled-table">
