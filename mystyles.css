@@ -73,7 +73,7 @@ header {
 }
 /* SCROLLING TEXT WITH*/
 /* SCROLLING UP*/
-scrolling-text {
+.headingscrolling-text {
   overflow: hidden;
   white-space: nowrap;
   animation: scroll-text 30s linear infinite;
