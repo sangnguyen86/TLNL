@@ -7,58 +7,32 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     	<title>CƠ ĐIỆN</title>
     	<!--Import Styles CSS file-->
-    	<link rel="stylesheet" href="mystyles.css"/>
+    	<link rel="stylesheet" href="tablestyles.css"/>
 </head>
 <body>    
 	<header>
-    		<div class="header">
-      			<a href="#" class="logo"><img src="KHATOCO_LOGO.png" alt="CSS Header"></a>
-      			<div class="header-right">
-        			<!--div class="search-container"-->
-          				<!--form action="/action_page.php"-->
-            					<!--input type="text" placeholder="Search.." name="search"-->
-          				<!--/form-->
-				<!--/div-->
-				<!-- DATE & TIME -->
-				<p id="datetime"></p>
-
-				<script>
-				function updateDateTime() {
-  				const now = new Date();
-  				const date = now.toLocaleDateString();
-  				const time = now.toLocaleTimeString();
-  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;
-					}
-
-					updateDateTime(); // Hiển thị ngay khi trang load
-				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
-				</script>
-			</div>
-	   
-
-         		<!--button class="book-button">BOOK</button-->
-     </div>
-<!-- THANH ĐIỀU HƯỚNG-->	     
-		<div class="navbar">
-				<a class="active" href=""https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
-	      			<a href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
-	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">HÀNG NGÀY</a>
-	      			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG</a>
-	      			<a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY</a>
-		</div>
-<!-- HEADING -->
-    		<div class="main-heading">
-      			<h1><span id="HELLO_THIS_IS_MY_FIRST_HEADER-3">TÊN NỘI DUNG</span></h1>
-      			<p>My Text.</p>
-			<div id="scroll-container">
-  				<div id="scroll-text">
-    					NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG.<br>
-    				</div>
-			</div>
-    		</div>
+    		
   	</header>
 	
-
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dom</td>
+            <td>6000</td>
+        </tr>
+        <tr class="active-row">
+            <td>Melissa</td>
+            <td>5150</td>
+        </tr>
+        <!-- and so on... -->
+    </tbody>
+</table>
 
   
 
