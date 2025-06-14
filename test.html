@@ -55,7 +55,7 @@
       year: 'numeric', month: 'long', day: 'numeric',
       hour: 'numeric', minute: 'numeric', second: 'numeric'
     };
-    const clock = () => dateTime.innerText=new Intl.DateTimeFormat('en-EN', options).format(new Date())
+    const clock = () => dateTime.innerText=new Intl.DateTimeFormat('vi-VN', options).format(new Date())
     clock()
     setInterval(clock, 1000);
   </script>
