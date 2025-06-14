@@ -175,7 +175,7 @@ input[type=”text” i]{
   		align-items: right;
 			}
 		.header-bottom {
-  		float: right;
+  		float: bottom;
   		display: flex;
   		align-items: right;
 			}
