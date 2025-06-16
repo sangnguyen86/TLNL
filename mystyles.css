@@ -15,7 +15,10 @@ header {
 }
 .header-right {
           /*width: 30%;*/
-   		 		float: top, right;
+   		 		/*float: top, right;*/
+          position: absolute;
+          top: 0;
+          right: 0;
           
   				}
 .header-right p{
