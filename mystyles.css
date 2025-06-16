@@ -9,7 +9,7 @@ body {
  overflow: hidden;
  position: relative;
  background: yellow;
- color: orange;
+ color: red;
  border: 1px solid orange;
 }
 .scroll-left p {
