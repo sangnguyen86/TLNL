@@ -11,6 +11,22 @@
 <!-- BODY CONTENTS-->	
 <body>    
 <!-- HEADER -->
+	<header>
+		<div class="header">
+			<div class="header-right">
+				<p id="datetime"></p>
+				<script>
+					function updateDateTime() {
+  						const now = new Date();
+  						const date = now.toLocaleDateString();
+  						const time = now.toLocaleTimeString();
+  						document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
+					updateDateTime(); // Hiển thị ngay khi trang load
+					setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+				</script>
+			</div>
+		</div>
+	</header>
 <!-- NOTES SCROLLING TEXT-->
 <style>
 
