@@ -1,6 +1,48 @@
 
 /* SCROLLING TEXT IN HEADER*/
+/*Removes default list styling (margins, padding, and list markers)*/
+	.tag-list {
+  			margin: 0;
+  			padding-inline: 0;
+  			list-style: none;
+		}
 
+		/* Adjust Text Styles Here. Defines the styles for each text item, including font, color, and width. */
+		.tag-list li {
+  				background-color: transparent;
+  				/*width: 250px; /* adjust as needed - this value depends on font-size */
+				width: 100%; /* adjust as needed - this value depends on font-size */
+  				text-align: center;
+  				font-size: 16px; 
+  				font-family: "Manrope", Sans-Serif; 
+  				font-weight: 600; 
+  				/*color: #111111; */
+				color: red; 
+				}
+		/*Uses display: flex to arrange the text items in a row (horizontal alignment). The gap between items creates consistent spacing.*/
+		.scroller__inner {
+ 		 		padding-block: .25rem;
+  				display: flex; /* shows all content for reduced motion browser settings */
+  				flex-wrap: wrap; 
+  				gap: 1rem; /* If you change this value, you need to change the transform value in keyframes */
+				}
+		/* Hides overflow content so only the visible portion of the scrolling text shows on the screen.*/
+		.scroller[data-animated=true] {
+  				overflow: hidden;
+				}
+		/* When the animation is active (data-animated=true), the container’s width is set to fit the content exactly, and flex-wrap: nowrap ensures that all list items are on one line. The animation is applied using the scroll keyframe.*/
+		.scroller[data-animated=true] .scroller__inner {
+  				width: fit-content;
+  				flex-wrap: nowrap;
+  				animation: scroll 50s linear infinite;
+				}
+
+		/* Defines the scrolling animation. The translate function moves the content left by 50% of its width, creating the scrolling effect. The calc(-50% – 0.5rem) adjusts for the gap between items, preventing any visible jumps in the animation.*/
+@keyframes scroll {
+  			to {
+    				transform: translate(calc(-50% - 0.5rem)); /* Calc value corrects for gap value and removes animation jump */
+  				}
+		}
 
 
 /* TABLE STYLES */
