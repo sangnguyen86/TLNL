@@ -7,7 +7,7 @@ body {
 /* NAVIGATION BAR*/
 /* Định dạng thanh điều hướng */
 .navbar {
-   background-color: #333; /* Màu nền */
+   background-color: blue; /* Màu nền */
    overflow: hidden;
 }
 /* Định dạng các liên kết trong thanh điều hướng */
