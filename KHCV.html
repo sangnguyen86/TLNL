@@ -22,48 +22,7 @@
 <!-- CSS -->
 
 <style>
-	.tag-list {
-  			margin: 0;
-  			padding-inline: 0;
-  			list-style: none;
-		}
-
-		/* Adjust Text Styles Here */
-		.tag-list li {
-  				background-color: transparent;
-  				/*width: 250px; /* adjust as needed - this value depends on font-size */
-				width: 100%; /* adjust as needed - this value depends on font-size */
-  				text-align: center;
-  				font-size: 16px; 
-  				font-family: "Manrope", Sans-Serif; 
-  				font-weight: 600; 
-  				/*color: #111111; */
-				color: red; 
-				}
-
-		.scroller__inner {
- 		 		padding-block: .25rem;
-  				display: flex; /* shows all content for reduced motion browser settings */
-  				flex-wrap: wrap; 
-  				gap: 1rem; /* If you change this value, you need to change the transform value in keyframes */
-				}
-
-		.scroller[data-animated=true] {
-  				overflow: hidden;
-				}
-
-		.scroller[data-animated=true] .scroller__inner {
-  				width: fit-content;
-  				flex-wrap: nowrap;
-  				animation: scroll 50s linear infinite;
-				}
-
-
-@keyframes scroll {
-  			to {
-    				transform: translate(calc(-50% - 0.5rem)); /* Calc value corrects for gap value and removes animation jump */
-  				}
-		}
+	
 </style>
 <script>
 // Find the container(s) with the scroller class
