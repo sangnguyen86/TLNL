@@ -12,14 +12,14 @@
 <body>    
 <!-- HEADER -->
 <!-- NOTES SCROLLING TEXT-->
-<div class="m-scroll">
-  <div class="m-scroll__title">
+<div class="scroll-container">
+  <div class="scroll-text">
     <div>
       <h1>
-        <a href="https://dribbble.com/JulianoF">Likedin,</a> <a href="https://dribbble.com/JulianoF">Dribbble</a> &amp; <a href="https://dribbble.com/JulianoF">Instagram </a>&nbsp;
+      NOTE 1
       </h1>
       <h1>
-      <a href="https://dribbble.com/JulianoF">Likedin,</a> <a href="https://dribbble.com/JulianoF">Dribbble</a> &amp; <a href="https://dribbble.com/JulianoF">Instagram </a>&nbsp;
+      NOTE 2
       </h1>
     </div>
   </div>
@@ -27,56 +27,51 @@
 
 <!-- CSS -->
 <style>
-	.m-scroll {
-  display: flex;
-  position: relative;
-  width: 800px;
-  height: 600px;
-  margin: auto;
-  background-color: #D34444;
-  overflow: hidden;
-  z-index: 1;
+	scroll-container {
+  				border: 3px solid black;
+  				border-radius: 5px;
+  				height: 50px;
+  				overflow: hidden;
+			}
 
-    &__title {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100%;
-    white-space: nowrap;
-    transform: scale(2);
-    transition: all 1s ease;
-    & > div {
-      display: flex;
-      animation: scrollText 33s infinite linear;
-    }
-    h1 {
-      margin: 0;
-      font-size: 140px;
-      color: rgba(255,255,255,1);
-      transition: all 2s ease;
-      }
-      a {
-        text-decoration:none;
-        color:white;
-        }
-      a:hover{
-        -webkit-text-stroke: 1px white;
-        color: transparent;
-      }
-  }
-}
+	scroll-text {
+			color: red;
+  			height: 100%;
+  			text-align: center;
+  
+  			/* animation properties */
+  			-moz-transform: translateY(100%);
+  			-webkit-transform: translateY(100%);
+  			transform: translateY(100%);
+  
+  			-moz-animation: my-animation 5s linear infinite;
+  			-webkit-animation: my-animation 5s linear infinite;
+  			animation: my-animation 5s linear infinite;
+			}
+	/* for Firefox */
+			@-moz-keyframes my-animation {
+  				from { -moz-transform: translateY(100%); }
+  				to { -moz-transform: translateY(-100%); }
+				}
 
-/*div:hover {
-  animation-play-state: paused;
-}*/
-@keyframes scrollText {
-  from   { transform: translateX(0%); }
-  to { transform: translateX(-50%); }
-}
+			/* for Chrome */
+			@-webkit-keyframes my-animation {
+  				from { -webkit-transform: translateY(100%); }
+  				to { -webkit-transform: translateY(-100%); }
+				}
+
+			@keyframes my-animation {
+  				from {
+    					-moz-transform: translateY(100%);
+    					-webkit-transform: translateY(100%);
+    					transform: translateY(100%);
+ 					 }
+  				to {
+    					-moz-transform: translateY(-100%);
+    					-webkit-transform: translateY(-100%);
+    					transform: translateY(-100%);
+  					}
+				}
 </style>
 
 <!-- -->
