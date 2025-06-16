@@ -12,32 +12,16 @@
 <body>    
 <!-- HEADER -->
 <!-- NOTES SCROLLING TEXT-->
-<div class="scrolling-text">
-Scrolling Text Scrolling Text Scrolling Text
-</div>
-<style>
-	scrolling-text {
-		width: 30vw;
-		white-space: nowrap;
-		overflow: hidden;
-		box-sizing: border-box;
-		font-size:clamp(16px,50dvh,220px);
-		white-space:nowrap;
-		margin: 0 auto;
-			}
-</style>
-	<script>
-		const container = document.querySelector('.scrolling-text');
-let scrollAmount = 0;
-
-setInterval(() => {
- scrollAmount += 10;
- container.scrollLeft = scrollAmount;
- if (scrollAmount >= container.scrollWidth) {
-  scrollAmount = 0;
- }
-}, 20);
-	</script>
+<div class="sticky-container">
+    <div class="sticky-section">
+      <p class="paragraph">This is the first paragraph.</p>
+      <p class="paragraph">This is the second paragraph.</p>
+      <p class="paragraph">This is the third paragraph.</p>
+    </div>
+  </div>
+  <div class="rest-of-content">
+    <p>Here is the rest of the content...</p>
+  </div>
 
 <!-- -->
 
