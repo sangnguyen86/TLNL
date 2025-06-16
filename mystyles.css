@@ -29,6 +29,12 @@ body {
    color: white; /* Màu chữ khi được chọn */
 }
 /* SCROLLING TEXT */
+.scroll-container {
+  				border: 3px solid black;
+  				border-radius: 5px;
+  				height: 50px;
+  				overflow: hidden;
+			}
 .scroll-left {
  height: 30px;	
  overflow: hidden;
