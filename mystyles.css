@@ -15,12 +15,13 @@ header {
 }
 .header-right {
           /*width: 30%;*/
-   		 		float: right;
+   		 		float: top, right;
+          
   				}
 .header-right p{
           font-size: 14px;
           text-align: right;
-          padding: 5px;
+          padding: 20px;
           color: white;
   				}
 
@@ -36,7 +37,7 @@ header {
 .navbar a {
    float: left; /* Đặt liên kết vào một hàng ngang */
    display: block; /* Hiển thị là khối để có thể định dạng */
-    height:12px;
+   height:12px;
    color: white; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
    padding: 12px 14px; /* Khoảng cách giữa các liên kết */
@@ -59,7 +60,8 @@ header {
  position: relative;
  background: darkblue;
  color: red;
- border: 2px solid orange;
+ /*border: 2px solid orange;*/
+ 
 }
 .scroll-left p {
  position: absolute;
