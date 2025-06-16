@@ -16,7 +16,7 @@ body {
    display: block; /* Hiển thị là khối để có thể định dạng */
    color: white; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
-   padding: 14px 16px; /* Khoảng cách giữa các liên kết */
+   padding: 12px 14px; /* Khoảng cách giữa các liên kết */
    text-decoration: none; /* Loại bỏ gạch dưới liên kết */
 }
 /* Định dạng khi rê chuột qua liên kết */
