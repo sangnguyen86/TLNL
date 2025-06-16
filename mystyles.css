@@ -127,7 +127,7 @@ header {
     justify-content: space-around;
     width: fit-content;
     white-space: nowrap;
-    animation: loop 30s linear infinite;
+    animation: loop 15s linear infinite;
 }
 .fade {
     width: 100%;
@@ -150,7 +150,8 @@ header {
     display: flex;
     align-items: center;
     gap: 0 0.2rem;
-    color: #e2e8f0;
+    /*color: #e2e8f0;*/
+    color: Yellow;
     font-size: .9rem;
     background-color: #152c41;
     padding: 0.7rem 1rem;
