@@ -1,5 +1,5 @@
 /* SCROLLING TEXT IN HEADER*/
-.scroll-left {
+scroll-left {
 height: 50px; 
 overflow: hidden;
 position: relative;
