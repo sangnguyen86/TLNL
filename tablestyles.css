@@ -1,3 +1,4 @@
+/* TABLE STYLES */
 /* Let's target the main <table> element first*/
 .styled-table {
     border-collapse: collapse;/* border-collapse to ensure there is no space between the cell borders*/
