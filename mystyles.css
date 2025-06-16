@@ -58,7 +58,7 @@ header {
 /* SCROLLING TEXT */
 
 .scroll-left {
- height: 30px;	
+ height: 50px;	
  overflow: hidden;
  position: relative;
  background: darkblue;
