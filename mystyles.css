@@ -17,6 +17,10 @@ header {
           width: 30%;
    		 		float: right;
   				}
+.header-right p{
+          font-size: 14px;
+          color: red;
+  				}
 
 /* NAVIGATION BAR*/
 /* Định dạng thanh điều hướng */
