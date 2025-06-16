@@ -8,18 +8,18 @@ body {
 header {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: linear-gradient(181 deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 48%, rgba(0,212,255,1) 100%);
+  background-color: darkblue;
   color: white;
   min-height: 10vh;
   padding: 0px;
 }
 .header-right {
-          width: 30%;
+          /*width: 30%;*/
    		 		float: right;
   				}
 .header-right p{
           font-size: 14px;
-          color: red;
+          color: white;
   				}
 
 /* NAVIGATION BAR*/
