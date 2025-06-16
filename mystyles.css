@@ -1,12 +1,12 @@
 /* SCROLLING TEXT IN HEADER*/
-.scroll-container {
+#scroll-container {
   				border: 3px solid black;
   				border-radius: 5px;
   				height: 50px;
   				overflow: hidden;
 			}
 
-.scroll-text {
+#scroll-text {
 			color: red;
   			height: 100%;
   			text-align: center;
