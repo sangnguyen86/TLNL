@@ -34,7 +34,9 @@ body {
  overflow: hidden;
  position: relative;
  background: yellow;
- color: blue;
+  font-style: bold;
+   color: red;
+  
  border: 2px solid orange;
 }
 .scroll-left p {
