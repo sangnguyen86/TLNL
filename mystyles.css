@@ -12,7 +12,7 @@ body {
 }
 /* Định dạng các liên kết trong thanh điều hướng */
 .navbar a {
-   float: right; /* Đặt liên kết vào một hàng ngang */
+   float: left; /* Đặt liên kết vào một hàng ngang */
    display: block; /* Hiển thị là khối để có thể định dạng */
    color: white; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
