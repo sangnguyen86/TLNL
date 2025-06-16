@@ -19,6 +19,8 @@ header {
   				}
 .header-right p{
           font-size: 14px;
+          text-align: right;
+          padding: 5px;
           color: white;
   				}
 
