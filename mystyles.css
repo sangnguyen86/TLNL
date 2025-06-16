@@ -58,9 +58,10 @@ header {
 .scroll-left {
  height: 50px;	
  overflow: hidden;
- position: relative;
- background: darkblue;
- color: white;
+ /*position: relative; /* vị trí */
+ position: middle; /* vị trí */
+ background: darkblue; /* màu nền*/
+ color: yellow; /* màu chữ*/
  /*border: 2px solid orange;*/
  
 }
