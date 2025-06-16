@@ -35,14 +35,13 @@ body {
   				height: 50px;
   				overflow: hidden;
 			}
-.scroll-left {
+.scroll-container scroll-left {
  height: 30px;	
  overflow: hidden;
  position: relative;
  background: yellow;
-  font-style: bold;
-   color: red;
-  
+font-style: bold;
+color: red;
  border: 2px solid orange;
 }
 .scroll-left p {
