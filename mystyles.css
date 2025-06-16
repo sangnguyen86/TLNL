@@ -14,11 +14,9 @@ header {
   padding: 0px;
 }
 .header-right {
-          /*width: 30%;*/
-   		 		/*float: top, right;*/
-          position: absolute;
-          top: 0;
-          right: 0;
+          float:right;
+          display:flex;
+        align-items:top;
           
   				}
 .header-right p{
