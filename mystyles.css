@@ -194,8 +194,10 @@ For the header, we can simply change the background color and apply some basic s
 
 .styled-table thead tr {
     background-color: #009879;
-    color: #ffffff;
     text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    
 }
 /*Moving onto the table cells
 Let's space things out a bit: */
