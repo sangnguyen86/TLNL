@@ -42,6 +42,7 @@ header {
 /* Định dạng các liên kết trong thanh điều hướng */
 .navbar a {
    align-items: center;
+   align-items: middle;
    float: left; /* Đặt liên kết vào một hàng ngang */
    display: block; /* Hiển thị là khối để có thể định dạng */
    height:12px;
@@ -58,6 +59,8 @@ header {
 /* Định dạng khi trạng thái được chọn */
 .navbar a.active {
    background-color: #4CAF50; /* Màu nền khi được chọn */
+   align-items: center;
+   align-items: middle;
    color: white; /* Màu chữ khi được chọn */
 }
 /* SCROLLING TEXT */
