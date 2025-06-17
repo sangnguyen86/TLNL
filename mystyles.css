@@ -227,7 +227,7 @@ For this, we're just going to make changes to the text: */
     /*color: #009879;*/
     color: orange;
 }
-.styled-table tbody tr.active-rowhigh {
+.styled-table tbody tr.active-high {
     font-weight: bold;
     /*color: #009879;*/
   background-color: red
