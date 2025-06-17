@@ -35,7 +35,7 @@ header {
 .navbar {
    background-color: darkblue; /* Màu nền */
    
-   height: 30px;
+   height: 50px;
    width: 100%;
    overflow: hidden;
 }
