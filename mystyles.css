@@ -127,7 +127,7 @@ header {
     justify-content: space-around;
     width: fit-content;
     white-space: nowrap;
-    animation: loop 15s linear infinite;
+    animation: loop 10s linear infinite;
 }
 .fade {
     width: 100%;
