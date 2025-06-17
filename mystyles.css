@@ -227,6 +227,12 @@ For this, we're just going to make changes to the text: */
     /*color: #009879;*/
     color: orange;
 }
+.styled-table tbody tr.active-rowhigh {
+    font-weight: bold;
+    /*color: #009879;*/
+  background-color: red
+    color: white;
+}
 /* ALIGN CENTER*/
 .center {
   margin-left: auto;
