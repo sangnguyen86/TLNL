@@ -154,7 +154,8 @@ header {
     /*color: #e2e8f0;*/
     color: Red;
     font-size: .9rem;
-    background-color: #152c41;
+    /*background-color: #152c41;*/
+    background-color: white;
     padding: 0.7rem 1rem;
     margin: 0rem 1rem;
     border-radius: 0.4rem;
