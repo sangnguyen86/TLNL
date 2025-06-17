@@ -226,3 +226,8 @@ For this, we're just going to make changes to the text: */
     font-weight: bold;
     color: #009879;
 }
+/* ALIGN CENTER*/
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
