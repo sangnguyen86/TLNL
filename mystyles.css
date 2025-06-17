@@ -34,17 +34,18 @@ header {
 /* Định dạng thanh điều hướng */
 .navbar {
    background-color: darkblue; /* Màu nền */
-   align-items: center;
+   
    height: 30px;
    width: 100%;
    overflow: hidden;
 }
 /* Định dạng các liên kết trong thanh điều hướng */
 .navbar a {
+   align-items: center;
    float: left; /* Đặt liên kết vào một hàng ngang */
    display: block; /* Hiển thị là khối để có thể định dạng */
    height:12px;
-   align: midle;
+   /*align: middle;*/
    color: white; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
    padding: 12px 14px; /* Khoảng cách giữa các liên kết */
