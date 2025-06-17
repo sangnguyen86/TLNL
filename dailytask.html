@@ -1,57 +1,68 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    	<meta charset="UTF-8" />
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    	
+    	
     	<title>CƠ ĐIỆN</title>
     	<!--Import Styles CSS file-->
     	<link rel="stylesheet" href="mystyles.css"/>
 </head>
-<body>    
-	<header>
-    		<div class="header">
-      			<a href="#" class="logo"><img src="KHATOCO_LOGO.png" alt="CSS Header"></a>
-      			<div class="header-right">
-        			<!--div class="search-container"-->
-          				<!--form action="/action_page.php"-->
-            					<!--input type="text" placeholder="Search.." name="search"-->
-          				<!--/form-->
-				<!--/div-->
-				<!-- DATE & TIME -->
-				<p id="datetime"></p>
 
-				<script>
+<!-- BODY CONTENTS-->	
+<body>    
+<!-- HEADER -->
+	<header>
+		<div class="header-right">
+			<p id="datetime"></p>
+			<script>
 				function updateDateTime() {
   				const now = new Date();
   				const date = now.toLocaleDateString();
   				const time = now.toLocaleTimeString();
-  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;
-					}
-
-					updateDateTime(); // Hiển thị ngay khi trang load
+  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
+				updateDateTime(); // Hiển thị ngay khi trang load
 				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
-				</script>
-			</div>
-	   
+			</script>
+		</div>
+	</header>
+<!-- NOTES SCROLLING TEXT-->
+<style>
 
-         		<!--button class="book-button">BOOK</button-->
-     </div>
+</style>
 <!-- THANH ĐIỀU HƯỚNG-->	     
-		<div class="navbar">
-				<a class="active" href=""https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
-	      			<a href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
+<div class="navbar">
+				<a href=""https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
+	      			<a class="active" href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
 	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">HÀNG NGÀY</a>
 	      			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG</a>
-	      			<a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY</a>
-		</div>
-<!-- HEADING -->
-    		<div class="main-heading">
-      			<h1><span id="HELLO_THIS_IS_MY_FIRST_HEADER-3">CÔNG VIỆC THƯỜNG NGÀY</span></h1>
-      			
-    		</div>
-  	</header>
-<body>
+	      			<!--a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY</a-->
+</div>
+<!--	
+<div id="scroll-container">	
+<div class="scroll-left">
+<p> MESSAGE</p>
+</div>
+</div-->
+
+<!-- TEST SCROLLING ITEMS -->
+	<div id='container'>
+    		<div class='scroll'>
+        		<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - CHÚ Ý DỌN DẸP VỆ SINH KHU VỰC MÁY XỬ LÝ BỤI VÀ MÙI</div>
+			<div class='item'> NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - CHÚ Ý DỌN DẸP VỆ SINH KHU VỰC MÁY XỬ LÝ BỤI VÀ MÙI</div>
+			
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+    </div>
+    <!--div class='fade'></div--> <!-- HIỆU ỨNG MỜ-->
+</div>
+<!-- -->
 
 
 	<h1 style="color:blue; text-align:left;font-family:Times New Roman;font-size:25px; "><b>CÔNG VIỆC HÀNG NGÀY</b></h1>
