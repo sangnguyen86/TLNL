@@ -34,7 +34,7 @@ header {
 /* Định dạng thanh điều hướng */
 .navbar {
    background-color: darkblue; /* Màu nền */
-   
+   align-items: center;
    height: 30px;
    width: 100%;
    overflow: hidden;
