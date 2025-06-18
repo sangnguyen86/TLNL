@@ -179,15 +179,18 @@ header {
 
 /* TABLE STYLES */
 /* Let's target the main <table> element first*/
-.styled-table {border-collapse: collapse;/* border-collapse to ensure there is no space between the cell borders*/
+.styled-table {
+    border-collapse: collapse;/* border-collapse to ensure there is no space between the cell borders*/
     margin: 25px 0;
+    margin-bottom:1rem;
     font-size: 0.9em;
     font-family: sans-serif;
+    width:100%;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);/* add a subtle transparent shadow around the table*/
+    background-color:transparent
 }
-/* ***/
-.styled-table{width:100%;margin-bottom:1rem;background-color:transparent}
+
  
 
  .styled-table tbody+tbody{border-top:2px solid #dee2e6}.styled-table .styled-table{background-color:#fff}
