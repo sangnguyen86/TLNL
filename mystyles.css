@@ -192,13 +192,11 @@ header {
 /* Styling the header
 For the header, we can simply change the background color and apply some basic styles to the text: */
 
-.styled-table thead tr {
-    background-color: #009879;
-    text-align: center;
-    font-weight: bold;
-    color: #ffffff;
-    
-}
+.styled-table thead tr {background-color: #009879;
+                        text-align: center;
+                        font-weight: bold;
+                        color: #ffffff;
+                        }
 /*Moving onto the table cells
 Let's space things out a bit: */
 .styled-table th,
@@ -231,7 +229,11 @@ For this, we're just going to make changes to the text: */
     color: white;
 }
 
-
+.styled-table-active,.styled-table-active>td,.styled-table-active>th{background-color:rgba(0,0,0,.075)}
+ .styled-table-hover .styled-table-active:hover{background-color:rgba(0,0,0,.075)}
+ .styled-table-hover .styled-table-active:hover>td,.styled-table-hover .styled-table-active:hover>th{background-color:rgba(0,0,0,.075)}
+ .styled-table .thead-dark th{color:#fff;background-color:#212529;border-color:#32383e}
+ .styled-table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}
 /* ALIGN CENTER*/
 .center {
   margin-left: auto;
@@ -239,15 +241,4 @@ For this, we're just going to make changes to the text: */
 }
 
 /* CUSTOM TABLE */
-.table{width:100%;margin-bottom:1rem;background-color:transparent}
-.table td,
-.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}
- .table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}
- .table tbody+tbody{border-top:2px solid #dee2e6}.table .table{background-color:#fff}
- .table-sm td,.table-sm th{padding:.3rem}
- .table-bordered{border:1px solid #dee2e6}
- .table-bordered td,.table-bordered th{border:1px solid #dee2e6}
- .table-bordered thead td,.table-bordered thead th{border-bottom-width:2px}
- .table-borderless tbody+tbody,.table-borderless td,.table-borderless th,.table-borderless thead th{border:0}
- .table-striped tbody tr:nth-of-type(odd){background-color:rgba(0,0,0,.05)}
- .table-hover tbody tr:hover{background-color:rgba(0,0,0,.075)}
+
