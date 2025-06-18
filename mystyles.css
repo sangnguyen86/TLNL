@@ -205,13 +205,13 @@ header {
 /* Styling the header
 For the header, we can simply change the background color and apply some basic styles to the text: */
 
-.styled-table thead th{align:center;border-bottom:2px solid black}
+.styled-table thead th{align:center; vertical-align:middle;border-bottom:2px solid black}
 .styled-table thead tr {background-color: #009879;text-align: center;font-weight: bold;color: #ffffff;border-bottom:2px solid black}
 
 /*Moving onto the table cells
 Let's space things out a bit: */
 /*.styled-table th,.styled-table td {padding: 12px 15px;}*/
-.styled-table td,.styled-table th{padding:.75rem;vertical-align:top;border-top:2px solid red}
+.styled-table td,.styled-table th{padding:.75rem;vertical-align:top;border-top:2px solid black}
 
 /* And the table rows...
 For these, we want to do 3 things:
