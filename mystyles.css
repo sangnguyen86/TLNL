@@ -245,14 +245,14 @@ For this, we're just going to make changes to the text: */
  .styled-table-hover .styled-table-info:hover{background-color:#abdde5}
  .styled-table-hover .styled-table-info:hover>td,.styled-table-hover .styled-table-info:hover>th{background-color:#abdde5}
  /* styled-table WARNING*/
- .styled-table-warning,.styled-table-warning>td,.styled-table-warning>th{background-color:#ffeeba}
- .styled-table-hover .styled-table-warning:hover{background-color:#ffe8a1}
- .styled-table-hover .styled-table-warning:hover>td,.styled-table-hover .styled-table-warning:hover>th{background-color:#ffe8a1}
+ .styled-table-warning,.styled-table-warning>td,.styled-table-warning>th{background-color:yellow; color: black;}
+ .styled-table-hover .styled-table-warning:hover{background-color:yellow}
+ .styled-table-hover .styled-table-warning:hover>td,.styled-table-hover .styled-table-warning:hover>th{background-color:yellow}
  /* styled-table DANGER */
- .styled-table-danger,.styled-table-danger>td,.styled-table-danger>th{background-color:#dc3545; color: white;}
- .styled-table-hover .styled-table-danger:hover{background-color:#dc3545}
+ .styled-table-danger,.styled-table-danger>td,.styled-table-danger>th{background-color:red; color: white;}
+ .styled-table-hover .styled-table-danger:hover{background-color:red}
  .styled-table-hover .styled-table-danger:hover>td,
- .styled-table-hover .styled-table-danger:hover>th{background-color:#f1b0b7}
+ .styled-table-hover .styled-table-danger:hover>th{background-color:red}
  /* styled-table LIGHT*/
  .styled-table-light,.styled-table-light>td,.styled-table-light>th{background-color:#fdfdfe}
  .styled-table-hover .styled-table-light:hover{background-color:#ececf6}
