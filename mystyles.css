@@ -249,8 +249,8 @@ For this, we're just going to make changes to the text: */
  .styled-table-hover .styled-table-warning:hover{background-color:#ffe8a1}
  .styled-table-hover .styled-table-warning:hover>td,.styled-table-hover .styled-table-warning:hover>th{background-color:#ffe8a1}
  /* styled-table DANGER */
- .styled-table-danger,.styled-table-danger>td,.styled-table-danger>th{background-color:#f5c6cb}
- .styled-table-hover .styled-table-danger:hover{background-color:#f1b0b7}
+ .styled-table-danger,.styled-table-danger>td,.styled-table-danger>th{background-color:#f5c6cb; color: white;}
+ .styled-table-hover .styled-table-danger:hover{background-color:#dc3545}
  .styled-table-hover .styled-table-danger:hover>td,
  .styled-table-hover .styled-table-danger:hover>th{background-color:#f1b0b7}
  /* styled-table LIGHT*/
