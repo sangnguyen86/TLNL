@@ -228,12 +228,51 @@ For this, we're just going to make changes to the text: */
     /*color: #009879;*/
     color: white;
 }
-
-.styled-table-active,.styled-table-active>td,.styled-table-active>th{background-color:rgba(0,0,0,.075)}
+/* styled-table PRIMARY*/
+ .styled-table-primary,.styled-table-primary>td,.styled-table-primary>th{background-color:#b8daff}
+ .styled-table-hover .styled-table-primary:hover{background-color:#9fcdff}
+ .styled-table-hover .styled-table-primary:hover>td,.styled-table-hover .styled-table-primary:hover>th{background-color:#9fcdff}
+ /* styled-table SECONDARy*/
+ .styled-table-secondary,.styled-table-secondary>td,.styled-table-secondary>th{background-color:#d6d8db}
+ .styled-table-hover .styled-table-secondary:hover{background-color:#c8cbcf}
+ .styled-table-hover .styled-table-secondary:hover>td,.styled-table-hover .styled-table-secondary:hover>th{background-color:#c8cbcf}
+ /* styled-table SUCCESS*/
+ .styled-table-success,.styled-table-success>td,.styled-table-success>th{background-color:#c3e6cb}
+ .styled-table-hover .styled-table-success:hover{background-color:#b1dfbb}
+ .styled-table-hover .styled-table-success:hover>td,.styled-table-hover .styled-table-success:hover>th{background-color:#b1dfbb}
+ /* styled-table INFO*/
+ .styled-table-info,.styled-table-info>td,.styled-table-info>th{background-color:#bee5eb}
+ .styled-table-hover .styled-table-info:hover{background-color:#abdde5}
+ .styled-table-hover .styled-table-info:hover>td,.styled-table-hover .styled-table-info:hover>th{background-color:#abdde5}
+ /* styled-table WARNING*/
+ .styled-table-warning,.styled-table-warning>td,.styled-table-warning>th{background-color:#ffeeba}
+ .styled-table-hover .styled-table-warning:hover{background-color:#ffe8a1}
+ .styled-table-hover .styled-table-warning:hover>td,.styled-table-hover .styled-table-warning:hover>th{background-color:#ffe8a1}
+ /* styled-table DANGER */
+ .styled-table-danger,.styled-table-danger>td,.styled-table-danger>th{background-color:#f5c6cb}
+ .styled-table-hover .styled-table-danger:hover{background-color:#f1b0b7}
+ .styled-table-hover .styled-table-danger:hover>td,
+ .styled-table-hover .styled-table-danger:hover>th{background-color:#f1b0b7}
+ /* styled-table LIGHT*/
+ .styled-table-light,.styled-table-light>td,.styled-table-light>th{background-color:#fdfdfe}
+ .styled-table-hover .styled-table-light:hover{background-color:#ececf6}
+ .styled-table-hover .styled-table-light:hover>td,.styled-table-hover .styled-table-light:hover>th{background-color:#ececf6}
+ /* styled-table DARK*/
+ .styled-table-dark,.styled-table-dark>td,.styled-table-dark>th{background-color:#c6c8ca}
+ .styled-table-hover .styled-table-dark:hover{background-color:#b9bbbe}
+ .styled-table-hover .styled-table-dark:hover>td,.styled-table-hover .styled-table-dark:hover>th{background-color:#b9bbbe}
+ /* styled-table ACTIVE */
+ .styled-table-active,.styled-table-active>td,.styled-table-active>th{background-color:rgba(0,0,0,.075)}
  .styled-table-hover .styled-table-active:hover{background-color:rgba(0,0,0,.075)}
  .styled-table-hover .styled-table-active:hover>td,.styled-table-hover .styled-table-active:hover>th{background-color:rgba(0,0,0,.075)}
  .styled-table .thead-dark th{color:#fff;background-color:#212529;border-color:#32383e}
  .styled-table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}
+ /* styled-table DARK*/
+ .styled-table-dark{color:#fff;background-color:#212529}
+ .styled-table-dark td,.styled-table-dark th,.styled-table-dark thead th{border-color:#32383e}
+ .styled-table-dark.styled-table-bordered{border:0}
+ .styled-table-dark.styled-table-striped tbody tr:nth-of-type(odd){background-color:rgba(255,255,255,.05)}
+ .styled-table-dark.styled-table-hover tbody tr:hover{background-color:rgba(255,255,255,.075)}
 /* ALIGN CENTER*/
 .center {
   margin-left: auto;
