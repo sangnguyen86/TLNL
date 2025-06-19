@@ -72,9 +72,9 @@ header {
  overflow: hidden;
  /*position: relative; /* vị trí */
  position: middle; /* vị trí */
- background: blue; /* màu nền*/
+ background: transparent; /* màu nền*/
  color: yellow; /* màu chữ*/
- /*border: 2px solid orange;*/
+ border: 1px solid orange;*/
  
 }
 .scroll-left p {
@@ -123,7 +123,7 @@ header {
     position: relative;
     overflow: hidden;
     white-space: nowrap;
-    background: #000;
+    background: transparent;
     color: #fff;
 }
 #container .scroll {
