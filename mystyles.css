@@ -31,18 +31,12 @@ header {
           padding: 20px;
           color: white;
   				}
-/* Header navigation bar*/
-.header nav{
-            background-color: darkblue; /* Màu nền */
-            height: 50px;
-            width: 100%;
-            overflow: hidden;
-           }
+
 
 /* NAVIGATION BAR*/
 /* Định dạng thanh điều hướng */
 .navbar {
-   background-color: darkblue; /* Màu nền */  
+   background-color: transparent; /* Màu nền */  
    height: 50px;
    width: 100%;
    overflow: hidden;
