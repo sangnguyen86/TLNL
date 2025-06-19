@@ -6,6 +6,11 @@
     	<title>CƠ ĐIỆN - CÔNG VIỆC KHÁC</title>
     	<!--Import Styles CSS file-->
     	<link rel="stylesheet" href="mystyles.css"/>
+	<script>
+      	$(function() {
+         $("#includeHtml").load("message.html");
+      });
+   </script>
 </head>
 
 <!-- BODY CONTENTS-->	
@@ -34,7 +39,7 @@
 		</div>
 		<!-- SCROLL MESSAGE -->
 		<div id='container'>
-		<include src="message.html"></include>
+		<div id="includeHtml"></div>
 		</div>
 		
 	</header>
