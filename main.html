@@ -1,148 +1,64 @@
+
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-<title>CƠ ĐIỆN -TLNL KHATOCO - TRANG CHÍNH</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {box-sizing: border-box;}
-
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* Style the header */
-/*header { background-color: #666; padding: 5px; text-align: center; /*font-size: 35px;*/ color: white;}*/
-header-image-menu{
-    top: 10px;
-    position: relative;
-}
-
-header-image-menu img{
-    width: 100%;
-    margin: none;
-    padding: none;
-}
-
-image-text{
-    position: absolute;
-    top: 60%;
-    left: 60%;
-    font-family: 'Roboto';
-    color: #000;
-    transform: translate(-30%, -30%);
-    text-align: center;
-}
-/* Tạo hai cột/hộp nổi cạnh nhau */
-nav {float: left; width: 30%; 
-     /*height: 300px; /* only for demonstration, should be removed */
-  	background: #ccc;
-  	padding: 20px;
-}
-
-/* Style the list inside the menu */
-nav ul { list-style-type: none; padding: 0;}
-
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  /*height: 300px; /* only for demonstration, should be removed */
-}
-
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-				}
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-		}
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  				}
-						}
-</style>
+    	
+    	
+    	<title>CƠ ĐIỆN</title>
+    	<!--Import Styles CSS file-->
+    	<link rel="stylesheet" href="mystyles.css"/>
 </head>
-<body>
 
-<!-- HEADER -->	
-<header>
-	 <!-- Top header menu containing
-         logo and Navigation bar -->
-    <div id="top-header">
-        <!-- Logo -->
-        <div id="logo">
-            <img src="images/logo.png" />
-        </div>
-        <!-- Navigation Menu -->
-        <nav>
-            <ul>
-                <li class="active">
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">About Us</a>
-                </li>
-                <li>
-                    <a href="#">Our Products</a>
-                </li>
-                <li>
-                    <a href="#">Careers</a>
-                </li>
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+<!-- BODY CONTENTS-->	
+<body>    
+<!-- HEADER -->
+	<header>
+		<div class="header-right">
+			<p id="datetime"></p>
+			<script>
+				function updateDateTime() {
+  				const now = new Date();
+  				const date = now.toLocaleDateString();
+  				const time = now.toLocaleTimeString();
+  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
+				updateDateTime(); // Hiển thị ngay khi trang load
+				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+			</script>
+		</div>
+		<div class="navbar">
+				<a class = "active" href=""https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
+	      			<a class="active" href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
+              			<a href="https://sangnguyen86.github.io/TLNL/project.html">DỰ ÁN</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">CÔNG VIỆC ĐỊNH KỲ</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG VIỆC KHÁC/ NGHIÊN CỨU</a>
+	      			<!--a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY</a-->
+		</div>
+		<!-- SCROLL MESSAGE -->
+		<div id='container'>
+    			<div class='scroll'>
+        			<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - NGÀY 19/06/2025 VỆ SINH XUNG QUANH CÁC MAÝ XỬ LÝ BỤI VÀ MÙI, CHỔ CÁNH CỬA BUỒNG DẬP BỤI</div>
+				<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - NGÀY 19/06/2025 VỆ SINH XUNG QUANH CÁC MAÝ XỬ LÝ BỤI VÀ MÙI, CHỔ CÁNH CỬA BUỒNG DẬP BỤI</div>
+			
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+    			</div>
+   
+		</div>
+	</header>
+	     
 
-    <!-- Image menu in Header to contain an Image and  a sample text over that image -->
-    <div id="header-image-menu">
-        <img src="https://github.com/sangnguyen86/TLNL/blob/main/slider.jpg">
-        <h2 id="image-text">
-            A Basic Web Design
-        </h2>
-    </div>
-</header>
 
-<section>
-  <nav>
-    <ul>
-      
-	    	<li><a href="https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNHC</a></li>
-		<li><a href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH CÔNG VIỆC</a></li>
-		<li><a href="https://sangnguyen86.github.io/TLNL/dailytask.html">CÔNG VIỆC HÀNG NGÀY</a></li>
-		<li><a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG VÀO XƯỞNG</a></li>
-		<li><a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY QUY ĐỊNH</a></li>
-    </ul>
-  </nav>
-  
-  <article>
-    <h1>KẾ HOẠCH CÔNG VIỆC</h1>
-    	<p>Bảng kế hoạch công việc gồm những công việc được ưu tiên làm trước trong thời gian tiếp theo.</p>
-    	<p>Có phân công rõ ràng về nhân sự và thời gian.</p>
-    <h1>CÔNG VIỆC HÀNG NGÀY</h1>
-    	<p>Bảng những công việc hàng ngày.</p>
-    	<p>....</p>
-    <h1>PHÂN CÔNG VÀO XƯỞNG</h1>
-    	<p>Phân công nhiệm vụ/ công việc khác ngoài công việc hàng này.</p>
-    	<p>....</p>
-  </article>
-</section>
 
-<footer>
-  <p>@2025r</p>
-</footer>
+<!--CONTENST-->
+	
 
-</body>
+
+	</body>
 </html>
