@@ -6,6 +6,10 @@ body {
 }
 /* HEADER STYLE*/
 header {
+     position: sticky;
+     top: 0; /* hoặc một giá trị khác nếu bạn muốn header cách đỉnh trang một khoảng */
+     
+     z-index: 100; /* Đảm bảo header nằm trên các phần tử khác */
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #123;
