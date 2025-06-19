@@ -28,3 +28,13 @@ function renderHeader() {
 }
 
 renderHeader();
+/* RENDER MESSAGE*/
+function renderMessage() {
+  fetch('message.html')
+    .then(response => response.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('afterbegin', html);
+    });
+}
+
+renderMessage();
