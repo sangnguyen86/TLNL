@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    	
+    	
+    	<title>CƠ ĐIỆN</title>
+    	<!--Import Styles CSS file-->
+    	<link rel="stylesheet" href="mystyles.css"/>
+</head>
 
+<!-- BODY CONTENTS-->	
+<body>    
+<!-- HEADER -->
+	<header>
+		<div class="header-right">
+			<p id="datetime"></p>
+			<script>
+				function updateDateTime() {
+  				const now = new Date();
+  				const date = now.toLocaleDateString();
+  				const time = now.toLocaleTimeString();
+  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
+				updateDateTime(); // Hiển thị ngay khi trang load
+				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+			</script>
+		</div>
+	</header>
+<!-- NOTES SCROLLING TEXT-->
+<style>
+
+</style>
+<!-- THANH ĐIỀU HƯỚNG-->	     
+<div class="navbar">
+				<!--a href=""https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a-->
+	      			<a href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
+              <a class="active" href="https://sangnguyen86.github.io/TLNL/project.html">DỰ ÁN</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">CÔNG VIỆC ĐỊNH KỲ</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG VIỆC KHÁC/ NGHIÊN CỨU</a>
+	      			<!--a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY</a-->
+</div>
+
+
+<!-- MESSAGE SCROLLING ITEMS -->
+	<div id='container'>
+    		<div class='scroll'>
+        		<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - NGÀY 19/06/2025 VỆ SINH XUNG QUANH CÁC MAÝ XỬ LÝ BỤI VÀ MÙI, CHỔ CÁNH CỬA BUỒNG DẬP BỤI</div>
+			<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - NGÀY 19/06/2025 VỆ SINH XUNG QUANH CÁC MAÝ XỬ LÝ BỤI VÀ MÙI, CHỔ CÁNH CỬA BUỒNG DẬP BỤI</div>
+			
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+        		<!--div class='item'>Item 2</div-->
+    </div>
+    <!--div class='fade'></div--> <!-- HIỆU ỨNG MỜ-->
+</div>
+<!-- -->
+	
+<p  style="color:red;font-size:25px;text-align: center"><b> CÁC DỰ ÁN SẮP TỚI</b></p>
+<table class="styled-table center">
+    <thead>
+        <tr>
+            	<th scope="col">STT</th>
+		<th scope="col">TÊN DỰ ÁN</th>
+    		<th scope="col">NỘI DUNG</th>
+		<th scope="col">THỰC HIỆN</th>
+    		<th scope="col">DỰ KIẾN<br>TRIỄN KHAI</th>
+		<th scope="col">GHI CHÚ</th>
+        </tr>
+    </thead>
+    <tbody>
+<!-- DÒNG 1-->
+	    			<tr> <!-- Mặc định-->
+				<!--tr class ="styled-table-primary"> <!--Việc ưu tiên Xanh dương -->
+				<!--tr class ="styled-table-secondary"> <!-- Xám -->
+				<!--tr class ="styled-table-success"> <!-- Việc hoàn thành Xanh lá -->
+				<!--tr class ="styled-table-danger"> <!-- Việc khẩn cấp /đỏ-->	
+				<!--tr class ="styled-table-warning"> <!-- Việc quan trọng/ vàng-->
+	<!-- STT-->			
+				<th scope="row" style = "text-align: center; vertical-align: middle;">1</th>
+	<!-- TÊN DỰ ÁN-->
+    				<td style = "text-align: left; vertical-align: middle;">Sàn rung<br>Máy sàng cát</td>
+	<!-- NỘI DUNG-->
+    				<td style = "text-align: left; vertical-align: middle;">Thiết kế </td>	
+	<!-- NGƯỜI -->
+    				<td style = "text-align: center; vertical-align: middle;">Hoà</td>  
+	<!-- DỰ KIẾN-->
+    				<td style = "text-align: center; vertical-align: middle;">Tháng 7</td>  	
+	<!-- Ghi chú-->
+				<td style = "text-align: left; vertical-align: middle;">***</td> 
+  			</tr>
+<!-- DÒNG 2-->
+	    			<tr> <!-- Mặc định-->
+				<!--tr class ="styled-table-primary"> <!--Việc ưu tiên Xanh dương -->
+				<!--tr class ="styled-table-secondary"> <!-- Xám -->
+				<!--tr class ="styled-table-success"> <!-- Việc hoàn thành Xanh lá -->
+				<!--tr class ="styled-table-danger"> <!-- Việc khẩn cấp /đỏ-->	
+				<!--tr class ="styled-table-warning"> <!-- Việc quan trọng/ vàng-->
+	<!-- STT-->			
+				<th scope="row" style = "text-align: center; vertical-align: middle;">2</th>
+	<!-- TÊN DỰ ÁN-->
+    				<td style = "text-align: left; vertical-align: middle;">Máy ép kiện 15 tấn</td>
+	<!-- NỘI DUNG-->
+    				<td style = "text-align: left; vertical-align: middle;">Thiết kế </td>	
+	<!-- NGƯỜI -->
+    				<td style = "text-align: center; vertical-align: middle;">Hoà</td>  
+	<!-- DỰ KIẾN-->
+    				<td style = "text-align: center; vertical-align: middle;">Cuối năm 2025</td>  	
+	<!-- Ghi chú-->
+				<td style = "text-align: left; vertical-align: middle;">***</td> 
+  			</tr>
+<!-- DÒNG 3-->
+	    			<tr> <!-- Mặc định-->
+				<!--tr class ="styled-table-primary"> <!--Việc ưu tiên Xanh dương -->
+				<!--tr class ="styled-table-secondary"> <!-- Xám -->
+				<!--tr class ="styled-table-success"> <!-- Việc hoàn thành Xanh lá -->
+				<!--tr class ="styled-table-danger"> <!-- Việc khẩn cấp /đỏ-->	
+				<!--tr class ="styled-table-warning"> <!-- Việc quan trọng/ vàng-->
+	<!-- STT-->			
+				<th scope="row" style = "text-align: center; vertical-align: middle;">3</th>
+	<!-- TÊN DỰ ÁN-->
+    				<td style = "text-align: left; vertical-align: middle;">Kệ chồng chứa hàng</td>
+	<!-- NỘI DUNG-->
+    				<td style = "text-align: left; vertical-align: middle;">Thiết kế </td>	
+	<!-- NGƯỜI -->
+    				<td style = "text-align: center; vertical-align: middle;">Hoà</td>  
+	<!-- DỰ KIẾN-->
+    				<td style = "text-align: center; vertical-align: middle;">Tháng 08/2025</td>  	
+	<!-- Ghi chú-->
+				<td style = "text-align: left; vertical-align: middle;">***</td> 
+  			</tr>
+<!-- DÒNG 4-->
+	    			<tr> <!-- Mặc định-->
+				<!--tr class ="styled-table-primary"> <!--Việc ưu tiên Xanh dương -->
+				<!--tr class ="styled-table-secondary"> <!-- Xám -->
+				<!--tr class ="styled-table-success"> <!-- Việc hoàn thành Xanh lá -->
+				<!--tr class ="styled-table-danger"> <!-- Việc khẩn cấp /đỏ-->	
+				<!--tr class ="styled-table-warning"> <!-- Việc quan trọng/ vàng-->
+	<!-- STT-->			
+				<th scope="row" style = "text-align: center; vertical-align: middle;">4</th>
+	<!-- TÊN DỰ ÁN-->
+    				<td style = "text-align: left; vertical-align: middle;">Kệ drive in kho 2</td>
+	<!-- NỘI DUNG-->
+    				<td style = "text-align: left; vertical-align: middle;">Tháo bớt 2 tầng </td>	
+	<!-- NGƯỜI -->
+    				<td style = "text-align: center; vertical-align: middle;">KT Cơ khí</td>  
+	<!-- DỰ KIẾN-->
+    				<td style = "text-align: center; vertical-align: middle;">Tháng 10/2025</td>  	
+	<!-- Ghi chú-->
+				<td style = "text-align: left; vertical-align: middle;">***</td> 
+  			</tr>
+    </tbody>
+</table>
+	</body>
+</html>
