@@ -18,3 +18,13 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
+
+function renderHeader() {
+  fetch('header.html')
+    .then(response => response.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('afterbegin', html);
+    });
+}
+
+renderHeader();
