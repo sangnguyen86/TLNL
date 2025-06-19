@@ -18,9 +18,9 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
-
+/* render header function*
 function renderHeader() {
-  fetch('header.html')
+  fetch('myheader.html')
     .then(response => response.text())
     .then(html => {
       document.body.insertAdjacentHTML('afterbegin', html);
