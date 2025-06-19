@@ -1,1 +1,40 @@
-
+<header>
+		<div class="header-right">
+			<p id="datetime"></p>
+			<script>
+				function updateDateTime() {
+  				const now = new Date();
+  				const date = now.toLocaleDateString();
+  				const time = now.toLocaleTimeString();
+  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
+				updateDateTime(); // Hiển thị ngay khi trang load
+				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+			</script>
+		</div>
+		<div class="navbar">
+				<a class = "active" href=""https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
+	      			<a class="active" href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
+              			<a href="https://sangnguyen86.github.io/TLNL/project.html">DỰ ÁN</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">CÔNG VIỆC ĐỊNH KỲ</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG VIỆC KHÁC/ NGHIÊN CỨU</a>
+	      			<!--a href="https://sangnguyen86.github.io/TLNL/rules.html">NỘI QUY</a-->
+		</div>
+		<!-- SCROLL MESSAGE -->
+		<div id='container'>
+    			<div class='scroll'>
+        			<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - NGÀY 19/06/2025 VỆ SINH XUNG QUANH CÁC MAÝ XỬ LÝ BỤI VÀ MÙI, CHỔ CÁNH CỬA BUỒNG DẬP BỤI</div>
+				<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - NGÀY 19/06/2025 VỆ SINH XUNG QUANH CÁC MAÝ XỬ LÝ BỤI VÀ MÙI, CHỔ CÁNH CỬA BUỒNG DẬP BỤI</div>
+			
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+        			<!--div class='item'>Item 2</div-->
+    			</div>
+   
+		</div>
+	</header>
