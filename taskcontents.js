@@ -2,7 +2,7 @@
 // KHCV//
 
 const  task_01_priority = null;//
-const  task_01_mach =  =  "PHÒNG ĐÀO TẠO(tên cũ: HỘI TRƯỜNG)";
+let  task_01_mach =  =  "PHÒNG ĐÀO TẠO(tên cũ: HỘI TRƯỜNG)";
 const  task_01_content  ="***";
 const  task_01_start  ="***";
 const  task_01_end ="***";
