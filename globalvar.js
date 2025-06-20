@@ -9,7 +9,7 @@ var myMessage05 = null;
 // KHCV//
 
 var task_01_priority = null;//
-var task_01_mach =  ="***";
+var task_01_mach =  =  "PHÒNG ĐÀO TẠO <br>(tên cũ: HỘI TRƯỜNG)";
 var task_01_content  ="***";
 var task_01_start  ="***";
 var task_01_end ="***";
