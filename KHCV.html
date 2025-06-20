@@ -94,20 +94,15 @@
 			<!--tr class ="styled-table-success"> <!-- Việc hoàn thành Xanh lá -->
 			<!--tr class ="styled-table-danger"> <!-- Việc khẩn cấp /đỏ-->	
 			<tr class ="styled-table-warning"> <!-- Việc quan trọng/ vàng-->	
-<!-- STT-->			<th scope="row" style = "text-align: center; vertical-align: middle;">1</th>
-<!-- tên máy-->			<td style = "text-align: left; vertical-align: middle;" id ="id_task01_mach"></td>
-<!-- Nội dung công việc-->      <td style = "text-align: left; vertical-align: middle;" id ="id_task01_content"></td>					
-<!-- Bắt đầu-->			<td style = "text-align: center; vertical-align: middle;" id ="id_task01_start">20/06/2025</td> 	
-	<!--Thời điểm kết thúc -->
-				<td style = "text-align: center; vertical-align: middle;" id ="id_task01_end">23/06/2025</td> 
-	<!-- Người thiết kế/ phương án-->
-				<td style = "text-align: center; vertical-align: middle;">***</td>
-	<!-- thực hiện chính-->
-				<td style = "text-align: center; vertical-align: middle;">Mật Thuỷ <br> Duy Hưng/Huy Yên</td> 
-	<!-- Hổ trợ thực hiện-->
-				<td style = "text-align: center; vertical-align: middle;">Minh Khánh<br> Văn Hưng</td> 
-	<!-- Ghi chú-->
-				<td style = "text-align: left; vertical-align: middle;"></td> 
+		<th scope="row" style = "text-align: center; vertical-align: middle;">1</th>
+		<td style = "text-align: left; vertical-align: middle;" id ="id_task01_mach"></td>
+     		<td style = "text-align: left; vertical-align: middle;" id ="id_task01_content"></td>					
+		<td style = "text-align: center; vertical-align: middle;" id ="id_task01_start">20/06/2025</td> 	
+		<td style = "text-align: center; vertical-align: middle;" id ="id_task01_end">23/06/2025</td> 
+		<td style = "text-align: center; vertical-align: middle;" id ="id_task01_assign">***</td>
+		<td style = "text-align: center; vertical-align: middle;"id ="id_task01_employ">Mật Thuỷ <br> Duy Hưng/Huy Yên</td> 
+		<td style = "text-align: center; vertical-align: middle;"id ="id_task01_support">Minh Khánh<br> Văn Hưng</td> 
+		<td style = "text-align: left; vertical-align: middle;"id ="id_task01_notes"></td> 
   			</tr>	
 
 <!-- DÒNG 2-->
@@ -349,9 +344,17 @@
     </tbody>
 </table>
 	    	<script type="text/javascript">
-		//document.querySelector("#id_task01_mach").innerHTML ="Phòng Đào Tạo (Hội Trường)";
-			document.querySelector("#id_task01_mach").innerHTML =task_01_mach;
-			document.querySelector("#id_task01_content").innerHTML =task_01_content;
+		//NỘI DUNG KHCV
+			document.querySelector("#id_task01_mach").innerHTML    = task_01_mach;
+			document.querySelector("#id_task01_content").innerHTML = task_01_content;
+			document.querySelector("#id_task01_start").innerHTML = task_01_start ;
+			document.querySelector("#id_task01_end").innerHTML = task_01_end;
+			document.querySelector("#id_task01_assign").innerHTML = task_01_assign;
+			document.querySelector("#id_task01_employ").innerHTML = task_01_employ;
+			document.querySelector("#id_task01_support").innerHTML = task_01_support;
+			document.querySelector("#id_task01_notes").innerHTML = task_01_note;
+
+
 			
 		</script>	
 
