@@ -94,24 +94,10 @@
 			<!--tr class ="styled-table-success"> <!-- Việc hoàn thành Xanh lá -->
 			<!--tr class ="styled-table-danger"> <!-- Việc khẩn cấp /đỏ-->	
 			<tr class ="styled-table-warning"> <!-- Việc quan trọng/ vàng-->	
-	<!-- STT-->			
-				<th scope="row" style = "text-align: center; vertical-align: middle;">1</th>
-	<!-- tên máy-->
-    				<td style = "text-align: left; vertical-align: middle;" id ="id_task01_mach"></td>
-
-				
-	<!-- Nội dung công việc-->
-    				<td style = "text-align: left; vertical-align: middle;" id ="id_task01_content">
-					- Làm theo thứ tự sau.<br>
-					1. Gắn 6 thêm bóng âm trần.<br>
-					2. Thay bóng đèn 1m2.<br>
-					3. Thay bóng đèn WC<br>
-					4. Gắn máy sấy tay ở 2 WC<br>
-					5. Gắn thêm CB, ổ cắm cho các vị trí lắp đặt các máy khác
-
-					
-	<!-- Bắt đầu-->
-    				<td style = "text-align: center; vertical-align: middle;" id ="id_task01_start">20/06/2025</td> 	
+<!-- STT-->			<th scope="row" style = "text-align: center; vertical-align: middle;">1</th>
+<!-- tên máy-->			<td style = "text-align: left; vertical-align: middle;" id ="id_task01_mach"></td>
+<!-- Nội dung công việc-->      <td style = "text-align: left; vertical-align: middle;" id ="id_task01_content"></td>					
+<!-- Bắt đầu-->			<td style = "text-align: center; vertical-align: middle;" id ="id_task01_start">20/06/2025</td> 	
 	<!--Thời điểm kết thúc -->
 				<td style = "text-align: center; vertical-align: middle;" id ="id_task01_end">23/06/2025</td> 
 	<!-- Người thiết kế/ phương án-->
@@ -364,7 +350,9 @@
 </table>
 	    	<script type="text/javascript">
 		//document.querySelector("#id_task01_mach").innerHTML ="Phòng Đào Tạo (Hội Trường)";
-			document.querySelector("#id_task01_mach").innerHTML =task_01_mach;	
+			document.querySelector("#id_task01_mach").innerHTML =task_01_mach;
+			document.querySelector("#id_task01_content").innerHTML =task01_content;
+			
 		</script>	
 
 </body>
