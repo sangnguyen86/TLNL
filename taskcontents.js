@@ -1,104 +1,104 @@
 
 // KHCV//
 
-const  task_01_priority = null;//
+let  task_01_priority = null;//
 let  task_01_mach;
 task_01_mach =  =  "P. Đào Tạo";
-const  task_01_content  ="***";
-const  task_01_start  ="***";
-const  task_01_end ="***";
-const  task_01_design ="***";
-const  task_01_assign ="***";
-const  task_01_support ="***";
-const  task_01_note ="***";
+let  task_01_content  ="***";
+let  task_01_start  ="***";
+let  task_01_end ="***";
+let  task_01_design ="***";
+let  task_01_assign ="***";
+let  task_01_support ="***";
+let  task_01_note ="***";
 
-const  task_02_priority = null;//
-const  task_02_mach =  ="***";
-const  task_02_content  ="***";
-const  task_02_start  ="***";
-const  task_02_end ="***";
-const  task_02_design ="***";
-const  task_02_assign ="***";
-const  task_02_support ="***";
-const  task_02_note ="***";
+let  task_02_priority = null;//
+let  task_02_mach =  ="***";
+let  task_02_content  ="***";
+let  task_02_start  ="***";
+let  task_02_end ="***";
+let  task_02_design ="***";
+let  task_02_assign ="***";
+let  task_02_support ="***";
+let  task_02_note ="***";
 
-const  task_03_priority = null;//
-const  task_03_mach =  ="***";
-const  task_03_content  ="***";
-const  task_03_start  ="***";
-const  task_03_end ="***";
-const  task_03_design ="***";
-const  task_03_assign ="***";
-const  task_03_support ="***";
-const  task_03_note ="***";
+let  task_03_priority = null;//
+let  task_03_mach =  ="***";
+let  task_03_content  ="***";
+let  task_03_start  ="***";
+let  task_03_end ="***";
+let  task_03_design ="***";
+let  task_03_assign ="***";
+let  task_03_support ="***";
+let  task_03_note ="***";
 
-const  task_04_priority = null;//
-const  task_04_mach =  ="***";
-const  task_04_content  ="***";
-const  task_04_start  ="***";
-const  task_04_end ="***";
-const  task_04_design ="***";
-const  task_04_assign ="***";
-const  task_04_support ="***";
-const  task_04_note ="***";
+let  task_04_priority = null;//
+let  task_04_mach =  ="***";
+let  task_04_content  ="***";
+let  task_04_start  ="***";
+let  task_04_end ="***";
+let  task_04_design ="***";
+let  task_04_assign ="***";
+let  task_04_support ="***";
+let  task_04_note ="***";
 
-const  task_05_priority = null;//
-const  task_05_mach =  ="***";
-const  task_05_content  ="***";
-const  task_05_start  ="***";
-const  task_05_end ="***";
-const  task_05_design ="***";
-const  task_05_assign ="***";
-const  task_05_support ="***";
-const  task_05_note ="***";
+let  task_05_priority = null;//
+let  task_05_mach =  ="***";
+let  task_05_content  ="***";
+let  task_05_start  ="***";
+let  task_05_end ="***";
+let  task_05_design ="***";
+let  task_05_assign ="***";
+let  task_05_support ="***";
+let  task_05_note ="***";
 
-const  task_06_priority = null;//
-const  task_06_mach =  ="***";
-const  task_06_content  ="***";
-const  task_06_start  ="***";
-const  task_06_end ="***";
-const  task_06_design ="***";
-const  task_06_assign ="***";
-const  task_06_support ="***";
-const  task_06_note ="***";
+let  task_06_priority = null;//
+let  task_06_mach =  ="***";
+let  task_06_content  ="***";
+let  task_06_start  ="***";
+let  task_06_end ="***";
+let  task_06_design ="***";
+let  task_06_assign ="***";
+let  task_06_support ="***";
+let  task_06_note ="***";
 
-const  task_07_priority = null;//
-const  task_07_mach =  ="***";
-const  task_07_content  ="***";
-const  task_07_start  ="***";
-const  task_07_end ="***";
-const  task_07_design ="***";
-const  task_07_assign ="***";
-const  task_07_support ="***";
-const  task_07_note ="***";
+let  task_07_priority = null;//
+let  task_07_mach =  ="***";
+let  task_07_content  ="***";
+let  task_07_start  ="***";
+let  task_07_end ="***";
+let  task_07_design ="***";
+let  task_07_assign ="***";
+let  task_07_support ="***";
+let  task_07_note ="***";
 
-const  task_08_priority = null;//
-const  task_08_mach =  ="***";
-const  task_08_content  ="***";
-const  task_08_start  ="***";
-const  task_08_end ="***";
-const  task_08_design ="***";
-const  task_08_assign ="***";
-const  task_08_support ="***";
-const  task_08_note ="***";
+let  task_08_priority = null;//
+let  task_08_mach =  ="***";
+let  task_08_content  ="***";
+let  task_08_start  ="***";
+let  task_08_end ="***";
+let  task_08_design ="***";
+let  task_08_assign ="***";
+let  task_08_support ="***";
+let  task_08_note ="***";
 
-const  task_09_priority = null;//
-const  task_09_mach =  ="***";
-const  task_09_content  ="***";
-const  task_09_start  ="***";
-const  task_09_end ="***";
-const  task_09_design ="***";
-const  task_09_assign ="***";
-const  task_09_support ="***";
-const  task_09_note ="***";
+let  task_09_priority = null;//
+let  task_09_mach =  ="***";
+let  task_09_content  ="***";
+let  task_09_start  ="***";
+let  task_09_end ="***";
+let  task_09_design ="***";
+let  task_09_assign ="***";
+let  task_09_support ="***";
+let  task_09_note ="***";
 
-const  task_10_priority = null;//
-const  task_10_mach =  ="***";
-const  task_10_content  ="***";
-const  task_10_start  ="***";
-const  task_10_end ="***";
-const  task_10_design ="***";
-const  task_10_assign ="***";
-const  task_10_support ="***";
-const  task_10_note ="***";
+let  task_10_priority = null;//
+let  task_10_mach =  ="***";
+let  task_10_content  ="***";
+let  task_10_start  ="***";
+let  task_10_end ="***";
+let  task_10_design ="***";
+let  task_10_assign ="***";
+let  task_10_support ="***";
+let  task_10_note ="***";
 
