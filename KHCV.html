@@ -8,12 +8,7 @@
     	<link rel="stylesheet" href="mystyles.css"/>
 	<script src="globalvar.js"></script>
 	<script src="taskcontents.js"></script>
-	<script>
-	// MESSAGE SCRIPT//
-	
-	//document.querySelector("#id_task01_mach").innerHTML ="Phòng Đào Tạo (Hội Trường)";
-	document.querySelector("#id_task01_mach").innerHTML =task_01_mach;	
-	</script>
+
 </head>
 
 <!-- BODY CONTENTS-->	
@@ -53,18 +48,18 @@
     			</div>
 		</div>
 		<script>
-			const msg01_element = document.getElementById("message01");
-			const msg02_element = document.getElementById("message02");
-			const msg03_element = document.getElementById("message03");
-			const msg04_element = document.getElementById("message04");
-			const msg05_element = document.getElementById("message05");
+			//const msg01_element = document.getElementById("message01");
+			//const msg02_element = document.getElementById("message02");
+			//const msg03_element = document.getElementById("message03");
+			//const msg04_element = document.getElementById("message04");
+			//const msg05_element = document.getElementById("message05");
 			// HIỂN THỊ
 			//msg01_element.innerHTML = myMessage01;
 			if (myMessage01 ==null) {document.getElementById("message01").style.display = 'none';}else{document.getElementById("message01").innerHTML = myMessage01;}
-			if (myMessage02 == null) {document.getElementById("message02").style.display = 'none';}else{document.getElementById("message01").innerHTML = myMessage02;}
-			if (myMessage03 == null) {document.getElementById("message03").style.display = 'none';}else{document.getElementById("message01").innerHTML = myMessage03;}
-			if (myMessage04 == null) {document.getElementById("message04").style.display = 'none';}else{document.getElementById("message01").innerHTML = myMessage04;}
-			if (myMessage05 == null) {document.getElementById("message05").style.display = 'none';}else{document.getElementById("message01").innerHTML = myMessage05;}
+			if (myMessage02 == null) {document.getElementById("message02").style.display = 'none';}else{document.getElementById("message02").innerHTML = myMessage02;}
+			if (myMessage03 == null) {document.getElementById("message03").style.display = 'none';}else{document.getElementById("message03").innerHTML = myMessage03;}
+			if (myMessage04 == null) {document.getElementById("message04").style.display = 'none';}else{document.getElementById("message04").innerHTML = myMessage04;}
+			if (myMessage05 == null) {document.getElementById("message05").style.display = 'none';}else{document.getElementById("message05").innerHTML = myMessage05;}
 		</script>
 	</header>
 	     
@@ -127,7 +122,11 @@
 				<td style = "text-align: center; vertical-align: middle;">Minh Khánh<br> Văn Hưng</td> 
 	<!-- Ghi chú-->
 				<td style = "text-align: left; vertical-align: middle;"></td> 
-  			</tr>		
+  			</tr>	
+	    	<script>
+		//document.querySelector("#id_task01_mach").innerHTML ="Phòng Đào Tạo (Hội Trường)";
+			document.querySelector("#id_task01_mach").innerHTML =task_01_mach;	
+		</script>
 <!-- DÒNG 2-->
 			<!--tr class ="styled-table-primary"> <!--Việc ưu tiên Xanh dương -->
 			<!--tr class ="styled-table-secondary"> <!-- Xám -->
