@@ -34,22 +34,33 @@
 		</div>
 		<!-- SCROLL MESSAGE -->
 		<div id='container'>
-    			<div class='scroll'>
-        			<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - NGÀY 19/06/2025 VỆ SINH XUNG QUANH CÁC MAÝ XỬ LÝ BỤI VÀ MÙI, CHỔ CÁNH CỬA BUỒNG DẬP BỤI</div>
-				<div class='item'>NGÀY 20/06/2025 QUAN TRẮC MÔI TRƯỜNG - NGÀY 19/06/2025 VỆ SINH XUNG QUANH CÁC MAÝ XỬ LÝ BỤI VÀ MÙI, CHỔ CÁNH CỬA BUỒNG DẬP BỤI</div>
-			
-        			<!--div class='item'>Item 2</div-->
-        			<!--div class='item'>Item 2</div-->
-        			<!--div class='item'>Item 2</div-->
-        			<!--div class='item'>Item 2</div-->
-        			<!--div class='item'>Item 2</div-->
-        			<!--div class='item'>Item 2</div-->
-        			<!--div class='item'>Item 2</div-->
-        			<!--div class='item'>Item 2</div-->
-        			<!--div class='item'>Item 2</div-->
+		
+			<div class='scroll'>
+        			<div class='item' id ="message01"></div>
+				<div class='item' id ="message02"></div>
+				<div class='item' id ="message03"></div>
+				<div class='item' id ="message04"></div>
+				<div class='item' id ="message05"></div>
+ 
     			</div>
-   
 		</div>
+		<script>
+			const msg01_element = document.getElementById("message01");
+			const msg02_element = document.getElementById("message02");
+			const msg03_element = document.getElementById("message03");
+			const msg04_element = document.getElementById("message04");
+			const msg05_element = document.getElementById("message05");
+			// HIỂN THỊ
+			//msg01_element.innerHTML = myMessage01;
+			if (myMessage01 ==null) {msg01_element.style.display = 'none';}else{msg01_element.innerHTML = myMessage01;}
+			if (myMessage02 == null) {msg02_element.style.display = 'none';}else{msg02_element.innerHTML = myMessage02;}
+			if (myMessage03 == null) {msg03_element.style.display = 'none';}else{msg03_element.innerHTML = myMessage03;}
+			if (myMessage04 == null) {msg04_element.style.display = 'none';}else{msg04_element.innerHTML = myMessage04;}
+			if (myMessage05 == null) {msg05_element.style.display = 'none';}else{msg05_element.innerHTML = myMessage05;}
+
+			
+			
+	</script>
 	</header>
 	
 <p  style="color:red;font-size:25px;text-align: center"><b> CÁC DỰ ÁN SẮP TỚI</b></p>
