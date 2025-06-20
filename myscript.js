@@ -38,3 +38,5 @@ function renderMessage() {
 }
 
 renderMessage();
+/* MESSGAGE */
+document.getElementById("message01").textContent="newtext";
