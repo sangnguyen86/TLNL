@@ -1,3 +1,5 @@
+//GLOBAL VAR
+var globalVar1 = "Hello";
 /*
 window.onscroll: Bắt sự kiện cuộn trang.
 header.offsetTop: Lấy vị trí cố định của header.
