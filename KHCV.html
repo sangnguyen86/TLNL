@@ -99,8 +99,13 @@
 				<th scope="row" style = "text-align: center; vertical-align: middle;">1</th>
 	<!-- tên máy-->
     				<td style = "text-align: left; vertical-align: middle;" id ="id_task01_mach"> PHÒNG ĐÀO TẠO <br>(tên cũ: HỘI TRƯỜNG)</td>
+				<script>
+					const task01_mach_element = document.getElementById("id_task01_mach");
+					task01_mach_element.innerHTML = myMessage01;
+				</script>
+				
 	<!-- Nội dung công việc-->
-    				<td style = "text-align: left; vertical-align: middle;">
+    				<td style = "text-align: left; vertical-align: middle;" id ="id_task01_content">
 					- Làm theo thứ tự sau.<br>
 					1. Gắn 6 thêm bóng âm trần.<br>
 					2. Thay bóng đèn 1m2.<br>
@@ -110,9 +115,9 @@
 
 					
 	<!-- Bắt đầu-->
-    				<td style = "text-align: center; vertical-align: middle;">20/06/2025</td> 	
+    				<td style = "text-align: center; vertical-align: middle;" id ="id_task01_start">20/06/2025</td> 	
 	<!--Thời điểm kết thúc -->
-				<td style = "text-align: center; vertical-align: middle;">23/06/2025</td> 
+				<td style = "text-align: center; vertical-align: middle;" id ="id_task01_end">23/06/2025</td> 
 	<!-- Người thiết kế/ phương án-->
 				<td style = "text-align: center; vertical-align: middle;">***</td>
 	<!-- thực hiện chính-->
