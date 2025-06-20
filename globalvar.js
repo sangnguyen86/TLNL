@@ -6,4 +6,4 @@ let myMessage03 = null;
 let myMessage04 = null;
 let myMessage05 = null;
 
-let  task_01_mach =  "P. Đào Tạo";
+const  task_01_mach =  "P. Đào Tạo";
