@@ -100,7 +100,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: fit-content;
+    width:100%;
     white-space: nowrap;
     animation: loop 30s linear infinite;
 }
