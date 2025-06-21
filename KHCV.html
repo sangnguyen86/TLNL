@@ -88,12 +88,8 @@
     </thead>
     <tbody>
 <!-- DÒNG 1-->
-				
-			<!--tr class ="styled-table-primary"> <!--Việc ưu tiên Xanh dương -->
-			<!--tr class ="styled-table-secondary"> <!-- Xám -->
-			<!--tr class ="styled-table-success"> <!-- Việc hoàn thành Xanh lá -->
-			<!--tr class ="styled-table-danger"> <!-- Việc khẩn cấp /đỏ-->	
-			<tr class ="styled-table-warning"> <!-- Việc quan trọng/ vàng-->	
+
+		<tr id ="id_task01_priority">	
 		<th scope="row" style = "text-align: center; vertical-align: middle;">1</th>
 		<td style = "text-align: left; vertical-align: middle;" id ="id_task01_mach"></td>
      		<td style = "text-align: left; vertical-align: middle;" id ="id_task01_content"></td>					
@@ -103,7 +99,7 @@
 		<td style = "text-align: center; vertical-align: middle;"id ="id_task01_employ">Mật Thuỷ <br> Duy Hưng/Huy Yên</td> 
 		<td style = "text-align: center; vertical-align: middle;"id ="id_task01_support">Minh Khánh<br> Văn Hưng</td> 
 		<td style = "text-align: left; vertical-align: middle;"id ="id_task01_notes"></td> 
-  			</tr>	
+  		</tr>	
 
 <!-- DÒNG 2-->
 			<!--tr class ="styled-table-primary"> <!--Việc ưu tiên Xanh dương -->
@@ -345,6 +341,7 @@
 </table>
 	    	<script type="text/javascript">
 		//NỘI DUNG KHCV
+			document.getElementById("id_task01_priority").className = "styled-table-danger";
 			//element.classList.add("mystyle");//tr class ="styled-table-primary"/"styled-table-secondary"/"styled-table-success"/"styled-table-danger"/="styled-table-warning"> <!-- Việc quan trọng/ vàng-->
 			document.querySelector("#id_task01_mach").innerHTML    = task_01_mach;
 			document.querySelector("#id_task01_content").innerHTML = task_01_content;
