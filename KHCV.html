@@ -90,6 +90,13 @@
 <!-- DÒNG 1-->
 
 		<tr id ="id_task01_priority">	
+		<script  type="text/javascript">
+			if (task01_priority =="danger") {document.getElementById("id_task01_priority").className = "styled-table-danger";} 
+			if (task01_priority =="warning") {document.getElementById("id_task01_priority").className = "styled-table-warning";}
+			if (task01_priority =="primary") {document.getElementById("id_task01_priority").className = "styled-table-primary";}
+			if (task01_priority =="secondary") {document.getElementById("id_task01_priority").className = "styled-table-secondary";}
+  			if (task01_priority =="success") {document.getElementById("id_task01_priority").className = "styled-table-success";}
+		</script>
 		<th scope="row" style = "text-align: center; vertical-align: middle;">1</th>
 		<td style = "text-align: left; vertical-align: middle;" id ="id_task01_mach"></td>
      		<td style = "text-align: left; vertical-align: middle;" id ="id_task01_content"></td>					
@@ -310,13 +317,7 @@
         <!-- and so on... -->
     </tbody>
 </table>
-		<script  type="text/javascript">
-			if (task01_priority =="danger") {document.getElementById("id_task01_priority").className = "styled-table-danger";} 
-			if (task01_priority =="warning") {document.getElementById("id_task01_priority").className = "styled-table-warning";}
-			if (task01_priority =="primary") {document.getElementById("id_task01_priority").className = "styled-table-primary";}
-			if (task01_priority =="secondary") {document.getElementById("id_task01_priority").className = "styled-table-secondary";}
-  			if (task01_priority =="success") {document.getElementById("id_task01_priority").className = "styled-table-success";}
-		</script>
+
 	    	<script type="text/javascript">
 		//NỘI DUNG KHCV
 			
