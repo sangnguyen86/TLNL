@@ -109,6 +109,9 @@
   		</tr>	
 <!-- DÒNG 2-->
 		<tr id ="id_task02_priority">	
+		<script>
+			document.getElementById("id_task02_priority").className = "styled-table-warning";
+		</script>
 		<th scope="row" style = "text-align: center; vertical-align: middle;">2</th>
 		<td style = "text-align: left; vertical-align: middle;" id ="id_task02_mach"></td>
      		<td style = "text-align: left; vertical-align: middle;" id ="id_task02_content"></td>					
@@ -334,7 +337,7 @@
 			document.querySelector("#id_task01_support").innerHTML = task01_support;
 			document.querySelector("#id_task01_notes").innerHTML = task01_notes;
 
-			document.getElementById("id_task02_priority").className = "styled-table-warning";
+			
 			//element.classList.add("mystyle");//tr class ="styled-table-primary"/"styled-table-secondary"/"styled-table-success"/"styled-table-danger"/="styled-table-warning"> <!-- Việc quan trọng/ vàng-->
 			document.querySelector("#id_task02_mach").innerHTML    = task02_mach;
 			document.querySelector("#id_task02_content").innerHTML = task02_content;
