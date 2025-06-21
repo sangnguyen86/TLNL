@@ -6,13 +6,6 @@ let myMessage03 = null;
 let myMessage04 = null;
 let myMessage05 = null;
 
-const  task_01_mach =  "P. Đào Tạo";
-const  task_01_content =  "- Làm theo thứ tự sau.<br> 1. Gắn 6 thêm bóng âm trần.<br>Thay bóng đèn WC<br>Gắn máy sấy tay ở 2 WC<br>Gắn thêm CB, ổ cắm cho các vị trí lắp đặt các máy khác";
-const  task_01_start  ="20/06/2025";
-const  task_01_end ="24/06/2025";
-const  task_01_assign ="***";
-const  task_01_employ ="Mật Thuỷ <br> Duy Hưng";
-const  task_01_support ="Minh Khánh<br> Văn Hưng";
-const  task_01_notes ="***";
+
 
 
