@@ -23,7 +23,7 @@ header {
 .header-connertopright{
             position: absolute;
             top: 0px;
-            right: 0px;
+            right: 10px;
             }
 .header-right {
           float:right;
