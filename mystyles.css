@@ -9,16 +9,18 @@ body {
 header {
         height:100px;
         /*min-height: 10vh;*/
-        width:100%;
-       position: sticky; /* Ghim header*/
+        width:100%;      
          /* Font và màu chữ */
         font-family: Arial,sans-serif;
         color: white; 
         /* Màu nền header */
         background-color: lightgray; 
+        /* Ghim */
+        position: sticky; /* Ghim header*/
         }
 
-               }
+.header-logo{
+            }
 .header-right {
           float:right;
           display:flex;
@@ -39,11 +41,11 @@ header {
 /* NAVIGATION BAR*/
 /* Định dạng thanh điều hướng */
 .navbar {
-   background-color: transparent; /* Màu nền */  
-   height: 50px;
-   width: 100%;
-   overflow: hidden;/* Ẩn nội dung tràn */
-}
+           background-color: transparent; /* Màu nền */  
+           height: 50px;
+           width: 100%;
+           overflow: hidden;/* Ẩn nội dung tràn */
+        }
 /* Định dạng các liên kết trong thanh điều hướng */
 .navbar a {
    align-items: center;
@@ -51,11 +53,11 @@ header {
    float: left; /* Đặt liên kết vào một hàng ngang */
    display: block; /* Hiển thị là khối để có thể định dạng */
    height:12px;
-   /*align: middle;*/
+   /* Font prop */
    color: white; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
-   padding: 12px 14px; /* Khoảng cách giữa các liên kết */
-   text-decoration: none; /* Loại bỏ gạch dưới liên kết */
+   padding: 5px 5px; /* Khoảng cách giữa các liên kết */
+   text-decoration: none; /* Gạch dưới */
 }
 /* Định dạng khi rê chuột qua liên kết */
 .navbar a:hover {
