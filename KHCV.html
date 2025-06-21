@@ -112,17 +112,17 @@
 		<td style = "text-align: center; vertical-align: middle;"id ="id_task02_support"></td> 
 		<td style = "text-align: left; vertical-align: middle;"id ="id_task02_notes"></td> 
   		</tr>
-<!-- DÒNG 2-->
+<!-- DÒNG 3-->
 		<tr id ="id_task03_priority">	
 		<th scope="row" style = "text-align: center; vertical-align: middle;">3</th>
-		<td style = "text-align: left; vertical-align: middle;" id ="id_task02_mach"></td>
-     		<td style = "text-align: left; vertical-align: middle;" id ="id_task02_content"></td>					
-		<td style = "text-align: center; vertical-align: middle;" id ="id_task02_start"></td> 	
-		<td style = "text-align: center; vertical-align: middle;" id ="id_task02_end"></td> 
-		<td style = "text-align: center; vertical-align: middle;" id ="id_task02_assign"></td>
-		<td style = "text-align: center; vertical-align: middle;"id ="id_task02_employ"></td> 
-		<td style = "text-align: center; vertical-align: middle;"id ="id_task02_support"></td> 
-		<td style = "text-align: left; vertical-align: middle;"id ="id_task02_notes"></td> 
+		<td style = "text-align: left; vertical-align: middle;" id ="id_task03_mach"></td>
+     		<td style = "text-align: left; vertical-align: middle;" id ="id_task03_content"></td>					
+		<td style = "text-align: center; vertical-align: middle;" id ="id_task03_start"></td> 	
+		<td style = "text-align: center; vertical-align: middle;" id ="id_task03_end"></td> 
+		<td style = "text-align: center; vertical-align: middle;" id ="id_task03_assign"></td>
+		<td style = "text-align: center; vertical-align: middle;"id ="id_task03_employ"></td> 
+		<td style = "text-align: center; vertical-align: middle;"id ="id_task03_support"></td> 
+		<td style = "text-align: left; vertical-align: middle;"id ="id_task03_notes"></td> 
   		</tr>
 
 <!-- DÒNG 4-->
@@ -344,7 +344,16 @@
 			document.querySelector("#id_task02_support").innerHTML = task02_support;
 			document.querySelector("#id_task02_notes").innerHTML = task02_notes;
 
-
+			document.getElementById("id_task03_priority").className = "styled-table-warning";
+			//element.classList.add("mystyle");//tr class ="styled-table-primary"/"styled-table-secondary"/"styled-table-success"/"styled-table-danger"/="styled-table-warning"> <!-- Việc quan trọng/ vàng-->
+			document.querySelector("#id_task03_mach").innerHTML    = task03_mach;
+			document.querySelector("#id_task03_content").innerHTML = task03_content;
+			document.querySelector("#id_task03_start").innerHTML = task03_start ;
+			document.querySelector("#id_task03_end").innerHTML = task03_end;
+			document.querySelector("#id_task03_assign").innerHTML = task03_assign;
+			document.querySelector("#id_task03_employ").innerHTML = task03_employ;
+			document.querySelector("#id_task03_support").innerHTML = task03_support;
+			document.querySelector("#id_task03_notes").innerHTML = task03_notes;
 			
 		</script>	
 
