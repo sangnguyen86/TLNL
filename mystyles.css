@@ -10,17 +10,22 @@ header {
        position: sticky;
        top: 0; /* hoặc một giá trị khác nếu bạn muốn header cách đỉnh trang một khoảng */    
         z-index: 100; /* Đảm bảo header nằm trên các phần tử khác */
-        margin: 0;
+        margin: 0; /* canh lề */
         font-family: Arial,sans-serif;
         background-color: lightgray;/*lightgray;#123*/
         color: white; /* text color in header*/
         min-height: 10vh;
         padding: 0px;
         }
+.header-bottom{
+                position: absolute;
+                width: 100%;
+                background-color: white;
+               }
 .header-right {
           float:right;
           display:flex;
-        align-items:top;
+          align-items:top;
           
   				}
 .header-right p{
