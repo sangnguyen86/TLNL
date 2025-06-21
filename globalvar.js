@@ -18,7 +18,7 @@ const  task01_employ ="Mật Thuỷ <br> Duy Hưng";
 const  task01_support ="Minh Khánh<br> Văn Hưng";
 const  task01_notes ="***";
 // ROW 2//
-const  task02_priotity = "warning"; //primary- Xanh dương; secondary-Xám ;success- Xanh lá; danger - Đỏ; warning-vàng-->
+const  task02_priotity = 2;//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; 
 const  task02_mach  =  "Bộ trao đổi nhiệt<br> Máy gia ẩm thân lá 01" ;
 const  task02_content =  "Làm bộ trao đổi nhiệt";
 const  task02_start  = "20/06/2025";
