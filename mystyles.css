@@ -20,7 +20,10 @@ header {
         top: 0;
         }
 
-.header-logo{
+.header-connertopright{
+            position: absolute;
+            top: 0px;
+            right: 0px;
             }
 .header-right {
           float:right;
