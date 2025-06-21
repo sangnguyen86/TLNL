@@ -17,6 +17,7 @@ header {
         background-color: lightgray; 
         /* Ghim */
         position: sticky; /* Ghim header*/
+        top: 0;
         }
 
 .header-logo{
