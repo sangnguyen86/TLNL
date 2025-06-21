@@ -52,7 +52,7 @@ header {
    align-items: middle;
    float: left; /* Đặt liên kết vào một hàng ngang */
    display: block; /* Hiển thị là khối để có thể định dạng */
-   height:12px;
+   height:30px;
    /* Font prop */
    color: black; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
