@@ -109,8 +109,12 @@
   		</tr>	
 <!-- DÒNG 2-->
 		<tr id ="id_task02_priority">	
-		<script>
-			document.getElementById("id_task02_priority").className = "styled-table-success";
+		<script  type="text/javascript">
+			if (task02_priority =="danger") {document.getElementById("id_task02_priority").className = "styled-table-danger";} 
+			if (task02_priority =="warning") {document.getElementById("id_task02_priority").className = "styled-table-warning";}
+			if (task02_priority =="primary") {document.getElementById("id_task02_priority").className = "styled-table-primary";}
+			if (task02_priority =="secondary") {document.getElementById("id_task02_priority").className = "styled-table-secondary";}
+  			if (task02_priority =="success") {document.getElementById("id_task02_priority").className = "styled-table-success";}
 		</script>
 		<th scope="row" style = "text-align: center; vertical-align: middle;">2</th>
 		<td style = "text-align: left; vertical-align: middle;" id ="id_task02_mach"></td>
