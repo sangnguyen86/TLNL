@@ -8,7 +8,7 @@ let myMessage05 = null;
 
 // TASK
 // ROW 1
-const  task01_priotity = 1;//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; 
+const  task01_priotity = 2;//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; 
 const  task01_mach =  "P. Đào Tạo";
 const  task01_content =  "- Làm theo thứ tự sau.<br> 1. Gắn 6 thêm bóng âm trần.<br>Thay bóng đèn WC<br>Gắn máy sấy tay ở 2 WC<br>Gắn thêm CB, ổ cắm cho các vị trí lắp đặt các máy khác";
 const  task01_start  ="20/06/2025";
