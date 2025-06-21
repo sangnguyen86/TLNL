@@ -29,7 +29,7 @@ const  task02_employ = "KT Cơ khí";
 const  task02_support = "-";
 const  task02_notes = "-";
 // ROW 3//
-let  task03_priotity = 3;//0: default 1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
+let  task03_priotity = 1;//0: default 1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
 const  task03_mach  =  "Quạt hút ống khói lò hơi" ;
 const  task03_content =  "Thay buli 100<br>Thay dây curoa";
 const  task03_start  = "Khi có vật tư";
