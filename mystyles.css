@@ -73,15 +73,14 @@ header {
 }
 /* Định dạng khi rê chuột qua liên kết */
 .navbar a:hover {
-  height:75%;
+  
    background-color: #555; /* Màu nền khi rê chuột qua */
+  height:25%;
 }
 /* Định dạng khi trạng thái được chọn */
 .navbar a.active {
    background-color: #4CAF50; /* Màu nền khi được chọn */
-  height:75%;
-   align-items: center;
-   align-items: middle;
+   height:25%;
    color: white; /* Màu chữ khi được chọn */
 }
 
