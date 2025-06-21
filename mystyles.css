@@ -12,7 +12,7 @@ header {
         z-index: 100; /* Đảm bảo header nằm trên các phần tử khác */
         margin: 0; /* canh lề */
         font-family: Arial,sans-serif;
-        background-color: lightgray;/*lightgray;#123*/
+        background-color: pink;/*lightgray;#123*/
         color: white; /* text color in header*/
         min-height: 10vh;
         padding: 0px;
