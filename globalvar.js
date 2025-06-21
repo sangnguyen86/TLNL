@@ -28,6 +28,16 @@ const  task02_assign = "Hoà";
 const  task02_employ = "KT Cơ khí";
 const  task02_support = "-";
 const  task02_notes = "-";
+// ROW 3//
+let  task03_priotity = 3;//0: default 1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
+const  task03_mach  =  "Quạt hút ống khói lò hơi" ;
+const  task03_content =  "Thay buli 100<br>Thay dây curoa";
+const  task03_start  = "Khi có vật tư";
+const  task03_end = "_";
+const  task03_assign = "_";
+const  task03_employ = "KT Cơ khí";
+const  task03_support = "-";
+const  task03_notes = "Tìm nguyên nhân và hạn chế rung lắc";
 
 
 
