@@ -14,7 +14,7 @@ header {
         font-family: Arial,sans-serif;
         color: white; 
         /* Màu nền header */
-        background-color: lightgray; 
+        background-color:#123; 
         /* Ghim */
         position: sticky; /* Ghim header*/
         top: 0;
