@@ -329,8 +329,27 @@
 </table>
 	    	<script type="text/javascript">
 		//NỘI DUNG KHCV
-			document.getElementById("id_task01_priority").className = "styled-table-danger";
-			//element.classList.add("mystyle");//tr class ="styled-table-primary"/"styled-table-secondary"/"styled-table-success"/"styled-table-danger"/="styled-table-warning"> <!-- Việc quan trọng/ vàng-->
+			switch (task01_priority) {
+  				case 1: // danger
+    					document.getElementById("id_task01_priority").className = "styled-table-danger";
+    					break;
+  				case 2: // warning
+    					document.getElementById("id_task01_priority").className = "styled-table-warning";
+    					break;
+  				case 3:// primary
+    					document.getElementById("id_task01_priority").className = "styled-table-primaryr";
+    					break;
+				case 4:// secondary
+    					document.getElementById("id_task01_priority").className = "styled-table-secondary";
+    					break;
+				case 5:// success
+    					document.getElementById("id_task01_priority").className = "styled-table-success";
+    					break;
+  				default:
+    					break;
+						} 
+			
+			//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; 
 			document.querySelector("#id_task01_mach").innerHTML    = task01_mach;
 			document.querySelector("#id_task01_content").innerHTML = task01_content;
 			document.querySelector("#id_task01_start").innerHTML = task01_start ;
