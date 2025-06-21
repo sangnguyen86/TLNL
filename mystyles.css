@@ -55,7 +55,7 @@ header {
    display: block; /* Hiển thị là khối để có thể định dạng */
    height:30px;
    /* Font prop */
-   color: black; /* Màu chữ */
+   color: white; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
    padding: 5px 5px; /* Khoảng cách giữa các liên kết */
    text-decoration: none; /* Gạch dưới */
