@@ -1,7 +1,7 @@
 //GLOBAL VAR
 // MESSAGE//
-let myMessage01 = "CHỦ ĐỘNG - SÁNG TẠO - HIỆU QUẢ";
-let myMessage02 = "TIẾT KIỆM - AN TOÀN - HIỆU SUẤT";
+let myMessage01 = null;
+let myMessage02 = null;
 let myMessage03 = null;
 let myMessage04 = null;
 let myMessage05 = null;
