@@ -1,7 +1,7 @@
 
 // PHÂN CÔNG CÔNG VIỆC KHÁC //
 // ROW 0//
-let   othertask00_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
+let   othertask00_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  othertask00_employ = "employ";
 const  othertask00_content =  "task";
 const  othertask00_start  = "start date";
