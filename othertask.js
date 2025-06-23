@@ -15,7 +15,7 @@ const  othertask01_start  = "01/06/2025";
 const  othertask01_end = "31/08/2025";
 const  othertask01_notes = "Học vận hành các cụm máy, thay vận hành nghỉ phép.<br>Tham gia cùng vận hành sửa các hư hỏng.<br><b>Nắm bắt chi tiết thiết bị các máy</b><br>Làm việc dưới sự điều động, giám sát của Trưởng ca/ Tổ trưởng";
 // ROW 2//
-let   othertask02_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
+let   othertask02_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  othertask02_employ = "Mật Thuỷ";
 const  othertask02_content =  "Nghiên cứu máy bắn đai";
 const  othertask02_start  = "22/06/2025";
