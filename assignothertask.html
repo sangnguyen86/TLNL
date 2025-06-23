@@ -100,7 +100,24 @@
 		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask01_start"></td> 	
 		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask01_end"></td> 
 		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask01_notes"></td> 
-  		</tr>			     
+  		</tr>		
+			<!-- DÒNG 2-->
+
+		<tr id ="id_othertask02_priority">	
+		<script  type="text/javascript">
+			if (othertask02_priority =="danger") {document.getElementById("id_othertask02_priority").className = "styled-table-danger";} 
+			if (othertask02_priority =="warning") {document.getElementById("id_othertask02_priority").className = "styled-table-warning";}
+			if (othertask02_priority =="primary") {document.getElementById("id_othertask02_priority").className = "styled-table-primary";}
+			if (othertask02_priority =="secondary") {document.getElementById("id_othertask02_priority").className = "styled-table-secondary";}
+  			if (othertask02_priority =="success") {document.getElementById("id_othertask02_priority").className = "styled-table-success";}
+		</script>
+		<th scope="row" style = "text-align: center; vertical-align: middle;">2</th>
+		<td style = "text-align: center; vertical-align: middle;"id ="id_othertask02_employ"></td>
+     		<td style = "text-align: left; vertical-align: middle;" id ="id_othertask02_content"></td>					
+		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask02_start"></td> 	
+		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask02_end"></td> 
+		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask02_notes"></td> 
+  		</tr>	
 </tbody>
 </table>
 <p style="color:black; text-align:left;font-family:Times New Roman;font-size:18px;text-indent: 50px;">Từ ngày 01/06/2025 đến 31/08/2015, phân công vào xưởng: Đức Duy (ca A) và anh Tấn Khải (ca B) </p>	
@@ -117,16 +134,17 @@
 
 	    	<script type="text/javascript">
 		//NỘI DUNG KHCV
-			
-    					
-    				 
-			
-			
 			document.querySelector("#id_othertask01_employ").innerHTML = othertask01_employ;
 			document.querySelector("#id_othertask01_content").innerHTML = othertask01_content;
 			document.querySelector("#id_othertask01_start").innerHTML = othertask01_start ;
 			document.querySelector("#id_othertask01_end").innerHTML = othertask01_end;
 			document.querySelector("#id_othertask01_notes").innerHTML = othertask01_notes;
+
+			document.querySelector("#id_othertask02_employ").innerHTML = othertask02_employ;
+			document.querySelector("#id_othertask02_content").innerHTML = othertask02_content;
+			document.querySelector("#id_othertask02_start").innerHTML = othertask02_start ;
+			document.querySelector("#id_othertask02_end").innerHTML = othertask02_end;
+			document.querySelector("#id_othertask02_notes").innerHTML = othertask02_notes;
 		</script>
 </body>
 </html>
