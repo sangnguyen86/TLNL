@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    	
+    	
+    	<title>CƠ ĐIỆN</title>
+    	<!--Import Styles CSS file-->
+    	<link rel="stylesheet" href="mystyles.css"/>
+	<script src="globalvar.js"></script>
+	
 
+</head>
+
+<!-- BODY CONTENTS-->	
+<body>    
+<!-- HEADER -->
+	<header>
+		
+		<div class="header-label-clock">
+			<p id="datetime"></p>
+			<script>
+				function updateDateTime() {
+  				const now = new Date();
+  				const date = now.toLocaleDateString();
+  				const time = now.toLocaleTimeString();
+  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
+				updateDateTime(); // Hiển thị ngay khi trang load
+				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+			</script>
+		</div>
+		<div class="header-navbar">
+		<div class="navbar">
+				
+	      			<a class="active" href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
+              			<a href="https://sangnguyen86.github.io/TLNL/project.html">DỰ ÁN</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">ĐỊNH KỲ</a>
+	      			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">VIỆC KHÁC</a>
+	      			
+		</div>
+		</div>
+		<!-- SCROLL MESSAGE -->
+		<div class="header-bottom">
+			<div id='container'>
+		
+			<div class='scroll'>
+        			<div class='item' id ="message01"></div>
+				<div class='item' id ="message02"></div>
+				<div class='item' id ="message03"></div>
+				<div class='item' id ="message04"></div>
+				<div class='item' id ="message05"></div>
+ 
+    			</div>
+			</div>
+			</div>
+		<script>
+			//const msg01_element = document.getElementById("message01");
+			//const msg02_element = document.getElementById("message02");
+			//const msg03_element = document.getElementById("message03");
+			//const msg04_element = document.getElementById("message04");
+			//const msg05_element = document.getElementById("message05");
+			// HIỂN THỊ
+			//msg01_element.innerHTML = myMessage01;
+			if (myMessage01 ==null) {document.getElementById("message01").style.display = 'none';}else{document.getElementById("message01").innerHTML = myMessage01;}
+			if (myMessage02 == null) {document.getElementById("message02").style.display = 'none';}else{document.getElementById("message02").innerHTML = myMessage02;}
+			if (myMessage03 == null) {document.getElementById("message03").style.display = 'none';}else{document.getElementById("message03").innerHTML = myMessage03;}
+			if (myMessage04 == null) {document.getElementById("message04").style.display = 'none';}else{document.getElementById("message04").innerHTML = myMessage04;}
+			if (myMessage05 == null) {document.getElementById("message05").style.display = 'none';}else{document.getElementById("message05").innerHTML = myMessage05;}
+		</script>
+	</header>
+</body>
