@@ -101,6 +101,7 @@
 		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask01_end"></td> 
 		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask01_notes"></td> 
   		</tr>		
+		<p style="color:black; text-align:left;font-family:Times New Roman;font-size:18px;text-indent: 50px;">Khi được phân công vào xưởng Trưởng ca có quyền quyết định: nghỉ phép, nghỉ ốm, đánh giá kết quả công việc.</p>
 		<!-- DÒNG 2-->
 
 		<tr id ="id_othertask02_priority">	
@@ -135,6 +136,40 @@
 		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask03_end"></td> 
 		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask03_notes"></td> 
   		</tr>	
+	<!-- DÒNG 4-->
+
+		<tr id ="id_othertask04_priority">	
+		<script  type="text/javascript">
+			if (othertask04_priority =="danger") {document.getElementById("id_othertask04_priority").className = "styled-table-danger";} 
+			if (othertask04_priority =="warning") {document.getElementById("id_othertask04_priority").className = "styled-table-warning";}
+			if (othertask04_priority =="primary") {document.getElementById("id_othertask04_priority").className = "styled-table-primary";}
+			if (othertask04_priority =="secondary") {document.getElementById("id_othertask04_priority").className = "styled-table-secondary";}
+  			if (othertask04_priority =="success") {document.getElementById("id_othertask04_priority").className = "styled-table-success";}
+		</script>
+		<th scope="row" style = "text-align: center; vertical-align: middle;">4</th>
+		<td style = "text-align: center; vertical-align: middle;"id ="id_othertask04_employ"></td>
+     		<td style = "text-align: left; vertical-align: middle;" id ="id_othertask04_content"></td>					
+		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask04_start"></td> 	
+		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask04_end"></td> 
+		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask04_notes"></td> 
+  		</tr>	
+	<!-- DÒNG 5-->
+
+		<tr id ="id_othertask05_priority">	
+		<script  type="text/javascript">
+			if (othertask05_priority =="danger") {document.getElementById("id_othertask05_priority").className = "styled-table-danger";} 
+			if (othertask05_priority =="warning") {document.getElementById("id_othertask05_priority").className = "styled-table-warning";}
+			if (othertask05_priority =="primary") {document.getElementById("id_othertask05_priority").className = "styled-table-primary";}
+			if (othertask05_priority =="secondary") {document.getElementById("id_othertask05_priority").className = "styled-table-secondary";}
+  			if (othertask05_priority =="success") {document.getElementById("id_othertask05_priority").className = "styled-table-success";}
+		</script>
+		<th scope="row" style = "text-align: center; vertical-align: middle;">5</th>
+		<td style = "text-align: center; vertical-align: middle;"id ="id_othertask05_employ"></td>
+     		<td style = "text-align: left; vertical-align: middle;" id ="id_othertask05_content"></td>					
+		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask05_start"></td> 	
+		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask05_end"></td> 
+		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask05_notes"></td> 
+  		</tr>	
 </tbody>
 </table>
 
@@ -161,6 +196,19 @@
 			document.querySelector("#id_othertask03_start").innerHTML = othertask03_start ;
 			document.querySelector("#id_othertask03_end").innerHTML = othertask03_end;
 			document.querySelector("#id_othertask03_notes").innerHTML = othertask03_notes;
+
+			
+			document.querySelector("#id_othertask04_employ").innerHTML = othertask04_employ;
+			document.querySelector("#id_othertask04_content").innerHTML = othertask04_content;
+			document.querySelector("#id_othertask04_start").innerHTML = othertask04_start ;
+			document.querySelector("#id_othertask04_end").innerHTML = othertask04_end;
+			document.querySelector("#id_othertask04_notes").innerHTML = othertask04_notes;
+			
+			document.querySelector("#id_othertask05_employ").innerHTML = othertask05_employ;
+			document.querySelector("#id_othertask05_content").innerHTML = othertask05_content;
+			document.querySelector("#id_othertask05_start").innerHTML = othertask05_start ;
+			document.querySelector("#id_othertask05_end").innerHTML = othertask05_end;
+			document.querySelector("#id_othertask05_notes").innerHTML = othertask05_notes;
 		</script>
 </body>
 </html>
