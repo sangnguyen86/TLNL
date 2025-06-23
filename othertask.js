@@ -23,10 +23,10 @@ const  othertask02_end = "31/08/2025";
 const  othertask02_notes = "";
 // ROW 3//
 let   othertask03_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
-const  othertask03_employ = "employ";
-const  othertask03_content =  "task";
-const  othertask03_start  = "start date";
-const  othertask03_end = "end date";
+const  othertask03_employ = "";
+const  othertask03_content =  "Nghiên cứu hệ thống van thuỷ lực ép kiện";
+const  othertask03_start  = "---";
+const  othertask03_end = "31/08/2025";
 const  othertask03_notes = "Notes";
 // ROW 4//
 let   othertask04_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
