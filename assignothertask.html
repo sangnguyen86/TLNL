@@ -101,7 +101,7 @@
 		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask01_end"></td> 
 		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask01_notes"></td> 
   		</tr>		
-			<!-- DÒNG 2-->
+		<!-- DÒNG 2-->
 
 		<tr id ="id_othertask02_priority">	
 		<script  type="text/javascript">
@@ -117,6 +117,23 @@
 		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask02_start"></td> 	
 		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask02_end"></td> 
 		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask02_notes"></td> 
+  		</tr>
+	<!-- DÒNG 3-->
+
+		<tr id ="id_othertask03_priority">	
+		<script  type="text/javascript">
+			if (othertask03_priority =="danger") {document.getElementById("id_othertask03_priority").className = "styled-table-danger";} 
+			if (othertask03_priority =="warning") {document.getElementById("id_othertask03_priority").className = "styled-table-warning";}
+			if (othertask03_priority =="primary") {document.getElementById("id_othertask03_priority").className = "styled-table-primary";}
+			if (othertask03_priority =="secondary") {document.getElementById("id_othertask03_priority").className = "styled-table-secondary";}
+  			if (othertask03_priority =="success") {document.getElementById("id_othertask03_priority").className = "styled-table-success";}
+		</script>
+		<th scope="row" style = "text-align: center; vertical-align: middle;">3</th>
+		<td style = "text-align: center; vertical-align: middle;"id ="id_othertask03_employ"></td>
+     		<td style = "text-align: left; vertical-align: middle;" id ="id_othertask03_content"></td>					
+		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask03_start"></td> 	
+		<td style = "text-align: center; vertical-align: middle;" id ="id_othertask03_end"></td> 
+		<td style = "text-align: left; vertical-align: middle;"id ="id_othertask03_notes"></td> 
   		</tr>	
 </tbody>
 </table>
@@ -145,6 +162,12 @@
 			document.querySelector("#id_othertask02_start").innerHTML = othertask02_start ;
 			document.querySelector("#id_othertask02_end").innerHTML = othertask02_end;
 			document.querySelector("#id_othertask02_notes").innerHTML = othertask02_notes;
+
+			document.querySelector("#id_othertask03_employ").innerHTML = othertask03_employ;
+			document.querySelector("#id_othertask03_content").innerHTML = othertask03_content;
+			document.querySelector("#id_othertask03_start").innerHTML = othertask03_start ;
+			document.querySelector("#id_othertask03_end").innerHTML = othertask03_end;
+			document.querySelector("#id_othertask03_notes").innerHTML = othertask03_notes;
 		</script>
 </body>
 </html>
