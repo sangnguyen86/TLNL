@@ -100,14 +100,14 @@ const  task08_support = "";
 const  task08_notes = "";
 // ROW 9//
 let   task09_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
-const  task09_mach  =  "" ;
-const  task09_content =  "";
+const  task09_mach  =  "Các bộ trao đổi nhiệt hỏng" ;
+const  task09_content =  "Kiểm tra đánh dấu các vị trí xì<>Lên phương án tự sửa chữa nếu được";
 const  task09_start  = "";
 const  task09_end = "";
-const  task09_assign = "";
-const  task09_employ = "";
+const  task09_assign = "Hoà";
+const  task09_employ = "Huy Yên";
 const  task09_support = "";
-const  task09_notes = "";
+const  task09_notes = "a Yên kiểm tra và đánh dấu các chổ xì<br> Hoà lên phương án và mua dụng cụ để sửa";
 // ROW 10//
 let   task10_priority = "success";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task10_mach  =  "" ;
