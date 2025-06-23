@@ -75,12 +75,12 @@ header {
 .navbar a:hover {
   
    background-color: #555; /* Màu nền khi rê chuột qua */
-  height:25%;
+  height:35%;
 }
 /* Định dạng khi trạng thái được chọn */
 .navbar a.active {
    background-color: #4CAF50; /* Màu nền khi được chọn */
-   height:25%;
+   height:35%;
    color: white; /* Màu chữ khi được chọn */
 }
 
