@@ -64,7 +64,7 @@ header {
    align-items: middle;
    float: left; /* Đặt liên kết vào một hàng ngang */
    display: block; /* Hiển thị là khối để có thể định dạng */
-   height:30px;
+   height:50px;
    /* Font prop */
    color: white; /* Màu chữ */
    text-align: center; /* Canh giữa văn bản */
