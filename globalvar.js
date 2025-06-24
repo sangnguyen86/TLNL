@@ -58,7 +58,7 @@ const  task04_end = "---";
 const  task04_assign = "---";
 const  task04_employ = "---";
 const  task04_support = "---";
-const  task04_notes = "Cắt thép tấm có sẵn làm ê ke không dùng la <br><style="color: blue;"> Bình quân 1 tuần sữa 4 cái";
+const  task04_notes = "Cắt thép tấm có sẵn làm ê ke không dùng la <br> Bình quân 1 tuần sữa 4 cái";
 
 // ROW 5//
 let   task05_priority = "primary";//danger -warning; 3; primary; 4 secondary; 5 success; //
