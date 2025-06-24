@@ -86,8 +86,8 @@ header {
 
 /* SCOLLING ITEM */
 #container {
-            width: 500px;
-            height: 40px; 
+            width: 90%;
+            height: 20px; 
             font-family: Arial, sans-serif;
             position: relative;
             align-items: center;
