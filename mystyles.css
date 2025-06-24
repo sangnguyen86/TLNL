@@ -93,7 +93,7 @@ header {
             overflow: hidden;
             white-space: nowrap;
             background: cyan;
-            color: #fff;
+            color: black; /* font color fff is white*/
 }
 #container .scroll {
             background: transparent;
