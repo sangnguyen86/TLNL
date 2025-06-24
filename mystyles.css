@@ -86,15 +86,15 @@ header {
 
 /* SCOLLING ITEM */
 #container {
-            width: 100%;
+            width: 1000px;
             height: 20px; 
             font-family: Arial, sans-serif;
-            position: absolute;
+            position: relative;
             
             align-items: center;
             overflow: hidden;/* Hide any content that overflows */
             white-space: nowrap;/* Prevent text from wrapping */
-            background: cyan;
+            background: #d8ddf0;
 
             
 }
