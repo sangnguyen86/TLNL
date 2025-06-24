@@ -9,7 +9,7 @@ body {
 header {
         height:150px;
         /*min-height: 10vh;*/
-        width:1000px;      
+        width:100%;      
          /* Font và màu chữ */
         font-family: Arial,sans-serif;
         color: white; 
@@ -90,7 +90,7 @@ header {
             height: 20px; 
             font-family: Arial, sans-serif;
             position: absolute;
-            bottom:0px;
+            
             align-items: center;
             overflow: hidden;/* Hide any content that overflows */
             white-space: nowrap;/* Prevent text from wrapping */
