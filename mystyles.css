@@ -104,7 +104,7 @@ header {
             white-space: nowrap;
             animation: loop 30s linear infinite;
             }
-.fade {
+/*.fade {
     width: 100%;
     position: absolute;
     background: linear-gradient(
@@ -116,7 +116,7 @@ header {
     );
     inset: 0;
     pointer-event: none;
-}
+}*/  /* bỏ đoạn fade*/
 @keyframes loop {
     0% {transform: translateX(100%);
         -webkit-transform: translateX(100%);}
