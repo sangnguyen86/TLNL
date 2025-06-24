@@ -47,7 +47,6 @@ header {
             height: 50px;
             position: absolute;
             bottom: 0px;
-            
             }
 
 
@@ -62,50 +61,49 @@ header {
         }
 /* Định dạng các liên kết trong thanh điều hướng */
 .navbar a {
-   align-items: center;
-   align-items: middle;
-   float: left; /* Đặt liên kết vào một hàng ngang */
-   display: block; /* Hiển thị là khối để có thể định dạng */
-   height:50px;
+           align-items: center;
+           align-items: middle;
+           float: left; /* Đặt liên kết vào một hàng ngang */
+           display: block; /* Hiển thị là khối để có thể định dạng */
+           height:50px;
    /* Font prop */
-   color: white; /* Màu chữ */
-   text-align: center; /* Canh giữa văn bản */
-   padding: 5px 20px; /* Khoảng cách giữa các liên kết */
-   text-decoration: none; /* Gạch dưới */
-}
+           color: white; /* Màu chữ */
+           text-align: center; /* Canh giữa văn bản */
+           padding: 5px 20px; /* Khoảng cách giữa các liên kết */
+           text-decoration: none; /* Gạch dưới */
+            }
 /* Định dạng khi rê chuột qua liên kết */
 .navbar a:hover {
-  
-   background-color: #555; /* Màu nền khi rê chuột qua */
-  height:35%;
-}
+                 background-color: #555; /* Màu nền khi rê chuột qua */
+                height:35%;
+                }
 /* Định dạng khi trạng thái được chọn */
 .navbar a.active {
-   background-color: #4CAF50; /* Màu nền khi được chọn */
-   height:35%;
-   color: white; /* Màu chữ khi được chọn */
-}
+                 background-color: #4CAF50; /* Màu nền khi được chọn */
+                 height:35%;
+                 color: white; /* Màu chữ khi được chọn */
+                  }
 
 /* SCOLLING ITEM */
 #container {
-    width: 100%;
-    height: 40px; 
-    font-family: Arial, sans-serif;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    background: white;
-    color: #fff;
+            width: 100%;
+            height: 40px; 
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            background: white;
+            color: #fff;
 }
 #container .scroll {
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width:100%;
-    white-space: nowrap;
-    animation: loop 30s linear infinite;
-}
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width:100%;
+            white-space: nowrap;
+            animation: loop 30s linear infinite;
+            }
 .fade {
     width: 100%;
     position: absolute;
