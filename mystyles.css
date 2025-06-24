@@ -91,7 +91,7 @@ header {
             font-family: Arial, sans-serif;
             position: absolute;
             bottom: 5px;
-            right: 10px;
+            
             align-items: center;
             overflow: hidden;/* Hide any content that overflows */
             white-space: nowrap;/* Prevent text from wrapping */
