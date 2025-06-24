@@ -92,7 +92,7 @@ header {
             position: relative;
             overflow: hidden;
             white-space: nowrap;
-            background: white;
+            background: cyan;
             color: #fff;
 }
 #container .scroll {
