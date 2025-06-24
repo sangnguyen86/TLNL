@@ -91,10 +91,11 @@ header {
             font-family: Arial, sans-serif;
             position: relative;
             align-items: center;
-            overflow: hidden;
-            white-space: nowrap;
+            overflow: hidden;/* Hide any content that overflows */
+            white-space: nowrap;/* Prevent text from wrapping */
             background: cyan;
-            color: black; /* font color fff is white*/
+
+            
 }
 #container .scroll {
             background: transparent;
