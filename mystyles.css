@@ -89,7 +89,7 @@ header {
             width: 500px;
             height: 20px; 
             font-family: Arial, sans-serif;
-            position: relative;
+            position: absolute;
             
             align-items: center;
             overflow: hidden;/* Hide any content that overflows */
