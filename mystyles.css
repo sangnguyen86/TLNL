@@ -29,9 +29,9 @@ header {
 .header-label-clock p{
           font-size: 14px;
           text-align: right;
-          background-color:white; 
+          background-color:transparent; 
           padding: 0px;
-          color: yellow;
+          color: white;
 }
 .header-navbar{
             height: 50px;
