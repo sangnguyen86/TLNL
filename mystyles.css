@@ -94,7 +94,7 @@ header {
     position: relative;
     overflow: hidden;
     white-space: nowrap;
-    background: transparent;
+    background: white;
     color: #fff;
 }
 #container .scroll {
