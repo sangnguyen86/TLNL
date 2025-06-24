@@ -104,8 +104,18 @@ header {
             white-space: nowrap;
             animation: loop 30s linear infinite;
             }
-
-
+.fade {
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(
+        90deg,
+        #000,
+        transparent 30%,
+        transparent 90%,
+        #000
+    );
+    inset: 0;
+    pointer-event: none;
 }
 @keyframes loop {
     0% {transform: translateX(100%);
@@ -124,7 +134,7 @@ header {
     /*row-gap: 10px;  Khoảng cách giữa các hàng là 10px */
     /*column-gap: 20px;  Khoảng cách giữa các cột là 20px */
     
-    color: red; /* text color*/
+    color: cyan; /* text color*/
     font-size: 14px;/* 1 rem  = 16px*/
     overflow: hidden;/* Ẩn nội dung tràn */
     background-color: transparent; /* màu nến */
@@ -136,43 +146,6 @@ header {
     0 0.1rem 0.2rem #00000033,
     0 0.1rem 0.5rem #0000004d,
     0 0.2rem 01.5rem #00000066,
-}
-
-/* SCROLL TEXT*/
-.scroll-container {
-  width: 100%; /* Example width */
-  height: 40px; /* Example height */
-  overflow: scroll; /* or overflow: auto; */
-  background: cyan;
-}
-.scroll-left {
- height: 50px;	
- overflow: hidden;
- position: relative;
- background: yellow;
- color: orange;
- border: 1px solid orange;
-}
-.scroll-left p {
- position: absolute;
- width: 100%;
- height: 100%;
- margin: 0;
- line-height: 50px;
- text-align: center;
- /* Starting position */
- transform:translateX(100%);
- /* Apply animation to this element */
- animation: scroll-left 15s linear infinite;
-}
-/* Move it (define the animation) */
-@keyframes scroll-left {
- 0%   {
- transform: translateX(100%); 		
- }
- 100% {
- transform: translateX(-100%); 
- }
 }
 
 
