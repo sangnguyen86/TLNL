@@ -104,18 +104,14 @@ header {
             white-space: nowrap;
             animation: loop 30s linear infinite;
             }
-.fade {
-    width: 100%;
-    position: absolute;
-    background: linear-gradient(
-        90deg,
-        #000,
-        transparent 30%,
-        transparent 90%,
-        #000
-    );
-    inset: 0;
-    pointer-event: none;
+.scroll-container {
+  width: 100%; /* Example width */
+  height: 40px; /* Example height */
+  overflow: scroll; /* or overflow: auto; */
+}
+
+.scroll-content {
+  width: 500px; /* Example wider content */
 }
 @keyframes loop {
     0% {transform: translateX(100%);
