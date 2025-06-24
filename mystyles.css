@@ -133,8 +133,8 @@ header {
 }
 .item {
     display: flex;
-    align-items: center;
-    
+    /*align-items: center;*/
+    /* align-items: bottom; */
     gap: 0px 20px; /* Khoảng cách giữa các hàng và cột đều là 20px */
     /*row-gap: 10px;  Khoảng cách giữa các hàng là 10px */
     /*column-gap: 20px;  Khoảng cách giữa các cột là 20px */
