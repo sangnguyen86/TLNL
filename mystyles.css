@@ -130,7 +130,7 @@ header {
     /*row-gap: 10px;  Khoảng cách giữa các hàng là 10px */
     /*column-gap: 20px;  Khoảng cách giữa các cột là 20px */
     
-    color: cyan; /* text color*/
+    color: red; /* text color*/
     font-size: 14px;/* 1 rem  = 16px*/
     overflow: hidden;/* Ẩn nội dung tràn */
     background-color: transparent; /* màu nến */
