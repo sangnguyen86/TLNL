@@ -104,14 +104,8 @@ header {
             white-space: nowrap;
             animation: loop 30s linear infinite;
             }
-.scroll-container {
-  width: 100%; /* Example width */
-  height: 40px; /* Example height */
-  overflow: scroll; /* or overflow: auto; */
-}
 
-.scroll-content {
-  width: 500px; /* Example wider content */
+
 }
 @keyframes loop {
     0% {transform: translateX(100%);
@@ -144,7 +138,42 @@ header {
     0 0.2rem 01.5rem #00000066,
 }
 
-
+/* SCROLL TEXT*/
+.scroll-container {
+  width: 100%; /* Example width */
+  height: 40px; /* Example height */
+  overflow: scroll; /* or overflow: auto; */
+  background: cyan;
+}
+.scroll-left {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+ background: yellow;
+ color: orange;
+ border: 1px solid orange;
+}
+.scroll-left p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: scroll-left 15s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%); 		
+ }
+ 100% {
+ transform: translateX(-100%); 
+ }
+}
 
 
 /* TABLE STYLES */
