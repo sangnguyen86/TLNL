@@ -55,12 +55,12 @@ caption {
     text-align: -webkit-center
 }
 /* Rows level*/
-.highlightlevel01 {background: #F4412DFF; color: white;} 
-.highlightlevel02 {background: orange;color: white;} 
-.highlightlevel03 {background: yellow;color: black;} 
-.highlightlevel04 {background: #FAEBEF;color: #0E4274;} /*Hồng – Xanh dương đậm (#FAEBEF – #0E4274)*/
-.highlightlevel05 {background: #6F56A6;color: #F1E5FF;} /*Tím đậm – Tím nhạt (#6F56A6 – #F1E5FF*/
-.highlightlevel06 {background:#00539CFF;color: #89CFF0;} /*#00539CFF xanh dương Xanh ngọc – Xanh dương nhạt (#0D706E – #CEEFFA)*/
-.highlightlevel07 {background: #2BAE66FF;color: white;} /* xanh lá cây */
-.highlightlevel08 {background: #00203FFF;color: #ADEFD1FF;} /* xanh navy và xanh bạc hà */
+highlightlevel01 {background: #F4412DFF; color: white;} 
+highlightlevel02 {background: orange;color: white;} 
+highlightlevel03 {background: yellow;color: black;} 
+highlightlevel04 {background: #FAEBEF;color: #0E4274;} /*Hồng – Xanh dương đậm (#FAEBEF – #0E4274)*/
+highlightlevel05 {background: #6F56A6;color: #F1E5FF;} /*Tím đậm – Tím nhạt (#6F56A6 – #F1E5FF*/
+highlightlevel06 {background:#00539CFF;color: #89CFF0;} /*#00539CFF xanh dương Xanh ngọc – Xanh dương nhạt (#0D706E – #CEEFFA)*/
+highlightlevel07 {background: #2BAE66FF;color: white;} /* xanh lá cây */
+highlightlevel08 {background: #00203FFF;color: #ADEFD1FF;} /* xanh navy và xanh bạc hà */
 
