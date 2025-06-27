@@ -34,10 +34,10 @@ const  task02_mach =  "Lò hơi";
 const  task02_content =  "Tháo và kiểm tra bơm nước của lò hơi có tiếng kêu";
 const  task02_start  ="27/06/2025";
 const  task02_end ="27/06/2025";
-const  task02_assign ="***";
-const  task02_employ ="KT Điện";
-const  task02_support ="KT Cơ khí";
-const  task02_notes ="***";
+const  task02_assign =" ";
+const  task02_employ ="Duy Hưng<br> Huy Yên";
+const  task02_support ="";
+const  task02_notes ="";
 
 // ROW 3//
 let   task03_priority = "danger";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
@@ -81,43 +81,43 @@ const  task06_employ = "M Thuỷ & D. Hưng";
 const  task06_support = "---";
 const  task06_notes = "---";
 // ROW 7//
-let   task07_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
+let   task07_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task07_mach  =  "Máy hút bụi <br> Đầu máy cắt" ;
-const  task07_content =  "Gắn mô tơ và hoàn thiện";
-const  task07_start  = "---";
-const  task07_end = "---";
-const  task07_assign = "---";
-const  task07_employ = "---";
-const  task07_support = "---";
-const  task07_notes = "Chờ quấn mô tơ";
+const  task07_content =  "Gắn mô tơ và hoàn thiện phần đầu ra quạt";
+const  task07_start  = "28/06/2025";
+const  task07_end = "29/06/2025";
+const  task07_assign = "";
+const  task07_employ = "";
+const  task07_support = "";
+const  task07_notes = "";
 // ROW 8//
 let   task08_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task08_mach  =  "Quạt thổi phân li" ;
 const  task08_content =  "Thay ổ bi <br> Sửa vành";
-const  task08_start  = "24/06/2025";
-const  task08_end = "24/06/2025";
+const  task08_start  = "28/06/2025";
+const  task08_end = "28/06/2025";
 const  task08_assign = "";
 const  task08_employ = "";
 const  task08_support = "";
 const  task08_notes = "";
-// ROW 9//
+
+// ROW 09//
 let   task09_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
-const  task09_mach  =  "Các bộ trao đổi nhiệt hỏng" ;
-const  task09_content =  "Kiểm tra đánh dấu các vị trí xì<>Lên phương án tự sửa chữa nếu được";
+const  task09_mach  =  "" ;
+const  task09_content =  "";
 const  task09_start  = "";
 const  task09_end = "";
-const  task09_assign = "Hoà";
-const  task09_employ = "Huy Yên";
+const  task09_assign = "";
+const  task09_employ = "";
 const  task09_support = "";
-const  task09_notes = "a Yên kiểm tra và đánh dấu các chổ xì<br> Hoà lên phương án và mua dụng cụ để sửa";
+const  task09_notes = "";
 // ROW 10//
 let   task10_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
-const  task10_mach  =  "" ;
-const  task10_content =  "";
+const  task10_mach  =  "Các bộ trao đổi nhiệt hỏng" ;
+const  task10_content =  "Kiểm tra đánh dấu các vị trí xì<>Lên phương án tự sửa chữa nếu được";
 const  task10_start  = "";
 const  task10_end = "";
-const  task10_assign = "";
-const  task10_employ = "";
+const  task10_assign = "Hoà";
+const  task10_employ = "Huy Yên";
 const  task10_support = "";
-const  task10_notes = "";
-
+const  task10_notes = "a Yên kiểm tra và đánh dấu các chổ xì<br> Hoà lên phương án và mua dụng cụ để sửa";
