@@ -57,7 +57,7 @@ const  task04_content =  "1. Tháo nắp lưng của mô tơ để gở nắp s�
 const  task04_start  = "CN 29/06/2025";
 const  task04_end = "CN 29/06/2025";
 const  task04_assign = "---";
-const  task04_employ = "a Khánh, a Yên tháo làm mục số 01<> Hoà, Văn Hưng, Duy Hưng làm mục số 02 ";
+const  task04_employ = "a Khánh, a Yên tháo làm mục số 01<br> Hoà, Văn Hưng, Duy Hưng làm mục số 02 ";
 const  task04_support = "---";
 const  task04_notes = "Chuẩn bị sẵn dụng cụ đầy đủ";
 
