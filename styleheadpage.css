@@ -1,1 +1,12 @@
+header {
+        height:150px;
+         width:100%;      
 
+        /* màu chữ */
+        color: white; 
+        /* màu nền*/
+        background-color:#123; 
+        /* Ghim header*/
+        position: sticky; 
+        top: 0;
+        }
