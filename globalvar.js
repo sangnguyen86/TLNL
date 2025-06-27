@@ -19,7 +19,7 @@ const  task00_support = "support";
 const  task00_notes = "Notes";
 
 // ROW 1//
-let  task01_priority = "none";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
+let  task01_priority = "warning";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
 const  task01_mach  =  "Bộ trao đổi nhiệt<br> Máy gia ẩm thân lá 01" ;
 const  task01_content =  "Làm bộ trao đổi nhiệt";
 const  task01_start  = "20/06/2025";
@@ -29,26 +29,26 @@ const  task01_employ = "KT Cơ khí";
 const  task01_support = "-";
 const  task01_notes = "-";
 // ROW 2
-let  task02_priority = "none";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
-const  task02_mach =  "P. Đào Tạo";
-const  task02_content =  "Gắn thêm CB, ổ cắm cho các vị trí lắp đặt các máy khác";
-const  task02_start  ="20/06/2025";
-const  task02_end ="25/06/2025";
+let  task02_priority = "danger";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
+const  task02_mach =  "Lò hơi";
+const  task02_content =  "Tháo và kiểm tra bơm nước của lò hơi có tiếng kêu";
+const  task02_start  ="27/06/2025";
+const  task02_end ="27/06/2025";
 const  task02_assign ="***";
-const  task02_employ ="Mật Thuỷ <br> Duy Hưng";
-const  task02_support ="Minh Khánh<br> Văn Hưng";
+const  task02_employ ="KT Điện";
+const  task02_support ="KT Cơ khí";
 const  task02_notes ="***";
 
 // ROW 3//
-let   task03_priority = "none";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
+let   task03_priority = "danger";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
 const  task03_mach  =  "Quạt hút ống khói lò hơi" ;
-const  task03_content =  "Thay đế mô tơ";
-const  task03_start  = "26/06/2025";
+const  task03_content =  "Có tiếng kêu lại";
+const  task03_start  = "27/06/2025";
 const  task03_end = "28/06/2025";
 const  task03_assign = "_";
 const  task03_employ = "_";
 const  task03_support = "_";
-const  task03_notes = "Dùng sắt từ kệ hỏng <br>Không dùng que hàn thổi các rãnh, lỗ ";
+const  task03_notes = "_";
 // ROW 4//
 let   task04_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task04_mach  =  "Sửa kệ phòng kế hoạch" ;
