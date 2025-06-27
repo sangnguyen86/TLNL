@@ -56,9 +56,9 @@ caption {
 }
 /* Rows level*/
 .highlightlevel01 {background-color: #F4412DFF; color: white;} 
-.highlightlevel02 {background-color: orange;color: white;} 
-.highlightlevel03 {background-color: yellow;color: black;} 
-.highlightlevel04 {background-color: #FAEBEF;color: #0E4274;} /*Hồng – Xanh dương đậm (#FAEBEF – #0E4274)*/
+.highlightlevel02 {background-color: #FFA500;color: white;} /*#FFA500 orange*/
+.highlightlevel03 {background-color: yellow;color: black;} /* FFFF00 yellow*/
+.highlightlevel04 {background-color: #pink;color: #0E4274;} /*Hồng – Xanh dương đậm (#FAEBEF – #0E4274)*/
 .highlightlevel05 {background-color: #6F56A6;color: #F1E5FF;} /*Tím đậm – Tím nhạt (#6F56A6 – #F1E5FF*/
 .highlightlevel06 {background-color:#00539CFF;color: #89CFF0;} /*#00539CFF xanh dương Xanh ngọc – Xanh dương nhạt (#0D706E – #CEEFFA)*/
 .highlightlevel07 {background-color: #2BAE66FF;color: white;} /* xanh lá cây */
