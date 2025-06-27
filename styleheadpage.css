@@ -5,7 +5,7 @@ header {
         /* màu chữ */
         color: white; 
         /* màu nền*/
-        background-color:#123; 
+        background-color:#00203FFF; /* xanh navy: #00203FFF*/
         /* Ghim header*/
         position: sticky; 
         top: 0;
