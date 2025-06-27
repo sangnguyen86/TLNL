@@ -1,7 +1,7 @@
 //GLOBAL VAR
 // MESSAGE//
 let myMessage01 = "THEO DÕI QUẠT HÚT ỐNG KHÓI";
-let myMessage02 = "CHÚ Ý CÁC CÔNG VIỆC HÀNG NGÀY VÀ ĐINH KỲ";
+let myMessage02 = "CHÚ Ý CÁC CÔNG VIỆC HÀNG NGÀY VÀ ĐỊNH KỲ";
 let myMessage03 =  "MỞ CHỊU NHIỆT CHỈ DÙNG CHO QUẠT HÚT ỐNG KHÓI, QUẠT HÚT LÒ HƠI VÀ QUẠT HÚT MÁY XỬ LÝ MÙI ";
 let myMessage04 ="  SỬ DỤNG 1 CÂY BƠM MỠ RIÊNG CHO MỞ CHỊU NHIỆT - CƠ ĐIỆN CHỊU TRÁCH NHIỆM QUẢN LÝ";
 let myMessage05 = null;
