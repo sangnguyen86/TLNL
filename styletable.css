@@ -54,3 +54,10 @@ caption {
     display: table-caption;
     text-align: -webkit-center
 }
+/* Rows level*/
+.highlightlevel01 {background: red; color: white;} /* Action Attention Dertermination */
+.highlightlevel02 {background: orange;} /* Danger */
+.highlightlevel03 {background: yellow;} /* Warning */
+.highlightlevel04 {background: red;} /* Primary*/
+.highlightlevel05 {background: red;} /* Secondary*/
+
