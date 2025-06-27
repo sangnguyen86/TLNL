@@ -157,6 +157,14 @@ header {
 
 /* TABLE STYLES */
 /* Let's target the main <table> element first*/
+/* Chú thích:
+thead: đầu bảng
+tfoot: chân bảng
+tbody: 
+tr: dòng
+
+td : table data
+*/
 .styled-table {
     border-collapse: collapse;/* border-collapse to ensure there is no space between the cell borders*/
     margin: 25px 0;
@@ -182,29 +190,20 @@ header {
 
 /* Styling the headerFor the header, we can simply change the background color and apply some basic styles to the text: */
 
-.styled-table thead th{text-align: center; vertical-align: middle;border-bottom:2px solid black}
-.styled-table thead tr {background-color: #009879;text-align: center;font-weight: bold;color: #ffffff;border-bottom:2px solid black}
+.styled-table thead th{ text-align: center; vertical-align: middle;border-bottom:2px solid black}
+.styled-table thead tr {text-align: center; background-color: #009879;font-weight: bold;color: #ffffff;border-bottom:2px solid black}
 
-/*Moving onto the table cells
-Let's space things out a bit: */
-/*.styled-table th,.styled-table td {padding: 12px 15px;}*/
+/*Moving onto the table cells Let's space things out a bit: */
 .styled-table td,.styled-table th{padding:.75rem;vertical-align:top;border-top:2px solid black}
 
-/* And the table rows...
-For these, we want to do 3 things:
+/* And the table rows...For these, we want to do 3 things:
 
 Add a bottom border to each row for separation
 Add a lighter background to every second row to help readability
 Add a dark border to the very last row to signify the end of the table */
 .styled-table tbody tr {border-bottom: 2px solid orange;}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
+.styled-table tbody tr:nth-of-type(even) {background-color: #b6e6f0;} /* màu dòng chẵn*/
+.styled-table tbody tr:last-of-type {border-bottom: 2px solid #009879;} /* màu dòng cuối */
 /* Lastly, let's make the active row look different
 For this, we're just going to make changes to the text: */
 
