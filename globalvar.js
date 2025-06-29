@@ -43,7 +43,7 @@ const  task02_notes = "-";
 // ROW 3//
 let   task03_priority = "warning";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
 const  task03_mach  =  "Phòng đào tạo<br>Chữ KHATOCO" ;
-const  task03_content =  "Chuyển ổ cắm điện <br> Thay 02 bóng đèn ở sảnh<br>Nghiên cứu keo dán lại chữ Khatoco";
+const  task03_content =  "Chuyển ổ cắm điện <br> Thay 02 bóng đèn ở sảnh<br> Mang kệ đựng bình chữa cháy, thay bảng tiêu lệnh mới(không đóng đè lên cái cũ) <br>Nghiên cứu keo dán lại chữ Khatoco";
 const  task03_start  = "30/06/2025";
 const  task03_end = "02/07/2025";
 const  task03_assign = "";
@@ -62,7 +62,7 @@ const  task04_support = "---";
 const  task04_notes = "";
 
 // ROW 5//
-let   task05_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
+let   task05_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task05_mach  =  "Tủ điều khiển bơm PCCC<br> Kho Diên Phú" ;
 const  task05_content =  "Làm gọn tủ điện và thay thiết bị";
 const  task05_start  = "04/07/2025";
@@ -103,15 +103,15 @@ const  task08_support = "";
 const  task08_notes = "";
 
 // ROW 09//
-let   task09_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
-const  task09_mach  =  "" ;
-const  task09_content =  "";
-const  task09_start  = "";
-const  task09_end = "";
-const  task09_assign = "";
+let   task09_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
+const  task09_mach="Phòng kế hoạch" ;
+const  task09_content =  "Sửa kệ chứa hàng";
+const  task09_start  = "01/07/2025";
+const  task09_end = "10/07/2025";
+const  task09_assign = "ca A";
 const  task09_employ = "";
 const  task09_support = "";
-const  task09_notes = "";
+const  task09_notes = "Cắt gom các kệ hỏng ";
 // ROW 10//
 let   task10_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task10_mach  =  "Các bộ trao đổi nhiệt hỏng" ;
