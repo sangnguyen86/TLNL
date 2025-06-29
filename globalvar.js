@@ -65,12 +65,12 @@ const  task04_notes = "";
 let   task05_priority = "none";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task05_mach  =  "Tủ điều khiển bơm PCCC<br> Kho Diên Phú" ;
 const  task05_content =  "Làm gọn tủ điện và thay thiết bị";
-const  task05_start  = "---";
-const  task05_end = "---";
+const  task05_start  = "04/07/2025";
+const  task05_end = "05/07/2025";
 const  task05_assign = "---";
-const  task05_employ = "M. Thuỷ hoặc D. Hưng";
-const  task05_support = "01 KT Cơ khí";
-const  task05_notes = "Làm giờ hành chính";
+const  task05_employ = "M. Thuỷ và D. Hưng";
+const  task05_support = "";
+const  task05_notes = "Làm giờ hành chính, a Yên và Hòa phụ trách tắt mở điện 2 ngày này";
 // ROW 6//
 let   task06_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task06_mach  =  "Buồng dập bụi bê tông<br> Tủ điều khiển" ;
