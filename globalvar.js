@@ -1,9 +1,9 @@
 //GLOBAL VAR
 // MESSAGE//
-let myMessage01 = "BULI QUẠT ỐNG KHÓI BỊ MÒN, CHÚ Ý THEO DÕI VÀ CÂN CHỈNH ĐỂ CHẠY TẠM THỜI ";
-let myMessage02 = "CHỦ NHẬT LẮP QUẠT HÚT BỤI" ;
-let myMessage03 =  "MỞ CHỊU NHIỆT CHỈ DÙNG CHO QUẠT HÚT ỐNG KHÓI, QUẠT HÚT LÒ HƠI VÀ QUẠT HÚT MÁY XỬ LÝ MÙI ";
-let myMessage04 ="  SỬ DỤNG 1 CÂY BƠM MỠ RIÊNG CHO MỞ CHỊU NHIỆT - CƠ ĐIỆN CHỊU TRÁCH NHIỆM QUẢN LÝ";
+let myMessage01 = "THEO DÕI QUẠT HÚT BỤI";
+let myMessage02 = "THEO DÕI QUẠT HÚT ỐNG KHÓI" ;
+let myMessage03 =  "SỬA THANH CÀO SILO THÀNH PHẨM 3 THANH/CA";
+let myMessage04 = null;
 let myMessage05 = null;
 
 // TASK
