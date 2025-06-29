@@ -41,17 +41,17 @@ const  task02_notes = "-";
 
 
 // ROW 3//
-let   task03_priority = "none";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
-const  task03_mach  =  "" ;
-const  task03_content =  "";
-const  task03_start  = "";
-const  task03_end = "";
-const  task03_assign = "_";
-const  task03_employ = "_";
+let   task03_priority = "warning";//1: danger; 2 warning; 3; primary; 4 secondary; 5 success; //
+const  task03_mach  =  "Phòng đào tạo<br>Chữ KHATOCO" ;
+const  task03_content =  "Chuyển ổ cắm điện <br> Thay 02 bóng đèn ở sảnh<br>Nghiên cứu keo dán lại chữ Khatoco";
+const  task03_start  = "30/06/2025";
+const  task03_end = "02/07/2025";
+const  task03_assign = "";
+const  task03_employ = "Duy Hưng, Mật Thủy";
 const  task03_support = "_";
-const  task03_notes = "_";
+const  task03_notes = "Dán lại chữ Khatoco kết hợp với bảo vệ";
 // ROW 4//
-let   task04_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
+let   task04_priority = "danger";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task04_mach  =  "Máy sấy lá" ;
 const  task04_content =  "Thay ổ bi cánh quạt khoang sấy số 06";
 const  task04_start  = "30/06/2025";
@@ -76,13 +76,13 @@ let   task06_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 
 const  task06_mach  =  "Buồng dập bụi bê tông<br> Tủ điều khiển" ;
 const  task06_content =  "Làm mạch báo mức nước và bảo vệ mô tơ";
 const  task06_start  = "30/06/2025";
-const  task06_end = "03/06/2025";
+const  task06_end = "03/07/2025";
 const  task06_assign = "M Thuỷ";
 const  task06_employ = "M Thuỷ & D. Hưng";
 const  task06_support = "---";
 const  task06_notes = "---";
 // ROW 7//
-let   task07_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
+let   task07_priority = "danger";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task07_mach  =  "Máy hút bụi <br> Đầu máy cắt" ;
 const  task07_content =  "Gắn mô tơ và hoàn thiện phần đầu ra quạt";
 const  task07_start  ="30/06/2025";
@@ -90,7 +90,7 @@ const  task07_end = "30/06/2025";
 const  task07_assign = "";
 const  task07_employ = "ca A";
 const  task07_support = "";
-const  task07_notes = "";
+const  task07_notes="Kiểm tra đo đạc trước và sau khi lắp có tải và không tải";
 // ROW 8//
 let   task08_priority = "warning";//danger -warning; 3; primary; 4 secondary; 5 success; //
 const  task08_mach  =  "Quạt thổi phân li" ;
