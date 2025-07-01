@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--Youtube: Netmediacctv-->
-	<title>BÁO CÁO CÔNG VIỆC - CƠ ĐIỆN LÒ HƠI</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-	  <link rel ="stylesheet" href="styleheadpage.css"/>
-	<style>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title>BÁO CÁO CÔNG VIỆC - CƠ ĐIỆN LÒ HƠI</title>
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link rel ="stylesheet" href="styleheadpage.css"/>
+	
+<style>
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
@@ -69,58 +71,59 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 </style>
-  </head>
-  <body>
-	  <div class="header">
-  		<div class="header-label-clock">
-			<p id="datetime"></p>
-			<script>
-			function updateDateTime() {
-  			const now = new Date();
-  			const date = now.toLocaleDateString();
-  			const time = now.toLocaleTimeString();
-  			document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
-			updateDateTime(); // Hiển thị ngay khi trang load
-			setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
-			</script>
-		</div>
+	
+</head>
+	
+<body>
+<div class="header">
+	<div class="header-label-clock">
+		<p id="datetime"></p>
+		<script>
+		function updateDateTime() {
+  		const now = new Date();
+  		const date = now.toLocaleDateString();
+  		const time = now.toLocaleTimeString();
+  		document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
+		updateDateTime(); // Hiển thị ngay khi trang load
+		setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+		</script>
+	</div>
    
-   		<h1>BP. CƠ ĐIỆN - LÒ HƠI</h1> 
-             <!-- Navigation bar-->
-   		<div class="header-navbar">
-			<a  href="https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
-   			<a href="">BẢNG CÔNG VIỆC</a>
-   			<a href="">HÀNG NGÀY</a>
-   			<a href="">KẾ HOẠCH/DỰ ÁN</a>	
-   			<a href="">PHÂN CÔNG KHÁC</a>
-			<a href="">GHI CHỈ SỐ NƯỚC</a>
-			<a class="active" href="https://sangnguyen86.github.io/TLNL/BCCV.html">BÁO CÁO CÔNG VIỆC</a>
-			<a href="">NHẬT KÝ SỬA CHỮA</a>			
-   		</div>
+   	<h1>BP. CƠ ĐIỆN - LÒ HƠI</h1> 
+	
+        <!-- Navigation bar-->
+   	<div class="header-navbar">
+		<a  href="https://sangnguyen86.github.io/TLNL/main.html">TRANG CHÍNH</a>
+   		<a href="">BẢNG CÔNG VIỆC</a>
+   		<a href="">HÀNG NGÀY</a>
+   		<a href="">KẾ HOẠCH/DỰ ÁN</a>	
+   		<a href="">PHÂN CÔNG KHÁC</a>
+		<a href="">GHI CHỈ SỐ NƯỚC</a>
+		<a class="active" href="https://sangnguyen86.github.io/TLNL/BCCV.html">BÁO CÁO CÔNG VIỆC</a>
+		<a href="">NHẬT KÝ SỬA CHỮA</a>			
+   	</div>
 
           <!-- Message bar-->
-    		<div class="header-message">
-    			<div class='scroll'>
-    				<div class='item' >Thông báo</span> </div>
-    			</div>
-   		</div>
-	</div>   
-	<!-- PHẦN NỘI DUNG -->
-  
-    <section class="hero is-primary is-bold is-center">
-      <div class="hero-body container"  style="text-align: center; height:50px; padding: 5px;">        
-      
-<span style="font-size: 30px; color: #ffffff; font-weight: bold;">BÁO CÁO CÔNG VIỆC</span>		
-      </div>
-    </section>
-	<div style="height: 10px"></div>
-	<div class="container" style="border: solid 2px #00a779; border-radius: 10px" > 
-		<form id="form" class="container m-4 pl-4" method="POST">
+    	<div class="header-message">
+    		<div class='scroll'>
+    			<div class='item' >Thông báo</span> </div>
+    		</div>
+   	</div>
+</div>   
+<!-- PHẦN NỘI DUNG -->
+<section class="hero is-primary is-bold is-center">
+	<div class="hero-body container"  style="text-align: center; height:50px; padding: 5px;">             
+		<span style="font-size: 30px; color: #ffffff; font-weight: bold;">BÁO CÁO CÔNG VIỆC</span>		
+	</div>
+</section>
+	
+<div style="height: 10px"></div>
+<div class="container" style="border: solid 2px #00a779; border-radius: 10px" > 
+<form id="form" class="container m-4 pl-4" method="POST">
 <!-- Hiển thị thời gian thực-->
 		<div class="field">
 			<div class="control">
-				<p id="timestamp" >
-                	
+				<p id="timestamp" >        	
 			</div>
 		</div>
 <!--Chọn ngày tháng-->		
@@ -128,37 +131,35 @@
 			<label class="label" style = "color:blue;">NGÀY</label>
 				<div class="control">
 			  		<input
-						class="input"
-                        
+						class="input"                        
 						type="date"
 						placeholder="NGÀY"
 						name="NGÀY"  
 			  		/>
 				</div>
 		 </div>	
-<!-- GIỜ-->
-	<div class="field">
-		<label class="label" style = "color:blue;">NGƯỜI THỰC HIỆN</label>
-		<div class="custom-select" style="width:500px;">
-			<select name ="NGƯỜI THỰC HIỆN">
-			<!--NGƯỜI THỰC HIỆN-->
-            	<option value="Tên người thực hiện">Chọn tên người thực hiện</option>
-				<option value="Võ Bá Hoà">BÁ HOÀ</option>
-				<option value="Đào Duy Hưng">DUY HƯNG</option>
-            	<option value="Đàm Văn Hưng">VĂN HƯNG</option>
-            	<option value="Huỳnh Tấn Khải">TẤN KHẢI</option>
-            	<option value="Huỳnh Tấn Khải">TẤN KHẢI</option>
-            	<option value="Võ Minh Khánh">MINH KHÁNH</option>
-            	<option value="Đặng N.T.M. Thuỷ">MẬT THUỶ</option>
-            	<option value="Lê Huy Yên">HUY YÊN</option>
-            	<option value="Phạm T. Đức Duy">ĐỨC DUY</option>
-			</select>
-		</div>
-	</div>	  
+<!--NGƯỜI THỰC HIỆN-->
+		<div class="field">
+			<label class="label" style = "color:blue;">NGƯỜI THỰC HIỆN</label>
+			<div class="custom-select" style="width:500px;">
+				<select name ="NGƯỜI THỰC HIỆN">
+            				<option value="Tên người thực hiện">Chọn tên người thực hiện</option>
+					<option value="Võ Bá Hoà">BÁ HOÀ</option>
+					<option value="Đào Duy Hưng">DUY HƯNG</option>
+            				<option value="Đàm Văn Hưng">VĂN HƯNG</option>
+            				<option value="Huỳnh Tấn Khải">TẤN KHẢI</option>
+            				<option value="Huỳnh Tấn Khải">TẤN KHẢI</option>
+            				<option value="Võ Minh Khánh">MINH KHÁNH</option>
+            				<option value="Đặng N.T.M. Thuỷ">MẬT THUỶ</option>
+            				<option value="Lê Huy Yên">HUY YÊN</option>
+            				<option value="Phạm T. Đức Duy">ĐỨC DUY</option>
+				</select>
+			</div>
+		</div>	  
 <!-- NGƯỜI CÙNG THỰC HIỆN-->
-	<div class="field">
-		<label class="label"style = "color:blue;">NGƯỜI CÙNG THỰC HIỆN</label>
-		<div class="control">
+		<div class="field">
+			<label class="label"style = "color:blue;">NGƯỜI CÙNG THỰC HIỆN</label>
+			<div class="control">
 			 <input
 				class="input"
 				type="text"	
@@ -302,75 +303,55 @@
 				name="GHI CHÚ"
 			  />
 		</div>
+<!-- Khoảng trống 10px-->			
 <div style="height: 10px"></div>		 
 
-		  <div class="field is-grouped">
-			<div class="control">
-			  <button class="button is-primary" type="submit" id="submit-button">
-				Nhập
-			  </button>
-			</div>
-			<div class="control">
-			  <button class="button is-danger" type="button" onclick="getNewRecord()">Xóa</button>
-			</div>
-		  </div>
-		</form>
-		<div
-		  id="message"
-		  style="
-			display: none;
-			margin: 20px;
-			font-weight: bold;
-			color: green;
-			padding: 8px;
-			background-color: beige;
-			border-radius: 4px;
-			border-color: aquamarine;
-		  "
-		></div>
+<div class="field is-grouped">
+	<div class="control">
+		<button class="button is-primary" type="submit" id="submit-button">Nhập</button>
 	</div>
+	<div class="control">
+		<button class="button is-danger" type="button" onclick="getNewRecord()">Xóa</button>
+	</div>
+</div>
+</form>
+<div id="message" style="display: none;margin: 20px;font-weight: bold;color: green;padding: 8px;background-color: beige;border-radius: 4px;border-color: aquamarine;"></div>
+</div>
 
-    <script>
-      document.getElementById("form").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent the default form submission
-        document.getElementById("message").textContent = "Submitting..";
-        document.getElementById("message").style.display = "block";
-        document.getElementById("submit-button").disabled = true;
-
-
-        // Collect the form data
-        var formData = new FormData(this);
-        var keyValuePairs = [];
-        for (var pair of formData.entries()) {
-          keyValuePairs.push(pair[0] + "=" + pair[1]);
-        }
-
-        var formDataString = keyValuePairs.join("&");
-
-        // Send a POST request to your Google Apps Script
-        fetch(
-          "https://script.google.com/macros/s/AKfycbyJj510-XyigLhKF9WX1Yq00Mpvr2VgW0U6TSDSZO65IXeTZphnh3awiZ63p6Jgs7TS/exec",
-          {
-            redirect: "follow",
-            method: "POST",
-            body: formDataString,
-            headers: {
-              "Content-Type": "text/plain;charset=utf-8",
-            },
-          }
+<script>
+document.getElementById("form").addEventListener("submit", function (e) {
+        									e.preventDefault(); // Prevent the default form submission
+        									document.getElementById("message").textContent = "Submitting..";
+        									document.getElementById("message").style.display = "block";
+        									document.getElementById("submit-button").disabled = true;
+        									// Collect the form data
+        									var formData = new FormData(this);
+        									var keyValuePairs = [];
+        									for (var pair of formData.entries()) {
+         									 keyValuePairs.push(pair[0] + "=" + pair[1]);
+        								}
+var formDataString = keyValuePairs.join("&");
+// Send a POST request to your Google Apps Script
+fetch("https://script.google.com/macros/s/AKfycbyJj510-XyigLhKF9WX1Yq00Mpvr2VgW0U6TSDSZO65IXeTZphnh3awiZ63p6Jgs7TS/exec",
+          								{
+            									redirect: "follow",
+            									method: "POST",
+            									body: formDataString,
+            									headers: {"Content-Type": "text/plain;charset=utf-8",},
+          								}
         )
           .then(function (response) {
-            // Check if the request was successful
-            if (response) {
-              return response; // Assuming your script returns JSON response
-            } else {
-              throw new Error("Failed to submit the form.");
-            }
-          })
+            				// Check if the request was successful
+            				if (response) {
+             						 return response; // Assuming your script returns JSON response
+            						} else {
+              							throw new Error("Failed to submit the form.");
+            							}
+				         })
           .then(function (data) {
             // Display a success message
             document.getElementById("message").textContent =
-              "Data submitted successfully!";
+              "Dữ liệu được gửi thành công!";
             document.getElementById("message").style.display = "block";
             document.getElementById("message").style.backgroundColor = "green";
             document.getElementById("message").style.color = "beige";
@@ -386,7 +367,7 @@
             // Handle errors, you can display an error message here
             console.error(error);
             document.getElementById("message").textContent =
-              "An error occurred while submitting the form.";
+              "Đã xảy ra lỗi khi gửi dữ liệu.";
             document.getElementById("message").style.display = "block";
           });
       });
