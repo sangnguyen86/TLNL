@@ -42,9 +42,9 @@ body {
            	float: left; /* Đặt liên kết vào một hàng ngang */
            	display: block; /* Hiển thị là khối để có thể định dạng */
            	color: black; /* Màu chữ */
-           	font-size:18px;
+           	font-size:12px;
            	text-align: center; /* Canh giữa văn bản */
-           	padding: 5px 20px ; /* Khoảng cách topbot leftrignt */
+           	padding: 5px 5px ; /* Khoảng cách topbot leftrignt */
            	text-decoration: none; /* Gạch dưới */
            	}
 .header-navbar a:hover {
