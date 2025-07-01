@@ -89,10 +89,11 @@
 		</div>
 <!--Chọn ngày tháng-->		
 		<div class="field">
-			<label class="label">NGÀY</label>
+			<label class="label" style = "color:blue;">NGÀY</label>
 				<div class="control">
 			  		<input
 						class="input"
+                        
 						type="date"
 						placeholder="NGÀY"
 						name="NGÀY"  
@@ -101,10 +102,11 @@
 		 </div>	
 <!-- GIỜ-->
 	<div class="field">
-		<label class="label">NGƯỜI THỰC HIỆN</label>
-		<div class="custom-select" style="width:200px;">
+		<label class="label" style = "color:blue;">NGƯỜI THỰC HIỆN</label>
+		<div class="custom-select" style="width:500px;">
 			<select name ="NGƯỜI THỰC HIỆN">
 			<!--NGƯỜI THỰC HIỆN-->
+            	<option value="Tên người thực hiện">Chọn tên người thực hiện</option>
 				<option value="Võ Bá Hoà">BÁ HOÀ</option>
 				<option value="Đào Duy Hưng">DUY HƯNG</option>
             	<option value="Đàm Văn Hưng">VĂN HƯNG</option>
@@ -119,7 +121,7 @@
 	</div>	  
 <!-- NGƯỜI CÙNG THỰC HIỆN-->
 	<div class="field">
-		<label class="label">NGƯỜI CÙNG THỰC HIỆN</label>
+		<label class="label"style = "color:blue;">NGƯỜI CÙNG THỰC HIỆN</label>
 		<div class="control">
 			 <input
 				class="input"
@@ -131,7 +133,7 @@
 	</div>
 <!-- NỘI DUNG CÔNG VIỆC-->		  
 	<div class="field">
-		<label class="label">NỘI DUNG CÔNG VIỆC</label>
+		<label class="label"style = "color:blue;">NỘI DUNG CÔNG VIỆC</label>
 		<div class="control">
 			  <input
 				class="input"
@@ -143,7 +145,7 @@
 	</div>
 <!-- THỜI ĐIỂM BẮT ĐẦU-->    
 	<div class="field">
-		<label class="label">BẮT ĐẦU</label>
+		<label class="label"style = "color:blue;">BẮT ĐẦU</label>
 		<div class="control">
 			  <input
 				class="input"
@@ -156,7 +158,7 @@
      </div>
  <!-- THỜI ĐIỂM KẾT THÚC-->    
 	<div class="field">
-		<label class="label">KẾT THÚC</label>
+		<label class="label" style = "color:blue;">KẾT THÚC</label>
 		<div class="control">
 			  <input
 				class="input"
@@ -165,7 +167,105 @@
 			  />
 		</div>
 </div>
-
+<!-- KHỐI LƯỢNG CÔNG VIỆC-->
+	<div class="field">
+		<label class="label"style = "color:blue;">KHỐI LƯỢNG CÔNG VIỆC</label>
+		<div class="control">
+			 <input
+				class="input"
+				type="text"	
+				placeholder="Ghi số hoặc phần trăm"
+				name="KHỐI LƯỢNG CÔNG VIỆC"
+			  />
+		</div>
+	</div>
+ <label class="label"style = "color:brown;">THÔNG TIN MÁY MÓC THIẾT BỊ</label> 
+ 
+    
+   <!-- MÃ SỐ MÁY-->
+	<div class="field">
+		<label class="label" style = "color:brown;">TÊN MÁY/KHU VỰC</label>
+		<div class="control">
+			 <input
+				class="input"
+				type="text"	
+				placeholder="Ghi tên máy"
+				name=""MÁY/ KHU VỰC""
+			  />
+		</div>
+	</div>
+ <!-- MÃ SỐ MÁY-->
+	<div class="field">
+		<label class="label"style = "color:brown;">MÃ SỐ MÁY</label>
+		<div class="control">
+			 <input
+				class="input"
+				type="text"	
+				placeholder="Mã số của máy. Ví dụ ghi theo tên mô tơ 46_35_M1 ..."
+				name="MÃ MÁY"
+			  />
+		</div>
+	</div>
+  <!-- SỐ SERI MÁY THIẾT BỊ-->
+	<div class="field">
+		<label class="label"style = "color:brown;">SỐ SERIES</label>
+		<div class="control">
+			 <input
+				class="input"
+				type="text"	
+				placeholder="Mã số của máy. Ví dụ ghi theo tên mô tơ 46_35_M1 ..."
+				name="MÃ MÁY"
+			  />
+		</div>
+	</div>
+ 
+ <label class="label"style = "color:orange;">VẬT TƯ/ THIẾT BỊ SỬ DỤNG ĐỂ SỬA CHỮA</label> 
+ <!-- TÊN VẬT TƯ THIẾT BỊ-->
+	<div class="field">
+		<label class="label"style = "color:orange;">Tên vật tư/ thiết bị</label>
+		<div class="control">
+			 <input
+				class="input"
+				type="text"	
+				placeholder="Tên vật tư phụ tùng sử dụng để sửa chữa"
+				name="VẬT TƯ PHỤ TÙNG SỬ DỤNG ĐỂ SỬA CHỮA"
+			  />
+		</div>
+	</div>
+   <!-- MÃ VẬT TƯ THIẾT BỊ-->
+	<div class="field">
+		<label class="label"style = "color:orange;">Mã vật tư/ thiết bị</label>
+		<div class="control">
+			 <input
+				class="input"
+				type="text"	
+				placeholder="Mã vật tư phụ tùng sử dụng để sửa chữa"
+				name="MÃ SỐ VẬT TƯ"
+			  />
+		</div>
+	</div>
+       <!-- SỐ LƯỢNG-->
+	<div class="field">
+		<label class="label"style = "color:orange;">Mã vật tư/ thiết bị</label>
+		<div class="control">
+			 <input
+				class="input"
+				type="number"	
+				placeholder="Mã vật tư phụ tùng sử dụng để sửa chữa"
+				name="SỐ LƯỢNG VẬT TƯ"
+			  />
+		</div>
+	</div>
+ 
+ <label class="label"style = "color:red;">GHI CHÚ</label>     
+ 		<div class="control">
+			 <input
+				class="input"
+				type="text"	
+				placeholder="Mã vật tư phụ tùng sử dụng để sửa chữa"
+				name="GHI CHÚ"
+			  />
+		</div>
 <div style="height: 10px"></div>		 
 
 		  <div class="field is-grouped">
