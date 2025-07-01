@@ -16,6 +16,11 @@ body {
 position: sticky; 
     top: 50px;
 }
+.third-header{
+  height:50px; background:orange; border-color:red;
+position: sticky; 
+    top: 100px;
+}
 
 /* Header/Logo Title */
 
