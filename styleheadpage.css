@@ -7,6 +7,9 @@ body {
 /* */
 .fisrt-header{
   height:50px; background:white; border-color:red;
+	        /* Ghim header*/
+    position: sticky; 
+    top: 0;
 }
 .second-header{
   height:50px; background:blue; border-color:red;
@@ -25,8 +28,8 @@ body {
   	font-size: 20px;
     
         /* Ghim header*/
-    position: sticky; 
-    top: 0;
+    /*position: sticky; 
+    top: 0;*/
 }
 .header-label-clock{
             height:14px;
