@@ -4,8 +4,16 @@ body {
   	margin: 0;
 	padding: 0;
 	}
+/* */
+.fisrt-header{
+  height:50px; background:white; border-color:red;
+}
+.second-header{
+  height:50px; background:blue; border-color:red;
+}
 
 /* Header/Logo Title */
+
 .header {
 	height:150px;
     	width:100%;
