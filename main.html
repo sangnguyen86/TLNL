@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DANH SÁCH CÔNG VIỆC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel ="stylesheet" href="styleheadpage.css"/>
+<link rel="stylesheet" href="styletable.css"/>
 
+</head>
+<body>
+	<div class="header">
+  		<div class="header-label-clock">
+			<p id="datetime"></p>
+			<script>
+			function updateDateTime() {
+  			const now = new Date();
+  			const date = now.toLocaleDateString();
+  			const time = now.toLocaleTimeString();
+  			document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
+			updateDateTime(); // Hiển thị ngay khi trang load
+			setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
+			</script>
+		</div>
+   
+   		<h1>BP. CƠ ĐIỆN - LÒ HƠI</h1> 
+             <!-- Navigation bar-->
+   		<div class="header-navbar">
+   			<a href="https://sangnguyen86.github.io/TLNL/KHCV.html">BẢNG CÔNG VIỆC</a>
+   			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">HÀNG NGÀY</a>
+   			<a href="https://sangnguyen86.github.io/TLNL/project.html">KẾ HOẠCH/DỰ ÁN</a>	
+   			<a href="https://sangnguyen86.github.io/TLNL/assignothertask.html">PHÂN CÔNG KHÁC</a>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSfzLud-IGtOgKCKW5njS2nEIxHpGZMW2m2EKNJJzIgQuDzo8Q/viewform">GHI CHỈ SỐ NƯỚC</a>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLScE_uNF0IuUKrvMLOcm-Gl-8xj510QlyoYLhFfJ76k3F115iw/viewform">BÁO CÁO CÔNG VIỆC</a>
+			<a href="https://sangnguyen86.github.io/TLNL/nhatkysuachua.html">NHẬT KÝ SỬA CHỮA</a>
+   		</div>
+          <!-- Message bar-->
+    		<div class="header-message">
+    			<div class='scroll'>
+    				<div class='item' >Chủ nhật ngày 29/06/2025 Gắn quạt hút máy hút bụi số 01<span>Theoi dõi quạt hút</span> </div>
+    			</div>
+   		</div>
+	</div>   
+	<!-- NỘI DUNG -->
+	
+</body>
+</html>
