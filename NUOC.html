@@ -80,8 +80,107 @@
 <div style="height: 10px"></div>
 <div class="container" style="border: solid 2px #00a779; border-radius: 10px" > 
 <form id="form" class="container m-4 pl-4" method="POST">
-
-
+<!--Chọn ngày tháng-->		
+		<div class="field">
+			<label class="label" style = "color:blue;">NGÀY</label>
+				<div class="control">
+			  		<input
+						class="input"                        
+						type="date"
+						placeholder="NGÀY"
+						name="NGÀY:"  
+			  		/>
+				</div>
+		 </div>
+<!--GIỜ GI-->
+		<div class="field">
+			<label class="label" style = "color:blue;">GIỜ GHI</label>
+			<!--div class="custom-select" style="width:500px;"-->
+			<div class="select">	
+				<select name ="GIỜ GHI:">
+            				
+					<option value="06:00">6h00</option>
+					<option value="07:30">07h30</option>
+            				<option value="12:00">12h00</option>
+            				<option value="14:00">14h00</option>
+            				<option value="18:00">18h00</option>
+            				<option value="22:00">22h00</option>
+				</select>
+			</div>
+		</div>
+	<!--GIỜ GI-->
+		<div class="field">
+			<label class="label" style = "color:blue;">NGƯỜI GHI</label>
+			<!--div class="custom-select" style="width:500px;"-->
+			<div class="select">	
+				<select name ="NGƯỜI GHI">
+            				
+					<option value="Đào Duy Hưng">DUY HƯNG</option>
+					<option value="Lê Huy Yên">HUY YÊN</option>
+					<option value="Võ Bá Hoà">BÁ HOÀ</option>
+            				<option value="Đàm Văn Hưng">VĂN HƯNG</option>
+            				<option value="Huỳnh Tấn Khải">TẤN KHẢI</option>
+            				
+            				<option value="Võ Minh Khánh">MINH KHÁNH</option>
+            				<option value="Đặng N.T.M. Thuỷ">MẬT THUỶ</option>
+            				
+            				<option value="Phạm T. Đức Duy">ĐỨC DUY</option>
+				</select>
+			</div>
+		</div>	
+<!-- ĐỒNG HỒ NƯỚC CẤP LỚN-->
+		<div class="field">
+			<label class="label"style = "color:blue;">NƯỚC CẤP - ĐỒNG HỒ LỚN</label>
+			<div class="control">
+			 <input
+				class="input"
+				type="number"	
+				min = "1"
+				placeholder="Nhập số đồng hồ lớn nước cấp"
+				name="NƯỚC CẤP (ĐỒNG HỒ LỚN):"
+			  />
+		</div>
+	</div>
+	<!-- ĐỒNG HỒ NƯỚC CẤP NHỎ-->
+		<div class="field">
+			<label class="label"style = "color:blue;">NƯỚC CẤP - ĐỒNG HỒ NHỎ</label>
+			<div class="control">
+			 <input
+				class="input"
+				type="number"	
+				min = "1"
+				placeholder="Nhập số đồng hồ nhỏ nước cấp"
+				name="NƯỚC CẤP (ĐỒNG HỒ NHỎ):"
+			  />
+		</div>
+	</div>
+		<!-- ĐỒNG HỒ NƯỚC THẢI LỚN-->
+		<div class="field">
+			<label class="label"style = "color:blue;">NƯỚC THẢI - ĐỒNG HỒ LỚN</label>
+			<div class="control">
+			 <input
+				class="input"
+				type="number"	
+				min = "1"
+				placeholder="Nhập số đồng hồ lớn nước thải"
+				name="NƯỚC THẢI (ĐỒNG HỒ LỚN)"
+			  />
+		</div>
+	</div>
+			<!-- ĐỒNG HỒ NƯỚC THẢI NHỎ-->
+		<div class="field">
+			<label class="label"style = "color:blue;">NƯỚC THẢI - ĐỒNG HỒ NHỎ</label>
+			<div class="control">
+			 <input
+				class="input"
+				type="number"	
+				min = "1"
+				placeholder="Nhập số đồng hồ nhỏ nước thải"
+				name="NƯỚC THẢI (ĐỒNG HỒ NHỎ)"
+			  />
+		</div>
+	</div>
+	
 <!-- Khoảng trống 10px-->			
 <div style="height: 10px"></div>		 
 
@@ -111,7 +210,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
         								}
 var formDataString = keyValuePairs.join("&");
 // Send a POST request to your Google Apps Script
-fetch("https://script.google.com/macros/s/AKfycbyJj510-XyigLhKF9WX1Yq00Mpvr2VgW0U6TSDSZO65IXeTZphnh3awiZ63p6Jgs7TS/exec",
+fetch("https://script.google.com/macros/s/AKfycbwcGgGDL3hJa_1oRrGGDGCyeUYCQaPjWgnxoTTw7ws/dev",
           								{
             									redirect: "follow",
             									method: "POST",
