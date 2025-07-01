@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--Youtube: Netmediacctv-->
 	<title>BÁO CÁO CÔNG VIỆC</title>
-    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<style>
 /*the container must be positioned relative:*/
@@ -69,181 +70,103 @@
 </style>
   </head>
   <body>
+  
     <section class="hero is-primary is-bold is-center">
       <div class="hero-body container"  style="text-align: center; height:50px; padding: 5px;">        
+      
 <span style="font-size: 30px; color: #ffffff; font-weight: bold;">BÁO CÁO CÔNG VIỆC</span>		
       </div>
     </section>
 	<div style="height: 10px"></div>
 	<div class="container" style="border: solid 2px #00a779; border-radius: 10px" > 
 		<form id="form" class="container m-4 pl-4" method="POST">
-		
+<!-- Hiển thị thời gian thực-->
 		<div class="field">
 			<div class="control">
 				<p id="timestamp" >
+                	
 			</div>
 		</div>
-		
+<!--Chọn ngày tháng-->		
 		<div class="field">
 			<label class="label">NGÀY</label>
-			<div class="control">
-			  <input
-				class="input"
-				type="date"
-				placeholder="NGÀY"
-				name="NGÀY"  <!-- Tên cột trong bảng
-			  />
-			</div>
-		  </div>	
+				<div class="control">
+			  		<input
+						class="input"
+						type="date"
+						placeholder="NGÀY"
+						name="NGÀY"  
+			  		/>
+				</div>
+		 </div>	
 <!-- GIỜ-->
 	<div class="field">
-	<label class="label">MÁY/KHU VỰC</label>
+		<label class="label">NGƯỜI THỰC HIỆN</label>
+		<div class="custom-select" style="width:200px;">
+			<select name ="NGƯỜI THỰC HIỆN">
+			<!--NGƯỜI THỰC HIỆN-->
+				<option value="Võ Bá Hoà">BÁ HOÀ</option>
+				<option value="Đào Duy Hưng">DUY HƯNG</option>
+            	<option value="Đàm Văn Hưng">VĂN HƯNG</option>
+            	<option value="Huỳnh Tấn Khải">TẤN KHẢI</option>
+            	<option value="Huỳnh Tấn Khải">TẤN KHẢI</option>
+            	<option value="Võ Minh Khánh">MINH KHÁNH</option>
+            	<option value="Đặng N.T.M. Thuỷ">MẬT THUỶ</option>
+            	<option value="Lê Huy Yên">HUY YÊN</option>
+            	<option value="Phạm T. Đức Duy">ĐỨC DUY</option>
+			</select>
+		</div>
+	</div>	  
+<!-- NGƯỜI CÙNG THỰC HIỆN-->
+	<div class="field">
+		<label class="label">NGƯỜI CÙNG THỰC HIỆN</label>
 		<div class="control">
-		
-		<select class="custom-select" style="width:200px;" id="machinename" name="MÁY" >
-			<!-- DANH MỤC MÁY XƯỞNG SẢN XUẤT-->
-			<option value="MÁY CẮT">MÁY CẮT</option>
-			<option value="GIA ẨM ĐẦU LÁ">GIA ẨM ĐẦU LÁ</option>
-        		<option value="BĂNG TẢI LỰA ĐẦU LÁ">BĂNG TẢI LỰA ĐẦU LÁ</option>
-			<option value="PHÂN LI ĐẦU LÁ">PHÂN LI ĐẦU LÁ </option>
-        		<option value="GIA ẨM THÂN LÁ 01">GIA ẨM THÂN LÁ 01 </option>
-        		<option value="CỤM CHIA DÒNG VÀ BĂNG TẢI LỰA LÁ">CỤM CHIA DÒNG VÀ BĂNG TẢI LỰA LÁ </option>
-        		<option value="MÁY SÀNG CÁT">MÁY SÀNG CÁT</option>
-        		<option value="THÙNG CHỨA THÂN LÁ">SILO LÁ SƠ CHẾ</option>
-        		<option value="GIA ẨM THÂN LÁ 02">GIA ẨM THÂN LÁ 02 </option>
-        		<option value="MÁY ĐẬP CẤP 01">MÁY ĐẬP CẤP 01 </option>
-        		<option value="MÁY ĐẬP CẤP 02">MÁY ĐẬP CẤP 02 </option>
-        		<option value="MÁY ĐẬP CẤP 03">MÁY ĐẬP CẤP 03 </option>
-        		<option value="MÁY ĐẬP CẤP 04">MÁY ĐẬP CẤP 04 </option>
-        		<option value="MÁY PHÂN LI CẤP 01 BUỒNG 01">MÁY PHÂN LI CẤP 01 BUỒNG 01 </option>
-        		<option value="MÁY PHÂN LI CẤP 01 BUỒNG 02">MÁY PHÂN LI CẤP 01 BUỒNG 02 </option>
-        		<option value="MÁY PHÂN LI CẤP 01 BUỒNG 03">MÁY PHÂN LI CẤP 01 BUỒNG 03 </option>
-        		<option value="MÁY PHÂN LI CẤP 01 BUỒNG 04">MÁY PHÂN LI CẤP 01 BUỒNG 04 </option>
-        		<option value="MÁY PHÂN LI CẤP 02 BUỒNG 01">MÁY PHÂN LI CẤP 02 BUỒNG 01 </option>
-        		<option value="MÁY PHÂN LI CẤP 02 BUỒNG 02">MÁY PHÂN LI CẤP 02 BUỒNG 02 </option>
-        		<option value="MÁY PHÂN LI CẤP 02 BUỒNG 03">MÁY PHÂN LI CẤP 02 BUỒNG 03 </option>
-        		<option value="MÁY PHÂN LI CẤP 03 BUỒNG 01">MÁY PHÂN LI CẤP 03 BUỒNG 01 </option>
-        		<option value="MÁY PHÂN LI CẤP 03 BUỒNG 03">MÁY PHÂN LI CẤP 03 BUỒNG 02 </option>
-        		<option value="MÁY PHÂN LI CẤP 04">MÁY PHÂN LI CẤP 04 </option>
-        		<option value="CỤM HỒI CỌNG">CỤM HỒI CỌNG</option>
-        		<option value="CỤM SÀN RUNG MÁY ĐẬP">CỤM SÀN RUNG MÁY ĐẬP</option>
-        		<option value="CỤM BĂNG TẢI MÁY ĐẬP">CỤM BĂNG TẢI MÁY ĐẬP</option>
-        		<option value="SILO 01">SILO CHỨA 01 THÀNH PHẨM</option>
-        		<option value="SILO 02">SILO CHỨA 02 THÀNH PHẨM</option>
-        		<option value="SILO 03">SILO CHỨA 03 THÀNH PHẨM</option>
-        		<option value="MÁY SẤY LÁ">MÁY SẤY LÁ</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 01">MÁY SẤY LÁ - KHOANG SẤY 01</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 02">MÁY SẤY LÁ - KHOANG SẤY 02</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 03">MÁY SẤY LÁ - KHOANG SẤY 03</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 04">MÁY SẤY LÁ - KHOANG SẤY 04</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 05">MÁY SẤY LÁ - KHOANG SẤY 05</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 06">MÁY SẤY LÁ - KHOANG SẤY 06</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 07">MÁY SẤY LÁ - KHOANG SẤY 07</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 08">MÁY SẤY LÁ - KHOANG SẤY 08</option>
-        		<option value="MÁY SẤY LÁ - KHOANG SẤY 09">MÁY SẤY LÁ - KHOANG SẤY 09</option>
-        		<option value="MÁY SẤY LÁ - KHOANG 11">MÁY SẤY LÁ - KHOANG 11</option>
-        		<option value="MÁY SẤY LÁ - KHOANG HỒI ẨM 01">MÁY SẤY LÁ - KHOANG HỒI ẨM 01</option>
-        		<option value="MÁY SẤY LÁ - KHOANG HỒI ẨM 02">MÁY SẤY LÁ - KHOANG HỒI ẨM 02</option>
-        		<option value="MÁY SẤY LÁ - KHOANG HỒI ẨM 03">MÁY SẤY LÁ - KHOANG HỒI ẨM 03</option>
-        		<option value="MÁY SẤY LÁ - KHOANG HỒI ẨM 04">MÁY SẤY LÁ - KHOANG HỒI ẨM 04</option>
-			<option value="BĂNG TẢI SAU MÁY SẤY LÁ">BĂNG TẢI SAU MÁY SẤY LÁ</option>	
-			<option value="BĂNG TẢI CÂN VÀ RẢI LÁ">BĂNG TẢI CÂN VÀ RẢI LÁ</option>
-			<option value="RAM ÉP CHÍNH">RAM ÉP CHÍNH</option>
-			<option value="Ô ÉP SỐ 01">Ô ÉP SỐ 01</option>
-        		<option value="Ô ÉP SỐ 02">Ô ÉP SỐ 02</option>
-			<option value="CỤM BĂNG TẢI ÉP KIỆN ">CỤM BĂNG TẢI ÉP KIỆN</option>
-			<option value="CỤM MÁY ÉP LẠI VÀ BẮN ĐAI ">CỤM MÁY ÉP LẠI VÀ BẮN ĐAI</option>
-			<option value="MÁY SẤY CỌNG - KHOANG SỐ 01">MÁY SẤY CỌNG - KHOANG SỐ 01</option>
-			<option value="MÁY SẤY CỌNG - KHOANG SỐ 02">MÁY SẤY CỌNG - KHOANG SỐ 02</option>
-			<option value="MÁY SẤY CỌNG - KHOANG SỐ 03">MÁY SẤY CỌNG - KHOANG SỐ 03</option>
-			<option value="MÁY SẤY CỌNG - KHOANG SỐ 04">MÁY SẤY CỌNG - KHOANG SỐ 04</option>
-			<option value="MÁY SẤY CỌNG - KHOANG SỐ 05">MÁY SẤY CỌNG - KHOANG SỐ 05</option>
-			<option value="CỤM HÚT VÀ SÀN RUNG CỌNG">CỤM HÚT VÀ SÀN RUNG CỌNG</option>
-			<option value="CỤM HÚT VÀ SÀN RUNG VỤN">CỤM HÚT VÀ SÀN RUNG VỤN</option>
-			<option value="CỤM BĂNG TẢI CHUYỂN THÙNG CỌNG">CỤM BĂNG TẢI CHUYỂN THÙNG CỌNG</option>
-			<option value="CỤM ÉP CỌNG VÀ BẮN ĐAI">CỤM ÉP CỌNG VÀ BẮN ĐAI</option>
-			<option value="MÁY HÚT BỤI SỐ 01">MÁY HÚT BỤI SỐ 01</option>
-			<option value="MÁY HÚT BỤI SỐ 02">MÁY HÚT BỤI SỐ 02</option>
-			<option value="MÁY HÚT BỤI SỐ 03">MÁY HÚT BỤI SỐ 03</option>
-			<option value="HỆ THỐNG THUỶ LỰC">HỆ THỐNG THUỶ LỰC</option>
-			<!-- CƠ ĐIỆN LÒ HƠI QUẢN LÝ-->
-			<option value="MÁY HÚT BỤI- MÁY CẮT">MÁY HÚT BỤI- MÁY CẮT</option>
-			<option value="MÁY HÚT BỤI- PHÂN LI ĐẦU LÁ">MÁY HÚT BỤI- PHÂN LI ĐẦU LÁ</option>
-			<option value="BUỒNG DẬP BỤI">BUỒNG DẬP BỤI</option>
-			<option value="MÁY XỬ LÝ MÙI SỐ 01">MÁY XỬ LÝ MÙI SỐ 01</option>
-			<option value="MÁY XỬ LÝ MÙI SỐ 02">MÁY XỬ LÝ MÙI SỐ 02</option>
-			<option value="MÁY XỬ LÝ MÙI SỐ 03">MÁY XỬ LÝ MÙI SỐ 03</option>
-			<option value="MÁY KHÍ TƯƠI">MÁY KHÍ TƯƠI</option>
-			<option value="LÒ HƠI">LÒ HƠI</option>
-			<option value="LÒ HƠI-THÁP TẢI THAN">LÒ HƠI-THÁP TẢI THAN</option>
-			<option value="LÒ HƠI-VÍT TẢI THAN">LÒ HƠI-VÍT TẢI THAN</option>
-			<option value="LÒ HƠI-CỤM QUẠT THỔI">LÒ HƠI-CỤM QUẠT THỔI</option>
-			<option value="LÒ HƠI-CỤM QUẠT HÚT">LÒ HƠI-CỤM QUẠT HÚT</option>
-			<option value="LÒ HƠI-HỆ THỐNG DẬP BỤI">LÒ HƠI-HỆ THỐNG DẬP BỤI</option>
-			<option value="LÒ HƠI-HỆ THỐNG XỬ LÝ NƯỚC THẢI">LÒ HƠI-HỆ THỐNG XỬ LÝ NƯỚC THẢI</option>
-			<option value="LÒ HƠI-ỐNG KHÓI">LÒ HƠI-ỐNG KHÓI</option>
-			<option value="MÁY NÉN KHÍ SỐ 01">MÁY NÉN KHÍ SỐ 01</option>
-			<option value="MÁY NÉN KHÍ SỐ 02">MÁY NÉN KHÍ SỐ 02</option>
-			<option value="MÁY TÁCH NƯỚC">MÁY TÁCH NƯỚC</option>
-			<!-- KHU VỰC-->
-			<option value="PHÒNG MCC">PHÒNG MCC</option>
-			<option value="PHÒNG ĐIỀU PHỐI">PHÒNG ĐIỀU PHỐI</option>
-			<option value="TRẠM ĐIỆN">TRẠM ĐIỆN</option>
-			<option value="TRẠM BƠM CTY">TRẠM BƠM CTY</option>
-
-        		<option value="KHÁC">KHÁC </option>
-				</select>
-			</div>
-		  </div>
-
-		  <div class="field">
-			<label class="label">NƯỚC CẤP (SỐ LỚN)</label>
-			<div class="control">
-			  <input
+			 <input
 				class="input"
-				type="number"
-				min="1"
-				placeholder="Ghi chỉ số đồng hồ lớn của nước cấp"
-				name="NƯỚC CẤP (ĐỒNG HỒ LỚN):"
+				type="text"	
+				placeholder="Ghi tên người cùng thực hiện công việc"
+				name="NGƯỜI CÙNG THỰC HIỆN"
 			  />
-			</div>
-		  </div>
-		  
-		  <div class="field">
-			<label class="label">NƯỚC CẤP (SỐ NHỎ)</label>
-			<div class="control">
+		</div>
+	</div>
+<!-- NỘI DUNG CÔNG VIỆC-->		  
+	<div class="field">
+		<label class="label">NỘI DUNG CÔNG VIỆC</label>
+		<div class="control">
 			  <input
 				class="input"
-				type="number"
-				min="1"
-				placeholder="Ghi chỉ số đồng hồ nhỏ của nước cấp, chỉ ghi số nguyên không lấy dấu phẩy"
+				type="text"
+				placeholder="Ghi nội dung công việc đã làm"
 				name="NƯỚC CẤP (ĐỒNG HỒ NHỎ):"
 			  />
-			</div>
-			
-			<div class="field">
-			<label class="label">NƯỚC THẢI (SỐ LỚN)</label>
-			<div class="control">
+		</div>
+	</div>
+<!-- THỜI ĐIỂM BẮT ĐẦU-->    
+	<div class="field">
+		<label class="label">BẮT ĐẦU</label>
+		<div class="control">
 			  <input
 				class="input"
-				type="number"
-				min="1"
-				placeholder="Ghi chỉ số đồng hồ lớn nước thải, ghi số nguyên"
-				name="NƯỚC THẢI (ĐỒNG HỒ LỚN)"
+				type="time"
+				
+				placeholder=""
+				name="BẮT ĐẦU"
 			  />
-			</div>
-			<div class="field">
-			<label class="label">NƯỚC THẢI (SỐ NHỎ)</label>
-			<div class="control">
+		</div>
+     </div>
+ <!-- THỜI ĐIỂM KẾT THÚC-->    
+	<div class="field">
+		<label class="label">KẾT THÚC</label>
+		<div class="control">
 			  <input
 				class="input"
-				type="number"
-				min="1"
-				placeholder="Ghi chỉ số đồng hồ nhỏ nước thải, ghi số nguyên"
-				name="NƯỚC THẢI (ĐỒNG HỒ NHỎ)"
+				type="time"
+				name="KẾT THÚC"
 			  />
-			</div>
-		 
+		</div>
+</div>
+
+<div style="height: 10px"></div>		 
 
 		  <div class="field is-grouped">
 			<div class="control">
@@ -343,6 +266,87 @@
         }
         updateTimestamp();
         setInterval(updateTimestamp, 1000);
+        // Hàm cho select
+       
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /*for each element, create a new DIV that will act as the selected item:*/
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /*for each element, create a new DIV that will contain the option list:*/
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    /*for each option in the original select element,
+    create a new DIV that will act as an option item:*/
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        /*when an item is clicked, update the original select box,
+        and the selected item:*/
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      /*when the select box is clicked, close any other select boxes,
+      and open/close the current select box:*/
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  /*a function that will close all select boxes in the document,
+  except the current select box:*/
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+</script>
     </script>
   </body>
 </html>
