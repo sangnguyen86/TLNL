@@ -6,13 +6,15 @@ body {
 	}
 /* */
 .fisrt-header{
-  height:50px; background:white; border-color:red;
+  height:50px; background:red; border-color:red;
 	        /* Ghim header*/
     position: sticky; 
     top: 0;
 }
 .second-header{
   height:50px; background:blue; border-color:red;
+position: sticky; 
+    top: 50px;
 }
 
 /* Header/Logo Title */
