@@ -1,74 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    	
-    	
-    	<title>CƠ ĐIỆN - LÒ HƠI - MÁY NÉN KHÍ</title>
-    	<!--Import Styles CSS file-->
-    	<link rel="stylesheet" href="mystyles.css"/>
-	<script src="globalvar.js"></script>
-	<script src="othertask.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>BP CƠ ĐIỆN NƯỚC - LÒ HƠI - MÁY NÉN KHÍ</title>	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">	
+</head>
+	
+<body>
+
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+	<div  class="navbar-brand">
+    		<div class="navbar-start">
+      			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/01Main.html">TRANG CHÍNH</a>
+       			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/02Task.html">BẢNG CÔNG VIỆC</a>
+			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/03Plan.html">KẾ HOẠCH</a>
+			<a class="navbar-item  is-selected" href="https://sangnguyen86.github.io/TLNL/04OtherTask.html">PHÂN CÔNG</a>
+			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/05TaskReport.html">BÁO CÁO CÔNG VIỆC</a>
+			<a class="navbar-item"  href="https://sangnguyen86.github.io/TLNL/06WaterRecord.html">CHỈ SỐ NƯỚC</a>    
+    		</div>
+		<div class="navbar-end">
+        		<div class="field is-grouped">
+            			<p id="timestamp" ></p>
+				<script>
+					function updateTimestamp() {
+          				const now = new Date();
+          				const datetime = now.toLocaleString();
+          				document.getElementById("timestamp").textContent = datetime;
+        				}
+        				updateTimestamp();
+        				setInterval(updateTimestamp, 1000);
+				</script>
+        		</div>
+      		</div>
+
+    	</div>
+	
+</nav>
+		<div style="height: 5px">
+		<marquee>MESSAGE</marquee>
+		</div>
+
+	<!-- end-->
 	
 
-</head>
-
-<!-- BODY CONTENTS-->	
-<body>    
-<!-- HEADER -->
-	<header>
-		
-		<div class="header-label-clock">
-			<p id="datetime"></p>
-			<script>
-				function updateDateTime() {
-  				const now = new Date();
-  				const date = now.toLocaleDateString();
-  				const time = now.toLocaleTimeString();
-  				document.getElementById("datetime").innerHTML = "Ngày: " + date + " - Giờ: " + time;}
-				updateDateTime(); // Hiển thị ngay khi trang load
-				setInterval(updateDateTime, 1000); // Cập nhật mỗi giây
-			</script>
-		</div>
-		<div class="header-navbar">
-		<div class="navbar">
-				
-	      			<a href="https://sangnguyen86.github.io/TLNL/KHCV.html">KẾ HOẠCH</a>
-              			<a href="https://sangnguyen86.github.io/TLNL/project.html">DỰ ÁN</a>
-	      			<a href="https://sangnguyen86.github.io/TLNL/dailytask.html">ĐỊNH KỲ</a>
-	      			<a  class="active"  href="https://sangnguyen86.github.io/TLNL/assignothertask.html">VIỆC KHÁC</a>
-				<a href="https://sangnguyen86.github.io/TLNL/LOHOI.html">LÒ HƠI</a>
-	      			
-		</div>
-		</div>
-		<!-- SCROLL MESSAGE -->
-		<div class="header-bottom">
-			<div id='container'>
-		
-			<div class='scroll'>
-        			<div class='item' id ="message01"></div>
-				<div class='item' id ="message02"></div>
-				<div class='item' id ="message03"></div>
-				<div class='item' id ="message04"></div>
-				<div class='item' id ="message05"></div>
  
-    			</div>
-			</div>
-			</div>
-		<script>
-			//const msg01_element = document.getElementById("message01");
-			//const msg02_element = document.getElementById("message02");
-			//const msg03_element = document.getElementById("message03");
-			//const msg04_element = document.getElementById("message04");
-			//const msg05_element = document.getElementById("message05");
-			// HIỂN THỊ
-			//msg01_element.innerHTML = myMessage01;
-			if (myMessage01 ==null) {document.getElementById("message01").style.display = 'none';}else{document.getElementById("message01").innerHTML = myMessage01;}
-			if (myMessage02 == null) {document.getElementById("message02").style.display = 'none';}else{document.getElementById("message02").innerHTML = myMessage02;}
-			if (myMessage03 == null) {document.getElementById("message03").style.display = 'none';}else{document.getElementById("message03").innerHTML = myMessage03;}
-			if (myMessage04 == null) {document.getElementById("message04").style.display = 'none';}else{document.getElementById("message04").innerHTML = myMessage04;}
-			if (myMessage05 == null) {document.getElementById("message05").style.display = 'none';}else{document.getElementById("message05").innerHTML = myMessage05;}
-		</script>
-	</header>
+
+<!-- PHẦN NỘI DUNG -->
+<section class="hero is-primary is-bold is-center">
+	<div class="hero-body container"  style="text-align: center; height:50px; padding: 5px;">             
+		<span style="font-size: 30px; color: #ffffff; font-weight: bold;">BẢNG KẾ HOẠCH DỰ ÁN</span>		
+	</div>
+</section>
 
 <!-- CONTENTS-->
 	<p  style="color:red;font-size:25px;text-align: center"><b>PHÂN CÔNG CÁC VIỆC KHÁC</b></p>
