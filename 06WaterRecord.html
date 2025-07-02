@@ -1,69 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-<title>GHI CHỈ SỐ NƯỚC - CƠ ĐIỆN LÒ HƠI</title>
-	
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>BP CƠ ĐIỆN NƯỚC - LÒ HƠI - MÁY NÉN KHÍ</title>	
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-<link rel ="stylesheet" href="styleheadpage.css"/>
-	
-
-	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">	
 </head>
 	
 <body>
-<HEDAER-->
-<nav class="navbar is-link" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+	<div  class="navbar-brand">
+    		<div class="navbar-start">
+      			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/01Main.html">TRANG CHÍNH</a>
+       			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/02Task.html">BẢNG CÔNG VIỆC</a>
+			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/03Plan.html">KẾ HOẠCH</a>
+			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/04OtherTask.html">PHÂN CÔNG</a>
+			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/05TaskReport.html">BÁO CÁO CÔNG VIỆC</a>
+			<a class="navbar-item  is-selected"  href="https://sangnguyen86.github.io/TLNL/06WaterRecord.html">CHỈ SỐ NƯỚC</a>    
+    		</div>
+		<div class="navbar-end">
+        		<div class="field is-grouped">
+            			<p id="timestamp" ></p>
+				<script>
+					function updateTimestamp() {
+          				const now = new Date();
+          				const datetime = now.toLocaleString();
+          				document.getElementById("timestamp").textContent = datetime;
+        				}
+        				updateTimestamp();
+        				setInterval(updateTimestamp, 1000);
+				</script>
+        		</div>
+      		</div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">TRANG CHÍNH</a>
-
-       <a class="navbar-item">BẢNG CÔNG VIỆC</a>
-	<a class="navbar-item">KẾ HOẠCH</a>
-	<a class="navbar-item">PHÂN CÔNG</a>
-	<a class="navbar-item is-selected" href="https://sangnguyen86.github.io/TLNL/project.html">BÁO CÁO CÔNG VIỆC</a>
-	<a class="navbar-item is-selected" href="https://sangnguyen86.github.io/TLNL/project.html">CHỈ SỐ NƯỚC</a>    
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">KHÁC</a>
-        	<div class="navbar-dropdown">
-          		
-          		
-          		<a class="navbar-item">NHẬT KÝ SỬA CHỮA MÁY</a>
-          			<hr class="navbar-divider">
-          		<a class="navbar-item">BÁO CÁO SỰ CỐ</a>
-        	</div>
-      </div>
-    </div>
-
-	  
-<div class="navbar-end">
-      <div class="navbar-item">
-        <div class="field is-grouped">
-          
-          <p class="control">
-            <p id="timestamp" >
-          </p>
-        </div>
-      </div>
-    </div>
-  
-    
-  </div>
+    	</div>
+	
 </nav>
-
+		<div style="height: 5px">
+		<marquee>MESSAGE</marquee>
+		</div>
 
 	<!-- end-->
 	
