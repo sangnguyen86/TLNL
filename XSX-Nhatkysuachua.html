@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>XƯỞNG SẢN XUẤT - CÔNG TY THUỐC LÁ NGUYÊN LIỆU</title>	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">	
+</head>
+	
+<body>
 
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+	<div  class="navbar-brand">
+    		<div class="navbar-start">
+      			<a class="navbar-item  is-selected" href="">TRANG CHÍNH</a>
+       			<a class="navbar-item" href="">BẢNG CÔNG VIỆC</a>
+			<a class="navbar-item" href="">KẾ HOẠCH</a>
+			<a class="navbar-item" href="">PHÂN CÔNG</a>
+			<a class="navbar-item" href="">BÁO CÁO CÔNG VIỆC</a>
+			<a class="navbar-item"  href="">CHỈ SỐ NƯỚC</a>    
+    		</div>
+		<div class="navbar-end">
+        		<div class="field is-grouped">
+            			<p id="timestamp" ></p>
+				<script>
+					function updateTimestamp() {
+          				const now = new Date();
+          				const datetime = now.toLocaleString();
+          				document.getElementById("timestamp").textContent = datetime;
+        				}
+        				updateTimestamp();
+        				setInterval(updateTimestamp, 1000);
+				</script>
+        		</div>
+      		</div>
+
+    	</div>
+	
+</nav>
+		<div style="height: 5px">
+		<marquee></marquee>
+		</div>
+
+	<!-- end-->
+	
+
+ 
+
+<!-- PHẦN NỘI DUNG -->
+<section class="hero is-primary is-bold is-center">
+	<div class="hero-body container"  style="text-align: center; height:50px; padding: 5px;">             
+		<span style="font-size: 30px; color: #ffffff; font-weight: bold;">NHẬT KÝ SỬA CHỮA</span>		
+	</div>
+</section>
+	
+<div style="height: 10px"></div>
+<iframe src="https://script.google.com/macros/s/AKfycbyezPEmVOMQUI0gzmPK464WBdF5L0WwE2eVvArvwIkLmXPqV0xeTPhvwIgPsZrxsDmwuA/exec" height="800px" width="100%"></iframe>
+				
+  </body>
+</html>
