@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>BP CƠ ĐIỆN NƯỚC - LÒ HƠI - MÁY NÉN KHÍ</title>	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">	
+</head>
+	
+<body>
 
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+	<div  class="navbar-brand">
+    		<div class="navbar-start">
+      			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/01Main.html">TRANG CHÍNH</a>
+       			<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/02Task.html">BẢNG CÔNG VIỆC</a>
+			      <a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/03Plan.html">KẾ HOẠCH</a>
+			      <a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/04OtherTask.html">PHÂN CÔNG</a>
+			      <a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/05TaskReport.html">BÁO CÁO CÔNG VIỆC</a>
+			      <a class="navbar-item"  href="https://sangnguyen86.github.io/TLNL/06WaterRecord.html">CHỈ SỐ NƯỚC</a>
+           <a class="navbar-item  is-selected" href="https://sangnguyen86.github.io/TLNL/TaskListEdit.html">LẬP DANH SÁCH CÔNG VIỆC</a>
+    		</div>
+		<div class="navbar-end">
+        		<div class="field is-grouped">
+            			<p id="timestamp" ></p>
+				<script>
+					function updateTimestamp() {
+          				const now = new Date();
+          				const datetime = now.toLocaleString();
+          				document.getElementById("timestamp").textContent = datetime;
+        				}
+        				updateTimestamp();
+        				setInterval(updateTimestamp, 1000);
+				</script>
+        		</div>
+      		</div>
+
+    	</div>
+	
+</nav>
+		<div style="height: 5px">
+		<marquee>MESSAGE</marquee>
+		</div>
+
+	<!-- end-->
+	
+
+ 
+
+<!-- PHẦN NỘI DUNG -->
+<section class="hero is-primary is-bold is-center">
+	<div class="hero-body container"  style="text-align: center; height:50px; padding: 5px;">             
+		<span style="font-size: 30px; color: #ffffff; font-weight: bold;">Chỉ dành cho cấp quản lý</span>		
+	</div>
+</section>
+	
+<div style="height: 10px"></div>
+
+				
+  </body>
+</html>
