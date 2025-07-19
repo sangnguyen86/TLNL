@@ -1,0 +1,66 @@
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit
+}
+
+tfoot {
+    display: table-footer-group;
+    vertical-align: middle;
+    border-color: inherit
+}
+
+table > tr {
+    vertical-align: middle;
+}
+
+col {
+    display: table-column
+}
+
+colgroup {
+    display: table-column-group
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit
+}
+
+th {
+    font-weight: bold
+}
+
+caption {
+    display: table-caption;
+    text-align: -webkit-center
+}
+/* Rows level*/
+.highlightlevel01 {background-color: #F4412DFF; color: white;} 
+.highlightlevel02 {background-color: #FFA500;color: white;} /*#FFA500 orange*/
+.highlightlevel03 {background-color: yellow;color: black;} /* FFFF00 yellow*/
+.highlightlevel04 {background-color: #pink;color: #0E4274;} /*Hồng – Xanh dương đậm (#FAEBEF – #0E4274)*/
+.highlightlevel05 {background-color: #6F56A6;color: #F1E5FF;} /*Tím đậm – Tím nhạt (#6F56A6 – #F1E5FF*/
+.highlightlevel06 {background-color:#00539CFF;color: #89CFF0;} /*#00539CFF xanh dương Xanh ngọc – Xanh dương nhạt (#0D706E – #CEEFFA)*/
+.highlightlevel07 {background-color: #2BAE66FF;color: white;} /* xanh lá cây */
+.highlightlevel08 {background-color: #00203FFF;color: #ADEFD1FF;} /* xanh navy và xanh bạc hà */
+

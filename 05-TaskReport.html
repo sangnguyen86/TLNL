@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>BP CƠ ĐIỆN NƯỚC - LÒ HƠI - MÁY NÉN KHÍ</title>	
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+	</head>
+	
+<body>
+	<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+		<div  class="navbar-brand">
+    			<div class="navbar-start">
+      				<a class="navbar-item  is-selected" href="https://sangnguyen86.github.io/TLNL/01-Main.html">TRANG CHÍNH</a>
+       				<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/02-TaskList.html">BẢNG CÔNG VIỆC</a>
+				<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/03-PlanList.html">KẾ HOẠCH</a>
+				<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/04-MaintList.html">BẢO DƯỠNG</a>
+				<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/05-TaskReport.html">BÁO CÁO CÔNG VIỆC</a>
+				<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/06-WaterRecord.html">CHỈ SỐ NƯỚC</a>
+				<a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/07-Suggestion.html">ĐỀ XUẤT VẬT TƯ</a>
+
+        <a class="navbar-item" href="https://sangnguyen86.github.io/TLNL/09-KTDien.html">KT ĐIỆN</a>
+    			</div>
+			<div class="navbar-end">
+        			<div class="field is-grouped">
+            				<p id="timestamp" ></p>
+						<script>
+						function updateTimestamp() {
+          					const now = new Date();
+          					const datetime = now.toLocaleString();
+          					document.getElementById("timestamp").textContent = datetime;
+        					}
+        					updateTimestamp();
+        					setInterval(updateTimestamp, 1000);
+						</script>
+        			</div>
+      			</div>
+    		</div>	
+	</nav>
+<!-- TỰ ĐỀ CHO TRANG -->
+<section class="hero is-primary is-bold is-center">
+<div class="hero-body container"  style="text-align: center; height:50px; padding: 5px;">             
+<span style="font-size: 30px; color: #ffffff; font-weight: bold;">BÁO CÁO CÔNG VIỆC</span>		
+</div>
+</section>	
+<div style="height: 10px"></div>
+<!--PHẦN NHÚNG NỘI DUNG-->	
+	<iframe src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec" height="800px" width="100%"></iframe>
+
+<!-- KẾT THÚC NHÚNG NỘI DUNG-->	
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
