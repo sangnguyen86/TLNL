@@ -39,7 +39,7 @@
   <!--LOGO + BANNER-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid text-center">
-      <h1 class="text-primary text-center mb-0">BP CƠ ĐIỆN - LÒ HƠI - MÁY NÉN KHÍ</h1>
+      <h1 class="text-primary text-center mb-0">XƯỞNG SẢN XUẤT</h1>
     </div>
   </nav>
 
@@ -54,22 +54,61 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">TRANG CHỦ</a>
           </li>
+          <!-- XƯỞNG SẢN XUẤT -->
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown">XƯỞNG SẢN XUẤT</a>
+            <ul class="dropdown-menu dropdown-menu-dark shadow">
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">ĐỀ XUẤT SỬA CHỮA</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">ĐỀ XUẤT VẬT TƯ</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">BÁO CÁO SỬA CHỮA</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">BÁO CÁO NHẬN VẬT TƯ</a></li>
+            </ul> 
+          </li>
           <!-- CƠ ĐIỆN -->
           <li class="nav-item dropdown">
             <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown">TỔ CƠ ĐIỆN</a>
             <ul class="dropdown-menu dropdown-menu-dark shadow">
-              <li><a class="dropdown-item iframe-link" data-target="taskListFrame" href="#">TASK LIST</a></li>
-              <li><a class="dropdown-item iframe-link" data-target="planListFrame" href="#">PLAN LIST</a></li>
-              <li><a class="dropdown-item iframe-link" data-target="maintListFrame" href="#">MAINT LIST</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="taskListFrame" href="#">BẢNG CÔNG VIỆC</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="planListFrame" href="#">BẢNG KẾ HOẠCH</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="maintListFrame" href="#">LỊCH BẢO TRÌ</a></li>
               <li class="dropend">
                 <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">BÁO CÁO & GHI CHỈ SỐ</a>
                 <ul class="dropdown-menu dropdown-menu-dark shadow">
-                  <li><a class="dropdown-item iframe-link" data-target="taskReportFrame" href="#">TASK REPORT</a></li>
+                  <li><a class="dropdown-item iframe-link" data-target="taskReportFrame" href="#">BÁO CÁO CÔNG VIỆC HÀNG NGÀY</a></li>
+                  <li><a class="dropdown-item iframe-link" data-target="" href="#">ĐỀ XUẤT VẬT TƯ</a></li>
+                  <li><a class="dropdown-item iframe-link" data-target="" href="#">BÁO CÁO NHẬN VẬT TƯ</a></li>
                   <li><a class="dropdown-item iframe-link" data-target="waterRecordFrame" href="#">GHI CHỈ SỐ NƯỚC</a></li>
                   <li><a class="dropdown-item iframe-link" data-target="motorRecordFrame" href="#">GHI CHỈ SỐ MÔ TƠ</a></li>
                 </ul>
               </li>
+              <li class="dropend">
+                <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">NỘI DUNG CÔNG VIỆC THƯỜNG NGÀY</a>
+                <ul class="dropdown-menu dropdown-menu-dark shadow">
+                  <li><a class="dropdown-item iframe-link" data-target="" href="#">NHÂN VIÊN KỸ THUẬT ĐIỆN</a></li>
+                  <li><a class="dropdown-item iframe-link" data-target="" href="#">NHÂN VIÊN KỸ THUẬT CƠ KHÍ</a></li>
+                  <li><a class="dropdown-item iframe-link" data-target="" href="#">CÔNG VIỆC KHÁC</a></li>
+                </ul>
+              </li>
             </ul>
+          </li>
+          <!-- LÒ HƠI -->
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown">TỔ LÒ HƠI</a>
+            <ul class="dropdown-menu dropdown-menu-dark shadow">
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">BÁO CÁO SỬA CHỮA</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">BÁO CÁO NHẬN VẬT TƯ</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">BÁO CÁO NHẬN VẬT TƯ</a></li>
+            </ul> 
+          </li>
+          <!-- THỐNG KÊ -->
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown">THỐNG KÊ</a>
+            <ul class="dropdown-menu dropdown-menu-dark shadow">
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">BÁO CÁO SẢN XUẤT THEO NGÀY</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">BÁO CÁO SẢN XUẤT THEO CA</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">NGUYÊN VẬT LIỆU</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">CÂN NHẬP THAN</a></li>
+            </ul> 
           </li>
           <!-- ADMIN -->
           <li class="nav-item dropdown">
@@ -78,7 +117,8 @@
               <li><a class="dropdown-item iframe-link" data-target="taskManagementFrame" href="#">TASK MANAGEMENT</a></li>
               <li><a class="dropdown-item iframe-link" data-target="planManagementFrame" href="#">PLAN MANAGEMENT</a></li>
               <li><a class="dropdown-item iframe-link" data-target="maintManagementFrame" href="#">MAINT MANAGEMENT</a></li>
-              <li><a class="dropdown-item iframe-link" data-target="machineManagementFrame" href="#">MACHINE MANAGEMENT</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="machineManagementFrame" href="#">MACHINES MANAGEMENT</a></li>
+              <li><a class="dropdown-item iframe-link" data-target="" href="#">EMPLOYEES MANAGEMENT</a></li>
             </ul>
           </li>
         </ul>
@@ -88,16 +128,21 @@
 
   <!-- NỘI DUNG -->
   <div class="content-wrapper">
+    <!--CÁC FRAME DÀNH CHO XƯỞNG SẢN XUẤT-->
+    <!--CÁC FRAME DÀNH CHO CƠ ĐIỆN-->
     <iframe id="taskListFrame" src="https://script.google.com/macros/s/AKfycbw-dxt1WJ-cQWxe8r5MMa6Cu4h1_rzcb0dBNig3k1BQwRCzlRXHYan1THUb3dSZs-24Wg/exec"></iframe>
     <iframe id="planListFrame" src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
     <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbyvcF1S-_RXhg7zKnG6-WF8MjZnweb3TQdgJo-GLc85tQY4xRxBQbheXIMsaVGpIUkI/exec"></iframe>
     <iframe id="taskReportFrame" src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
     <iframe id="waterRecordFrame" src="https://script.google.com/macros/s/AKfycbw3DxX2gVyv8A-SbeAJct80V-y3K3YNiVNavsueSbrNZeieqel-qkC4Fkxm25harnpAsw/exec"></iframe>
     <iframe id="motorRecordFrame" src="https://script.google.com/macros/s/AKfycbxpHonjPCZ9Vin42ZATGEPGD09XWZ8MI76MI1kuE3lwHKV09_Yb_XeL193SVvnrSthe/exec"></iframe>
+    <!--CÁC FRAME DÀNH CHO THỐNG KÊ-->
+    <!--CÁC FRAME DÀNH CHO ADMIN-->
     <iframe id="taskManagementFrame" src="https://script.google.com/macros/s/AKfycbzB3Y5wpOclBvP9749VW-G5RsMn76rrhoAm-9UPCOQZNZWjeKyG8-hh1VyF5aSNGBdr/exec"></iframe>
     <iframe id="planManagementFrame" src="https://script.google.com/macros/s/AKfycbwxMXRpCIeSCUOaUbYWElUMhKBjbNzNwwa0G6K1gwI9bIUWxrI7bpjK2xF4-j5lsosKIQ/exec"></iframe>
     <iframe id="maintManagementFrame" src="https://script.google.com/macros/s/AKfycbzgS6dX5AUsktBIPM0KRyuAnptawZqMUjJCTYffK7MP7yuaZNAPsf_DsnRqKdmo8jwivg/exec"></iframe>
     <iframe id="machineManagementFrame" src="https://script.google.com/macros/s/AKfycbxrkItnU0Qk1gyiZsKFBbk6npR2DQe1ANepY9xSduyac8ySZrxjC0Gy4cuVCewsP-oG/exec"></iframe>
+    <iframe id="employeeManagementFrame" src=""></iframe>
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
