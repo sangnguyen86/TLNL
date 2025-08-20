@@ -130,6 +130,8 @@
 
   <!-- NỘI DUNG -->
   <div class="content-wrapper">
+    <!--CÁC FRAME TRANG CHÍNH-->
+    <iframe id="mainFrame" src=""></iframe>
     <!--CÁC FRAME DÀNH CHO XƯỞNG SẢN XUẤT-->
     <iframe id="plantWorkReportFrame" src="https://script.google.com/macros/s/AKfycbyezPEmVOMQUI0gzmPK464WBdF5L0WwE2eVvArvwIkLmXPqV0xeTPhvwIgPsZrxsDmwuA/exec"></iframe>
     <!--CÁC FRAME DÀNH CHO CƠ ĐIỆN-->
@@ -168,7 +170,7 @@
     });
 
     // Hiện mặc định iframe đầu tiên
-    document.getElementById("taskListFrame").classList.add("active");
+    document.getElementById("mainFrame").classList.add("active");
   </script>
 </body>
 </html>
