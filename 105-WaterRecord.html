@@ -8,7 +8,6 @@
   <!-- NinjaBootstrap (Bootstrap 5) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" media="all">
   <style>
-    /* Layout dùng CSS Grid: 2 thanh navbar + phần nội dung chiếm 1fr */
     html, body { height: 100%; }
     body {
       min-height: 100dvh;
@@ -16,10 +15,7 @@
       grid-template-rows: auto auto 1fr;
       background: #121212;
     }
-    /* Phần nội dung có chiều cao linh hoạt, cho phép con (iframe) cao 100% */
-    .content-wrap {
-      min-height: 0; /* Rất quan trọng để phần con có thể 100% trong grid */
-    }
+    .content-wrap { min-height: 0; }
     .content-inner {
       height: 100%;
       display: flex;
@@ -31,15 +27,12 @@
       border-bottom: 1px solid rgba(255,255,255,.1);
       box-shadow: 0 .25rem .75rem rgba(0,0,0,.25) inset;
     }
-    .content-header {
-      padding: .75rem 1rem .25rem 1rem;
-      text-align: center;
-    }
+    .content-header { padding: .75rem 1rem .25rem 1rem; text-align: center; }
     .iframe-wrap {
       position: relative;
       flex: 1 1 auto;
-      min-height: 0; /* Cho phép iframe cao 100% */
-      overflow: hidden; /* Không để body cuộn, chỉ cuộn trong iframe nếu cần */
+      min-height: 0;
+      overflow: hidden;
       border-top: 1px solid rgba(255,255,255,.08);
     }
     .iframe-wrap iframe {
@@ -50,7 +43,6 @@
       border: 0;
       background: #000;
     }
-    /* Spinner ở giữa khi đang tải iframe */
     .iframe-spinner {
       position: absolute;
       inset: 0;
@@ -61,15 +53,13 @@
       transition: opacity .25s ease;
     }
     .iframe-spinner.hide { opacity: 0; pointer-events: none; }
-    /* Tối ưu clickable area trên mobile */
     .navbar .nav-link { padding-top: .5rem; padding-bottom: .5rem; }
-    /* Tên bộ phận to, gọn */
     .brand-title { font-size: clamp(1rem, 3.5vw, 1.75rem); }
   </style>
 </head>
 
 <body>
-  <!-- Banner / Tiêu đề -->
+  <!-- Banner -->
   <nav class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container-fluid justify-content-center py-2">
       <h1 class="brand-title text-primary m-0 text-center fw-bold">
@@ -78,28 +68,25 @@
     </div>
   </nav>
 
-  <!-- Menu điều hướng -->
+  <!-- Menu -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <div class="container-fluid">
       <a class="navbar-brand d-lg-none" href="#">MENU</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbar-content">
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="https://sangnguyen86.github.io/TLNL/100-Main.html">TRANG CHỦ</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="https://sangnguyen86.github.io/TLNL/100-Main.html">TRANG CHỦ</a></li>
 
-          <!-- TỔ CƠ ĐIỆN -->
+          <!-- CƠ ĐIỆN -->
           <li class="nav-item dropdown">
-            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">TỔ CƠ ĐIỆN</a>
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown">TỔ CƠ ĐIỆN</a>
             <ul class="dropdown-menu dropdown-menu-dark shadow">
               <li><a class="dropdown-item" href="https://sangnguyen86.github.io/TLNL/101-TaskList.html">BẢNG CÔNG VIỆC</a></li>
               <li><a class="dropdown-item" href="https://sangnguyen86.github.io/TLNL/102-PlanList.html">KẾ HOẠCH DỰ ÁN</a></li>
               <li><hr class="dropdown-divider"></li>
-
               <li class="dropend">
                 <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">BÁO CÁO VÀ GHI CHỈ SỐ</a>
                 <ul class="dropdown-menu dropdown-menu-dark shadow">
@@ -108,9 +95,7 @@
                   <li><a class="dropdown-item" href="https://sangnguyen86.github.io/TLNL/107-MotorRecord.html">GHI CHỈ SỐ DÒNG ĐIỆN MÔ TƠ</a></li>
                 </ul>
               </li>
-
               <li><hr class="dropdown-divider"></li>
-
               <li class="dropend">
                 <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">PHÂN CÔNG CÔNG VIỆC</a>
                 <ul class="dropdown-menu dropdown-menu-dark shadow">
@@ -122,9 +107,9 @@
             </ul>
           </li>
 
-          <!-- TỔ LÒ HƠI -->
+          <!-- LÒ HƠI -->
           <li class="nav-item dropdown">
-            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">TỔ LÒ HƠI</a>
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown">TỔ LÒ HƠI</a>
             <ul class="dropdown-menu dropdown-menu-dark shadow">
               <li><a class="dropdown-item" href="#">Link 1</a></li>
               <li><a class="dropdown-item" href="#">Link 2</a></li>
@@ -140,14 +125,14 @@
             </ul>
           </li>
 
-          <!-- Mục đơn -->
+          <!-- Các mục khác -->
           <li class="nav-item"><a class="nav-link active" href="https://sangnguyen86.github.io/TLNL/103-MaintList.html">BẢO TRÌ BẢO DƯỠNG</a></li>
           <li class="nav-item"><a class="nav-link active" href="https://sangnguyen86.github.io/TLNL/204-Than.html">THAN ĐÁ</a></li>
           <li class="nav-item"><a class="nav-link active" href="https://sangnguyen86.github.io/TLNL/106-Suggestion.html">ĐỀ XUẤT VẬT TƯ</a></li>
 
           <!-- ADMIN -->
           <li class="nav-item dropdown">
-            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">ADMIN</a>
+            <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown">ADMIN</a>
             <ul class="dropdown-menu dropdown-menu-dark shadow">
               <li><a class="dropdown-item" href="https://sangnguyen86.github.io/TLNL/201-AdminTaskList.html">TASK MANAGEMENT</a></li>
               <li><a class="dropdown-item" href="https://sangnguyen86.github.io/TLNL/202-AdminPlanList.html">PLANT MANAGEMENT</a></li>
@@ -166,70 +151,34 @@
             </ul>
           </li>
         </ul>
-
-        <!-- Search -->
-        <form class="d-flex ms-auto mt-2 mt-lg-0" role="search">
-          <div class="input-group">
-            <input class="form-control border-0" type="search" placeholder="Tìm kiếm" aria-label="Search">
-            <button class="btn btn-primary border-0" type="submit">Tìm kiếm</button>
-          </div>
-        </form>
       </div>
     </div>
   </nav>
 
-  <!-- NỘI DUNG -->
+  <!-- Nội dung -->
   <div class="content-wrap">
     <div class="content-inner">
       <div class="content-header">
         <h3 class="h5 m-0">BẢNG GHI CHỈ SỐ NƯỚC</h3>
       </div>
-
       <div class="iframe-wrap">
-        <!-- Spinner khi đang tải -->
         <div id="iframeSpinner" class="iframe-spinner">
           <div class="text-center">
-            <div class="spinner-border" role="status" aria-hidden="true"></div>
+            <div class="spinner-border" role="status"></div>
             <div class="mt-3">Đang tải dữ liệu…</div>
           </div>
         </div>
-
-        <!-- IFRAME GAS WEB APP -->
-        <!-- Có thể đổi src bên dưới theo app của bạn -->
-        <iframe
-          id="gasFrame"
-          title="WaterRecord"
-          src="https://script.google.com/macros/s/AKfycbxjUfLYLTdO6DoD3qveXAXboEeu85XeT8RhWKzVIH0qcaezZz5rxetV1OrcRjdt7nrUgQ/exec"
-          referrerpolicy="no-referrer"
-          loading="lazy"
-        ></iframe>
+        <iframe id="gasFrame" src="https://script.google.com/macros/s/AKfycbxjUfLYLTdO6DoD3qveXAXboEeu85XeT8RhWKzVIH0qcaezZz5rxetV1OrcRjdt7nrUgQ/exec"></iframe>
       </div>
     </div>
   </div>
 
-  <!-- JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Ẩn spinner khi iframe load xong hoặc khi lỗi (có thể do CORS chặn onload tùy app)
-    (function(){
-      const spinner = document.getElementById('iframeSpinner');
-      const frame   = document.getElementById('gasFrame');
-
-      // Trường hợp onload hoạt động
-      frame.addEventListener('load', function(){
-        spinner.classList.add('hide');
-      });
-
-      // Timeout fallback 6s nếu onload không bắn
-      setTimeout(()=> spinner.classList.add('hide'), 6000);
-
-      // Xử lý full-height mượt trên iOS Safari (đôi khi 100vh bị trừ thanh address)
-      const setVH = () => {
-        document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
-      };
-      setVH();
-      window.addEventListener('resize', setVH);
-    })();
+    const spinner = document.getElementById('iframeSpinner');
+    const frame   = document.getElementById('gasFrame');
+    frame.addEventListener('load', ()=> spinner.classList.add('hide'));
+    setTimeout(()=> spinner.classList.add('hide'), 6000);
   </script>
 </body>
 </html>
