@@ -68,57 +68,7 @@
     </div>
   </nav>
 
-  <!-- ====== CHỌN NGÀY + KHỐI KẾT QUẢ DẠNG DÒNG ====== -->
-  <div class="container-fluid bg-light text-dark py-3">
-    <div class="card shadow-sm shift-card">
-      <div class="card-body">
-        <div class="row g-3 align-items-center mb-3">
-          <div class="col-auto">
-            <label for="workDate" class="form-label fw-bold mb-0">Chọn ngày:</label>
-          </div>
-          <div class="col-auto">
-            <input type="date" id="workDate" class="form-control"/>
-          </div>
-        </div>
-
-        <!-- 5 khối hiển thị từng dòng -->
-        <div class="row g-3">
-          <div class="col-12 col-md-6 col-xl">
-            <div class="p-3 border rounded-3 h-100">
-              <div class="shift-title">Kíp 1 Lò hơi</div>
-              <div id="k1" class="small"></div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl">
-            <div class="p-3 border rounded-3 h-100">
-              <div class="shift-title">Kíp 2 Lò hơi</div>
-              <div id="k2" class="small"></div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl">
-            <div class="p-3 border rounded-3 h-100">
-              <div class="shift-title">Kíp 3 Lò hơi</div>
-              <div id="k3" class="small"></div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl">
-            <div class="p-3 border rounded-3 h-100">
-              <div class="shift-title">Ca Sáng</div>
-              <div id="caSang" class="small"></div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-xl">
-            <div class="p-3 border rounded-3 h-100">
-              <div class="shift-title">Ca Chiều</div>
-              <div id="caChieu" class="small"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <!-- ====== HẾT KHỐI KẾT QUẢ ====== -->
+  
 
   <!-- KHU VỰC NỘI DUNG (IFRAME) -->
   <div class="content-wrapper">
@@ -169,68 +119,7 @@
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
       if (defaultLink) defaultLink.classList.add('active');
 
-      /* ====== PHẦN MỚI: KÍP/CA DẠNG DÒNG ====== */
-      const baseDate = new Date("2025-01-01"); // mốc A5
-
-      // Nhân sự theo nhóm (mỗi phần tử là một người)
-      const groupA = ["Mạnh Hiền","Quốc Thắng"];
-      const groupB = ["Cường Thịnh","Minh Tú"];
-      const groupC = ["Đức Thịnh","Ngọc Hiếu"];
-      const kipOrder = [groupA, groupB, groupC]; // thứ tự A->B->C
-
-      // Ca (điền tên thật nếu có)
-      const caA = ["Ca A"];
-      const caB = ["Ca B"];
-      const caOrder = [caA, caB];
-
-      // Mốc hàng 5: B5, C5, D5, E5, F5 (tham chiếu đúng tới mảng ở trên)
-      const baseKip = [groupB, groupC, groupA];
-      const baseCa  = [caB, caA];
-
-      const dateEl  = document.getElementById('workDate');
-      const k1El    = document.getElementById('k1');
-      const k2El    = document.getElementById('k2');
-      const k3El    = document.getElementById('k3');
-      const caSEl   = document.getElementById('caSang');
-      const caCEl   = document.getElementById('caChieu');
-
-      function weeksBetween(d1, d2){ return Math.floor((d1 - d2) / (1000*60*60*24*7)); }
-      function rotateByStart(startArr, orderArr, k){
-        const startIdx = orderArr.indexOf(startArr);
-        const pos = (startIdx + k) % orderArr.length;
-        return orderArr[pos];
-      }
-      function computeShifts(isoDate){
-        const d = new Date(isoDate);
-        if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
-        const k = weeksBetween(d, baseDate);
-        return {
-          k1: rotateByStart(baseKip[0], kipOrder, k),
-          k2: rotateByStart(baseKip[1], kipOrder, k),
-          k3: rotateByStart(baseKip[2], kipOrder, k),
-          caS: rotateByStart(baseCa[0],  caOrder,  k),
-          caC: rotateByStart(baseCa[1],  caOrder,  k)
-        };
-      }
-      function renderLines(el, arr){
-        el.innerHTML = arr.map(name => `<div class="person-line">${name}</div>`).join("");
-      }
-      function render(isoDate){
-        const r = computeShifts(isoDate);
-        renderLines(k1El,  r.k1);
-        renderLines(k2El,  r.k2);
-        renderLines(k3El,  r.k3);
-        renderLines(caSEl, r.caS);
-        renderLines(caCEl, r.caC);
-      }
-
-      // Mặc định hôm nay
-      const today = new Date().toISOString().split('T')[0];
-      dateEl.value = today;
-      render(today);
-
-      // Khi đổi ngày
-      dateEl.addEventListener('change', () => render(dateEl.value));
+      
     });
   </script>
 </body>
