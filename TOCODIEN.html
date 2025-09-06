@@ -106,7 +106,47 @@
       </div>
     </div>
   </nav>
+  <!-- ====== KHỐI CHỌN NGÀY + BẢNG KẾT QUẢ (MỚI THÊM) ====== -->
+  <div class="container-fluid bg-light text-dark py-3">
+    <div class="card shadow-sm shift-card">
+      <div class="card-body">
+        <div class="row g-3 align-items-center mb-2">
+          <div class="col-auto">
+            <label for="workDate" class="form-label fw-bold mb-0">Chọn ngày:</label>
+          </div>
+          <div class="col-auto">
+            <input type="date" id="workDate" class="form-control"/>
+          </div>
+          
+        </div>
 
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped shift-table mb-0">
+            <thead class="table-dark">
+              <tr>
+                <th>Kíp 1 Lò hơi</th>
+                <th>Kíp 2 Lò hơi</th>
+                <th>Kíp 3 Lò hơi</th>
+                <th>Ca Sáng</th>
+                <th>Ca Chiều</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="k1"></td>
+                <td id="k2"></td>
+                <td id="k3"></td>
+                <td id="caSang"></td>
+                <td id="caChieu"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ====== HẾT KHỐI CHỌN NGÀY ====== -->
   <!-- KHU VỰC NỘI DUNG (IFRAME) -->
   <div class="content-wrapper">
     <!-- Iframe "Trang chủ": để trống src; nếu cần, gán src tại đây -->
@@ -187,6 +227,71 @@
       // Đồng bộ "active" trên menu tương ứng
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
       if (defaultLink) defaultLink.classList.add('active');
+      // ====== PHẦN MỚI: TÍNH KÍP/CA THEO NGÀY ======
+      // — Giả định mốc hàng 5 như hình bạn gửi:
+      //   A5 = 2025-01-01 (mốc ngày), B5=Nhóm B, C5=Nhóm C, D5=Nhóm A, E5=Ca B, F5=Ca A
+      const baseDate = new Date("2025-01-01");     // A5
+      // Gán danh sách nhân sự thay cho Nhóm A/B/C
+      const groupA = "Mạnh Hiền, Quốc Thắng";
+      const groupB = "Cường Thịnh, Minh Tú";
+      const groupC = "Đức Thịnh, Ngọc Hiếu";
+      // Ca thì bạn có thể làm tương tự:
+      const caA = "Ca A"; 
+      const caB = "Ca B";
+      // Mốc hàng 5 (tùy vào bạn muốn ai làm mốc)
+      const baseKip  = [groupB, groupC, groupA]; // B5, C5, D5
+      const baseCa   = [caB, caA];               // E5, F5
+
+      const kipOrder = [groupA, groupB, groupC];   // thứ tự xoay chuẩn
+      const caOrder  = [caA, caB];
+
+      const dateInput = document.getElementById('workDate');
+      const cellK1 = document.getElementById('k1');
+      const cellK2 = document.getElementById('k2');
+      const cellK3 = document.getElementById('k3');
+      const cellCaS = document.getElementById('caSang');
+      const cellCaC = document.getElementById('caChieu');
+
+      function weeksBetween(d1, d2){
+        return Math.floor((d1 - d2) / (1000*60*60*24*7));
+      }
+
+      function rotateByStart(startLabel, orderArr, k){
+        const startIdx = orderArr.indexOf(startLabel);
+        const pos = (startIdx + k) % orderArr.length;
+        return orderArr[pos];
+      }
+
+      function computeShifts(isoDate){
+        const d = new Date(isoDate);
+        if (isNaN(d)) return { k1:"",k2:"",k3:"", caS:"", caC:"" };
+        const k = weeksBetween(d, baseDate); // số tuần từ mốc
+
+        return {
+          k1: rotateByStart(baseKip[0], kipOrder, k),
+          k2: rotateByStart(baseKip[1], kipOrder, k),
+          k3: rotateByStart(baseKip[2], kipOrder, k),
+          caS: rotateByStart(baseCa[0],  caOrder,  k),
+          caC: rotateByStart(baseCa[1],  caOrder,  k)
+        };
+      }
+
+      function render(isoDate){
+        const r = computeShifts(isoDate);
+        cellK1.textContent = r.k1;
+        cellK2.textContent = r.k2;
+        cellK3.textContent = r.k3;
+        cellCaS.textContent = r.caS;
+        cellCaC.textContent = r.caC;
+      }
+
+      // Mặc định hôm nay
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.value = today;
+      render(today);
+
+      // Khi đổi ngày
+      dateInput.addEventListener('change', () => render(dateInput.value));
     });
   </script>
 </body>
