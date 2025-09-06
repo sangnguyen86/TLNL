@@ -109,26 +109,10 @@
         </div>
 
         <div class="table-responsive">
-          <table class="table table-bordered table-striped shift-table mb-0">
-            <thead class="table-dark">
-              <tr>
-                <th>Kíp 1 Lò hơi</th>
-                <th>Kíp 2 Lò hơi</th>
-                <th>Kíp 3 Lò hơi</th>
-                <th>Ca Sáng</th>
-                <th>Ca Chiều</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td id="k1"></td>
-                <td id="k2"></td>
-                <td id="k3"></td>
-                <td id="caSang"></td>
-                <td id="caChieu"></td>
-              </tr>
-            </tbody>
-          </table>
+
+        <div id="lineKip" class="fw-semibold py-1"></div>
+        <div id="lineCa"  class="fw-semibold py-1"></div>
+
         </div>
 
       </div>
@@ -195,71 +179,69 @@
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
       if (defaultLink) defaultLink.classList.add('active');
 
-      // ====== PHẦN MỚI: TÍNH KÍP/CA THEO NGÀY ======
-      // — Giả định mốc hàng 5 như hình bạn gửi:
-      //   A5 = 2025-01-01 (mốc ngày), B5=Nhóm B, C5=Nhóm C, D5=Nhóm A, E5=Ca B, F5=Ca A
-      const baseDate = new Date("2025-01-01");     // A5
-      // Gán danh sách nhân sự thay cho Nhóm A/B/C
-      const groupA = "Mạnh Hiền, Quốc Thắng";
-      const groupB = "Cường Thịnh, Minh Tú";
-      const groupC = "Đức Thịnh, Ngọc Hiếu";
-      // Ca thì bạn có thể làm tương tự:
-      const caA = "Ca A"; 
-      const caB = "Ca B";
-      // Mốc hàng 5 (tùy vào bạn muốn ai làm mốc)
-      const baseKip  = [groupB, groupC, groupA]; // B5, C5, D5
-      const baseCa   = [caB, caA];               // E5, F5
 
-      const kipOrder = [groupA, groupB, groupC];   // thứ tự xoay chuẩn
-      const caOrder  = [caA, caB];
+      // ====== PHẦN MỚI: KÍP/CA – HIỂN THỊ 2 DÒNG ======
+    const baseDate = new Date("2025-01-01"); // mốc A5
 
-      const dateInput = document.getElementById('workDate');
-      const cellK1 = document.getElementById('k1');
-      const cellK2 = document.getElementById('k2');
-      const cellK3 = document.getElementById('k3');
-      const cellCaS = document.getElementById('caSang');
-      const cellCaC = document.getElementById('caChieu');
+    // Nhân sự theo nhóm (mỗi phần tử là 1 người)
+    const groupA = ["Mạnh Hiền","Quốc Thắng"];
+    const groupB = ["Cường Thịnh","Minh Tú"];
+    const groupC = ["Đức Thịnh","Ngọc Hiếu"];
+    const kipOrder = [groupA, groupB, groupC]; // A -> B -> C
 
-      function weeksBetween(d1, d2){
-        return Math.floor((d1 - d2) / (1000*60*60*24*7));
-      }
+    // Ca (điền tên thật nếu có; tạm để nhãn)
+    const caA = ["Ca A"];
+    const caB = ["Ca B"];
+    const caOrder = [caA, caB];
 
-      function rotateByStart(startLabel, orderArr, k){
-        const startIdx = orderArr.indexOf(startLabel);
-        const pos = (startIdx + k) % orderArr.length;
-        return orderArr[pos];
-      }
+    // Mốc hàng 5: B5, C5, D5, E5, F5 (tham chiếu đúng tới mảng ở trên)
+    const baseKip = [groupB, groupC, groupA];
+    const baseCa  = [caB, caA];
 
-      function computeShifts(isoDate){
-        const d = new Date(isoDate);
-        if (isNaN(d)) return { k1:"",k2:"",k3:"", caS:"", caC:"" };
-        const k = weeksBetween(d, baseDate); // số tuần từ mốc
+    const dateEl  = document.getElementById('workDate');
+    const lineKip = document.getElementById('lineKip');
+    const lineCa  = document.getElementById('lineCa');
 
-        return {
-          k1: rotateByStart(baseKip[0], kipOrder, k),
-          k2: rotateByStart(baseKip[1], kipOrder, k),
-          k3: rotateByStart(baseKip[2], kipOrder, k),
-          caS: rotateByStart(baseCa[0],  caOrder,  k),
-          caC: rotateByStart(baseCa[1],  caOrder,  k)
-        };
-      }
+    function weeksBetween(d1, d2){
+      return Math.floor((d1 - d2) / (1000*60*60*24*7));
+    }
+    // Xoay theo mốc: startArr phải là 1 phần tử trong orderArr
+    function rotateByStart(startArr, orderArr, k){
+      const startIdx = orderArr.indexOf(startArr);
+      const pos = (startIdx + k) % orderArr.length;
+      return orderArr[pos];
+    }
+    function computeShifts(isoDate){
+      const d = new Date(isoDate);
+      if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
+      const k = weeksBetween(d, baseDate);
+      return {
+        k1: rotateByStart(baseKip[0], kipOrder, k),
+        k2: rotateByStart(baseKip[1], kipOrder, k),
+        k3: rotateByStart(baseKip[2], kipOrder, k),
+        caS: rotateByStart(baseCa[0],  caOrder,  k),
+        caC: rotateByStart(baseCa[1],  caOrder,  k)
+      };
+    }
+    function render(isoDate){
+      const r = computeShifts(isoDate);
+      const kip1 = r.k1.join(", ");
+      const kip2 = r.k2.join(", ");
+      const kip3 = r.k3.join(", ");
+      const caS  = r.caS.join(", ");
+      const caC  = r.caC.join(", ");
 
-      function render(isoDate){
-        const r = computeShifts(isoDate);
-        cellK1.textContent = r.k1;
-        cellK2.textContent = r.k2;
-        cellK3.textContent = r.k3;
-        cellCaS.textContent = r.caS;
-        cellCaC.textContent = r.caC;
-      }
+      lineKip.textContent = `Kíp 1: ${kip1} | Kíp 2: ${kip2} | Kíp 3: ${kip3}`;
+      lineCa.textContent  = `Ca sáng: ${caS} | Ca chiều: ${caC}`;
+    }
 
-      // Mặc định hôm nay
-      const today = new Date().toISOString().split('T')[0];
-      dateInput.value = today;
-      render(today);
+    // Mặc định hôm nay
+    const today = new Date().toISOString().split('T')[0];
+    dateEl.value = today;
+    render(today);
 
-      // Khi đổi ngày
-      dateInput.addEventListener('change', () => render(dateInput.value));
+    // Khi đổi ngày
+    dateEl.addEventListener('change', () => render(dateEl.value));
     });
   </script>
 </body>
