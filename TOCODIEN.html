@@ -22,7 +22,7 @@
     .shift-title { font-weight: 700; margin-bottom: .25rem; }
     .person-line { padding: .25rem .5rem; border-bottom: 1px dashed #e5e7eb; }
     .person-line:last-child { border-bottom: 0; }
-    .single-line{ white-space:nowrap; overflow:auto; }
+    .single-line{ white-space:nowrap; overflow-x:auto; }
   </style>
 </head>
 
@@ -71,22 +71,16 @@
 
    <!-- ====== KHỐI CHỌN NGÀY + BẢNG KẾT QUẢ (MỚI THÊM) ====== -->
   <div class="container-fluid bg-light text-dark py-3">
-    <div class="card shadow-sm shift-card">
-      <div class="card-body">
-        <div class="row g-3 align-items-center mb-2">
-          <div class="col-auto">
-            <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
-          </div>
-          <div class="col-auto">
-            <input type="date" id="workDate" class="form-control"/>
-          </div>
-        </div>
-        <div class="table-responsive">
-          <div id="lineAll" class="fw-semibold py-1 single-line"></div>
-        </div>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-nowrap gap-3">
+        <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
+        <input type="date" id="workDate" class="form-control" style="width: 180px;" />
+        <div id="lineAll" class="fw-semibold single-line flex-grow-1"></div>
       </div>
     </div>
   </div>
+</div>
   <!-- ====== HẾT KHỐI CHỌN NGÀY ====== -->
 
   <!-- KHU VỰC NỘI DUNG (IFRAME) -->
