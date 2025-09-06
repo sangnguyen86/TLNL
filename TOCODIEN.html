@@ -1,95 +1,99 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CỔNG TỔ CƠ ĐIỆN</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>TỔ CƠ ĐIỆN</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css">
+
   <style>
-    html, body { height: 100%; }
-    body { margin:0; display:flex; flex-direction:column; background:#121416; color:#e9ecef; }
-    .content { flex:1; display:flex; flex-direction:column; }
-    #frame { flex:1; border:0; width:100%; background:#0b0c0e; }
-    .list-group-item.active { background:#0d6efd; border-color:#0d6efd; }
-    .loading { position:absolute; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.25); z-index:10; }
-    .loading.show { display:flex; }
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* khu vực nội dung co giãn */
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #212529;
+    }
+
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+      display: none; /* ẩn mặc định */
+    }
+
+    iframe.active {
+      display: block; /* hiện khi active */
+    }
   </style>
 </head>
-<body>
-  <!-- Header -->
-  <nav class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">CỔNG TỔ CƠ ĐIỆN</span>
+
+<body class="bg-dark">
+  <!--LOGO + BANNER-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container-fluid text-center">
+      <h1 class="text-primary text-center mb-0">XƯỞNG SẢN XUẤT</h1>
     </div>
   </nav>
 
-  <!-- Danh sách link + khung xem -->
-  <div class="content position-relative">
-    <div class="loading" id="loading"><div class="spinner-border" role="status" aria-hidden="true"></div><span class="ms-2">Đang tải...</span></div>
-
-    <div class="container py-3">
-      <div class="row g-3">
-        <div class="col-12">
-          <div class="list-group list-group-horizontal-md flex-wrap" id="linkList">
-            <!-- Render bằng JS từ mảng data -->
-          </div>
-        </div>
-        <div class="col-12">
-          <iframe id="frame" title="Nội dung"></iframe>
-        </div>
+  <!-- MENU -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container-fluid">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-content">
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link " aria-current="page" href="#">TRANG CHỦ</a></li>
+          <li class="nav-item"><a class="nav-link iframe-link" data-target="taskListFrame" href="#">BẢNG CÔNG VIỆC</a></li>
+          <li class="nav-item"><a class="nav-link iframe-link" data-target="taskListFrame" href="#">BẢNG CÔNG VIỆC</a></li> 
+          <li class="nav-item"><a class="nav-link iframe-link" data-target="taskListFrame" href="#">BẢNG CÔNG VIỆC</a></li>  
+          <li class="nav-item"><a class="nav-link iframe-link" data-target="taskListFrame" href="#">BẢNG CÔNG VIỆC</a></li>
+        </ul>
       </div>
     </div>
+  </nav>
+
+  <!-- NỘI DUNG -->
+  <div class="content-wrapper">
+    <!--CÁC FRAME TRANG CHÍNH-->
+    <iframe id="mainFrame" src=""></iframe>
+    <!--CÁC FRAME DÀNH CHO CƠ ĐIỆN-->
+    <iframe id="taskListFrame" src="https://script.google.com/macros/s/AKfycbyHry8Kk9_0ZyCfy3nZhVIrxKrENmSf5vsnPW-xxoUUbxRuOg1wYcUjdnT9x3i9urw/exec"></iframe>
+    <iframe id="planListFrame" src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
+    <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbyvcF1S-_RXhg7zKnG6-WF8MjZnweb3TQdgJo-GLc85tQY4xRxBQbheXIMsaVGpIUkI/exec"></iframe>
+    <iframe id="taskReportFrame" src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
+    <iframe id="waterRecordFrame" src="https://script.google.com/macros/s/AKfycbw3DxX2gVyv8A-SbeAJct80V-y3K3YNiVNavsueSbrNZeieqel-qkC4Fkxm25harnpAsw/exec"></iframe>
+    <iframe id="motorRecordFrame" src="https://script.google.com/macros/s/AKfycbxpHonjPCZ9Vin42ZATGEPGD09XWZ8MI76MI1kuE3lwHKV09_Yb_XeL193SVvnrSthe/exec"></iframe>
   </div>
 
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Dữ liệu theo cấu trúc bảng: Tên + Src
-    const PAGES = [
-      { name: 'MÔ TẢ CÔNG VIỆC VÀ PHÂN CÔNG', src: 'https://script.google.com/macros/s/AKfycbyK1iye0cek7seY7kqmGOb6V1MYVy_Ue43q2dY2KFeby329xHaQBtFj2WdDweW46NLA/exec' },
-      { name: 'BẢNG CÔNG VIỆC',                 src: 'https://script.google.com/macros/s/AKfycbgyHry8kK9_0zyCyf3nZhVIrxKrFENmSf5vsnPW-xxoUUbxRuOg1wYCJdjnT9x3Pjuwr/exec' },
-      { name: 'KẾ HOẠCH DỰ KIẾN',               src: 'https://script.google.com/macros/s/AKfycby6kstI0lY03dARrTxXxuDd_83JEt2x7AzFzufPdOmxuz4xS0M35tsGn41z9CGXA-C/exec' },
-      { name: 'KH BẢO TRÌ BẢO DƯỠNG',           src: 'https://script.google.com/macros/s/AKfycbxeuGMrHIOt03JdRXAeU-JBQn-hoOFSOSuX1_qH9VAGZ6dxQ8HQqnb9W9Gn5ZOH1mCt9g/exec' },
-      { name: 'GHI CHỈ SỐ NƯỚC',                src: 'https://script.google.com/macros/s/AKfycbxjuYfLY1TdQ6DoD3qveXAXboEeuo85XeT8RhWkzVlH0Qaqezlz75xez1V0rcRjdt7nrUqQ/exec' },
-      { name: 'BÁO CÁO CÔNG VIỆC',              src: 'https://script.google.com/macros/s/AKfycbszwCj7p9fY2DMmeoEMnmdSmG__XTMAde0Bi7GLPR-r5qPX0pvipkT7GVdK3yd0wP0It/exec' },
-      { name: 'ĐỀ XUẤT VẬT TƯ',                 src: 'https://script.google.com/macros/s/AKfycbzrrIMJ4NsymEMEV6EkOQy2qTH1ApZtdb4bn81sLPbCUE-upxwxIW-tyNW0wzAurmxV/exec' },
-      { name: 'GHI CHỈ SỐ MÔ TƠ',               src: 'https://script.google.com/macros/s/AKfycbxpHonjpCZ9Vin4Z2ATGEPGD09XVZ8MI76M1LkueE3wIHWKG9_Yb_XeL1935VsnvrSthe/exec' },
-    ];
+    const links = document.querySelectorAll(".iframe-link");
+    const frames = document.querySelectorAll("iframe");
 
-    const linkList = document.getElementById('linkList');
-    const frame = document.getElementById('frame');
-    const loading = document.getElementById('loading');
-    const LS_KEY = 'codien.active';
+    links.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        const targetId = this.dataset.target;
 
-    function renderLinks(){
-      linkList.innerHTML = '';
-      PAGES.forEach((p, idx) => {
-        const a = document.createElement('a');
-        a.href = '#';
-        a.className = 'list-group-item list-group-item-action';
-        a.textContent = p.name;
-        a.dataset.src = p.src;
-        a.addEventListener('click', (e)=>{ e.preventDefault(); activate(p.src, a); });
-        linkList.appendChild(a);
+        frames.forEach(f => f.classList.remove("active"));
+        document.getElementById(targetId).classList.add("active");
+
+        links.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
       });
-    }
+    });
 
-    function activate(src, el){
-      if(!src) return;
-      loading.classList.add('show');
-      Array.from(linkList.children).forEach(c => c.classList.remove('active'));
-      if(el) el.classList.add('active');
-      frame.addEventListener('load', ()=> loading.classList.remove('show'), { once:true });
-      frame.src = src;
-      localStorage.setItem(LS_KEY, src);
-      location.hash = encodeURIComponent(src);
-    }
-
-    // init
-    renderLinks();
-    const start = decodeURIComponent(location.hash.slice(1)) || localStorage.getItem(LS_KEY) || (PAGES[0] && PAGES[0].src);
-    // Chọn đúng link active theo start
-    const startEl = Array.from(linkList.children).find(a => a.dataset.src === start);
-    activate(start, startEl);
+    // Hiện mặc định iframe đầu tiên
+    document.getElementById("mainFrame").classList.add("active");
   </script>
 </body>
 </html>
-
