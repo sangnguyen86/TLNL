@@ -22,6 +22,7 @@
     .shift-title { font-weight: 700; margin-bottom: .25rem; }
     .person-line { padding: .25rem .5rem; border-bottom: 1px dashed #e5e7eb; }
     .person-line:last-child { border-bottom: 0; }
+    .single-line{ white-space:nowrap; overflow:auto; }
   </style>
 </head>
 
@@ -74,21 +75,15 @@
       <div class="card-body">
         <div class="row g-3 align-items-center mb-2">
           <div class="col-auto">
-            <label for="workDate" class="form-label fw-bold mb-0">Chọn ngày:</label>
+            <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
           </div>
           <div class="col-auto">
             <input type="date" id="workDate" class="form-control"/>
           </div>
-          
         </div>
-
         <div class="table-responsive">
-
-        <div id="lineKip" class="fw-semibold py-1"></div>
-        <div id="lineCa"  class="fw-semibold py-1"></div>
-
+          <div id="lineAll" class="fw-semibold py-1 single-line"></div>
         </div>
-
       </div>
     </div>
   </div>
@@ -161,9 +156,7 @@
     const baseCa  = [caB, caA];
 
     const dateEl  = document.getElementById('workDate');
-    const lineKip = document.getElementById('lineKip');
-    const lineCa  = document.getElementById('lineCa');
-
+    const lineAll = document.getElementById('lineAll');
     function weeksBetween(d1, d2){
       return Math.floor((d1 - d2) / (1000*60*60*24*7));
     }
@@ -186,16 +179,16 @@
       };
     }
     function render(isoDate){
-      const r = computeShifts(isoDate);
-      const kip1 = r.k1.join(", ");
-      const kip2 = r.k2.join(", ");
-      const kip3 = r.k3.join(", ");
-      const caS  = r.caS.join(", ");
-      const caC  = r.caC.join(", ");
+  const r = computeShifts(isoDate);
+  const kip1 = r.k1.join(", ");
+  const kip2 = r.k2.join(", ");
+  const kip3 = r.k3.join(", ");
+  const caS  = r.caS.join(", ");
+  const caC  = r.caC.join(", ");
 
-      lineKip.textContent = `Kíp 1: ${kip1} | Kíp 2: ${kip2} | Kíp 3: ${kip3}`;
-      lineCa.textContent  = `Ca sáng: ${caS} | Ca chiều: ${caC}`;
-    }
+  lineAll.textContent =
+    `Kíp 1: ${kip1} | Kíp 2: ${kip2} | Kíp 3: ${kip3} | Ca sáng: ${caS} | Ca chiều: ${caC}`;
+}
 
     // Mặc định hôm nay
     const today = new Date().toISOString().split('T')[0];
