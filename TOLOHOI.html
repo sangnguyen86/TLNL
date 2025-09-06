@@ -201,11 +201,19 @@
       // — Giả định mốc hàng 5 như hình bạn gửi:
       //   A5 = 2025-01-01 (mốc ngày), B5=Nhóm B, C5=Nhóm C, D5=Nhóm A, E5=Ca B, F5=Ca A
       const baseDate = new Date("2025-01-01");     // A5
-      const baseKip  = ["Cường Thinh, Minh Tú","Đức Thịnh, Ngọc Hiếu","Mạnh Hiền, QUốc Thắng"]; // B5,C5,D5
-      const baseCa   = ["Ca B","Ca A"];              // E5,F5
+      // Gán danh sách nhân sự thay cho Nhóm A/B/C
+      const groupA = "Mạnh Hiền, Quốc Thắng";
+      const groupB = "Cường Thịnh, Minh Tú";
+      const groupC = "Đức Thịnh, Ngọc Hiếu";
+      // Ca thì bạn có thể làm tương tự:
+      const caA = "Ca A"; 
+      const caB = "Ca B";
+      // Mốc hàng 5 (tùy vào bạn muốn ai làm mốc)
+      const baseKip  = [groupB, groupC, groupA]; // B5, C5, D5
+      const baseCa   = [caB, caA];               // E5, F5
 
-      const kipOrder = ["Nhóm A","Nhóm B","Nhóm C"]; // thứ tự xoay chuẩn
-      const caOrder  = ["Ca A","Ca B"];
+      const kipOrder = [groupA, groupB, groupC];   // thứ tự xoay chuẩn
+      const caOrder  = [caA, caB];
 
       const dateInput = document.getElementById('workDate');
       const cellK1 = document.getElementById('k1');
