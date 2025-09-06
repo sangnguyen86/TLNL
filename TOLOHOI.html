@@ -47,14 +47,12 @@
     }
 
     /* Bảng kíp/ca */
-    .shift-card {
-      border-radius: .75rem;
-    }
-    .shift-table th, .shift-table td {
-      text-align: center;
-      vertical-align: middle;
-      white-space: nowrap;
-    }
+    /* Khối kíp/ca dạng dòng */
+    .shift-card { border-radius: .75rem; }
+    .shift-title { font-weight: 700; margin-bottom: .25rem; }
+    .person-line { padding: .25rem .5rem; border-bottom: 1px dashed #e5e7eb; }
+    .person-line:last-child { border-bottom: 0; }
+    .single-line{ white-space:nowrap; overflow-x:auto; }
   </style>
 </head>
 
@@ -96,28 +94,16 @@
 
   <!-- ====== KHỐI CHỌN NGÀY + BẢNG KẾT QUẢ (MỚI THÊM) ====== -->
   <div class="container-fluid bg-light text-dark py-3">
-    <div class="card shadow-sm shift-card">
-      <div class="card-body">
-        <div class="row g-3 align-items-center mb-2">
-          <div class="col-auto">
-            <label for="workDate" class="form-label fw-bold mb-0">Chọn ngày:</label>
-          </div>
-          <div class="col-auto">
-            <input type="date" id="workDate" class="form-control"/>
-          </div>
-          
-        </div>
-
-        <div class="table-responsive">
-
-        <div id="lineKip" class="fw-semibold py-1"></div>
-        <div id="lineCa"  class="fw-semibold py-1"></div>
-
-        </div>
-
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-nowrap gap-3">
+        <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
+        <input type="date" id="workDate" class="form-control" style="width: 180px;" />
+        <div id="lineAll" class="fw-semibold single-line flex-grow-1"></div>
       </div>
     </div>
   </div>
+</div>
   <!-- ====== HẾT KHỐI CHỌN NGÀY ====== -->
 
   <!-- KHU VỰC NỘI DUNG (IFRAME) -->
@@ -180,8 +166,7 @@
       if (defaultLink) defaultLink.classList.add('active');
 
 
-      // ====== PHẦN MỚI: KÍP/CA – HIỂN THỊ 2 DÒNG ======
-    const baseDate = new Date("2025-01-01"); // mốc A5
+      const baseDate = new Date("2025-01-01"); // mốc A5
 
     // Nhân sự theo nhóm (mỗi phần tử là 1 người)
     const groupA = ["Mạnh Hiền","Quốc Thắng"];
@@ -199,9 +184,7 @@
     const baseCa  = [caB, caA];
 
     const dateEl  = document.getElementById('workDate');
-    const lineKip = document.getElementById('lineKip');
-    const lineCa  = document.getElementById('lineCa');
-
+    const lineAll = document.getElementById('lineAll');
     function weeksBetween(d1, d2){
       return Math.floor((d1 - d2) / (1000*60*60*24*7));
     }
@@ -224,16 +207,16 @@
       };
     }
     function render(isoDate){
-      const r = computeShifts(isoDate);
-      const kip1 = r.k1.join(", ");
-      const kip2 = r.k2.join(", ");
-      const kip3 = r.k3.join(", ");
-      const caS  = r.caS.join(", ");
-      const caC  = r.caC.join(", ");
+  const r = computeShifts(isoDate);
+  const kip1 = r.k1.join(", ");
+  const kip2 = r.k2.join(", ");
+  const kip3 = r.k3.join(", ");
+  const caS  = r.caS.join(", ");
+  const caC  = r.caC.join(", ");
 
-      lineKip.textContent = `Kíp 1: ${kip1} | Kíp 2: ${kip2} | Kíp 3: ${kip3}`;
-      lineCa.textContent  = `Ca sáng: ${caS} | Ca chiều: ${caC}`;
-    }
+  lineAll.textContent =
+    `Kíp 1: ${kip1} | Kíp 2: ${kip2} | Kíp 3: ${kip3} | Ca sáng: ${caS} | Ca chiều: ${caC}`;
+}
 
     // Mặc định hôm nay
     const today = new Date().toISOString().split('T')[0];
@@ -242,6 +225,7 @@
 
     // Khi đổi ngày
     dateEl.addEventListener('change', () => render(dateEl.value));
+      
     });
   </script>
 </body>
