@@ -141,11 +141,7 @@
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
       if (defaultLink) defaultLink.classList.add('active');
 
-      // --- NẠP THÔNG BÁO TỪ LINK ---
-      fetch("https://script.google.com/macros/s/AKfycbxRwqLIvXe_yHyp0Cb5SVo-k9gWFFc5FqciCIyBg7eZgLvBJL4ucS9k1BKZC6rWI20q/exec")
-        .then(res => res.text())
-        .then(txt => { document.getElementById("announcementBar").textContent = txt; })
-        .catch(err => { document.getElementById("announcementBar").textContent = "Không tải được thông báo"; });
+
     });
   </script>
 </body>
