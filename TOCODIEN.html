@@ -68,7 +68,31 @@
     </div>
   </nav>
 
-  
+   <!-- ====== KHỐI CHỌN NGÀY + BẢNG KẾT QUẢ (MỚI THÊM) ====== -->
+  <div class="container-fluid bg-light text-dark py-3">
+    <div class="card shadow-sm shift-card">
+      <div class="card-body">
+        <div class="row g-3 align-items-center mb-2">
+          <div class="col-auto">
+            <label for="workDate" class="form-label fw-bold mb-0">Chọn ngày:</label>
+          </div>
+          <div class="col-auto">
+            <input type="date" id="workDate" class="form-control"/>
+          </div>
+          
+        </div>
+
+        <div class="table-responsive">
+
+        <div id="lineKip" class="fw-semibold py-1"></div>
+        <div id="lineCa"  class="fw-semibold py-1"></div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ====== HẾT KHỐI CHỌN NGÀY ====== -->
 
   <!-- KHU VỰC NỘI DUNG (IFRAME) -->
   <div class="content-wrapper">
@@ -118,7 +142,68 @@
       activateFrame(defaultFrame);
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
       if (defaultLink) defaultLink.classList.add('active');
+      // ====== PHẦN MỚI: KÍP/CA – HIỂN THỊ 2 DÒNG ======
+    const baseDate = new Date("2025-01-01"); // mốc A5
 
+    // Nhân sự theo nhóm (mỗi phần tử là 1 người)
+    const groupA = ["Mạnh Hiền","Quốc Thắng"];
+    const groupB = ["Cường Thịnh","Minh Tú"];
+    const groupC = ["Đức Thịnh","Ngọc Hiếu"];
+    const kipOrder = [groupA, groupB, groupC]; // A -> B -> C
+
+    // Ca (điền tên thật nếu có; tạm để nhãn)
+    const caA = ["Ca A"];
+    const caB = ["Ca B"];
+    const caOrder = [caA, caB];
+
+    // Mốc hàng 5: B5, C5, D5, E5, F5 (tham chiếu đúng tới mảng ở trên)
+    const baseKip = [groupB, groupC, groupA];
+    const baseCa  = [caB, caA];
+
+    const dateEl  = document.getElementById('workDate');
+    const lineKip = document.getElementById('lineKip');
+    const lineCa  = document.getElementById('lineCa');
+
+    function weeksBetween(d1, d2){
+      return Math.floor((d1 - d2) / (1000*60*60*24*7));
+    }
+    // Xoay theo mốc: startArr phải là 1 phần tử trong orderArr
+    function rotateByStart(startArr, orderArr, k){
+      const startIdx = orderArr.indexOf(startArr);
+      const pos = (startIdx + k) % orderArr.length;
+      return orderArr[pos];
+    }
+    function computeShifts(isoDate){
+      const d = new Date(isoDate);
+      if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
+      const k = weeksBetween(d, baseDate);
+      return {
+        k1: rotateByStart(baseKip[0], kipOrder, k),
+        k2: rotateByStart(baseKip[1], kipOrder, k),
+        k3: rotateByStart(baseKip[2], kipOrder, k),
+        caS: rotateByStart(baseCa[0],  caOrder,  k),
+        caC: rotateByStart(baseCa[1],  caOrder,  k)
+      };
+    }
+    function render(isoDate){
+      const r = computeShifts(isoDate);
+      const kip1 = r.k1.join(", ");
+      const kip2 = r.k2.join(", ");
+      const kip3 = r.k3.join(", ");
+      const caS  = r.caS.join(", ");
+      const caC  = r.caC.join(", ");
+
+      lineKip.textContent = `Kíp 1: ${kip1} | Kíp 2: ${kip2} | Kíp 3: ${kip3}`;
+      lineCa.textContent  = `Ca sáng: ${caS} | Ca chiều: ${caC}`;
+    }
+
+    // Mặc định hôm nay
+    const today = new Date().toISOString().split('T')[0];
+    dateEl.value = today;
+    render(today);
+
+    // Khi đổi ngày
+    dateEl.addEventListener('change', () => render(dateEl.value));
       
     });
   </script>
