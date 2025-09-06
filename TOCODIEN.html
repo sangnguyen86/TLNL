@@ -82,25 +82,51 @@
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const links = document.querySelectorAll(".iframe-link");
-    const frames = document.querySelectorAll("iframe");
+<script>
+  // Lấy các phần tử cần dùng
+  const links  = document.querySelectorAll(".iframe-link");
+  const frames = document.querySelectorAll("iframe");
+  const navbarCollapseEl = document.getElementById("navbar-content");
 
-    links.forEach(link => {
-      link.addEventListener("click", function(e) {
-        e.preventDefault();
-        const targetId = this.dataset.target;
+  // Tạo instance Collapse (không tự toggle khi khởi tạo)
+  const navCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
 
-        frames.forEach(f => f.classList.remove("active"));
-        document.getElementById(targetId).classList.add("active");
+  // Hàm: chỉ thu gọn navbar khi đang ở mobile (< lg)
+  function collapseIfMobile() {
+    // Cách 1: theo breakpoint của Bootstrap (lg = 992px)
+    if (window.matchMedia("(max-width: 991.98px)").matches) {
+      navCollapse.hide();
+    }
+  }
 
-        links.forEach(l => l.classList.remove("active"));
-        this.classList.add("active");
-      });
+  // Gắn xử lý click cho các mục menu
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const targetId = this.dataset.target;
+      const targetFrame = document.getElementById(targetId);
+
+      // Kích hoạt iframe mục tiêu
+      frames.forEach(f => f.classList.remove("active"));
+      targetFrame.classList.add("active");
+
+      // Đổi trạng thái active trên menu
+      links.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+
+      // Thu gọn sau khi frame load xong.
+      // Nếu frame đã load sẵn (do có sẵn src), đóng ngay; nếu chưa, chờ sự kiện load.
+      if (targetFrame.contentDocument && targetFrame.contentDocument.readyState === "complete") {
+        collapseIfMobile();
+      } else {
+        targetFrame.addEventListener("load", collapseIfMobile, { once: true });
+      }
     });
+  });
 
-    // Hiện mặc định iframe đầu tiên
-    document.getElementById("mainFrame").classList.add("active");
-  </script>
+  // Mặc định hiển thị frame chính (nếu muốn)
+  document.getElementById("mainFrame").classList.add("active");
+  collapseIfMobile();
+</script>
 </body>
 </html>
