@@ -1,132 +1,192 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TỔ CƠ ĐIỆN</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css">
+
+  <!-- CSS Bootstrap (ninjabootstrap có sẵn boostrap core + tiện ích) -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
 
   <style>
-    body, html {
+    /* Toàn trang là flex column để vùng nội dung co giãn đầy đủ chiều cao */
+    html, body {
       height: 100%;
       margin: 0;
       display: flex;
       flex-direction: column;
     }
 
-    /* khu vực nội dung co giãn */
+    /* Vùng bao nội dung (chứa các iframe) chiếm phần còn lại */
     .content-wrapper {
       flex: 1;
       display: flex;
       flex-direction: column;
-      background: #212529;
+      background: #212529; /* nền tối */
     }
 
+    /* Iframe full rộng, cao co giãn, ẩn mặc định */
     iframe {
       flex: 1;
       width: 100%;
       border: none;
-      display: none; /* ẩn mặc định */
+      display: none;
     }
 
+    /* Iframe đang active thì hiển thị */
     iframe.active {
-      display: block; /* hiện khi active */
+      display: block;
     }
   </style>
 </head>
 
 <body class="bg-dark">
-  <!--LOGO + BANNER-->
+  <!-- BANNER / LOGO -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid text-center">
       <h1 class="text-primary text-center mb-0">TỔ CƠ ĐIỆN</h1>
     </div>
   </nav>
 
-  <!-- MENU -->
+  <!-- MENU ĐIỀU HƯỚNG -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid">
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+      <!-- Nút toggle cho mobile -->
+      <button class="navbar-toggler collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbar-content"
+              aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      <!-- Khối menu có thể thu gọn -->
       <div class="collapse navbar-collapse" id="navbar-content">
-        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link " aria-current="page" href="#">TRANG CHỦ</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" data-target="taskListFrame" href="#">BẢNG CÔNG VIỆC</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" data-target="planListFrame" href="#">KẾ HOẠCH DỰ KIẾN</a></li> 
-          <li class="nav-item"><a class="nav-link iframe-link" data-target="maintListFrame" href="#">BẢO TRÌ BẢO DƯỠNG</a></li>  
-          <li class="nav-item"><a class="nav-link iframe-link" data-target="MTCVFrame" href="#">PHÂN CÔNG CÔNG VIỆC</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" data-target="WaterRecordFrame" href="#">GHI CHỈ SỐ NƯỚC</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" data-target="TaskReportFrame" href="#">BÁO CÁO CÔNG VIỆC</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" data-target="DXVTFrame" href="#">ĐỀ XUẤT VẬT TƯ</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" data-target="MotorCurrentFrame" href="#">GHI CHỈ SỐ DÒNG ĐIỆN</a></li>
+        <!-- me-auto = margin end auto (chuẩn BS5) -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Trang chủ: nếu cần hiển thị iframe này, đặt src cho #mainFrame và bật mặc định bên dưới -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-target="mainFrame">TRANG CHỦ</a>
+          </li>
+
+          <!-- Các mục mở iframe tương ứng -->
+          <li class="nav-item">
+            <a class="nav-link iframe-link" href="#" data-target="taskListFrame">BẢNG CÔNG VIỆC</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link iframe-link" href="#" data-target="planListFrame">KẾ HOẠCH DỰ KIẾN</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link iframe-link" href="#" data-target="maintListFrame">BẢO TRÌ BẢO DƯỠNG</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link iframe-link" href="#" data-target="MTCVFrame">PHÂN CÔNG CÔNG VIỆC</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link iframe-link" href="#" data-target="WaterRecordFrame">GHI CHỈ SỐ NƯỚC</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link iframe-link" href="#" data-target="TaskReportFrame">BÁO CÁO CÔNG VIỆC</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link iframe-link" href="#" data-target="DXVTFrame">ĐỀ XUẤT VẬT TƯ</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link iframe-link" href="#" data-target="MotorCurrentFrame">GHI CHỈ SỐ DÒNG ĐIỆN</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- NỘI DUNG -->
+  <!-- KHU VỰC NỘI DUNG (IFRAME) -->
   <div class="content-wrapper">
-    <!--CÁC FRAME TRANG CHÍNH-->
+    <!-- Iframe "Trang chủ": để trống src; nếu cần trang tĩnh, gán src tại đây -->
     <iframe id="mainFrame" src=""></iframe>
-    <!--CÁC FRAME DÀNH CHO CƠ ĐIỆN-->
-    <iframe id="taskListFrame" src="https://script.google.com/macros/s/AKfycbyHry8Kk9_0ZyCfy3nZhVIrxKrENmSf5vsnPW-xxoUUbxRuOg1wYcUjdnT9x3i9urw/exec"></iframe>
-    <iframe id="planListFrame" src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
-    <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
-    <iframe id="MTCVFrame" src="https://script.google.com/macros/s/AKfycbyK1iyc0eck7seY7kqmGOb6V1MYVv_Ue43q2dYzKFeby329xHaQBtFj2WdDweW46NLA/exec"></iframe>
 
-    <iframe id="WaterRecordFrame" src="https://script.google.com/macros/s/AKfycbxjUfLYLTdO6DoD3qveXAXboEeu85XeT8RhWKzVIH0qcaezZz5rxetV1OrcRjdt7nrUgQ/exec"></iframe>
-    <iframe id="TaskReportFrame" src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
-    <iframe id="DXVTFrame" src="https://script.google.com/macros/s/AKfycbzrrIMJ4N5ymEMEV6EkOQy2qTH1ApZtdb4bn8h1sLPbCUE-upwxxlW-tvyNWOzAuwmX/exec"></iframe>
+    <!-- Các iframe Apps Script (cross-origin) -->
+    <iframe id="taskListFrame"  src="https://script.google.com/macros/s/AKfycbyHry8Kk9_0ZyCfy3nZhVIrxKrENmSf5vsnPW-xxoUUbxRuOg1wYcUjdnT9x3i9urw/exec"></iframe>
+    <iframe id="planListFrame"  src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
+    <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
+    <iframe id="MTCVFrame"     src="https://script.google.com/macros/s/AKfycbyK1iyc0eck7seY7kqmGOb6V1MYVv_Ue43q2dYzKFeby329xHaQBtFj2WdDweW46NLA/exec"></iframe>
+    <iframe id="WaterRecordFrame"  src="https://script.google.com/macros/s/AKfycbxjUfLYLTdO6DoD3qveXAXboEeu85XeT8RhWKzVIH0qcaezZz5rxetV1OrcRjdt7nrUgQ/exec"></iframe>
+    <iframe id="TaskReportFrame"   src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
+    <iframe id="DXVTFrame"         src="https://script.google.com/macros/s/AKfycbzrrIMJ4N5ymEMEV6EkOQy2qTH1ApZtdb4bn8h1sLPbCUE-upwxxlW-tvyNWOzAuwmX/exec"></iframe>
     <iframe id="MotorCurrentFrame" src="https://script.google.com/macros/s/AKfycbxpHonjPCZ9Vin42ZATGEPGD09XWZ8MI76MI1kuE3lwHKV09_Yb_XeL193SVvnrSthe/exec"></iframe>
   </div>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Lấy các phần tử cần dùng
-  const links  = document.querySelectorAll(".iframe-link");
-  const frames = document.querySelectorAll("iframe");
-  const navbarCollapseEl = document.getElementById("navbar-content");
+  <!-- JS Bootstrap (bundle) đặt defer để chắc chắn có sẵn trước khi chạy script của mình) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-  // Tạo instance Collapse (không tự toggle khi khởi tạo)
-  const navCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
+  <!-- Script điều khiển: defer + đợi DOMContentLoaded -->
+  <script defer>
+    window.addEventListener('DOMContentLoaded', function () {
+      // Lấy các phần tử cần dùng
+      const menuLinks = document.querySelectorAll('.iframe-link, .nav-link[data-target]'); // hỗ trợ cả "TRANG CHỦ"
+      const frames    = document.querySelectorAll('iframe');
+      const navbarCollapseEl = document.getElementById('navbar-content');
 
-  // Hàm: chỉ thu gọn navbar khi đang ở mobile (< lg)
-  function collapseIfMobile() {
-    // Cách 1: theo breakpoint của Bootstrap (lg = 992px)
-    if (window.matchMedia("(max-width: 991.98px)").matches) {
-      navCollapse.hide();
-    }
-  }
+      // Khởi tạo Collapse của Navbar (không auto-toggle khi tạo)
+      const navCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
 
-  // Gắn xử lý click cho các mục menu
-  links.forEach(link => {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      const targetId = this.dataset.target;
-      const targetFrame = document.getElementById(targetId);
-
-      // Kích hoạt iframe mục tiêu
-      frames.forEach(f => f.classList.remove("active"));
-      targetFrame.classList.add("active");
-
-      // Đổi trạng thái active trên menu
-      links.forEach(l => l.classList.remove("active"));
-      this.classList.add("active");
-
-      // Thu gọn sau khi frame load xong.
-      // Nếu frame đã load sẵn (do có sẵn src), đóng ngay; nếu chưa, chờ sự kiện load.
-      if (targetFrame.contentDocument && targetFrame.contentDocument.readyState === "complete") {
-        collapseIfMobile();
-      } else {
-        targetFrame.addEventListener("load", collapseIfMobile, { once: true });
+      // Chỉ thu gọn menu khi ở kích thước mobile (< lg = 992px)
+      function collapseIfMobile() {
+        if (window.matchMedia('(max-width: 991.98px)').matches) {
+          navCollapse.hide();
+        }
       }
-    });
-  });
 
-  // Mặc định hiển thị frame chính (nếu muốn)
-  document.getElementById("mainFrame").classList.add("active");
-  collapseIfMobile();
-</script>
+      // Hàm kích hoạt 1 iframe theo id
+      function activateFrame(targetId) {
+        // 1) Bật/tắt các iframe
+        frames.forEach(f => f.classList.remove('active'));
+        const target = document.getElementById(targetId);
+        if (target) target.classList.add('active');
+
+        // 2) Lưu lại lựa chọn để lần tải sau giữ nguyên (không bắt buộc)
+        try { localStorage.setItem('lastFrameId', targetId); } catch (e) {}
+      }
+
+      // Gán xử lý click cho các mục menu
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('data-target');
+          if (!targetId) return; // không có target thì bỏ qua
+
+          // Đổi trạng thái active trên menu
+          menuLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+
+          // Kích hoạt iframe mục tiêu
+          activateFrame(targetId);
+
+          // Thu gọn menu ngay trên mobile (không đụng tới nội dung iframe)
+          collapseIfMobile();
+        });
+      });
+
+      // --- MẶC ĐỊNH HIỂN THỊ LÚC VỪA MỞ TRANG ---
+      // Ưu tiên khôi phục frame đã chọn lần trước, nếu có
+      let defaultFrame = 'taskListFrame'; // đổi 'mainFrame' nếu muốn trang chủ rỗng
+      try {
+        const saved = localStorage.getItem('lastFrameId');
+        if (saved && document.getElementById(saved)) defaultFrame = saved;
+      } catch (e) {}
+
+      activateFrame(defaultFrame);
+
+      // Đồng bộ "active" trên menu tương ứng
+      const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
+      if (defaultLink) defaultLink.classList.add('active');
+    });
+  </script>
 </body>
 </html>
