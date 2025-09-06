@@ -10,43 +10,18 @@
         href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
 
   <style>
-    /* Toàn trang là flex column để vùng nội dung co giãn hết chiều cao */
-    html, body {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Vùng bao nội dung (chứa các iframe) chiếm phần còn lại */
-    .content-wrapper {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      background: #212529; /* nền tối */
-    }
-
-    /* Iframe hiển thị nội dung các trang con */
-    iframe {
-      flex: 1;
-      width: 100%;
-      border: none;
-      display: none; /* ẩn mặc định, chỉ hiện khi active */
-    }
+    html, body { height: 100%; margin: 0; display: flex; flex-direction: column; }
+    .content-wrapper { flex: 1; display: flex; flex-direction: column; background: #212529; }
+    iframe { flex: 1; width: 100%; border: none; display: none; }
     iframe.active { display: block; }
+    .announce-wrap { width: 100%; background: #212529; }
+    #announcementFrame { width: 100%; height: 80px; border: 0; overflow: hidden; display: block; }
 
-    /* Thanh thông báo (iframe mỏng, không thanh cuộn) */
-    .announce-wrap {
-      width: 100%;
-      background: #212529; /* tiệp màu header */
-    }
-    #announcementFrame {
-      width: 100%;
-      height: 80px;      /* chỉnh 36–44px tuỳ nội dung marquee */
-      border: 0;
-      overflow: hidden;
-      display: block;
-    }
+    /* Khối kíp/ca dạng dòng */
+    .shift-card { border-radius: .75rem; }
+    .shift-title { font-weight: 700; margin-bottom: .25rem; }
+    .person-line { padding: .25rem .5rem; border-bottom: 1px dashed #e5e7eb; }
+    .person-line:last-child { border-bottom: 0; }
   </style>
 </head>
 
@@ -58,14 +33,7 @@
     </div>
   </nav>
 
-  <!-- THANH THÔNG BÁO (CÁCH 1: nhúng iFrame từ Apps Script) 
-       Tham số bạn có thể chỉnh: 
-       - mode=marquee|list
-       - theme=dark|light
-       - sep=%7C (ký tự | đã URL-encode)
-       - fs=16 (cỡ chữ px)
-       - speed=30 (giây/vòng cho marquee)
-  -->
+  <!-- THANH THÔNG BÁO -->
   <div class="announce-wrap">
     <iframe
       id="announcementFrame"
@@ -78,22 +46,15 @@
   <!-- MENU ĐIỀU HƯỚNG -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid">
-      <!-- Nút toggle cho mobile -->
       <button class="navbar-toggler collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#navbar-content"
               aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Khối menu có thể thu gọn -->
       <div class="collapse navbar-collapse" id="navbar-content">
-        <!-- me-auto = margin end auto (chuẩn BS5) -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <!-- Trang chủ: nếu cần, gán src cho #mainFrame và đổi defaultFrame ở dưới -->
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-target="mainFrame">TRANG CHỦ</a>
-          </li>
-
+          <li class="nav-item"><a class="nav-link" href="#" data-target="mainFrame">TRANG CHỦ</a></li>
           <li class="nav-item"><a class="nav-link iframe-link" href="#" data-target="taskListFrame">BẢNG CÔNG VIỆC</a></li>
           <li class="nav-item"><a class="nav-link iframe-link" href="#" data-target="planListFrame">KẾ HOẠCH DỰ KIẾN</a></li>
           <li class="nav-item"><a class="nav-link iframe-link" href="#" data-target="maintListFrame">BẢO TRÌ BẢO DƯỠNG</a></li>
@@ -106,53 +67,62 @@
       </div>
     </div>
   </nav>
-  <!-- ====== KHỐI CHỌN NGÀY + BẢNG KẾT QUẢ (MỚI THÊM) ====== -->
+
+  <!-- ====== CHỌN NGÀY + KHỐI KẾT QUẢ DẠNG DÒNG ====== -->
   <div class="container-fluid bg-light text-dark py-3">
     <div class="card shadow-sm shift-card">
       <div class="card-body">
-        <div class="row g-3 align-items-center mb-2">
+        <div class="row g-3 align-items-center mb-3">
           <div class="col-auto">
             <label for="workDate" class="form-label fw-bold mb-0">Chọn ngày:</label>
           </div>
           <div class="col-auto">
             <input type="date" id="workDate" class="form-control"/>
           </div>
-          
         </div>
 
-        <div class="table-responsive">
-          <table class="table table-bordered table-striped shift-table mb-0">
-            <thead class="table-dark">
-              <tr>
-                <th>Kíp 1 Lò hơi</th>
-                <th>Kíp 2 Lò hơi</th>
-                <th>Kíp 3 Lò hơi</th>
-                <th>Ca Sáng</th>
-                <th>Ca Chiều</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td id="k1"></td>
-                <td id="k2"></td>
-                <td id="k3"></td>
-                <td id="caSang"></td>
-                <td id="caChieu"></td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- 5 khối hiển thị từng dòng -->
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-xl">
+            <div class="p-3 border rounded-3 h-100">
+              <div class="shift-title">Kíp 1 Lò hơi</div>
+              <div id="k1" class="small"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl">
+            <div class="p-3 border rounded-3 h-100">
+              <div class="shift-title">Kíp 2 Lò hơi</div>
+              <div id="k2" class="small"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl">
+            <div class="p-3 border rounded-3 h-100">
+              <div class="shift-title">Kíp 3 Lò hơi</div>
+              <div id="k3" class="small"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl">
+            <div class="p-3 border rounded-3 h-100">
+              <div class="shift-title">Ca Sáng</div>
+              <div id="caSang" class="small"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl">
+            <div class="p-3 border rounded-3 h-100">
+              <div class="shift-title">Ca Chiều</div>
+              <div id="caChieu" class="small"></div>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
-  <!-- ====== HẾT KHỐI CHỌN NGÀY ====== -->
+  <!-- ====== HẾT KHỐI KẾT QUẢ ====== -->
+
   <!-- KHU VỰC NỘI DUNG (IFRAME) -->
   <div class="content-wrapper">
-    <!-- Iframe "Trang chủ": để trống src; nếu cần, gán src tại đây -->
     <iframe id="mainFrame" src=""></iframe>
-
-    <!-- Các iframe Apps Script (cross-origin) -->
     <iframe id="taskListFrame"  src="https://script.google.com/macros/s/AKfycbyHry8Kk9_0ZyCfy3nZhVIrxKrENmSf5vsnPW-xxoUUbxRuOg1wYcUjdnT9x3i9urw/exec"></iframe>
     <iframe id="planListFrame"  src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
     <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
@@ -163,110 +133,77 @@
     <iframe id="MotorCurrentFrame" src="https://script.google.com/macros/s/AKfycbxpHonjPCZ9Vin42ZATGEPGD09XWZ8MI76MI1kuE3lwHKV09_Yb_XeL193SVvnrSthe/exec"></iframe>
   </div>
 
-  <!-- JS Bootstrap (bundle) -->
+  <!-- JS Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
   <!-- Script điều khiển -->
   <script defer>
     window.addEventListener('DOMContentLoaded', function () {
-      // Lấy các phần tử cần dùng
-      const menuLinks = document.querySelectorAll('.iframe-link, .nav-link[data-target]'); // hỗ trợ cả "TRANG CHỦ"
+      /* ====== PHẦN CŨ (giữ nguyên) ====== */
+      const menuLinks = document.querySelectorAll('.iframe-link, .nav-link[data-target]');
       const frames    = document.querySelectorAll('iframe');
       const navbarCollapseEl = document.getElementById('navbar-content');
-
-      // Khởi tạo Collapse của Navbar (không auto-toggle khi tạo)
       const navCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
 
-      // Chỉ thu gọn menu khi ở kích thước mobile (< lg = 992px)
-      function collapseIfMobile() {
-        if (window.matchMedia('(max-width: 991.98px)').matches) {
-          navCollapse.hide();
-        }
-      }
-
-      // Kích hoạt 1 iframe theo id
+      function collapseIfMobile() { if (window.matchMedia('(max-width: 991.98px)').matches) navCollapse.hide(); }
       function activateFrame(targetId) {
         frames.forEach(f => f.classList.remove('active'));
         const target = document.getElementById(targetId);
         if (target) target.classList.add('active');
-
-        // Ghi lại lựa chọn (tuỳ chọn)
         try { localStorage.setItem('lastFrameId', targetId); } catch (e) {}
       }
-
-      // Gán xử lý click cho các mục menu
       menuLinks.forEach(link => {
         link.addEventListener('click', function (e) {
           e.preventDefault();
-
           const targetId = this.getAttribute('data-target');
-          if (!targetId) return; // không có target thì bỏ qua
-
-          // Đổi trạng thái active trên menu
+          if (!targetId) return;
           menuLinks.forEach(l => l.classList.remove('active'));
           this.classList.add('active');
-
-          // Kích hoạt iframe mục tiêu
           activateFrame(targetId);
-
-          // Thu gọn menu ngay trên mobile
           collapseIfMobile();
         });
       });
-
-      // --- MẶC ĐỊNH HIỂN THỊ LÚC VỪA MỞ TRANG ---
-      // Ưu tiên khôi phục frame đã chọn lần trước, nếu có
-      let defaultFrame = 'taskListFrame'; // đổi 'mainFrame' nếu muốn mở Trang chủ
-      try {
-        const saved = localStorage.getItem('lastFrameId');
-        if (saved && document.getElementById(saved)) defaultFrame = saved;
-      } catch (e) {}
-
+      let defaultFrame = 'taskListFrame';
+      try { const saved = localStorage.getItem('lastFrameId'); if (saved && document.getElementById(saved)) defaultFrame = saved; } catch (e) {}
       activateFrame(defaultFrame);
-
-      // Đồng bộ "active" trên menu tương ứng
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
       if (defaultLink) defaultLink.classList.add('active');
-      // ====== PHẦN MỚI: TÍNH KÍP/CA THEO NGÀY ======
-      // — Giả định mốc hàng 5 như hình bạn gửi:
-      //   A5 = 2025-01-01 (mốc ngày), B5=Nhóm B, C5=Nhóm C, D5=Nhóm A, E5=Ca B, F5=Ca A
-      const baseDate = new Date("2025-01-01");     // A5
-      // Gán danh sách nhân sự thay cho Nhóm A/B/C
-      const groupA = "Mạnh Hiền, Quốc Thắng";
-      const groupB = "Cường Thịnh, Minh Tú";
-      const groupC = "Đức Thịnh, Ngọc Hiếu";
-      // Ca thì bạn có thể làm tương tự:
-      const caA = "Ca A"; 
-      const caB = "Ca B";
-      // Mốc hàng 5 (tùy vào bạn muốn ai làm mốc)
-      const baseKip  = [groupB, groupC, groupA]; // B5, C5, D5
-      const baseCa   = [caB, caA];               // E5, F5
 
-      const kipOrder = [groupA, groupB, groupC];   // thứ tự xoay chuẩn
-      const caOrder  = [caA, caB];
+      /* ====== PHẦN MỚI: KÍP/CA DẠNG DÒNG ====== */
+      const baseDate = new Date("2025-01-01"); // mốc A5
 
-      const dateInput = document.getElementById('workDate');
-      const cellK1 = document.getElementById('k1');
-      const cellK2 = document.getElementById('k2');
-      const cellK3 = document.getElementById('k3');
-      const cellCaS = document.getElementById('caSang');
-      const cellCaC = document.getElementById('caChieu');
+      // Nhân sự theo nhóm (mỗi phần tử là một người)
+      const groupA = ["Mạnh Hiền","Quốc Thắng"];
+      const groupB = ["Cường Thịnh","Minh Tú"];
+      const groupC = ["Đức Thịnh","Ngọc Hiếu"];
+      const kipOrder = [groupA, groupB, groupC]; // thứ tự A->B->C
 
-      function weeksBetween(d1, d2){
-        return Math.floor((d1 - d2) / (1000*60*60*24*7));
-      }
+      // Ca (điền tên thật nếu có)
+      const caA = ["Ca A"];
+      const caB = ["Ca B"];
+      const caOrder = [caA, caB];
 
-      function rotateByStart(startLabel, orderArr, k){
-        const startIdx = orderArr.indexOf(startLabel);
+      // Mốc hàng 5: B5, C5, D5, E5, F5 (tham chiếu đúng tới mảng ở trên)
+      const baseKip = [groupB, groupC, groupA];
+      const baseCa  = [caB, caA];
+
+      const dateEl  = document.getElementById('workDate');
+      const k1El    = document.getElementById('k1');
+      const k2El    = document.getElementById('k2');
+      const k3El    = document.getElementById('k3');
+      const caSEl   = document.getElementById('caSang');
+      const caCEl   = document.getElementById('caChieu');
+
+      function weeksBetween(d1, d2){ return Math.floor((d1 - d2) / (1000*60*60*24*7)); }
+      function rotateByStart(startArr, orderArr, k){
+        const startIdx = orderArr.indexOf(startArr);
         const pos = (startIdx + k) % orderArr.length;
         return orderArr[pos];
       }
-
       function computeShifts(isoDate){
         const d = new Date(isoDate);
-        if (isNaN(d)) return { k1:"",k2:"",k3:"", caS:"", caC:"" };
-        const k = weeksBetween(d, baseDate); // số tuần từ mốc
-
+        if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
+        const k = weeksBetween(d, baseDate);
         return {
           k1: rotateByStart(baseKip[0], kipOrder, k),
           k2: rotateByStart(baseKip[1], kipOrder, k),
@@ -275,23 +212,25 @@
           caC: rotateByStart(baseCa[1],  caOrder,  k)
         };
       }
-
+      function renderLines(el, arr){
+        el.innerHTML = arr.map(name => `<div class="person-line">${name}</div>`).join("");
+      }
       function render(isoDate){
         const r = computeShifts(isoDate);
-        cellK1.textContent = r.k1;
-        cellK2.textContent = r.k2;
-        cellK3.textContent = r.k3;
-        cellCaS.textContent = r.caS;
-        cellCaC.textContent = r.caC;
+        renderLines(k1El,  r.k1);
+        renderLines(k2El,  r.k2);
+        renderLines(k3El,  r.k3);
+        renderLines(caSEl, r.caS);
+        renderLines(caCEl, r.caC);
       }
 
       // Mặc định hôm nay
       const today = new Date().toISOString().split('T')[0];
-      dateInput.value = today;
+      dateEl.value = today;
       render(today);
 
       // Khi đổi ngày
-      dateInput.addEventListener('change', () => render(dateInput.value));
+      dateEl.addEventListener('change', () => render(dateEl.value));
     });
   </script>
 </body>
