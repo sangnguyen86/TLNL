@@ -183,9 +183,23 @@
 
     const dateEl  = document.getElementById('workDate');
     const lineAll = document.getElementById('lineAll');
-    function weeksBetween(d1, d2){
-      return Math.floor((d1 - d2 + 4) / (1000*60*60*24*7));
-    }
+
+      // Trả về 00:00 thứ Hai của tuần chứa 'date' (theo giờ địa phương)
+function startOfWeekMonday(date) {
+  // Dùng local-time để tránh lệch múi giờ khi parse 'YYYY-MM-DD'
+  const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  let day = d.getDay();          // 0 = Chủ nhật, 1 = Thứ hai, ...
+  if (day === 0) day = 7;        // Quy ước CN = 7 cho tuần ISO
+  const diff = day - 1;          // Số ngày lùi về thứ Hai
+  return new Date(d.getFullYear(), d.getMonth(), d.getDate() - diff);
+}
+    
+      // Số tuần chênh lệch, tính theo biên tuần là Thứ Hai
+function weeksBetweenMonday(d1, d2) {
+  const m1 = startOfWeekMonday(d1);
+  const m2 = startOfWeekMonday(d2);
+  return Math.floor((m1 - m2) / (7 * 24 * 60 * 60 * 1000));
+}
     // Xoay theo mốc: startArr phải là 1 phần tử trong orderArr
     function rotateByStart(startArr, orderArr, k){
       const startIdx = orderArr.indexOf(startArr);
@@ -193,17 +207,20 @@
       return orderArr[pos];
     }
     function computeShifts(isoDate){
-      const d = new Date(isoDate);
-      if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
-      const k = weeksBetween(d, baseDate);
-      return {
-        k1: rotateByStart(baseKip[0], kipOrder, k),
-        k2: rotateByStart(baseKip[1], kipOrder, k),
-        k3: rotateByStart(baseKip[2], kipOrder, k),
-        caS: rotateByStart(baseCa[0],  caOrder,  k),
-        caC: rotateByStart(baseCa[1],  caOrder,  k)
-      };
-    }
+  // Parse theo local-time để khỏi lệch ngày
+  const d = new Date(isoDate + 'T00:00');
+  if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
+
+  const k = weeksBetweenMonday(d, baseDate); // <— tính tuần theo Thứ Hai
+
+  return {
+    k1: rotateByStart(baseKip[0], kipOrder, k),
+    k2: rotateByStart(baseKip[1], kipOrder, k),
+    k3: rotateByStart(baseKip[2], kipOrder, k),
+    caS: rotateByStart(baseCa[0],  caOrder,  k),
+    caC: rotateByStart(baseCa[1],  caOrder,  k)
+  };
+}
     function render(isoDate){
   const r = computeShifts(isoDate);
   const kip1 = r.k1.join(", ");
