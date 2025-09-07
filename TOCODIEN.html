@@ -176,7 +176,7 @@
           collapseIfMobile();
         });
       });
-      let defaultFrame = 'taskListFrame';
+      let defaultFrame = 'mainFrame';
       try { const saved = localStorage.getItem('lastFrameId'); if (saved && document.getElementById(saved)) defaultFrame = saved; } catch (e) {}
       activateFrame(defaultFrame);
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
