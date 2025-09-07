@@ -9,32 +9,47 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
 
-  <style>
+<style>
     html, body { height: 100%; margin: 0; display: flex; flex-direction: column; }
     .content-wrapper { flex: 1; display: flex; flex-direction: column; background: #212529; }
-    iframe { flex: 1; width: 100%; border: none; display: none; }
+    iframe { width: 100%; height: 1000px; border: none; display: none; }
     iframe.active { display: block; }
+
     .announce-wrap { width: 100%; background: #212529; }
     #announcementFrame { width: 100%; height: 80px; border: 0; overflow: hidden; display: block; }
 
-    /* Khối kíp/ca dạng dòng */
-    .shift-card { border-radius: .75rem; }
-    .shift-title { font-weight: 700; margin-bottom: .25rem; }
-    .person-line { padding: .25rem .5rem; border-bottom: 1px dashed #e5e7eb; }
-    .person-line:last-child { border-bottom: 0; }
-    .single-line{ white-space:nowrap; overflow-x:auto; }
+    .mono { font-variant-numeric: tabular-nums; }
+    .week-range { font-size: .875rem; opacity: .8; }
+
+    /* Màu cho khối tuần */
+    .card-week { border-width: 1px; border-style: solid; border-radius: .75rem; }
+    .card-week.current {
+      background: #e8f5e9;
+      border-color: #a5d6a7;
+    }
+    .card-week.next {
+      background: #fff8e1;
+      border-color: #ffe082;
+    }
+
+    /* Alert khi chọn ngày */
+    .alert-chosen {
+      background: #e3f2fd;
+      border-color: #90caf9;
+      color: #0d47a1;
+    }
   </style>
 </head>
 
 <body class="bg-dark">
-  <!-- BANNER / LOGO -->
+  <!-- HEADER -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid text-center">
       <h1 class="text-primary text-center mb-0">TỔ CƠ ĐIỆN</h1>
     </div>
   </nav>
 
-  <!-- THANH THÔNG BÁO -->
+  <!-- DẢI THÔNG BÁO -->
   <div class="announce-wrap">
     <iframe
       id="announcementFrame"
@@ -44,8 +59,8 @@
     ></iframe>
   </div>
 
-  <!-- MENU ĐIỀU HƯỚNG -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+   <!-- MENU (STICKY) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top" style="z-index:1030;">
     <div class="container-fluid">
       <button class="navbar-toggler collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#navbar-content"
@@ -69,18 +84,53 @@
     </div>
   </nav>
 
-   <!-- ====== KHỐI CHỌN NGÀY + BẢNG KẾT QUẢ (MỚI THÊM) ====== -->
+   <!-- KHỐI CHỌN NGÀY + KẾT QUẢ  -->
   <div class="container-fluid bg-light text-dark py-3">
   <div class="card shadow-sm">
     <div class="card-body">
-      <div class="d-flex align-items-center flex-nowrap gap-3">
-        <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
-        <input type="date" id="workDate" class="form-control" style="width: 180px;" />
-        <div id="lineAll" class="fw-semibold single-line flex-grow-1"></div>
+        <!-- Hàng chọn ngày -->
+        <div class="d-flex align-items-center flex-nowrap gap-3 mb-3">
+          <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
+          <input type="date" id="workDate" class="form-control" style="width: 180px;" />
+        </div>
+
+        <!-- Hai cột: Tuần hiện tại / Tuần kế tiếp -->
+        <div class="row g-3">
+          <div class="col-12 col-lg-6">
+            <div class="card-week current p-3 h-100">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5 class="mb-1 text-success">Tuần hiện tại</h5>
+                <div id="rangeThis" class="week-range mono"></div>
+              </div>
+              <div id="weekThis" class="mt-2"></div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="card-week next p-3 h-100">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5 class="mb-1 text-warning">Tuần kế tiếp</h5>
+                <div id="rangeNext" class="week-range mono"></div>
+              </div>
+              <div id="weekNext" class="mt-2"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bảng thông báo cho tuần chứa ngày đã chọn -->
+        <div id="chosenAlert" class="alert alert-chosen d-none mt-3" role="alert">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <strong>Kết quả cho tuần chứa ngày đã chọn</strong>
+              <div id="rangeChosen" class="week-range mono"></div>
+            </div>
+            <button type="button" class="btn-close" aria-label="Close"
+                    onclick="document.getElementById('chosenAlert').classList.add('d-none')"></button>
+          </div>
+          <div id="weekChosen" class="mt-2"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <!-- ====== HẾT KHỐI CHỌN NGÀY ====== -->
 
   <!-- KHU VỰC NỘI DUNG (IFRAME) -->
@@ -131,66 +181,109 @@
       activateFrame(defaultFrame);
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
       if (defaultLink) defaultLink.classList.add('active');
-      // ====== PHẦN MỚI: KÍP/CA – HIỂN THỊ 2 DÒNG ======
-    const baseDate = new Date("2025-01-01"); // mốc A5
+     // ====== Logic kíp/ca ======
+      const baseDate = new Date("2025-01-01");
 
-    // Nhân sự theo nhóm (mỗi phần tử là 1 người)
-    const groupA = ["Mạnh Hiền","Quốc Thắng"];
-    const groupB = ["Cường Thịnh","Minh Tú"];
-    const groupC = ["Đức Thịnh","Ngọc Hiếu"];
-    const kipOrder = [groupA, groupB, groupC]; // A -> B -> C
+      const groupA = ["Mạnh Hiền","Quốc Thắng"];
+      const groupB = ["Cường Thịnh","Minh Tú"];
+      const groupC = ["Đức Thịnh","Ngọc Hiếu"];
+      const kipOrder = [groupA, groupB, groupC];
 
-    // Ca (điền tên thật nếu có; tạm để nhãn)
-    const caA = ["Ca A"];
-    const caB = ["Ca B"];
-    const caOrder = [caA, caB];
+      const caA = ["Ca A"];
+      const caB = ["Ca B"];
+      const caOrder = [caA, caB];
 
-    // Mốc hàng 5: B5, C5, D5, E5, F5 (tham chiếu đúng tới mảng ở trên)
-    const baseKip = [groupB, groupC, groupA];
-    const baseCa  = [caB, caA];
+      const baseKip = [groupB, groupC, groupA];
+      const baseCa  = [caB, caA];
 
-    const dateEl  = document.getElementById('workDate');
-    const lineAll = document.getElementById('lineAll');
-    function weeksBetween(d1, d2){
-      return Math.floor((d1 - d2) / (1000*60*60*24*7));
-    }
-    // Xoay theo mốc: startArr phải là 1 phần tử trong orderArr
-    function rotateByStart(startArr, orderArr, k){
-      const startIdx = orderArr.indexOf(startArr);
-      const pos = (startIdx + k) % orderArr.length;
-      return orderArr[pos];
-    }
-    function computeShifts(isoDate){
-      const d = new Date(isoDate);
-      if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
-      const k = weeksBetween(d, baseDate);
-      return {
-        k1: rotateByStart(baseKip[0], kipOrder, k),
-        k2: rotateByStart(baseKip[1], kipOrder, k),
-        k3: rotateByStart(baseKip[2], kipOrder, k),
-        caS: rotateByStart(baseCa[0],  caOrder,  k),
-        caC: rotateByStart(baseCa[1],  caOrder,  k)
-      };
-    }
-    function render(isoDate){
-  const r = computeShifts(isoDate);
-  const kip1 = r.k1.join(", ");
-  const kip2 = r.k2.join(", ");
-  const kip3 = r.k3.join(", ");
-  const caS  = r.caS.join(", ");
-  const caC  = r.caC.join(", ");
+      const dateEl       = document.getElementById('workDate');
+      const weekThisEl   = document.getElementById('weekThis');
+      const weekNextEl   = document.getElementById('weekNext');
+      const rangeThisEl  = document.getElementById('rangeThis');
+      const rangeNextEl  = document.getElementById('rangeNext');
+      const chosenAlert  = document.getElementById('chosenAlert');
+      const weekChosenEl = document.getElementById('weekChosen');
+      const rangeChosenEl= document.getElementById('rangeChosen');
 
-  lineAll.textContent =
-    `Kíp 1: ${kip1} | Kíp 2: ${kip2} | Kíp 3: ${kip3} | Ca sáng: ${caS} | Ca chiều: ${caC}`;
-}
+      function asLocalDate(d) {
+        return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+      }
+      function startOfWeekMonday(date) {
+        const d = asLocalDate(date);
+        let day = d.getDay();
+        if (day === 0) day = 7;
+        const diff = day - 1;
+        return new Date(d.getFullYear(), d.getMonth(), d.getDate() - diff);
+      }
+      function endOfWeekSunday(date) {
+        const mon = startOfWeekMonday(date);
+        return new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + 6);
+      }
+      function formatRange(mon, sun) {
+        const dd = n => String(n).padStart(2, '0');
+        const yyyy = d => d.getFullYear();
+        return `${dd(mon.getDate())}/${dd(mon.getMonth()+1)}/${yyyy(mon)} – ${dd(sun.getDate())}/${dd(sun.getMonth()+1)}/${yyyy(sun)}`;
+      }
+      function weeksBetweenMonday(d1, d2) {
+        const m1 = startOfWeekMonday(d1);
+        const m2 = startOfWeekMonday(d2);
+        return Math.floor((m1 - m2) / (7 * 24 * 60 * 60 * 1000));
+      }
+      function rotateByStart(startArr, orderArr, k){
+        const startIdx = orderArr.indexOf(startArr);
+        const pos = (startIdx + k) % orderArr.length;
+        return orderArr[pos];
+      }
+      function computeShifts(input){
+        const d = (input instanceof Date) ? input : new Date(input + 'T00:00');
+        if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
+        const k = weeksBetweenMonday(d, baseDate);
+        return {
+          k1: rotateByStart(baseKip[0], kipOrder, k),
+          k2: rotateByStart(baseKip[1], kipOrder, k),
+          k3: rotateByStart(baseKip[2], kipOrder, k),
+          caS: rotateByStart(baseCa[0],  caOrder,  k),
+          caC: rotateByStart(baseCa[1],  caOrder,  k)
+        };
+      }
+      function renderLine(r){
+        const kip1 = r.k1.join(", ");
+        const kip2 = r.k2.join(", ");
+        const kip3 = r.k3.join(", ");
+        const caS  = r.caS.join(", ");
+        const caC  = r.caC.join(", ");
+        return `Kíp 1: ${kip1}; Kíp 2: ${kip2}; Kíp 3: ${kip3}; Ca sáng: ${caS}; Ca chiều: ${caC}`;
+      }
 
-    // Mặc định hôm nay
-    const today = new Date().toISOString().split('T')[0];
-    dateEl.value = today;
-    render(today);
+      // Khởi tạo hôm nay
+      const today = new Date();
+      const isoToday = new Date(today.getTime() - today.getTimezoneOffset()*60000)
+                        .toISOString().split('T')[0];
+      dateEl.value = isoToday;
 
-    // Khi đổi ngày
-    dateEl.addEventListener('change', () => render(dateEl.value));
+      const monThis = startOfWeekMonday(today);
+      const sunThis = endOfWeekSunday(today);
+      const monNext = new Date(monThis.getFullYear(), monThis.getMonth(), monThis.getDate() + 7);
+      const sunNext = new Date(monNext.getFullYear(), monNext.getMonth(), monNext.getDate() + 6);
+
+      rangeThisEl.textContent = formatRange(monThis, sunThis);
+      rangeNextEl.textContent = formatRange(monNext, sunNext);
+
+      weekThisEl.textContent = renderLine(computeShifts(monThis));
+      weekNextEl.textContent = renderLine(computeShifts(monNext));
+
+      // Khi đổi ngày
+      dateEl.addEventListener('change', () => {
+        const iso = dateEl.value;
+        if (!iso) return;
+        const d = new Date(iso + 'T00:00');
+        const mon = startOfWeekMonday(d);
+        const sun = endOfWeekSunday(d);
+
+        rangeChosenEl.textContent = formatRange(mon, sun);
+        weekChosenEl.textContent = renderLine(computeShifts(d));
+        chosenAlert.classList.remove('d-none');
+      });
       
     });
   </script>
