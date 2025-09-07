@@ -184,7 +184,7 @@
     const dateEl  = document.getElementById('workDate');
     const lineAll = document.getElementById('lineAll');
     function weeksBetween(d1, d2){
-      return Math.floor((d1 - d2+2) / (1000*60*60*24*7));
+      return Math.floor((d1 - d2) / (1000*60*60*24*7));
     }
     // Xoay theo mốc: startArr phải là 1 phần tử trong orderArr
     function rotateByStart(startArr, orderArr, k){
