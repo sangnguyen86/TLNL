@@ -12,7 +12,7 @@
   <style>
     html, body { height: 100%; margin: 0; display: flex; flex-direction: column; }
     .content-wrapper { flex: 1; display: flex; flex-direction: column; background: #212529; }
-    iframe { width: 100%; border: none; display: none; }
+    iframe { width: 100%; height: 1000px; border: none; display: none; }
     iframe.active { display: block; }
 
     .announce-wrap { width: 100%; background: #212529; }
@@ -54,8 +54,8 @@
     <iframe id="announcementFrame" src="" scrolling="no" referrerpolicy="no-referrer"></iframe>
   </div>
 
-  <!-- MENU -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+  <!-- MENU (STICKY) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top" style="z-index:1030;">
     <div class="container-fluid">
       <button class="navbar-toggler collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#navbar-content"
@@ -72,10 +72,10 @@
     </div>
   </nav>
 
-  <!-- KHỐI CHỌN NGÀY + KẾT QUẢ (STICKY) -->
-  <div class="container-fluid bg-light text-dark py-3 sticky-top" style="top:56px; z-index:1040;">
-    <div class="card shadow-sm">
-      <div class="card-body">
+  <!-- KHỐI CHỌN NGÀY + KẾT QUẢ  -->
+  <div class="container-fluid bg-light text-dark py-3">
+  <div class="card shadow-sm">
+    <div class="card-body">
         <!-- Hàng chọn ngày -->
         <div class="d-flex align-items-center flex-nowrap gap-3 mb-3">
           <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
