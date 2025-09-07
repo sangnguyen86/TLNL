@@ -5,39 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TỔ LÒ HƠI - BỘ PHẬN CƠ ĐIỆN NƯỚC - LÒ HƠI - MÁY NÉN KHÍ</title>
 
-  <!-- Bootstrap (ninjabootstrap gọn nhẹ, tương thích 5.x) -->
+  <!-- Bootstrap -->
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
 
   <style>
-    /* ===== BỐ CỤC CHUNG ===== */
     html, body { height: 100%; margin: 0; display: flex; flex-direction: column; }
     .content-wrapper { flex: 1; display: flex; flex-direction: column; background: #212529; }
-    iframe { flex: 1; width: 100%; height: 80vh; border: none; display: none; }
+    iframe { flex: 1; width: 100%; height: 800px; border: none; display: none; }
     iframe.active { display: block; }
 
     .announce-wrap { width: 100%; background: #212529; }
     #announcementFrame { width: 100%; height: 80px; border: 0; overflow: hidden; display: block; }
 
-    .single-line { white-space: nowrap; overflow-x: auto; }
     .mono { font-variant-numeric: tabular-nums; }
     .week-range { font-size: .875rem; opacity: .8; }
 
-    /* ===== NHẤN MẠNH HAI THẺ TUẦN (màu dịu mắt + viền) =====
-       Không phụ thuộc phiên bản Bootstrap; tự định nghĩa để ổn định màu. */
+    /* Màu cho khối tuần */
     .card-week { border-width: 1px; border-style: solid; border-radius: .75rem; }
     .card-week.current {
-      background: #e8f5e9;   /* xanh lá rất nhạt */
+      background: #e8f5e9;
       border-color: #a5d6a7;
     }
     .card-week.next {
-      background: #fff8e1;   /* vàng rất nhạt */
+      background: #fff8e1;
       border-color: #ffe082;
     }
 
-    /* ===== CẢNH BÁO KHI CHỌN NGÀY (nhẹ nhàng) ===== */
+    /* Alert khi chọn ngày */
     .alert-chosen {
-      background: #e3f2fd;  /* xanh dương nhạt */
+      background: #e3f2fd;
       border-color: #90caf9;
       color: #0d47a1;
     }
@@ -45,19 +42,19 @@
 </head>
 
 <body class="bg-dark">
-  <!-- ===== HEADER ===== -->
+  <!-- HEADER -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid text-center">
       <h1 class="text-primary text-center mb-0">TỔ LÒ HƠI</h1>
     </div>
   </nav>
 
-  <!-- ===== DẢI THÔNG BÁO (có thể nhúng Apps Script riêng) ===== -->
+  <!-- DẢI THÔNG BÁO -->
   <div class="announce-wrap">
     <iframe id="announcementFrame" src="" scrolling="no" referrerpolicy="no-referrer"></iframe>
   </div>
 
-  <!-- ===== MENU ===== -->
+  <!-- MENU -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
     <div class="container-fluid">
       <button class="navbar-toggler collapsed" type="button"
@@ -75,15 +72,14 @@
     </div>
   </nav>
 
-  <!-- ===== KHỐI CHỌN NGÀY + KẾT QUẢ ===== -->
+  <!-- KHỐI CHỌN NGÀY + KẾT QUẢ -->
   <div class="container-fluid bg-light text-dark py-3">
     <div class="card shadow-sm">
       <div class="card-body">
-        <!-- Hàng chọn ngày + tóm tắt ngay 1 dòng -->
+        <!-- Hàng chọn ngày -->
         <div class="d-flex align-items-center flex-nowrap gap-3 mb-3">
           <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
           <input type="date" id="workDate" class="form-control" style="width: 180px;" />
-          <div id="lineAll" class="fw-semibold single-line flex-grow-1"></div>
         </div>
 
         <!-- Hai cột: Tuần hiện tại / Tuần kế tiếp -->
@@ -108,7 +104,7 @@
           </div>
         </div>
 
-        <!-- Bảng thông báo cho "tuần chứa ngày đã chọn" -->
+        <!-- Bảng thông báo cho tuần chứa ngày đã chọn -->
         <div id="chosenAlert" class="alert alert-chosen d-none mt-3" role="alert">
           <div class="d-flex justify-content-between align-items-start">
             <div>
@@ -124,7 +120,7 @@
     </div>
   </div>
 
-  <!-- ===== KHU VỰC IFRAME ỨNG DỤNG KHÁC ===== -->
+  <!-- KHU VỰC IFRAME -->
   <div class="content-wrapper">
     <iframe id="mainFrame"  src="https://script.google.com/macros/s/AKfycbylNzumSIzPj_pElw47T642qV7gv43gU8QMMX7iZU393zQK9d1-lqunu09b93jHano_/exec"></iframe>
     <iframe id="taskListFrame"  src=""></iframe>
@@ -140,12 +136,10 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-  <!-- ===== SCRIPT CHÍNH (có chú thích chi tiết) ===== -->
+  <!-- SCRIPT CHÍNH -->
   <script defer>
     window.addEventListener('DOMContentLoaded', function () {
-      /* =========================
-         1) ĐIỀU KHIỂN MENU/IFRAME
-         ========================= */
+      // ========== Điều khiển menu / iframe ==========
       const menuLinks = document.querySelectorAll('.iframe-link, .nav-link[data-target]');
       const frames    = document.querySelectorAll('iframe');
       const navbarCollapseEl = document.getElementById('navbar-content');
@@ -180,37 +174,22 @@
       const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
       if (defaultLink) defaultLink.classList.add('active');
 
-      /* ==================================================
-         2) CẤU HÌNH XOAY KÍP/CA (dễ bảo trì)
-         - baseDate: mốc bất kỳ; chu kỳ tuần sẽ tính theo
-           "Tuần chứa baseDate", biên tuần là THỨ HAI.
-         - Nếu thêm người/đổi nhóm/đổi ca: chỉ sửa ở đây.
-         ================================================== */
-      const baseDate = new Date("2025-01-01"); // mốc A5
+      // ========== Logic kíp/ca ==========
+      const baseDate = new Date("2025-01-01"); // mốc
 
-      // Nhân sự theo nhóm (mỗi phần tử là 1 người)
-      const groupA = ["Mạnh Hiền", "Quốc Thắng"];
-      const groupB = ["Cường Thịnh", "Minh Tú"];
-      const groupC = ["Đức Thịnh", "Ngọc Hiếu"];
-      // Thứ tự xoay kíp (vòng tròn): A -> B -> C
+      const groupA = ["Mạnh Hiền","Quốc Thắng"];
+      const groupB = ["Cường Thịnh","Minh Tú"];
+      const groupC = ["Đức Thịnh","Ngọc Hiếu"];
       const kipOrder = [groupA, groupB, groupC];
 
-      // Nhóm ca (có thể thay bằng tên người trực từng ca)
       const caA = ["Ca A"];
       const caB = ["Ca B"];
-      // Thứ tự xoay ca (vòng tròn): A -> B
       const caOrder = [caA, caB];
 
-      // Trạng thái ở hàng mốc (B5..F5) tương ứng với tuần chứa baseDate
-      // Gợi ý: nếu muốn đổi “điểm xuất phát”, chỉ cần đổi 2 dòng dưới:
-      const baseKip = [groupB, groupC, groupA]; // Kíp 1/2/3 tại tuần mốc
-      const baseCa  = [caB, caA];               // Ca sáng / Ca chiều tại tuần mốc
+      const baseKip = [groupB, groupC, groupA];
+      const baseCa  = [caB, caA];
 
-      /* ==========================================
-         3) BIẾN DOM DÙNG LẠI NHIỀU (giảm query)
-         ========================================== */
       const dateEl       = document.getElementById('workDate');
-      const lineAll      = document.getElementById('lineAll');
       const weekThisEl   = document.getElementById('weekThis');
       const weekNextEl   = document.getElementById('weekNext');
       const rangeThisEl  = document.getElementById('rangeThis');
@@ -219,124 +198,84 @@
       const weekChosenEl = document.getElementById('weekChosen');
       const rangeChosenEl= document.getElementById('rangeChosen');
 
-      /* ==========================================
-         4) HÀM TIỆN ÍCH THỜI GIAN (theo THỨ HAI)
-         ========================================== */
-
-      // Chuẩn hoá về 00:00 theo local-time để tránh lệch múi giờ
       function asLocalDate(d) {
         return new Date(d.getFullYear(), d.getMonth(), d.getDate());
       }
-      // Lấy THỨ HAI của tuần chứa 'date'
       function startOfWeekMonday(date) {
         const d = asLocalDate(date);
-        let day = d.getDay();       // 0=CN, 1=Hai, ..., 6=Bảy
-        if (day === 0) day = 7;     // ISO: CN = 7
-        const diff = day - 1;       // số ngày lùi về Thứ Hai
+        let day = d.getDay();
+        if (day === 0) day = 7;
+        const diff = day - 1;
         return new Date(d.getFullYear(), d.getMonth(), d.getDate() - diff);
       }
-      // Lấy CHỦ NHẬT của tuần chứa 'date'
       function endOfWeekSunday(date) {
         const mon = startOfWeekMonday(date);
         return new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + 6);
       }
-      // Chuỗi khoảng tuần: dd/mm/yyyy – dd/mm/yyyy
       function formatRange(mon, sun) {
         const dd = n => String(n).padStart(2, '0');
         const yyyy = d => d.getFullYear();
-        return `${dd(mon.getDate())}/${dd(mon.getMonth()+1)}/${yyyy(mon)} – ` +
-               `${dd(sun.getDate())}/${dd(sun.getMonth()+1)}/${yyyy(sun)}`;
+        return `${dd(mon.getDate())}/${dd(mon.getMonth()+1)}/${yyyy(mon)} – ${dd(sun.getDate())}/${dd(sun.getMonth()+1)}/${yyyy(sun)}`;
       }
-      // Số tuần chênh lệch giữa d1 và d2 (đều tính theo THỨ HAI)
       function weeksBetweenMonday(d1, d2) {
         const m1 = startOfWeekMonday(d1);
         const m2 = startOfWeekMonday(d2);
         return Math.floor((m1 - m2) / (7 * 24 * 60 * 60 * 1000));
       }
-
-      /* ====================================
-         5) LOGIC XOAY KÍP/CA (vòng tròn)
-         ==================================== */
-
-      // Lấy phần tử trong chu kỳ orderArr khi “dịch” k bước từ startArr
       function rotateByStart(startArr, orderArr, k){
         const startIdx = orderArr.indexOf(startArr);
-        const pos = (startIdx + k) % orderArr.length; // k có thể âm? -> hiện tại chỉ dương/0
+        const pos = (startIdx + k) % orderArr.length;
         return orderArr[pos];
       }
-
-      // Tính kíp/ca cho *tuần chứa* 'input' (Date hoặc "YYYY-MM-DD")
       function computeShifts(input){
         const d = (input instanceof Date) ? input : new Date(input + 'T00:00');
         if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
-        const k = weeksBetweenMonday(d, baseDate); // số tuần lệch so với tuần mốc
+        const k = weeksBetweenMonday(d, baseDate);
         return {
-          k1: rotateByStart(baseKip[0], kipOrder, k), // kíp 1
-          k2: rotateByStart(baseKip[1], kipOrder, k), // kíp 2
-          k3: rotateByStart(baseKip[2], kipOrder, k), // kíp 3
-          caS: rotateByStart(baseCa[0],  caOrder,  k), // ca sáng
-          caC: rotateByStart(baseCa[1],  caOrder,  k)  // ca chiều
+          k1: rotateByStart(baseKip[0], kipOrder, k),
+          k2: rotateByStart(baseKip[1], kipOrder, k),
+          k3: rotateByStart(baseKip[2], kipOrder, k),
+          caS: rotateByStart(baseCa[0],  caOrder,  k),
+          caC: rotateByStart(baseCa[1],  caOrder,  k)
         };
       }
-
-      /* ================================
-         6) RENDER CHUỖI HIỂN THỊ
-         ================================ */
       function renderLine(r){
         const kip1 = r.k1.join(", ");
         const kip2 = r.k2.join(", ");
         const kip3 = r.k3.join(", ");
         const caS  = r.caS.join(", ");
         const caC  = r.caC.join(", ");
-        // Dấu phân cách bằng dấu ';' như yêu cầu
         return `Kíp 1: ${kip1}; Kíp 2: ${kip2}; Kíp 3: ${kip3}; Ca sáng: ${caS}; Ca chiều: ${caC}`;
       }
 
-      /* ================================
-         7) KHỞI TẠO THEO "HÔM NAY"
-         ================================ */
+      // Khởi tạo hôm nay
       const today = new Date();
-
-      // Set giá trị input type="date" theo local timezone
       const isoToday = new Date(today.getTime() - today.getTimezoneOffset()*60000)
                         .toISOString().split('T')[0];
       dateEl.value = isoToday;
 
-      // Tóm tắt nhanh 1 dòng theo "hôm nay"
-      lineAll.textContent = renderLine(computeShifts(today));
-
-      // Tính khoảng tuần hiện tại + tuần kế tiếp
       const monThis = startOfWeekMonday(today);
       const sunThis = endOfWeekSunday(today);
       const monNext = new Date(monThis.getFullYear(), monThis.getMonth(), monThis.getDate() + 7);
       const sunNext = new Date(monNext.getFullYear(), monNext.getMonth(), monNext.getDate() + 6);
 
-      // Range hiển thị (dd/mm/yyyy – dd/mm/yyyy)
       rangeThisEl.textContent = formatRange(monThis, sunThis);
       rangeNextEl.textContent = formatRange(monNext, sunNext);
 
-      // Nội dung kíp/ca cho hai tuần
       weekThisEl.textContent = renderLine(computeShifts(monThis));
       weekNextEl.textContent = renderLine(computeShifts(monNext));
 
-      /* ================================
-         8) SỰ KIỆN ĐỔI NGÀY (dropdown)
-         ================================ */
+      // Khi đổi ngày
       dateEl.addEventListener('change', () => {
         const iso = dateEl.value;
         if (!iso) return;
-
         const d = new Date(iso + 'T00:00');
         const mon = startOfWeekMonday(d);
         const sun = endOfWeekSunday(d);
 
-        // Bảng cảnh báo riêng cho tuần chứa “ngày đã chọn”
         rangeChosenEl.textContent = formatRange(mon, sun);
         weekChosenEl.textContent = renderLine(computeShifts(d));
         chosenAlert.classList.remove('d-none');
-
-        // Đồng thời cập nhật “tóm tắt 1 dòng” theo ngày chọn
-        lineAll.textContent = renderLine(computeShifts(d));
       });
     });
   </script>
