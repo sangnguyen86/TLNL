@@ -85,54 +85,7 @@
     </div>
   </nav>
 
-   <!-- KHỐI CHỌN NGÀY + KẾT QUẢ  -->
-  <div class="container-fluid bg-light text-dark py-3">
-  <div class="card shadow-sm">
-    <div class="card-body">
-        <!-- Hàng chọn ngày -->
-        <div class="d-flex align-items-center flex-nowrap gap-3 mb-3">
-          <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
-          <input type="date" id="workDate" class="form-control" style="width: 180px;" />
-        </div>
-
-        <!-- Hai cột: Tuần hiện tại / Tuần kế tiếp -->
-        <div class="row g-3">
-          <div class="col-12 col-lg-6">
-            <div class="card-week current p-3 h-100">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5 class="mb-1 text-success">Tuần hiện tại</h5>
-                <div id="rangeThis" class="week-range mono"></div>
-              </div>
-              <div id="weekThis" class="mt-2"></div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="card-week next p-3 h-100">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5 class="mb-1 text-warning">Tuần kế tiếp</h5>
-                <div id="rangeNext" class="week-range mono"></div>
-              </div>
-              <div id="weekNext" class="mt-2"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bảng thông báo cho tuần chứa ngày đã chọn -->
-        <div id="chosenAlert" class="alert alert-chosen d-none mt-3" role="alert">
-          <div class="d-flex justify-content-between align-items-start">
-            <div>
-              <strong>Kết quả cho tuần chứa ngày đã chọn</strong>
-              <div id="rangeChosen" class="week-range mono"></div>
-            </div>
-            <button type="button" class="btn-close" aria-label="Close"
-                    onclick="document.getElementById('chosenAlert').classList.add('d-none')"></button>
-          </div>
-          <div id="weekChosen" class="mt-2"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ====== HẾT KHỐI CHỌN NGÀY ====== -->
+   
 
   <!-- KHU VỰC NỘI DUNG (IFRAME) -->
   <div class="content-wrapper">
