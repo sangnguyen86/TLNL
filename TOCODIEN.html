@@ -143,6 +143,132 @@
     *::-webkit-scrollbar-thumb { background: #20304a; border-radius: 8px; }
     *::-webkit-scrollbar-thumb:hover { background: #2a4470; }
     *::-webkit-scrollbar-track { background: #0c1322; }
+    /* ===== KAIZEN – 5S Banner (PRO) ===== */
+.kaizen-banner{
+  position: relative;
+  width: 100%;
+  height: 92px;                /* cao hơn 80px một chút cho chữ thoáng */
+  background: linear-gradient(180deg, #0b1221 0%, #0e1830 60%, #0b1221 100%);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Lớp nền: lưới tech tinh tế */
+.kb-layer{ position:absolute; inset:0; pointer-events:none; }
+.kb-grid{
+  background:
+    linear-gradient(transparent 90%, rgba(32,64,120,.25) 100%),
+    repeating-linear-gradient(
+      to right,
+      rgba(59,130,246,.08) 0 1px,
+      transparent 1px 24px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(59,130,246,.08) 0 1px,
+      transparent 1px 24px
+    );
+  opacity:.55;
+}
+
+/* Lớp glow xanh dương (G2) */
+.kb-glow{
+  background:
+    radial-gradient(1200px 180px at 20% 120%,
+      rgba(59,130,246,.30) 0%,
+      rgba(59,130,246,0) 60%),
+    radial-gradient(900px 160px at 85% -20%,
+      rgba(56,189,248,.25) 0%,
+      rgba(56,189,248,0) 60%);
+  mix-blend-mode: screen;
+  opacity:.9;
+}
+
+/* Vệt sáng chạy chéo (hiệu ứng PRO, nhẹ) */
+.kb-streak::before{
+  content:"";
+  position:absolute;
+  left:-40%; top:-150%;
+  width:80%; height:400%;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg,
+    rgba(59,130,246,0) 0%,
+    rgba(148,197,255,.22) 40%,
+    rgba(148,197,255,.35) 50%,
+    rgba(148,197,255,.22) 60%,
+    rgba(59,130,246,0) 100%
+  );
+  filter: blur(6px);
+  animation: kbSweep 9s linear infinite;
+  opacity:.45;
+}
+@keyframes kbSweep{
+  0%   { left:-45%; }
+  100% { left:105%; }
+}
+
+/* Vùng chữ */
+.kb-inner{
+  position: relative;
+  height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding-left: clamp(12px, 3vw, 28px);
+  padding-right: clamp(12px, 3vw, 28px);
+}
+.kb-text{
+  line-height:1.15;
+  animation: kbFade .6s ease-out both;
+}
+@keyframes kbFade{
+  from{ transform: translateY(6px); opacity:0; }
+  to  { transform: translateY(0); opacity:1; }
+}
+
+/* Tiêu đề & phụ đề */
+.kb-title{
+  font-weight: 800;
+  letter-spacing:.06em;
+  text-transform: uppercase;
+  font-size: clamp(18px, 2.3vw, 28px);
+  color: var(--primary-200);
+  text-shadow: 0 0 8px rgba(59,130,246,.45);
+}
+.kb-sub{
+  margin-top: 2px;
+  font-weight: 600;
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: #d3e2ff;
+  opacity:.9;
+}
+
+/* Dòng 5S JP-VN */
+.kb-5s{
+  margin-top: 6px;
+  font-size: clamp(11px, 1.25vw, 13px);
+  color: #c9d7ff;
+  opacity:.95;
+}
+.kb-5s span{
+  color: #a7c4ff;
+  opacity:.95;
+}
+
+/* Mobile tối ưu chiều cao & cỡ chữ */
+@media (max-width: 575.98px){
+  .kaizen-banner{ height: 100px; }
+  .kb-title{ font-size: 18px; }
+  .kb-sub{ font-size: 12px; }
+  .kb-5s{ font-size: 11px; }
+}
+
+/* Tablet */
+@media (min-width:576px) and (max-width: 991.98px){
+  .kaizen-banner{ height: 106px; }
+  .kb-title{ font-size: 22px; }
+}
+
   </style>
 </head>
 
@@ -154,15 +280,27 @@
     </div>
   </nav>
 
-  <!-- DẢI THÔNG BÁO -->
-  <div class="announce-wrap">
-    <iframe
-      id="announcementFrame"
-      src="https://script.google.com/macros/s/AKfycbxRwqLIvXe_yHyp0Cb5SVo-k9gWFFc5FqciCIyBg7eZgLvBJL4ucS9k1BKZC6rWI20q/exec?mode=marquee&theme=dark&sep=%7C&fs=16&speed=30"
-      scrolling="no"
-      referrerpolicy="no-referrer"
-    ></iframe>
+<!-- BANNER KAIZEN – 5S (PRO) -->
+<div class="announce-wrap kaizen-banner border-e2">
+  <div class="kb-layer kb-grid"></div>
+  <div class="kb-layer kb-glow"></div>
+  <div class="kb-layer kb-streak"></div>
+
+  <div class="kb-inner container-fluid">
+    <div class="kb-text">
+      <div class="kb-title">KAIZEN</div>
+      <div class="kb-sub">Không ngừng cải tiến</div>
+      <div class="kb-5s">
+        Seiri <span>(Sàng lọc)</span> •
+        Seiton <span>(Sắp xếp)</span> •
+        Seiso <span>(Sạch sẽ)</span> •
+        Seiketsu <span>(Duy trì chuẩn)</span> •
+        Shitsuke <span>(Kỷ luật)</span>
+      </div>
+    </div>
   </div>
+</div>
+
 
   <!-- MENU (STICKY - DESKTOP) -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top" style="z-index:1030;">
