@@ -42,7 +42,32 @@
 
     html, body { height: 100%; margin: 0; }
     body { background: var(--bg); color: var(--text); display:flex; flex-direction:column; }
+    /* ===== HEADER (H1 – Dark Tech Clean) ===== */
+.top-header{
+  width: 100%;
+  background: linear-gradient(180deg, #0b1221 0%, #0d1627 100%);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  position: relative;
+  z-index: 1032;
+}
 
+.top-header .th-inner{
+  width: 100%;
+  text-align: center;
+}
+
+.top-header h1{
+  margin: 0;
+  font-weight: 650;
+  letter-spacing: .8px;
+  font-size: clamp(1.1rem, 2.15vw, 1.55rem);
+  color: var(--primary-200);
+  text-shadow: 0 0 6px rgba(59,130,246,.38);
+}
     /* Header bars */
     .navbar-dark.bg-dark {
       background: linear-gradient(180deg, #0b1221, #0d1627) !important;
@@ -273,12 +298,12 @@
 </head>
 
 <body>
-  <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-    <div class="container-fluid text-center">
-      <h1 class="text-primary text-center mb-0 fw-semibold">TỔ CƠ ĐIỆN</h1>
-    </div>
-  </nav>
+<!-- HEADER (H1 – Dark Tech Clean) -->
+<header class="top-header">
+  <div class="th-inner">
+    <h1>TỔ CƠ ĐIỆN</h1>
+  </div>
+</header>
 
 <!-- BANNER KAIZEN – 5S (PRO) -->
 <div class="announce-wrap kaizen-banner border-e2">
