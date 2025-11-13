@@ -1,513 +1,489 @@
 <!doctype html>
+<!-- ============================================
+     FILE HTML ĐẦY ĐỦ – STEEL × CYBER BLUE
+     + Hiệu ứng viền sáng NAV
+     + Hiệu ứng chuyển cảnh giữa các IFRAME
+     ============================================ -->												 											   																																			 
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+ <!-- Tiêu đề trang -->							
   <title>TỔ CƠ ĐIỆN</title>
 
-  <!-- Bootstrap & Icons -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <!-- ============================================
+       CSS BÊN NGOÀI – Bootstrap & Bootstrap Icons
+       ============================================ -->													   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 
+  <!-- ============================================
+       CSS THEME & LAYOUT
+       ============================================ -->
   <style>
+    /* ========== Token màu & biến layout ========== */
     :root{
-      --bg:#0d1628;
-      --surface:#0f1b33;
-      --text:#e8efff;
+      --bg: #0a1222;
+      --surface: #101827;
+      --surface-2: #131c2e;
+      --surface-3: #0b1323;
+      --text: #e8ecf5;
+      --muted: #9ca3af;
+      --primary: #3b82f6;
+      --primary-200: #bfdbfe;
+      --primary-500: #3b82f6;
+      --border: rgba(80,120,180,0.28);
+	  
+      --radius: 12px;
 
-      --primary:#3b82f6;
-      --primary-soft:#8bb7ff;
-
-      --banner-maxw:1400px;
-      --radius:12px;
-
-      --h-header:60px;
-      --h-banner:95px;
+      --banner-maxw: 1400px;
+      /* Chiều cao các layer sticky */
+      --h-header: 62px;
+      --gap-hb: 10px;
+      --h-banner: 96px;
+      --gap-bm: 12px;
     }
 
-    html,body{
-      margin:0;
-      height:100%;
-    }
-    body{
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,sans-serif;
+    html, body { height:100%; margin:0; background:var(--bg); color:var(--text); }
+    body {
+      background: var(--bg);
+      color: var(--text);
       display:flex;
       flex-direction:column;
-    }
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }	  													 				   																														 
 
-    /* ===== HEADER ===== */
+    /* =====================================================
+       HEADER — steel frame + soft glow
+       ===================================================== */
     .top-header{
-      position:sticky;
-      top:0;
-      z-index:999;
-      height:var(--h-header);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(10,18,35,.88);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,.06);
+      height: var(--h-header);
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(180deg,#0d1627,#0a1320);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 4px 18px rgba(0,0,0,.45);
+      position:sticky; top:0; z-index:1040;
     }
     .top-header h1{
       margin:0;
-      font-size:clamp(1.1rem,2vw,1.45rem);
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      font-weight:700;
       letter-spacing:.08em;
-      color:var(--primary-soft);
-      text-shadow:0 0 12px rgba(72,136,255,.45);
-      font-weight:650;
+      color:var(--primary-200);
+      text-shadow:0 0 14px rgba(90,150,255,.55);
     }
 
-    /* ===== KAIZEN BANNER ===== */
-    .kaizen-wrap{
-      height:calc(var(--h-banner) + 10px);
-    }
+    /* =====================================================
+       BANNER — Steel plate + subtle glow + reduced brightness
+       ===================================================== */
+    .kaizen-wrap{ height: calc(var(--h-banner) + var(--gap-hb)); }
+
     .kaizen-banner{
-      position:sticky;
-      top:var(--h-header);
-      z-index:990;
-      display:flex;
-      justify-content:center;
-      padding-top:10px;
-    }
-    .kb-surface{
-      position:relative;
-      width:100%;
-      max-width:var(--banner-maxw);
-      height:var(--h-banner);
-      background:linear-gradient(135deg,#0e1a2f,#132544);
-      border:1px solid rgba(120,160,255,.25);
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:0 12px 28px rgba(0,0,0,.45);
+      position: sticky;
+      top: var(--h-header);
+      padding-top: var(--gap-hb);
+      z-index: 1035;
+      display:flex; justify-content:center;
     }
 
-    .kb-glow{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
+    .kb-surface{
+      width:100%; max-width:var(--banner-maxw);
+      height:var(--h-banner);
+      border-radius:var(--radius);
+      border:1px solid rgba(110,150,220,0.25);
       background:
-        radial-gradient(circle at 20% 80%,rgba(100,150,255,.25),transparent 65%),
-        radial-gradient(circle at 85% 0%,rgba(130,160,255,.18),transparent 65%);
-      opacity:.75;
+        radial-gradient(circle at 20% 0%, rgba(80,120,200,.25), transparent 55%),
+        linear-gradient(180deg,#0c1628,#0e182e 60%,#0a1322);
+      box-shadow:
+        0 4px 20px rgba(0,0,0,.4),
+        0 0 22px rgba(80,120,200,.16);
+      position:relative;
+      overflow:hidden;
     }
+
+    .kb-layer{ position:absolute; inset:0; pointer-events:none; }
+
+  /* Grid nền banner */						   
     .kb-grid{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
       background:
-        repeating-linear-gradient(to right,rgba(255,255,255,.04) 0 1px,transparent 1px 26px),
-        repeating-linear-gradient(to bottom,rgba(255,255,255,.04) 0 1px,transparent 1px 26px);
+        repeating-linear-gradient(to right, rgba(90,140,220,.16) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(to bottom, rgba(90,140,220,.16) 0 1px, transparent 1px 22px);
       opacity:.35;
     }
 
+	  /* Ánh sáng */				
+    .kb-glow{
+      background:
+        radial-gradient(900px 110px at 20% -20%, rgba(120,160,240,.22), transparent 70%),
+        radial-gradient(600px 100px at 90% 120%, rgba(140,180,255,.16), transparent 70%);
+      opacity:.7;
+      mix-blend-mode:screen;
+    }
+
     .kb-inner{
-      position:relative;
       height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:0 20px;
+      display:flex; align-items:center; justify-content:center;
+      padding:0 12px;
+      position:relative;
       text-align:center;
     }
+
     .kb-title-1{
-      font-size:clamp(0.82rem,1.5vw,1rem);
+      font-size: clamp(0.82rem, 1.3vw, 1.05rem);
+      letter-spacing:.10em;
       text-transform:uppercase;
-      letter-spacing:.14em;
-      color:#d8e6ff;
-      font-weight:500;
-      text-shadow:0 0 4px rgba(140,170,255,.25);
+      color: var(--primary-200);
+      text-shadow:0 0 10px rgba(120,170,255,.45);
     }
+
     .kb-title-2{
-      margin-top:4px;
-      font-size:clamp(0.74rem,1.3vw,0.9rem);
-      text-transform:uppercase;
-      letter-spacing:.1em;
-      color:#cde0ff;
+      font-size: clamp(0.76rem, 1.2vw, .95rem);
+      letter-spacing:.09em;
+      margin-top:2px;
+      color: var(--primary-200);
+      text-shadow:0 0 10px rgba(120,170,255,.45);
     }
+
     .kb-5s{
       margin-top:4px;
-      font-size:clamp(0.65rem,1.2vw,0.83rem);
-      opacity:.85;
+      font-size: clamp(0.6rem, 1vw, .8rem);
+      color:#d6e4ff;
+      opacity:.9;
     }
 
-    @media(min-width:768px){
-      .kb-surface{
-        transition:.25s;
-      }
-      .kb-surface:hover{
-        box-shadow:0 0 25px rgba(90,140,255,.25);
-        transform:translateY(-1px);
-      }
-    }
-
-    /* ===== NAVBAR (PC) ===== */
+    /* =====================================================
+       NAVBAR — better glow + highlight line
+       ===================================================== */
     .navbar-dark.bg-dark{
       position:sticky;
-      top:calc(var(--h-header) + var(--h-banner) + 12px);
-      z-index:980;
+      top: calc(var(--h-header) + var(--gap-hb) + var(--h-banner) + var(--gap-bm));
+      z-index:1034;
       max-width:var(--banner-maxw);
       margin:0 auto;
       border-radius:var(--radius);
-      background:rgba(14,22,40,.85)!important;
-      backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,.06);
+      background:#0e1729 !important;
+      border:1px solid rgba(110,150,220,.22);
+      box-shadow:0 4px 20px rgba(0,0,0,.45);
     }
 
-    .navbar-nav .nav-link{
+    .nav-link{
+      padding:10px 14px;
+      font-size:.82rem;
+      letter-spacing:.04em;
       position:relative;
-      color:#dce6ff;
-      opacity:.88;
-      font-size:0.82rem;
-      padding:9px 14px;
-      letter-spacing:.05em;
-      text-transform:uppercase;
+      transition:.2s;
+      opacity:.85;
     }
-    .navbar-nav .nav-link:hover{
+    .nav-link:hover,
+    .nav-link.active{
+      color:var(--primary-200) !important;
       opacity:1;
-      color:var(--primary-soft);
     }
 
-    .navbar-nav .nav-link::after{
+    .nav-link.active::after,
+    .nav-link:hover::after{
       content:"";
       position:absolute;
-      left:20%;
-      right:20%;
-      bottom:4px;
-      height:2px;
-      background:linear-gradient(90deg,#6da8ff,#9fc4ff,#6da8ff);
-      opacity:0;
-      transition:.2s;
-      pointer-events:none; /* không chặn click */
-    }
-    .navbar-nav .nav-link.active::after,
-    .navbar-nav .nav-link:hover::after{
-      opacity:1;
-      box-shadow:0 0 8px rgba(130,170,255,.45);
-    }
-    .navbar-nav .nav-link.active{
-      color:var(--primary-soft)!important;
-      opacity:1;
+      left:20%; right:20%; bottom:4px;
+      height:3px;
+      background:linear-gradient(90deg,#87b7ff,#bfdcff,#87b7ff);
+      border-radius:99px;
+      box-shadow:0 0 8px rgba(110,150,240,.8);
     }
 
-    /* ===== CONTENT / IFRAMES ===== */
-    .content-wrapper{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-    }
-    .frame-wrap{
-      position:relative;
-      flex:1;
-      max-width:var(--banner-maxw);
-      margin:8px auto 70px auto;
-      border-radius:var(--radius);
-      background:#0b1324;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.06);
-      box-shadow:0 12px 26px rgba(0,0,0,.55);
-    }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ========== NỘI DUNG + IFRAMES ========== */
+	.content-wrapper{ flex:1; display:flex; flex-direction:column; background:var(--surface-2); }
+    .frame-wrap{ 
+		flex:1; 
+		position:relative; 
+		}						       
     iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:none;
-      background:#0b1324;
-      opacity:0;
-      pointer-events:none;
-      transform:translateY(4px);
-      filter:blur(1px);
-      transition:opacity .25s ease-out, transform .25s ease-out, filter .25s ease-out;
+      position:absolute; inset:0; width:100%; height:100%;
+      border:none; background: var(--surface-3); display:none;				  						 												   												   						  
     }
-    iframe.active{
-      opacity:1 !important;
-      pointer-events:auto;
-      transform:translateY(0);
-      filter:blur(0);
+	iframe.active{ display:block; }			
+	
+	/* Hiệu ứng chuyển cảnh cho iframe */
+    iframe.fade-anim{
+      animation: iframeFade .35s ease-out;
+						  
     }
-    iframe.fade-out{
-      opacity:0 !important;
-      transform:translateY(6px);
-      filter:blur(3px);
-    }
-    iframe.fade-in{
-      opacity:1 !important;
-      transform:translateY(0);
-      filter:blur(0);
-    }
-
-    /* ===== MINI NAVBAR (MOBILE) ===== */
-    .mini-nav{
-      position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-      height:58px;
-      z-index:2000;
-      background:rgba(12,18,30,.85);
-      backdrop-filter:blur(14px);
-      border-top:1px solid rgba(255,255,255,.08);
-      display:flex;
-      justify-content:space-around;
-      align-items:center;
-    }
-    .mini-btn{
-      text-align:center;
-      color:#adb9d7;
-      font-size:0.66rem;
-      text-decoration:none;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
-    .mini-btn i{
-      font-size:1.2rem;
-      margin-bottom:1px;
-    }
-    .mini-btn.active,
-    .mini-btn:hover{
-      color:var(--primary-soft);
+    @keyframes iframeFade{
+      from{
+        opacity:0;
+        transform: translateY(10px) scale(0.99);
+        filter: blur(4px);
+				  
+					   
+								  
+					
+						   
+												   
+					  
+					 
+	   
+				
+					 
+											
+					
+	   
+			  
+											
+												   
+						 
+					  
+					   
+      }
+      to{
+        opacity:1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
     }
 
-    @media(min-width:992px){
-      .mini-nav{display:none;}
-      .frame-wrap{margin-bottom:18px;}
+    /* =====================================================
+       BOTTOM NAV (MOBILE)
+       ===================================================== */
+    @media(max-width: 991.98px){
+      .bottom-nav{
+        position:fixed;
+        left:0; right:0; bottom:0;
+        height:60px;
+        background:#0f182b;
+        border-top:1px solid rgba(110,150,220,.22);
+        display:block;
+        z-index:1035;
+      }
+      .bn-inner{
+        display:grid;
+        grid-template-columns:repeat(5,1fr);
+        height:100%;
+      }
+      .bn-btn{
+        display:flex; flex-direction:column;
+        align-items:center; justify-content:center;
+        font-size:.72rem;
+        color:#a8b4c9;
+        transition:.2s;
+      }
+      .bn-btn.active,
+      .bn-btn:hover{
+        color:#d3e6ff;
+      }
     }
 
-    /* Scrollbar nhẹ */
-    *::-webkit-scrollbar{width:9px;height:9px;}
-    *::-webkit-scrollbar-thumb{background:#1f2937;border-radius:999px;}
-    *::-webkit-scrollbar-thumb:hover{background:#334155;}
-    *::-webkit-scrollbar-track{background:#020617;}
   </style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="top-header">
-    <h1>TỔ CƠ ĐIỆN</h1>
-  </header>
+<!-- ============================
+     HEADER
+=============================== -->
+<header class="top-header">
+  <h1>TỔ CƠ ĐIỆN</h1>
+</header>
 
-  <!-- KAIZEN BANNER -->
-  <div class="kaizen-wrap">
-    <div class="kaizen-banner">
-      <div class="kb-surface">
-        <div class="kb-grid"></div>
-        <div class="kb-glow"></div>
+<!-- ============================
+     BANNER KAIZEN
+=============================== -->
+<div class="kaizen-wrap">
+  <div class="kaizen-banner">
+    <div class="kb-surface">
 
-        <div class="kb-inner">
-          <div>
-            <div class="kb-title-1">CHỦ ĐỘNG ✦ SÁNG TẠO ✦ HIỆU QUẢ</div>
-            <div class="kb-title-2">KAIZEN - KHÔNG NGỪNG CẢI TIẾN</div>
-            <div class="kb-5s">
-              Seiri (Sàng lọc) • Seiton (Sắp xếp) • Seiso (Sạch sẽ) •
-              Seiketsu (Săn sóc) • Shitsuke (Sẵn sàng)
-            </div>
+      <div class="kb-layer kb-grid"></div>
+      <div class="kb-layer kb-glow"></div>
+
+      <div class="kb-inner">
+        <div>
+          <div class="kb-title-1">CHỦ ĐỘNG ✦ SÁNG TẠO ✦ HIỆU QUẢ</div>
+          <div class="kb-title-2">KAIZEN - KHÔNG NGỪNG CẢI TIẾN</div>
+
+          <div class="kb-5s">
+            Seiri (Sàng lọc) • Seiton (Sắp xếp) • Seiso (Sạch sẽ) • Seiketsu (Săn sóc) • Shitsuke (Sẵn sàng)
           </div>
         </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- NAVBAR (PC) -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-    <div class="container-fluid">
-
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#navbar-content">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbar-content">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-          <li class="nav-item">
-            <a href="#" class="nav-link" data-target="mainFrame">TRANG CHỦ</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link iframe-link" data-target="taskListFrame">BẢNG CÔNG VIỆC</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link iframe-link" data-target="planListFrame">DỰ KIẾN</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link iframe-link" data-target="maintListFrame">BẢO DƯỠNG</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link iframe-link" data-target="MTCVFrame">PHÂN CÔNG</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link iframe-link" data-target="WaterRecordFrame">CHỈ SỐ NƯỚC</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link iframe-link" data-target="TaskReportFrame">BÁO CÁO</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link iframe-link" data-target="chamcongFrame">CHẤM CÔNG</a>
-          </li>
-
-        </ul>
       </div>
 
     </div>
-  </nav>
+  </div>
+</div>
 
-  <!-- CONTENT + IFRAMES -->
-  <div class="content-wrapper">
-    <div class="frame-wrap">
+<!-- ============================
+     NAV MENU
+=============================== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+  <div class="container-fluid">
 
-      <iframe id="mainFrame" src="" class="active"></iframe>
+    <button class="navbar-toggler collapsed" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbar-content">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <iframe id="taskListFrame"
-        src="https://script.google.com/macros/s/AKfycbyHry8Kk9_0ZyCfy3nZhVIrxKrENmSf5vsnPW-xxoUUbxRuOg1wYcUjdnT9x3i9urw/exec">
-      </iframe>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-      <iframe id="planListFrame"
-        src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec">
-      </iframe>
+        <li class="nav-item"><a class="nav-link" data-target="mainFrame" href="#">TRANG CHỦ</a></li>
+        <li class="nav-item"><a class="nav-link iframe-link" data-target="taskListFrame" href="#">BẢNG CÔNG VIỆC</a></li>
+        <li class="nav-item"><a class="nav-link iframe-link" data-target="planListFrame" href="#">DỰ KIẾN</a></li>
+        <li class="nav-item"><a class="nav-link iframe-link" data-target="maintListFrame" href="#">BẢO DƯỠNG</a></li>
+        <li class="nav-item"><a class="nav-link iframe-link" data-target="MTCVFrame" href="#">PHÂN CÔNG</a></li>
+        <li class="nav-item"><a class="nav-link iframe-link" data-target="WaterRecordFrame" href="#">CHỈ SỐ NƯỚC</a></li>
+        <li class="nav-item"><a class="nav-link iframe-link" data-target="TaskReportFrame" href="#">BÁO CÁO</a></li>
+        <li class="nav-item"><a class="nav-link iframe-link" data-target="chamcongFrame" href="#">CHẤM CÔNG</a></li>
 
-      <iframe id="maintListFrame"
-        src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec">
-      </iframe>
-
-      <iframe id="MTCVFrame"
-        src="https://script.google.com/macros/s/AKfycbyK1iyc0eck7seY7kqmGOb6V1MYVv_Ue43q2dYzKFeby329xHaQBtFj2WdDweW46NLA/exec">
-      </iframe>
-
-      <iframe id="WaterRecordFrame"
-        src="https://script.google.com/macros/s/AKfycbwTbLHDiGjq4rcUwb6b6MLBM_junEEcJdVAlzZt1C25phiwIQG4uBnSEqpFu98I1wE/exec">
-      </iframe>
-
-      <iframe id="TaskReportFrame"
-        src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec">
-      </iframe>
-
-      <iframe id="DXVTFrame"
-        src="https://script.google.com/macros/s/AKfycbzrrIMJ4N5ymEMEV6EkOQy2qTH1ApZtdb4bn8h1sLPbCUE-upwxxlW-tvyNWOzAuwmX/exec">
-      </iframe>
-
-      <iframe id="MotorCurrentFrame"
-        src="https://script.google.com/macros/s/AKfycbxpHonjPCZ9Vin42ZATGEPGD09XWZ8MI76MI1kuE3lwHKV09_Yb_XeL193SVvnrSthe/exec">
-      </iframe>
-
-      <iframe id="chamcongFrame"
-        src="https://script.google.com/macros/s/AKfycbxG7IU2Nvv4IFmmcZnu4N_SWaNAKRYnNzElRan5ZiAaNqjb2GRdRpg-yyYCIZ95Gc6y2w/exec">
-      </iframe>
-
-      <iframe id="bearingFrame"
-        src="https://script.google.com/macros/s/AKfycbww7MA7xaZG2UJQWAc0NBwbl-bZPcjmic5XOUDFk_NR7OylFdv3OG2rxUUXRGy1w1BD/exec">
-      </iframe>
-
-      <iframe id="vbeltsFrame" src=""></iframe>
-
+      </ul>
     </div>
+
   </div>
+</nav>
 
-  <!-- MINI NAV (MOBILE) -->
-  <div class="mini-nav d-lg-none">
-    <a href="#" class="mini-btn" data-target="mainFrame">
-      <i class="bi bi-house"></i><span>Trang</span>
-    </a>
-    <a href="#" class="mini-btn" data-target="taskListFrame">
-      <i class="bi bi-card-checklist"></i><span>Công việc</span>
-    </a>
-    <a href="#" class="mini-btn" data-target="planListFrame">
-      <i class="bi bi-calendar-event"></i><span>Dự kiến</span>
-    </a>
-    <a href="#" class="mini-btn" data-target="maintListFrame">
-      <i class="bi bi-gear"></i><span>Bảo dưỡng</span>
-    </a>
-    <a href="#" class="mini-btn" data-target="TaskReportFrame">
-      <i class="bi bi-graph-up"></i><span>Báo cáo</span>
-    </a>
+<!-- ============================
+     IFRAMES — ALWAYS LOADED (fix PC)
+=============================== -->
+<div class="content-wrapper">
+  <div class="frame-wrap">
+
+    <!-- Trang chủ (tạm để trống) -->
+    <iframe id="mainFrame" src=""></iframe>
+
+    <iframe id="taskListFrame"  src="https://script.google.com/macros/s/AKfycbyHry8Kk9_0ZyCfy3nZhVIrxKrENmSf5vsnPW-xxoUUbxRuOg1wYcUjdnT9x3i9urw/exec"></iframe>
+
+    <iframe id="planListFrame"  src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
+
+    <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
+
+    <iframe id="MTCVFrame"     src="https://script.google.com/macros/s/AKfycbyK1iyc0eck7seY7kqmGOb6V1MYVv_Ue43q2dYzKFeby329xHaQBtFj2WdDweW46NLA/exec"></iframe>
+
+    <iframe id="WaterRecordFrame"  src="https://script.google.com/macros/s/AKfycbwTbLHDiGjq4rcUwb6b6MLBM_junEEcJdVAlzZt1C25phiwIQG4uBnSEqpFu98I1wE/exec"></iframe>
+
+    <iframe id="TaskReportFrame"   src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
+
+    <iframe id="DXVTFrame"         src="https://script.google.com/macros/s/AKfycbzrrIMJ4N5ymEMEV6EkOQy2qTH1ApZtdb4bn8h1sLPbCUE-upwxxlW-tvyNWOzAuwmX/exec"></iframe>
+
+    <iframe id="MotorCurrentFrame" src="https://script.google.com/macros/s/AKfycbxpHonjPCZ9Vin42ZATGEPGD09XWZ8MI76MI1kuE3lwHKV09_Yb_XeL193SVvnrSthe/exec"></iframe>
+
+    <iframe id="chamcongFrame"     src="https://script.google.com/macros/s/AKfycbxG7IU2Nvv4IFmmcZnu4N_SWaNAKRYnNzElRan5ZiAaNqjb2GRdRpg-yyYCIZ95Gc6y2w/exec"></iframe>
+
+    <iframe id="bearingFrame" src="https://script.google.com/macros/s/AKfycbww7MA7xaZG2UJQWAc0NBwbl-bZPcjmic5XOUDFk_NR7OylFdv3OG2rxUUXRGy1w1BD/exec"></iframe>
+
+    <iframe id="vbeltsFrame" src=""></iframe>
+
   </div>
+</div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<!-- ============================
+     MOBILE BOTTOM NAV
+=============================== -->
+<nav class="bottom-nav d-lg-none">
+  <div class="bn-inner">
+    <a href="#" class="bn-btn" data-target="mainFrame"><i class="bi bi-house"></i><div>Trang chủ</div></a>
+    <a href="#" class="bn-btn" data-target="taskListFrame"><i class="bi bi-card-checklist"></i><div>Công việc</div></a>
+    <a href="#" class="bn-btn" data-target="planListFrame"><i class="bi bi-calendar-event"></i><div>Dự kiến</div></a>
+    <a href="#" class="bn-btn" data-target="maintListFrame"><i class="bi bi-gear"></i><div>Bảo dưỡng</div></a>
+    <a href="#" class="bn-btn" data-target="TaskReportFrame"><i class="bi bi-graph-up"></i><div>Báo cáo</div></a>
+  </div>
+</nav>
+<!-- ============================================
+     SCRIPT NGOÀI – Bootstrap
+     ============================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+													 
 
-  <!-- SCRIPT: Điều hướng iframe + hiệu ứng -->
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
+<!-- ============================================
+     APP SCRIPT – ĐIỀU HƯỚNG IFRAME + HIỆU ỨNG
+     ============================================ -->
+<script defer>
+/* Điều khiển chuyển đổi giữa các iframe khi click menu */
+window.addEventListener('DOMContentLoaded', function () {
 
-    const menuLinks  = document.querySelectorAll('.nav-link[data-target], .iframe-link');
-    const miniBtns   = document.querySelectorAll('.mini-btn[data-target]');
-    const frames     = document.querySelectorAll('iframe');
+  const menuLinks = document.querySelectorAll('.iframe-link, .nav-link[data-target]');
+  const bottomBtns = document.querySelectorAll('.bottom-nav .bn-btn[data-target]');
+  const frames = document.querySelectorAll('iframe');
 
-    /* Hiệu ứng chuyển cảnh */
-    function transitionFrame(oldF, newF){
-      if (oldF) {
-        oldF.classList.remove("active");
-        oldF.classList.add("fade-out");
-        setTimeout(() => {
-          oldF.classList.remove("fade-out");
-        }, 250);
-      }
-      if (newF) {
-        newF.classList.add("active", "fade-in");
-        setTimeout(() => newF.classList.remove("fade-in"), 300);
-      }
+  /* Collapse menu cho mobile */
+  const navbarCollapseEl = document.getElementById('navbar-content');
+  const navCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
+
+  function collapseIfMobile(){
+    if(window.matchMedia('(max-width: 991.98px)').matches) navCollapse.hide();
+						 
+	 
+  }
+
+  /* Set trạng thái active cho menu */
+  function setActiveLink(targetId){
+    menuLinks.forEach(l=>{
+      l.classList.toggle('active', l.getAttribute('data-target')===targetId);
+    });
+    bottomBtns.forEach(b=>{
+      b.classList.toggle('active', b.getAttribute('data-target')===targetId);
+    });
+	 
+										  
+				  
+  }
+
+  /* Hiển thị iframe tương ứng + hiệu ứng chuyển cảnh */
+  function activateFrame(targetId){
+    frames.forEach(f=>{
+      f.classList.remove('active');
+	   
+							
+      f.classList.remove('fade-anim');
+    });
+    const t=document.getElementById(targetId);
+    if(t){
+      t.classList.add('active');
+      // restart animation
+      void t.offsetWidth;
+      t.classList.add('fade-anim');
     }
 
-    function setActiveMenu(id){
-      menuLinks.forEach(a => {
-        a.classList.toggle("active", a.getAttribute("data-target") === id);
-      });
-      miniBtns.forEach(b => {
-        b.classList.toggle("active", b.getAttribute("data-target") === id);
-      });
-    }
+    try{ localStorage.setItem('lastFrameId',targetId);}catch(e){}
+    setActiveLink(targetId);
+  }
 
-    function activateFrame(id){
-      const target = document.getElementById(id);
-      if (!target) return;
+  /* Xử lý click menu */
+  function handleClick(e){
+    e.preventDefault();
+    const targetId=this.getAttribute('data-target');
+    if(!targetId) return;
+    activateFrame(targetId);
+    collapseIfMobile();
+  }
 
-      const current = document.querySelector("iframe.active");
+  menuLinks.forEach(l=>l.addEventListener('click',handleClick));
+  bottomBtns.forEach(b=>b.addEventListener('click',handleClick));
 
-      transitionFrame(current, target);
-
-      frames.forEach(f => f.classList.remove("active"));
-      target.classList.add("active");
-
-      try{
-        localStorage.setItem("lastFrame", id);
-      }catch(e){}
-
-      setActiveMenu(id);
-    }
-
-    function clickHandler(e){
-      e.preventDefault();
-      const id = this.getAttribute('data-target');
-      if (id) activateFrame(id);
-    }
-
-    menuLinks.forEach(a => a.addEventListener("click", clickHandler));
-    miniBtns.forEach(b => b.addEventListener("click", clickHandler));
-
-    /* Khôi phục frame cuối */
-    let last = null;
-    try{
-      last = localStorage.getItem("lastFrame");
-    }catch(e){}
-    if (!last || !document.getElementById(last)) last = "mainFrame";
-    activateFrame(last);
-
-  });
-  </script>
+  /* Khôi phục iframe cuối cùng */
+  let defaultFrame='mainFrame';
+  try{
+    const saved=localStorage.getItem('lastFrameId');
+    if(saved && document.getElementById(saved)) defaultFrame=saved;
+  }catch(e){}
+  activateFrame(defaultFrame);
+});
+</script>
 
 </body>
 </html>
