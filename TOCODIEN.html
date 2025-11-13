@@ -10,23 +10,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <style>
-
 /* ============================================================
    THEME: STEEL × CYBER BLUE
    ============================================================ */
 :root{
-  /* Steel */
-  --steel-1: #0d1117;
-  --steel-2: #161b22;
-  --steel-3: #1f2937;
+  --steel-1: #050812;
+  --steel-2: #0b1220;
+  --steel-3: #111827;
 
-  /* Cyber Blue */
   --blue-1: #60a5fa;
   --blue-2: #3b82f6;
   --blue-3: #93c5fd;
   --blue-glow: rgba(96,165,250,0.55);
 
-  --text: #dbeafe;
+  --text: #e5e7eb;
   --muted: #94a3b8;
 
   --h-header: 65px;
@@ -43,36 +40,47 @@
    ============================================================ */
 html, body { height:100%; margin:0; }
 body{
-  background: radial-gradient(circle at 20% 0%, rgba(96,165,250,0.22), transparent 60%),
-              radial-gradient(circle at 80% 100%, rgba(59,130,246,0.3), transparent 60%),
-              var(--steel-1);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(96,165,250,0.22), transparent 60%),
+    radial-gradient(circle at 80% 100%, rgba(59,130,246,0.3), transparent 60%),
+    var(--steel-1);
   color: var(--text);
   display:flex;
   flex-direction:column;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* ============================================================
-   HEADER (sticky 1)
+   HEADER (sticky 1) – steel + 3D glow
    ============================================================ */
 .top-header{
   position:sticky; top:0; z-index:1000;
   height:var(--h-header);
-  background:linear-gradient(180deg, var(--steel-1), var(--steel-2));
-  border-bottom:1px solid rgba(148,163,184,0.25);
   display:flex; align-items:center; justify-content:center;
-  box-shadow:0 10px 25px rgba(0,0,0,0.45);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(96,165,250,0.25), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(37,99,235,0.25), transparent 55%),
+    linear-gradient(180deg, #020617, #020617 30%, #020617 100%);
+  border-bottom:1px solid rgba(148,163,184,0.4);
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.85),
+    0 0 25px rgba(15,23,42,0.95);
 }
 .top-header h1{
-  margin:0; font-size:clamp(1.1rem,2vw,1.55rem);
-  font-weight:700; letter-spacing:.12em;
+  margin:0;
+  font-size:clamp(1.1rem, 2vw, 1.55rem);
+  font-weight:800;
+  letter-spacing:.18em;
   text-transform:uppercase;
   color:var(--blue-3);
-  text-shadow:0 0 15px var(--blue-glow);
+  text-shadow:
+    0 0 12px rgba(96,165,250,0.9),
+    0 0 26px rgba(37,99,235,0.9),
+    0 0 38px rgba(15,23,42,1);
 }
 
 /* ============================================================
-   BANNER KAIZEN (sticky 2)
+   BANNER KAIZEN (sticky 2) – 3D steel + glow
    ============================================================ */
 .kaizen-wrap{
   height:calc(var(--h-banner) + var(--gap-hb));
@@ -88,51 +96,90 @@ body{
   width:100%; max-width:var(--maxw);
   height:var(--h-banner);
   border-radius:var(--radius);
-  background:linear-gradient(135deg,#0f172a,#1e293b);
-  border:1px solid rgba(96,165,250,0.35);
-  box-shadow:0 0 25px rgba(96,165,250,0.4);
-  position:relative;
   overflow:hidden;
+  background:
+    radial-gradient(circle at 0% 100%, rgba(30,64,175,0.55), transparent 60%),
+    radial-gradient(circle at 100% 0%, rgba(15,23,42,0.9), transparent 55%),
+    linear-gradient(135deg,#020617,#020617 35%,#020617 100%);
+  border:1px solid rgba(96,165,250,0.55);
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.95),
+    0 0 30px rgba(30,64,175,0.8);
+  position:relative;
 }
 
 /* Grid */
 .kb-grid{
   position:absolute; inset:0; pointer-events:none;
   background:
-    repeating-linear-gradient(to right, rgba(96,165,250,0.1) 0 1px, transparent 1px 24px),
-    repeating-linear-gradient(to bottom, rgba(96,165,250,0.1) 0 1px, transparent 1px 24px);
+    repeating-linear-gradient(to right, rgba(96,165,250,0.18) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(to bottom, rgba(96,165,250,0.18) 0 1px, transparent 1px 24px);
   opacity:.35;
 }
 
-/* Glow */
+/* Glow haze */
 .kb-glow{
   position:absolute; inset:0;
   background:
-    radial-gradient(800px 160px at 20% 120%, rgba(59,130,246,0.35), transparent 70%),
-    radial-gradient(1200px 180px at 90% -20%, rgba(96,165,250,0.35), transparent 70%);
+    radial-gradient(900px 160px at 10% 120%, rgba(37,99,235,0.55), transparent 70%),
+    radial-gradient(900px 160px at 90% -20%, rgba(56,189,248,0.55), transparent 70%);
   mix-blend-mode:screen;
-  opacity:.85;
+  opacity:.9;
+}
+
+/* Streak */
+.kb-streak::before{
+  content:"";
+  position:absolute;
+  left:-40%; top:-150%;
+  width:80%; height:380%;
+  transform:rotate(17deg);
+  background:linear-gradient(90deg,
+    rgba(15,23,42,0),
+    rgba(147,197,253,0.45),
+    rgba(191,219,254,0.85),
+    rgba(147,197,253,0.45),
+    rgba(15,23,42,0));
+  filter:blur(8px);
+  opacity:.8;
+  animation:kbSweep 12s linear infinite;
+}
+@keyframes kbSweep{
+  0%{ left:-45%; }
+  100%{ left:105%; }
 }
 
 /* Text */
 .kb-inner{
   position:relative;
   height:100%;
-  display:flex; align-items:center; justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 24px;
 }
 .kb-text{
   text-align:center;
   line-height:1.1;
 }
-.kb-title-1,.kb-title-2{
-  color:var(--blue-3);
+.kb-title-1,
+.kb-title-2{
+  margin:0;
   text-transform:uppercase;
-  text-shadow:0 0 8px var(--blue-glow);
-  letter-spacing:.1em;
+  letter-spacing:.14em;
+  font-weight:600;
+  color:var(--blue-3);
+  text-shadow:
+    0 0 8px var(--blue-glow),
+    0 0 20px rgba(15,23,42,0.9);
 }
-.kb-title-1{ font-size:clamp(14px,1.4vw,18px); }
-.kb-title-2{ font-size:clamp(12px,1.3vw,16px); margin-top:4px; }
-.kb-5s{ font-size:clamp(11px,1.1vw,14px); color:#bfdbfe; margin-top:4px; }
+.kb-title-1{ font-size:clamp(0.9rem, 1.55vw, 1.1rem); }
+.kb-title-2{ font-size:clamp(0.82rem, 1.45vw, 1.02rem); margin-top:4px; }
+.kb-5s{
+  margin-top:5px;
+  font-size:clamp(0.7rem, 1.25vw, 0.9rem);
+  color:#d1d5db;
+}
 
 /* ============================================================
    NAVBAR (sticky 3)
@@ -140,86 +187,250 @@ body{
 .navbar-dark.bg-dark{
   position:sticky;
   top:calc(var(--h-header) + var(--gap-hb) + var(--h-banner) + var(--gap-bm));
-  background:linear-gradient(180deg,#0b1220,#0d1625) !important;
-  border:1px solid rgba(96,165,250,0.2);
-  border-radius:var(--radius);
+  z-index:900;
   max-width:var(--maxw);
   margin:0 auto;
-  backdrop-filter:blur(12px);
-  box-shadow:0 0 18px rgba(59,130,246,.28);
+  border-radius:var(--radius);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(96,165,250,0.15), transparent 55%),
+    radial-gradient(circle at 100% 0%, rgba(37,99,235,0.18), transparent 55%),
+    rgba(15,23,42,0.96) !important;
+  border:1px solid rgba(148,163,184,0.4);
+  box-shadow:
+    0 12px 26px rgba(0,0,0,0.9),
+    0 0 20px rgba(37,99,235,0.5);
 }
-.nav-link{
+
+.navbar-nav .nav-link{
+  position:relative;
+  padding-inline:14px;
+  padding-block:8px;
+  font-size:0.82rem;
   text-transform:uppercase;
-  font-size:.82rem; letter-spacing:.06em;
-  padding-inline:14px; padding-block:8px;
+  letter-spacing:.06em;
   color:var(--muted);
+  overflow:hidden;
+  border-radius:8px;
+  transition:
+    color .16s ease,
+    background .16s ease,
+    box-shadow .25s ease,
+    transform .16s ease;
 }
-.nav-link:hover,.nav-link.active{
+
+/* Cyber glow viền */
+.navbar-nav .nav-link::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(45deg,
+             rgba(96,165,250,0.18),
+             rgba(59,130,246,0.55),
+             rgba(96,165,250,0.18));
+  -webkit-mask:
+     linear-gradient(#000 0 0) content-box,
+     linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity:0;
+  transition:opacity .25s ease;
+}
+
+.navbar-nav .nav-link:hover{
+  color:var(--blue-3);
+  transform:translateY(-1px);
+}
+.navbar-nav .nav-link:hover::before{
+  opacity:1;
+}
+.navbar-nav .nav-link.active{
   color:var(--blue-3) !important;
+  text-shadow:0 0 10px var(--blue-glow);
+  box-shadow:0 0 14px rgba(96,165,250,0.4);
 }
-.nav-link.active{
-  text-shadow:0 0 8px var(--blue-glow);
+.navbar-nav .nav-link.active::before{
+  opacity:1;
+}
+
+/* Ripple effect cho nav-link */
+.navbar-nav .nav-link .ripple-circle{
+  position:absolute;
+  border-radius:999px;
+  transform:scale(0);
+  pointer-events:none;
+  opacity:0.7;
+  background:radial-gradient(circle, rgba(191,219,254,0.85), rgba(59,130,246,0.15), transparent);
+  animation:ripple 0.6s ease-out;
+}
+@keyframes ripple{
+  to{
+    transform:scale(3.5);
+    opacity:0;
+  }
 }
 
 /* ============================================================
-   CONTENT AREA + IFRAMES
+   CONTENT + IFRAMES
    ============================================================ */
 .content-wrapper{
-  flex:1; display:flex; background:transparent;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  background:transparent;
   margin-top:10px;
 }
 .frame-wrap{
-  flex:1; position:relative;
+  flex:1;
+  position:relative;
   max-width:var(--maxw);
-  margin:0 auto 12px;
-  border-radius:var(--radius);
-  background:#0f172a;
-  border:1px solid rgba(96,165,250,0.18);
-  box-shadow:0 0 25px rgba(0,0,0,.6);
+  margin:0 auto 14px;
+  border-radius:16px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(30,64,175,0.35), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(15,23,42,0.9), transparent 65%),
+    #020617;
+  border:1px solid rgba(31,41,55,0.9);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.95),
+    0 0 26px rgba(15,23,42,1);
   overflow:hidden;
 
-  /* ⭐ FIX ĐẶC BIỆT CHO DESKTOP – KHÔNG LOAD IFRAME */
+  /* FIX: đảm bảo iframe luôn có chiều cao trên desktop */
   min-height:calc(100vh - 260px);
 }
+
+/* Iframe transition */
 iframe{
-  position:absolute; inset:0; width:100%; height:100%;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
   border:none;
-  background:#0b1220;
-  display:none;
+  background:#020617;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(12px);
+  transition:
+    opacity .35s ease-out,
+    transform .35s ease-out;
 }
-iframe.active{ display:block; }
+iframe.active{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
 
 /* ============================================================
-   BOTTOM NAV MOBILE
+   BOTTOM NAV – MOBILE + GLOW + RIPPLE
    ============================================================ */
 .bottom-nav{
   display:none;
 }
 @media(max-width:991.98px){
   .bottom-nav{
-    position:fixed; bottom:0; left:0; right:0;
-    height:58px;
-    background:rgba(13,19,33,0.95);
-    border-top:1px solid rgba(96,165,250,.25);
+    position:fixed;
+    left:0; right:0; bottom:0;
+    height:60px;
+    background:rgba(10,19,35,0.96);
+    border-top:1px solid rgba(96,165,250,0.3);
     display:block;
-    z-index:999;
+    z-index:1200;
+    box-shadow:0 -10px 26px rgba(0,0,0,0.9);
   }
-  .content-wrapper{ padding-bottom:68px; }
+  .content-wrapper{ padding-bottom:70px; }
 }
 .bn-inner{
-  height:100%; display:grid;
+  height:100%;
+  display:grid;
   grid-template-columns:repeat(5,1fr);
 }
 .bn-btn{
-  display:flex; flex-direction:column;
-  align-items:center; justify-content:center;
-  color:var(--muted); font-size:.75rem;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  font-size:0.7rem;
+  color:var(--muted);
+  text-decoration:none;
+  border-radius:12px;
+  margin:4px 4px;
+  overflow:hidden;
+  transition:
+    color .16s ease,
+    box-shadow .25s ease,
+    transform .16s ease;
 }
-.bn-btn.active,.bn-btn:hover{
+.bn-btn .bi{
+  font-size:1.18rem;
+}
+
+/* Glow border mobile */
+.bn-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(45deg,
+             rgba(96,165,250,0.3),
+             rgba(59,130,246,0.6),
+             rgba(96,165,250,0.3));
+  -webkit-mask:
+     linear-gradient(#000 0 0) content-box,
+     linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity:0;
+  transition:opacity .25s ease;
+}
+.bn-btn:hover::before,
+.bn-btn.active::before{
+  opacity:1;
+}
+.bn-btn.active{
   color:var(--blue-3);
-  text-shadow:0 0 8px var(--blue-glow);
+  text-shadow:0 0 10px var(--blue-glow);
+  box-shadow:0 0 12px rgba(96,165,250,0.45);
+  transform:translateY(-1px);
 }
-.bn-btn .bi{ font-size:1.25rem; }
+
+/* Ripple cho bottom nav */
+.bn-btn .ripple-circle{
+  position:absolute;
+  border-radius:999px;
+  transform:scale(0);
+  pointer-events:none;
+  opacity:0.8;
+  background:radial-gradient(circle, rgba(191,219,254,0.9), rgba(59,130,246,0.2), transparent);
+  animation:ripple 0.6s ease-out;
+}
+
+/* ============================================================
+   RESPONSIVE SMALL
+   ============================================================ */
+@media(max-width:575.98px){
+  :root{
+    --h-banner:80px;
+  }
+  .kb-5s{ display:none; }
+  .frame-wrap{
+    margin-inline:8px;
+  }
+  .navbar-nav .nav-link{
+    font-size:.78rem;
+    padding-inline:10px;
+  }
+}
+
+/* Scrollbar */
+*::-webkit-scrollbar { width:9px; height:9px; }
+*::-webkit-scrollbar-thumb { background:#1f2933; border-radius:999px; }
+*::-webkit-scrollbar-thumb:hover { background:#374151; }
+*::-webkit-scrollbar-track { background:#020617; }
 
 </style>
 </head>
@@ -237,15 +448,15 @@ iframe.active{ display:block; }
     <div class="kb-surface">
       <div class="kb-grid"></div>
       <div class="kb-glow"></div>
+      <div class="kb-streak"></div>
 
       <div class="kb-inner">
         <div class="kb-text">
           <div class="kb-title-1">CHỦ ĐỘNG ✦ SÁNG TẠO ✦ HIỆU QUẢ</div>
           <div class="kb-title-2">KAIZEN - KHÔNG NGỪNG CẢI TIẾN</div>
-          <div class="kb-5s">Seiri • Seiton • Seiso • Seiketsu • Shitsuke</div>
+          <div class="kb-5s">Sàng lọc (Seiri) • Sắp xếp (Seiton) • Sạch sẽ (Seiso) • Săn sóc (Seiketsu) • Sẵn sàng (Shitsuke)</div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -253,23 +464,36 @@ iframe.active{ display:block; }
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
   <div class="container-fluid">
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-        <li><a class="nav-link active" data-target="mainFrame" href="#">Trang chủ</a></li>
-
-        <li><a class="nav-link iframe-link" data-target="taskListFrame" href="#">Bảng công việc</a></li>
-        <li><a class="nav-link iframe-link" data-target="planListFrame" href="#">Dự kiến</a></li>
-        <li><a class="nav-link iframe-link" data-target="maintListFrame" href="#">Bảo dưỡng</a></li>
-        <li><a class="nav-link iframe-link" data-target="MTCVFrame" href="#">Phân công</a></li>
-        <li><a class="nav-link iframe-link" data-target="WaterRecordFrame" href="#">Chỉ số nước</a></li>
-        <li><a class="nav-link iframe-link" data-target="TaskReportFrame" href="#">Báo cáo</a></li>
-        <li><a class="nav-link iframe-link" data-target="chamcongFrame" href="#">Chấm công</a></li>
-
+        <li class="nav-item">
+          <a class="nav-link iframe-link active" data-target="mainFrame" href="#">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iframe-link" data-target="taskListFrame" href="#">Bảng công việc</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iframe-link" data-target="planListFrame" href="#">Dự kiến</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iframe-link" data-target="maintListFrame" href="#">Bảo dưỡng</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iframe-link" data-target="MTCVFrame" href="#">Phân công</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iframe-link" data-target="WaterRecordFrame" href="#">Chỉ số nước</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iframe-link" data-target="TaskReportFrame" href="#">Báo cáo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link iframe-link" data-target="chamcongFrame" href="#">Chấm công</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -278,44 +502,45 @@ iframe.active{ display:block; }
 <!-- CONTENT -->
 <div class="content-wrapper">
   <div class="frame-wrap">
-
     <iframe id="mainFrame" class="active" src=""></iframe>
 
     <iframe id="taskListFrame"  src="https://script.google.com/macros/s/AKfycbyHry8Kk9_0ZyCfy3nZhVIrxKrENmSf5vsnPW-xxoUUbxRuOg1wYcUjdnT9x3i9urw/exec"></iframe>
-
     <iframe id="planListFrame"  src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
-
     <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
-
     <iframe id="MTCVFrame"     src="https://script.google.com/macros/s/AKfycbyK1iyc0eck7seY7kqmGOb6V1MYVv_Ue43q2dYzKFeby329xHaQBtFj2WdDweW46NLA/exec"></iframe>
-
     <iframe id="WaterRecordFrame"  src="https://script.google.com/macros/s/AKfycbwTbLHDiGjq4rcUwb6b6MLBM_junEEcJdVAlzZt1C25phiwIQG4uBnSEqpFu98I1wE/exec"></iframe>
-
     <iframe id="TaskReportFrame"   src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
-
     <iframe id="DXVTFrame"         src="https://script.google.com/macros/s/AKfycbzrrIMJ4N5ymEMEV6EkOQy2qTH1ApZtdb4bn8h1sLPbCUE-upwxxlW-tvyNWOzAuwmX/exec"></iframe>
-
     <iframe id="MotorCurrentFrame" src="https://script.google.com/macros/s/AKfycbxpHonjPCZ9Vin42ZATGEPGD09XWZ8MI76MI1kuE3lwHKV09_Yb_XeL193SVvnrSthe/exec"></iframe>
-
     <iframe id="chamcongFrame"     src="https://script.google.com/macros/s/AKfycbxG7IU2Nvv4IFmmcZnu4N_SWaNAKRYnNzElRan5ZiAaNqjb2GRdRpg-yyYCIZ95Gc6y2w/exec"></iframe>
-
-    <iframe id="bearingFrame" src="https://script.google.com/macros/s/AKfycbww7MA7xaZG2UJQWAc0NBwbl-bZPcjmic5XOUDFk_NR7OylFdv3OG2rxUUXRGy1w1BD/exec"></iframe>
-
+    <iframe id="bearingFrame"      src="https://script.google.com/macros/s/AKfycbww7MA7xaZG2UJQWAc0NBwbl-bZPcjmic5XOUDFk_NR7OylFdv3OG2rxUUXRGy1w1BD/exec"></iframe>
     <iframe id="vbeltsFrame" src=""></iframe>
-
   </div>
 </div>
 
-<!-- MOBILE NAV -->
+<!-- BOTTOM NAV MOBILE -->
 <nav class="bottom-nav d-lg-none">
   <div class="bn-inner">
-
-    <a href="#" class="bn-btn" data-target="mainFrame"><i class="bi bi-house"></i>Trang chủ</a>
-    <a href="#" class="bn-btn" data-target="taskListFrame"><i class="bi bi-card-checklist"></i>Công việc</a>
-    <a href="#" class="bn-btn" data-target="planListFrame"><i class="bi bi-calendar-event"></i>Dự kiến</a>
-    <a href="#" class="bn-btn" data-target="maintListFrame"><i class="bi bi-gear"></i>Bảo dưỡng</a>
-    <a href="#" class="bn-btn" data-target="TaskReportFrame"><i class="bi bi-graph-up"></i>Báo cáo</a>
-
+    <a href="#" class="bn-btn active" data-target="mainFrame">
+      <i class="bi bi-house"></i>
+      <div>Trang chủ</div>
+    </a>
+    <a href="#" class="bn-btn" data-target="taskListFrame">
+      <i class="bi bi-card-checklist"></i>
+      <div>Công việc</div>
+    </a>
+    <a href="#" class="bn-btn" data-target="planListFrame">
+      <i class="bi bi-calendar-event"></i>
+      <div>Dự kiến</div>
+    </a>
+    <a href="#" class="bn-btn" data-target="maintListFrame">
+      <i class="bi bi-gear"></i>
+      <div>Bảo dưỡng</div>
+    </a>
+    <a href="#" class="bn-btn" data-target="TaskReportFrame">
+      <i class="bi bi-graph-up"></i>
+      <div>Báo cáo</div>
+    </a>
   </div>
 </nav>
 
@@ -324,8 +549,8 @@ iframe.active{ display:block; }
 <script>
 window.addEventListener('DOMContentLoaded', function () {
 
-  const menu = document.querySelectorAll('.nav-link[data-target], .iframe-link');
-  const mob  = document.querySelectorAll('.bn-btn[data-target]');
+  const menu   = document.querySelectorAll('.nav-link[data-target]');
+  const mob    = document.querySelectorAll('.bn-btn[data-target]');
   const frames = document.querySelectorAll('iframe');
 
   function activateFrame(id){
@@ -335,17 +560,40 @@ window.addEventListener('DOMContentLoaded', function () {
 
     menu.forEach(x=>x.classList.toggle('active', x.dataset.target===id));
     mob.forEach(x=>x.classList.toggle('active', x.dataset.target===id));
+
+    try{ localStorage.setItem('lastFrameId', id); }catch(e){}
   }
 
-  function clickHandler(e){
+  function createRipple(e, container){
+    const rect = container.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const circle = document.createElement('span');
+    circle.classList.add('ripple-circle');
+    circle.style.width = circle.style.height = size + 'px';
+    circle.style.left = (e.clientX - rect.left - size/2) + 'px';
+    circle.style.top  = (e.clientY - rect.top  - size/2) + 'px';
+    container.appendChild(circle);
+    setTimeout(()=>circle.remove(), 600);
+  }
+
+  function handleClick(e){
     e.preventDefault();
-    activateFrame(this.dataset.target);
+    const targetId = this.dataset.target;
+    if(!targetId) return;
+    createRipple(e, this);
+    activateFrame(targetId);
   }
 
-  menu.forEach(x=>x.addEventListener('click',clickHandler));
-  mob.forEach(x=>x.addEventListener('click',clickHandler));
+  menu.forEach(x=>x.addEventListener('click', handleClick));
+  mob.forEach(x=>x.addEventListener('click', handleClick));
 
-  activateFrame("mainFrame");
+  // Khôi phục iframe cuối cùng
+  let defaultFrame = 'mainFrame';
+  try{
+    const saved = localStorage.getItem('lastFrameId');
+    if(saved && document.getElementById(saved)) defaultFrame = saved;
+  }catch(e){}
+  activateFrame(defaultFrame);
 });
 </script>
 
