@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- GIAO DIỆN TỔ CƠ ĐIỆN – INDUSTRIAL STEEL + LAZY-LOAD + MOBILE/PC TỐI ƯU -->
+<!-- TỔ CƠ ĐIỆN – Giao diện STEEL × CYBER BLUE + Lazy-load iframe -->
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
@@ -12,36 +12,37 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 
-  <!-- =========================
-       INDUSTRIAL STEEL THEME
-       ========================= -->
   <style>
     :root{
-      /* Tông màu công nghiệp: thép – xám – xanh steel */
-      --bg: #05070b;             /* nền tổng thể */
-      --surface: #0b0d11;        /* bề mặt header/menu */
-      --surface-2: #0d1015;      /* vùng content */
-      --surface-3: #05070b;      /* nền iframe */
+      /* Nền & bề mặt */
+      --bg: #050b13;              /* nền tổng thể */
+      --surface: #071522;        /* header/menu */
+      --surface-2: #050b13;      /* vùng content */
+      --surface-3: #02040a;      /* nền iframe */
+
       --text: #e5e7eb;
-      --muted: #9ca3af;
+      --muted: #94a3b8;
 
-      --primary: #4f83a6;        /* steel blue */
-      --primary-600: #3b6787;
-      --primary-200: #bfd7e6;
+      /* CYBER BLUE */
+      --primary: #3b82f6;
+      --primary-light: #60a5fa;
+      --primary-soft: #93c5fd;
+      --primary-glow: rgba(59,130,246,0.55);
 
-      --border: #252b33;
-      --border-hover: #6ba3c9;
+      --border: #1f2933;
+      --border-strong: rgba(148,163,184,0.65);
+      --border-hover: #60a5fa;
 
-      --bottom-bg: rgba(9,11,15,0.98);
-      --bottom-border: #252b33;
-      --active-pill: rgba(79,131,166,0.22);
+      --bottom-bg: rgba(7,16,26,0.98);
+      --bottom-border: #1f2933;
+      --active-pill: rgba(37,99,235,0.22);
 
       --h-header: 60px;
       --gap-hb: 10px;
-      --h-banner: 80px;
+      --h-banner: 82px;
       --gap-bm: 14px;
 
-      --radius: 10px;
+      --radius: 12px;
       --banner-maxw: 1400px;
     }
 
@@ -51,9 +52,9 @@
     }
     body{
       background:
-        radial-gradient(circle at 0% 0%, rgba(107,114,128,0.25), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(15,23,42,0.55), transparent 55%),
-        linear-gradient(145deg, #020308, #05070b 35%, #020308 100%);
+        radial-gradient(circle at 15% 0%, rgba(96,165,250,0.18), transparent 55%),
+        radial-gradient(circle at 85% 100%, rgba(37,99,235,0.28), transparent 60%),
+        #020617;
       color: var(--text);
       display:flex;
       flex-direction:column;
@@ -70,22 +71,23 @@
       align-items:center;
       justify-content:center;
       background:
-        linear-gradient(180deg, rgba(15,16,20,0.98), rgba(10,11,15,0.98));
-      border-bottom: 1px solid rgba(148,163,184,0.35);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px rgba(3,4,7,0.95);
+        linear-gradient(180deg, rgba(10,24,40,0.98), rgba(9,16,28,0.96));
+      border-bottom: 1px solid rgba(148,163,184,0.4);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow:
+        0 10px 30px rgba(3,7,18,0.96);
     }
     .top-header h1{
       margin: 0;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .16em;
       text-transform: uppercase;
       font-size: clamp(1.05rem, 2vw, 1.4rem);
-      color: var(--primary-200);
+      color: var(--primary-soft);
       text-shadow:
-        0 0 8px rgba(191,215,230,0.7),
-        0 0 20px rgba(79,131,166,0.7);
+        0 0 10px rgba(96,165,250,0.8),
+        0 0 24px rgba(37,99,235,0.9);
     }
 
     /* =============== KAIZEN BANNER (sticky 2) =============== */
@@ -109,11 +111,11 @@
       border-radius: var(--radius);
       overflow: hidden;
       background:
-        linear-gradient(135deg, #05070b 0%, #10131a 40%, #05070b 100%);
-      border: 1px solid rgba(107,114,128,0.65);
+        linear-gradient(135deg, #071522 0%, #0b1f33 40%, #071522 100%);
+      border: 1px solid rgba(96,165,250,0.55);
       box-shadow:
-        0 12px 36px rgba(0,0,0,0.9),
-        0 0 16px rgba(31,41,55,0.7);
+        0 12px 34px rgba(3,7,18,0.96),
+        0 0 26px rgba(59,130,246,0.4);
     }
 
     .kb-layer{
@@ -121,23 +123,20 @@
       inset:0;
       pointer-events:none;
     }
-    /* Lưới thép */
     .kb-grid{
       background:
-        repeating-linear-gradient(to right, rgba(75,85,99,0.45) 0 1px, transparent 1px 20px),
-        repeating-linear-gradient(to bottom, rgba(75,85,99,0.45) 0 1px, transparent 1px 20px);
-      opacity:.25;
+        repeating-linear-gradient(to right, rgba(148,163,184,0.25) 0 1px, transparent 1px 24px),
+        repeating-linear-gradient(to bottom, rgba(96,165,250,0.22) 0 1px, transparent 1px 24px);
+      opacity:.35;
       mix-blend-mode:soft-light;
     }
-    /* Ánh thép */
     .kb-glow{
       background:
-        radial-gradient(900px 140px at 15% 120%, rgba(148,163,184,0.42), transparent 65%),
-        radial-gradient(700px 130px at 85% -25%, rgba(75,85,99,0.55), transparent 65%);
+        radial-gradient(1000px 150px at 10% 120%, rgba(59,130,246,0.46), transparent 65%),
+        radial-gradient(900px 150px at 90% -30%, rgba(37,99,235,0.5), transparent 65%);
       mix-blend-mode:screen;
-      opacity:.85;
+      opacity:.95;
     }
-    /* Vệt chà nhám / highlight */
     .kb-streak::before{
       content:"";
       position:absolute;
@@ -148,13 +147,13 @@
       transform: rotate(16deg);
       background: linear-gradient(90deg,
         rgba(15,23,42,0),
-        rgba(209,213,219,0.15),
-        rgba(243,244,246,0.35),
-        rgba(209,213,219,0.15),
+        rgba(147,197,253,0.55),
+        rgba(191,219,254,0.85),
+        rgba(147,197,253,0.55),
         rgba(15,23,42,0));
       filter: blur(8px);
-      animation: kbSweep 13s linear infinite;
-      opacity:.65;
+      animation: kbSweep 12s linear infinite;
+      opacity:.8;
     }
     @keyframes kbSweep{
       0%{ left:-45%; }
@@ -179,30 +178,29 @@
       text-transform:uppercase;
       letter-spacing:.14em;
       font-weight:600;
-      color: #e5e7eb;
+      color:#e5e7eb;
       text-shadow:
-        0 0 6px rgba(148,163,184,0.6),
-        0 0 18px rgba(55,65,81,0.9);
+        0 0 8px rgba(148,163,184,0.8),
+        0 0 18px rgba(59,130,246,0.9);
     }
     .kb-title-1{
-      font-size: clamp(0.9rem, 1.55vw, 1.1rem);
+      font-size:clamp(0.9rem, 1.55vw, 1.1rem);
     }
     .kb-title-2{
-      margin-top: 4px;
-      font-size: clamp(0.82rem, 1.45vw, 1.02rem);
+      margin-top:4px;
+      font-size:clamp(0.82rem, 1.45vw, 1.02rem);
     }
     .kb-5s{
-      margin-top: 4px;
-      font-size: clamp(0.7rem, 1.25vw, 0.9rem);
-      color: #d1d5db;
-      opacity:.98;
+      margin-top:4px;
+      font-size:clamp(0.7rem, 1.25vw, 0.9rem);
+      color:#d1d5db;
     }
     .kb-5s span{
-      color: #e5e7eb;
+      color:#bfdbfe;
       font-weight:500;
     }
 
-    /* =============== NAVBAR (sticky 3) – Steel Bar =============== */
+    /* =============== NAVBAR (sticky 3) =============== */
     .navbar-dark.bg-dark{
       position: sticky;
       top: calc(var(--h-header) + var(--gap-hb) + var(--h-banner) + var(--gap-bm));
@@ -210,12 +208,14 @@
       margin: 0 auto;
       max-width: var(--banner-maxw);
       border-radius: var(--radius);
-      border: 1px solid rgba(55,65,81,0.85);
+      border: 1px solid rgba(148,163,184,0.65);
       background:
-        linear-gradient(180deg, rgba(17,24,39,0.96), rgba(15,23,42,0.98)) !important;
+        linear-gradient(180deg, rgba(10,24,40,0.95), rgba(7,16,26,0.98)) !important;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       box-shadow:
-        0 10px 32px rgba(0,0,0,0.95),
-        0 0 18px rgba(15,23,42,0.95);
+        0 10px 30px rgba(3,7,18,0.96),
+        0 0 22px rgba(37,99,235,0.45);
     }
 
     .navbar-nav .nav-link{
@@ -234,7 +234,7 @@
     }
     .navbar-nav .nav-link:hover{
       opacity: 1;
-      color: var(--primary-200);
+      color: var(--primary-soft);
       transform: translateY(-1px);
     }
     .navbar-nav .nav-link::after{
@@ -245,7 +245,7 @@
       bottom:3px;
       height:0;
       border-radius:999px;
-      background: linear-gradient(90deg, #9ca3af, #e5e7eb, #9ca3af);
+      background: linear-gradient(90deg, var(--primary-light), var(--primary-soft), var(--primary-light));
       box-shadow:none;
       opacity:0;
       transition:
@@ -255,17 +255,17 @@
     }
     .navbar-nav .nav-link.active::after,
     .navbar-nav .nav-link:hover::after{
-      height:2px;
+      height:3px;
       opacity:1;
-      box-shadow:0 0 10px rgba(148,163,184,0.9);
+      box-shadow:0 0 12px var(--primary-glow);
     }
     .navbar-nav .nav-link.active{
-      color: var(--primary-200) !important;
+      color: var(--primary-soft) !important;
       opacity: 1;
     }
 
     .navbar-toggler{
-      border-color: #4b5563;
+      border-color: #475569;
     }
     .navbar-toggler-icon{
       filter: invert(0.9);
@@ -284,15 +284,15 @@
       position:relative;
       max-width: var(--banner-maxw);
       margin: 0 auto 14px auto;
-      border-radius: 14px;
-      border: 1px solid rgba(31,41,55,0.9);
+      border-radius: 16px;
+      border: 1px solid rgba(30,64,98,0.9);
       background:
-        radial-gradient(circle at 0% 0%, rgba(55,65,81,0.55), transparent 60%),
-        radial-gradient(circle at 100% 100%, rgba(31,41,55,0.8), transparent 65%),
-        #05070b;
+        radial-gradient(circle at 0% 0%, rgba(59,130,246,0.28), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(15,23,42,0.85), transparent 65%),
+        #020617;
       box-shadow:
-        0 18px 45px rgba(0,0,0,0.95),
-        0 0 26px rgba(3,4,7,0.95);
+        0 18px 45px rgba(3,7,18,0.98),
+        0 0 26px rgba(15,23,42,1);
       overflow:hidden;
     }
 
@@ -303,8 +303,8 @@
       height:100%;
       border:none;
       background:
-        radial-gradient(circle at 50% 0%, rgba(15,23,42,0.45), transparent 60%),
-        #05070b;
+        radial-gradient(circle at 50% 0%, rgba(30,64,175,0.35), transparent 60%),
+        #020617;
       opacity:0;
       pointer-events:none;
       transition: opacity .25s ease-out;
@@ -314,25 +314,28 @@
       pointer-events:auto;
     }
 
-    /* Loader khi đổi iframe */
+    /* =============== LOADER =============== */
     .frame-loader{
       position:absolute;
       inset:0;
       display:none;
       align-items:center;
       justify-content:center;
-      background: radial-gradient(circle at 50% 50%, rgba(15,23,42,0.85), rgba(3,4,7,0.96));
+      background: radial-gradient(circle at 50% 50%, rgba(15,23,42,0.94), rgba(3,7,18,0.98));
       z-index: 10;
     }
     .frame-loader.visible{
       display:flex;
     }
+    .loader-box{
+      text-align:center;
+    }
     .loader-ring{
       width:46px;
       height:46px;
       border-radius:999px;
-      border:3px solid rgba(75,85,99,0.7);
-      border-top-color: #e5e7eb;
+      border:3px solid rgba(51,65,85,0.75);
+      border-top-color: var(--primary-soft);
       animation: spin 0.8s linear infinite;
     }
     .loader-text{
@@ -356,11 +359,11 @@
       border-top: 1px solid var(--bottom-border);
       display: none;
       z-index: 1035;
-      border-top-left-radius: 14px;
-      border-top-right-radius: 14px;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 -8px 24px rgba(0,0,0,0.95);
+      box-shadow: 0 -8px 24px rgba(3,7,18,0.96);
     }
     .bottom-nav .bn-inner{
       height:100%;
@@ -386,7 +389,7 @@
     }
     .bn-btn.active,
     .bn-btn:hover{
-      color: var(--primary-200);
+      color: var(--primary-soft);
       background: var(--active-pill);
       transform: translateY(-1px);
     }
@@ -405,7 +408,7 @@
       :root{
         --h-banner: 70px;
       }
-      .kb-5s{ display:none; } /* mobile ẩn 5S cho gọn */
+      .kb-5s{ display:none; }
       .frame-wrap{
         margin-inline: 8px;
         border-radius: 12px;
@@ -418,9 +421,9 @@
 
     /* =============== Scrollbar =============== */
     *::-webkit-scrollbar { width: 9px; height: 9px; }
-    *::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 999px; }
+    *::-webkit-scrollbar-thumb { background: #1f2933; border-radius: 999px; }
     *::-webkit-scrollbar-thumb:hover { background: #374151; }
-    *::-webkit-scrollbar-track { background: #020308; }
+    *::-webkit-scrollbar-track { background: #020617; }
   </style>
 </head>
 
@@ -484,15 +487,15 @@
   <!-- CONTENT + IFRAMES -->
   <div class="content-wrapper">
     <div class="frame-wrap">
-      <!-- Loader khi đổi iframe -->
+      <!-- Loader -->
       <div class="frame-loader" id="frameLoader">
-        <div class="text-center">
+        <div class="loader-box">
           <div class="loader-ring"></div>
           <div class="loader-text">ĐANG TẢI DỮ LIỆU...</div>
         </div>
       </div>
 
-      <!-- Trang chủ có thể là dashboard static sau này -->
+      <!-- Trang chủ (chưa có src – sau này bạn có thể nhúng dashboard tĩnh vào) -->
       <iframe id="mainFrame" src="" class="active"></iframe>
 
       <!-- Lazy-load các iframe khác bằng data-src -->
@@ -596,7 +599,7 @@
         if (!hasSrc && dataSrc){
           frameEl.setAttribute('src', dataSrc);
         } else if (!hasSrc && !dataSrc){
-          // frame không có gì để load (ví dụ mainFrame hiện tại), tắt loader ngay
+          // frame không có gì để load (mainFrame hiện tại), tắt loader luôn
           hideLoader();
         }
       }
@@ -607,7 +610,6 @@
         frames.forEach(f => f.classList.remove('active'));
         const target = document.getElementById(targetId);
         if (target) {
-          // Gắn event load 1 lần để tắt loader
           const onLoadOnce = function(){
             hideLoader();
             target.removeEventListener('load', onLoadOnce);
@@ -642,7 +644,7 @@
         if (saved && document.getElementById(saved)) defaultFrame = saved;
       } catch (e) {}
 
-      // Trang chủ không có src/data-src nên tắt loader ngay
+      // Trang đầu tiên: tắt loader nếu không có src
       hideLoader();
       activateFrame(defaultFrame);
     });
