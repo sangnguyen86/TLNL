@@ -1,509 +1,368 @@
 <!doctype html>
+<!-- ============================================
+     FILE HTML ĐẦY ĐỦ – STEEL × CYBER BLUE
+     + Hiệu ứng viền sáng NAV
+     + Hiệu ứng chuyển cảnh giữa các IFRAME
+     ============================================ -->
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>TỔ CƠ ĐIỆN – Steel × Cyber Blue</title>
+  <!-- Tiêu đề trang -->
+  <title>TỔ CƠ ĐIỆN</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- ============================================
+       CSS BÊN NGOÀI – Bootstrap & Bootstrap Icons
+       ============================================ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 
-<style>
-/* ============================================================
-   THEME: STEEL × CYBER BLUE
-   ============================================================ */
-:root{
-  --steel-1: #050812;
-  --steel-2: #0b1220;
-  --steel-3: #111827;
+  <!-- ============================================
+       CSS THEME & LAYOUT
+       ============================================ -->
+  <style>
+    /* ========== Token màu & biến layout ========== */
+    :root{
+      --bg: #0f172a;
+      --surface: #111827;
+      --surface-2: #1f2937;
+      --surface-3: #0b1221;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
 
-  --blue-1: #60a5fa;
-  --blue-2: #3b82f6;
-  --blue-3: #93c5fd;
-  --blue-glow: rgba(96,165,250,0.55);
+      --primary: #3b82f6;
+      --primary-600: #2563eb;
+      --primary-200: #bfdbfe;
 
-  --text: #e5e7eb;
-  --muted: #94a3b8;
+      --border: #213045;
+      --border-hover: #3b82f6;
 
-  --h-header: 65px;
-  --h-banner: 95px;
-  --gap-hb: 10px;
-  --gap-bm: 12px;
+      --bottom-bg: #0b1221;
+      --bottom-border: #1e293b;
+      --active-pill: #172554;
 
-  --radius: 12px;
-  --maxw: 1480px;
-}
+      /* Chiều cao các layer sticky */
+      --h-header: 64px;
+      --gap-hb: 12px;
+      --h-banner: 104px;
+      --gap-bm: 10px;
 
-/* ============================================================
-   GLOBAL
-   ============================================================ */
-html, body { height:100%; margin:0; }
-body{
-  background:
-    radial-gradient(circle at 20% 0%, rgba(96,165,250,0.22), transparent 60%),
-    radial-gradient(circle at 80% 100%, rgba(59,130,246,0.3), transparent 60%),
-    var(--steel-1);
-  color: var(--text);
-  display:flex;
-  flex-direction:column;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
+      --radius: 10px;
+      --banner-maxw: 1400px;
+    }
 
-/* ============================================================
-   HEADER (sticky 1) – steel + 3D glow
-   ============================================================ */
-.top-header{
-  position:sticky; top:0; z-index:1000;
-  height:var(--h-header);
-  display:flex; align-items:center; justify-content:center;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(96,165,250,0.25), transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(37,99,235,0.25), transparent 55%),
-    linear-gradient(180deg, #020617, #020617 30%, #020617 100%);
-  border-bottom:1px solid rgba(148,163,184,0.4);
-  box-shadow:
-    0 12px 30px rgba(0,0,0,0.85),
-    0 0 25px rgba(15,23,42,0.95);
-}
-.top-header h1{
-  margin:0;
-  font-size:clamp(1.1rem, 2vw, 1.55rem);
-  font-weight:800;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--blue-3);
-  text-shadow:
-    0 0 12px rgba(96,165,250,0.9),
-    0 0 26px rgba(37,99,235,0.9),
-    0 0 38px rgba(15,23,42,1);
-}
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      display:flex;
+      flex-direction:column;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-/* ============================================================
-   BANNER KAIZEN (sticky 2) – 3D steel + glow
-   ============================================================ */
-.kaizen-wrap{
-  height:calc(var(--h-banner) + var(--gap-hb));
-}
-.kaizen-banner{
-  position:sticky;
-  top:var(--h-header);
-  z-index:950;
-  padding-top:var(--gap-hb);
-  display:flex; justify-content:center;
-}
-.kb-surface{
-  width:100%; max-width:var(--maxw);
-  height:var(--h-banner);
-  border-radius:var(--radius);
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 0% 100%, rgba(30,64,175,0.55), transparent 60%),
-    radial-gradient(circle at 100% 0%, rgba(15,23,42,0.9), transparent 55%),
-    linear-gradient(135deg,#020617,#020617 35%,#020617 100%);
-  border:1px solid rgba(96,165,250,0.55);
-  box-shadow:
-    0 18px 38px rgba(0,0,0,0.95),
-    0 0 30px rgba(30,64,175,0.8);
-  position:relative;
-}
+    /* ========== HEADER CỐ ĐỊNH LỚP 1 ========== */
+    .top-header{
+      position: sticky; top: 0; z-index: 1040;
+      width: 100%; height: var(--h-header);
+      background: linear-gradient(180deg, #0b1221 0%, #0d1627 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow:
+        0 6px 18px rgba(8,47,73,0.45),
+        inset 0 -2px 10px rgba(59,130,246,0.20);
+    }
+    .top-header h1{
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: .14px;
+      font-size: clamp(1.1rem, 2.15vw, 1.55rem);
+      color: var(--primary-200);
+      text-shadow:
+        0 0 10px rgba(148,197,255,0.65),
+        0 0 20px rgba(59,130,246,0.65);
+    }
 
-/* Grid */
-.kb-grid{
-  position:absolute; inset:0; pointer-events:none;
-  background:
-    repeating-linear-gradient(to right, rgba(96,165,250,0.18) 0 1px, transparent 1px 24px),
-    repeating-linear-gradient(to bottom, rgba(96,165,250,0.18) 0 1px, transparent 1px 24px);
-  opacity:.35;
-}
+    /* ========== KAIZEN BANNER – LỚP STICKY 2 ========== */
+    .kaizen-wrap { height: calc(var(--h-banner) + var(--gap-hb)); }
+    .kaizen-banner{
+      position: sticky; top: var(--h-header); z-index: 1036;
+      width: 100%; display:flex; justify-content:center;
+      padding-top: var(--gap-hb);
+    }
+    .kb-surface{
+      position: relative; width: 100%; max-width: var(--banner-maxw);
+      height: var(--h-banner);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56,189,248,0.25), transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(59,130,246,0.35), transparent 60%),
+        linear-gradient(135deg, #0b1221 0%, #0e1830 60%, #0b1221 100%);
+      border: 1px solid rgba(59,130,246,.35);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow:
+        0 0 22px rgba(59,130,246,0.25),
+        inset 0 0 45px rgba(37,99,235,0.18);
+      transition: box-shadow .3s ease, transform .3s ease;
+    }
+    /* Hover banner – hiệu ứng glow nhẹ */
+    .kb-surface:hover{
+      box-shadow:
+        0 0 26px rgba(59,130,246,0.55),
+        0 0 46px rgba(56,189,248,0.45);
+      transform: translateY(-1px);
+    }
 
-/* Glow haze */
-.kb-glow{
-  position:absolute; inset:0;
-  background:
-    radial-gradient(900px 160px at 10% 120%, rgba(37,99,235,0.55), transparent 70%),
-    radial-gradient(900px 160px at 90% -20%, rgba(56,189,248,0.55), transparent 70%);
-  mix-blend-mode:screen;
-  opacity:.9;
-}
+    .kb-layer{ position:absolute; inset:0; pointer-events:none; }
 
-/* Streak */
-.kb-streak::before{
-  content:"";
-  position:absolute;
-  left:-40%; top:-150%;
-  width:80%; height:380%;
-  transform:rotate(17deg);
-  background:linear-gradient(90deg,
-    rgba(15,23,42,0),
-    rgba(147,197,253,0.45),
-    rgba(191,219,254,0.85),
-    rgba(147,197,253,0.45),
-    rgba(15,23,42,0));
-  filter:blur(8px);
-  opacity:.8;
-  animation:kbSweep 12s linear infinite;
-}
-@keyframes kbSweep{
-  0%{ left:-45%; }
-  100%{ left:105%; }
-}
+    /* Grid nền banner */
+    .kb-grid{
+      background:
+        linear-gradient(transparent 90%, rgba(32,64,120,.25) 100%),
+        repeating-linear-gradient(to right, rgba(59,130,246,.08) 0 1px, transparent 1px 24px),
+        repeating-linear-gradient(to bottom, rgba(59,130,246,.08) 0 1px, transparent 1px 24px);
+      opacity:.45;
+    }
 
-/* Text */
-.kb-inner{
-  position:relative;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 24px;
-}
-.kb-text{
-  text-align:center;
-  line-height:1.1;
-}
-.kb-title-1,
-.kb-title-2{
-  margin:0;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  font-weight:600;
-  color:var(--blue-3);
-  text-shadow:
-    0 0 8px var(--blue-glow),
-    0 0 20px rgba(15,23,42,0.9);
-}
-.kb-title-1{ font-size:clamp(0.9rem, 1.55vw, 1.1rem); }
-.kb-title-2{ font-size:clamp(0.82rem, 1.45vw, 1.02rem); margin-top:4px; }
-.kb-5s{
-  margin-top:5px;
-  font-size:clamp(0.7rem, 1.25vw, 0.9rem);
-  color:#d1d5db;
-}
+    /* Ánh sáng */
+    .kb-glow{
+      background:
+        radial-gradient(1200px 180px at 20% 120%, rgba(59,130,246,.30), rgba(59,130,246,0)),
+        radial-gradient(900px 160px at 85% -20%, rgba(56,189,248,.25), rgba(56,189,248,0));
+      mix-blend-mode: screen;
+      opacity:.9;
+    }
 
-/* ============================================================
-   NAVBAR (sticky 3)
-   ============================================================ */
-.navbar-dark.bg-dark{
-  position:sticky;
-  top:calc(var(--h-header) + var(--gap-hb) + var(--h-banner) + var(--gap-bm));
-  z-index:900;
-  max-width:var(--maxw);
-  margin:0 auto;
-  border-radius:var(--radius);
-  background:
-    radial-gradient(circle at 0% 0%, rgba(96,165,250,0.15), transparent 55%),
-    radial-gradient(circle at 100% 0%, rgba(37,99,235,0.18), transparent 55%),
-    rgba(15,23,42,0.96) !important;
-  border:1px solid rgba(148,163,184,0.4);
-  box-shadow:
-    0 12px 26px rgba(0,0,0,0.9),
-    0 0 20px rgba(37,99,235,0.5);
-}
+    /* Vệt sáng chạy ngang banner */
+    .kb-streak::before{
+      content:""; position:absolute; left:-45%; top:-150%;
+      width:80%; height:400%; transform: rotate(18deg);
+      background: linear-gradient(90deg,
+        rgba(59,130,246,0),
+        rgba(148,197,255,.22),
+        rgba(148,197,255,.35),
+        rgba(148,197,255,.22),
+        rgba(59,130,246,0));
+      filter: blur(6px);
+      animation: kbSweep 9s linear infinite;
+      opacity:.45;
+    }
+    @keyframes kbSweep{ 0%{ left:-45%; } 100%{ left:105%; } }
 
-.navbar-nav .nav-link{
-  position:relative;
-  padding-inline:14px;
-  padding-block:8px;
-  font-size:0.82rem;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  color:var(--muted);
-  overflow:hidden;
-  border-radius:8px;
-  transition:
-    color .16s ease,
-    background .16s ease,
-    box-shadow .25s ease,
-    transform .16s ease;
-}
+    /* Text trong banner */
+    .kb-inner{ position: relative; height: 100%; display:flex; align-items:center; justify-content:center; padding: 0 24px; }
+    .kb-text{ line-height:1.15; text-align:center; }
 
-/* Cyber glow viền */
-.navbar-nav .nav-link::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  padding:1px;
-  background:linear-gradient(45deg,
-             rgba(96,165,250,0.18),
-             rgba(59,130,246,0.55),
-             rgba(96,165,250,0.18));
-  -webkit-mask:
-     linear-gradient(#000 0 0) content-box,
-     linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  opacity:0;
-  transition:opacity .25s ease;
-}
+    .kb-title-1, .kb-title-2{
+      font-weight: 400; letter-spacing:.06em; text-transform: uppercase;
+      color: var(--primary-200); text-shadow: 0 0 8px rgba(59,130,246,.45);
+    }
+    .kb-title-1{ font-size: clamp(16px, 1.35vw, 19px); }
+    .kb-title-2{ font-size: clamp(14px, 1.55vw, 17px); }
 
-.navbar-nav .nav-link:hover{
-  color:var(--blue-3);
-  transform:translateY(-1px);
-}
-.navbar-nav .nav-link:hover::before{
-  opacity:1;
-}
-.navbar-nav .nav-link.active{
-  color:var(--blue-3) !important;
-  text-shadow:0 0 10px var(--blue-glow);
-  box-shadow:0 0 14px rgba(96,165,250,0.4);
-}
-.navbar-nav .nav-link.active::before{
-  opacity:1;
-}
+    /* Dòng 5S */
+    .kb-5s{ margin-top:6px; font-size: clamp(11px, 1.3vw, 13.5px); color:#c9d7ff; }
 
-/* Ripple effect cho nav-link */
-.navbar-nav .nav-link .ripple-circle{
-  position:absolute;
-  border-radius:999px;
-  transform:scale(0);
-  pointer-events:none;
-  opacity:0.7;
-  background:radial-gradient(circle, rgba(191,219,254,0.85), rgba(59,130,246,0.15), transparent);
-  animation:ripple 0.6s ease-out;
-}
-@keyframes ripple{
-  to{
-    transform:scale(3.5);
-    opacity:0;
-  }
-}
+    /* ========== NAVBAR – LỚP STICKY 3 ========== */
+    .navbar-dark.bg-dark {
+      position: sticky;
+      top: calc(var(--h-header) + var(--gap-hb) + var(--h-banner) + var(--gap-bm));
+      z-index: 1032;
+      background: linear-gradient(180deg, #0b1221, #0d1627) !important;
+      border-bottom: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 0 auto;
+      max-width: var(--banner-maxw);
+      box-shadow:
+        0 10px 24px rgba(15,23,42,0.9),
+        0 0 18px rgba(15,23,42,0.9);
+    }
 
-/* ============================================================
-   CONTENT + IFRAMES
-   ============================================================ */
-.content-wrapper{
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  background:transparent;
-  margin-top:10px;
-}
-.frame-wrap{
-  flex:1;
-  position:relative;
-  max-width:var(--maxw);
-  margin:0 auto 14px;
-  border-radius:16px;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(30,64,175,0.35), transparent 60%),
-    radial-gradient(circle at 100% 100%, rgba(15,23,42,0.9), transparent 65%),
-    #020617;
-  border:1px solid rgba(31,41,55,0.9);
-  box-shadow:
-    0 20px 45px rgba(0,0,0,0.95),
-    0 0 26px rgba(15,23,42,1);
-  overflow:hidden;
+    /* Nav-link với viền sáng */
+    .navbar-nav .nav-link{
+      position: relative;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #e5e7eb !important;
+      transition: color .2s ease, transform .2s ease;
+      overflow:hidden;
+    }
+    .navbar-nav .nav-link::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      border:1px solid transparent;
+      box-shadow:0 0 0 rgba(59,130,246,0);
+      opacity:0;
+      transition: border-color .25s ease, box-shadow .25s ease, opacity .25s ease;
+    }
+    .navbar-nav .nav-link:hover{
+      color: var(--primary-200) !important;
+      transform: translateY(-1px);
+    }
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after{
+      border-color: var(--primary);
+      box-shadow: 0 0 10px rgba(59,130,246,.8);
+      opacity:1;
+    }
+    .navbar-nav .nav-link.active{
+      color: var(--primary-200) !important;
+    }
 
-  /* FIX: đảm bảo iframe luôn có chiều cao trên desktop */
-  min-height:calc(100vh - 260px);
-}
+    /* ========== NỘI DUNG + IFRAMES ========== */
+    .content-wrapper{ flex:1; display:flex; flex-direction:column; background:var(--surface-2); }
+    .frame-wrap{ flex:1; position:relative; }
 
-/* Iframe transition */
-iframe{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  border:none;
-  background:#020617;
-  opacity:0;
-  pointer-events:none;
-  transform:translateY(12px);
-  transition:
-    opacity .35s ease-out,
-    transform .35s ease-out;
-}
-iframe.active{
-  opacity:1;
-  pointer-events:auto;
-  transform:translateY(0);
-}
+    iframe{
+      position:absolute; inset:0; width:100%; height:100%;
+      border:none; background: var(--surface-3); display:none;
+    }
+    iframe.active{ display:block; }
 
-/* ============================================================
-   BOTTOM NAV – MOBILE + GLOW + RIPPLE
-   ============================================================ */
-.bottom-nav{
-  display:none;
-}
-@media(max-width:991.98px){
-  .bottom-nav{
-    position:fixed;
-    left:0; right:0; bottom:0;
-    height:60px;
-    background:rgba(10,19,35,0.96);
-    border-top:1px solid rgba(96,165,250,0.3);
-    display:block;
-    z-index:1200;
-    box-shadow:0 -10px 26px rgba(0,0,0,0.9);
-  }
-  .content-wrapper{ padding-bottom:70px; }
-}
-.bn-inner{
-  height:100%;
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-}
-.bn-btn{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:2px;
-  font-size:0.7rem;
-  color:var(--muted);
-  text-decoration:none;
-  border-radius:12px;
-  margin:4px 4px;
-  overflow:hidden;
-  transition:
-    color .16s ease,
-    box-shadow .25s ease,
-    transform .16s ease;
-}
-.bn-btn .bi{
-  font-size:1.18rem;
-}
+    /* Hiệu ứng chuyển cảnh cho iframe */
+    iframe.fade-anim{
+      animation: iframeFade .35s ease-out;
+    }
+    @keyframes iframeFade{
+      from{
+        opacity:0;
+        transform: translateY(10px) scale(0.99);
+        filter: blur(4px);
+      }
+      to{
+        opacity:1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+    }
 
-/* Glow border mobile */
-.bn-btn::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  padding:1px;
-  background:linear-gradient(45deg,
-             rgba(96,165,250,0.3),
-             rgba(59,130,246,0.6),
-             rgba(96,165,250,0.3));
-  -webkit-mask:
-     linear-gradient(#000 0 0) content-box,
-     linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  opacity:0;
-  transition:opacity .25s ease;
-}
-.bn-btn:hover::before,
-.bn-btn.active::before{
-  opacity:1;
-}
-.bn-btn.active{
-  color:var(--blue-3);
-  text-shadow:0 0 10px var(--blue-glow);
-  box-shadow:0 0 12px rgba(96,165,250,0.45);
-  transform:translateY(-1px);
-}
+    /* ========== BOTTOM NAV CHO MOBILE ========== */
+    .bottom-nav{
+      position: fixed; left:0; right:0; bottom:0;
+      height:60px; background:var(--bottom-bg);
+      border-top:1px solid var(--bottom-border);
+      display:none; z-index:1031;
+      border-top-left-radius:var(--radius);
+      border-top-right-radius:var(--radius);
+    }
+    .bn-inner{
+      height:100%;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      align-items:center;
+    }
+    .bn-btn{
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:2px;
+      font-size:0.7rem;
+      color:var(--muted);
+      text-decoration:none;
+      transition: color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .bn-btn .bi{
+      font-size:1.1rem;
+    }
+    .bn-btn:hover,
+    .bn-btn.active{
+      color:var(--primary-200);
+      background:var(--active-pill);
+      transform:translateY(-1px);
+      box-shadow:0 0 10px rgba(59,130,246,.6);
+    }
 
-/* Ripple cho bottom nav */
-.bn-btn .ripple-circle{
-  position:absolute;
-  border-radius:999px;
-  transform:scale(0);
-  pointer-events:none;
-  opacity:0.8;
-  background:radial-gradient(circle, rgba(191,219,254,0.9), rgba(59,130,246,0.2), transparent);
-  animation:ripple 0.6s ease-out;
-}
+    @media(max-width:991.98px){
+      .bottom-nav{ display:block; }
+      .content-wrapper{ padding-bottom:60px; }
+    }
 
-/* ============================================================
-   RESPONSIVE SMALL
-   ============================================================ */
-@media(max-width:575.98px){
-  :root{
-    --h-banner:80px;
-  }
-  .kb-5s{ display:none; }
-  .frame-wrap{
-    margin-inline:8px;
-  }
-  .navbar-nav .nav-link{
-    font-size:.78rem;
-    padding-inline:10px;
-  }
-}
-
-/* Scrollbar */
-*::-webkit-scrollbar { width:9px; height:9px; }
-*::-webkit-scrollbar-thumb { background:#1f2933; border-radius:999px; }
-*::-webkit-scrollbar-thumb:hover { background:#374151; }
-*::-webkit-scrollbar-track { background:#020617; }
-
-</style>
+    /* Scrollbar trang */
+    *::-webkit-scrollbar{ width:10px; height:10px; }
+    *::-webkit-scrollbar-thumb{ background:#20304a; border-radius:8px; }
+    *::-webkit-scrollbar-thumb:hover{ background:#2a4470; }
+    *::-webkit-scrollbar-track{ background:#0c1322; }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ============================================
+     HEADER – LỚP STICKY THỨ 1
+     ============================================ -->
 <header class="top-header">
-  <h1>TỔ CƠ ĐIỆN</h1>
+  <div class="th-inner"><h1>TỔ CƠ ĐIỆN</h1></div>
 </header>
 
-<!-- BANNER -->
+<!-- ============================================
+     KAIZEN BANNER – LỚP STICKY THỨ 2
+     ============================================ -->
 <div class="kaizen-wrap">
   <div class="kaizen-banner">
-    <div class="kb-surface">
-      <div class="kb-grid"></div>
-      <div class="kb-glow"></div>
-      <div class="kb-streak"></div>
+    <div class="kb-surface border-e2">
+      <div class="kb-layer kb-grid"></div>
+      <div class="kb-layer kb-glow"></div>
+      <div class="kb-layer kb-streak"></div>
 
-      <div class="kb-inner">
+      <div class="kb-inner container-fluid">
         <div class="kb-text">
-          <div class="kb-title-1">CHỦ ĐỘNG ✦ SÁNG TẠO ✦ HIỆU QUẢ</div>
+          <div class="kb-title-1">CHỦ ĐỘNG ✦ SÁNG TẠO ✦ HIỆU QUẢ </div>
+          <div class="kb-div"><span>✦</span></div>
           <div class="kb-title-2">KAIZEN - KHÔNG NGỪNG CẢI TIẾN</div>
-          <div class="kb-5s">Sàng lọc (Seiri) • Sắp xếp (Seiton) • Sạch sẽ (Seiso) • Săn sóc (Seiketsu) • Sẵn sàng (Shitsuke)</div>
+          <div class="kb-div"><span>✦</span></div>
+
+          <!-- Chuỗi 5S -->
+          <div class="kb-5s">
+            Seiri (Sàng lọc) • Seiton (Sắp xếp) • Seiso (Sạch sẽ) •
+            Seiketsu (Săn sóc) • Shitsuke (Sẵn sàng)
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
+<!-- ============================================
+     MENU – LỚP STICKY THỨ 3
+     ============================================ -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top" style="z-index:1030;">
   <div class="container-fluid">
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false">
+
+    <!-- Nút thu gọn mobile -->
+    <button class="navbar-toggler collapsed" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbar-content">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Danh sách menu -->
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link iframe-link active" data-target="mainFrame" href="#">Trang chủ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link iframe-link" data-target="taskListFrame" href="#">Bảng công việc</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link iframe-link" data-target="planListFrame" href="#">Dự kiến</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link iframe-link" data-target="maintListFrame" href="#">Bảo dưỡng</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link iframe-link" data-target="MTCVFrame" href="#">Phân công</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link iframe-link" data-target="WaterRecordFrame" href="#">Chỉ số nước</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link iframe-link" data-target="TaskReportFrame" href="#">Báo cáo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link iframe-link" data-target="chamcongFrame" href="#">Chấm công</a>
-        </li>
+        <li><a class="nav-link" data-target="mainFrame">TRANG CHỦ</a></li>
+        <li><a class="nav-link iframe-link" data-target="taskListFrame">BẢNG CÔNG VIỆC</a></li>
+        <li><a class="nav-link iframe-link" data-target="planListFrame">DỰ KIẾN</a></li>
+        <li><a class="nav-link iframe-link" data-target="maintListFrame">BẢO DƯỠNG</a></li>
+        <li><a class="nav-link iframe-link" data-target="MTCVFrame">PHÂN CÔNG</a></li>
+        <li><a class="nav-link iframe-link" data-target="WaterRecordFrame">CHỈ SỐ NƯỚC</a></li>
+        <li><a class="nav-link iframe-link" data-target="TaskReportFrame">BÁO CÁO</a></li>
+        <li><a class="nav-link iframe-link" data-target="chamcongFrame">CHẤM CÔNG</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- CONTENT -->
+<!-- ============================================
+     KHU VỰC IFRAME – HIỂN THỊ MODULE
+     ============================================ -->
 <div class="content-wrapper">
   <div class="frame-wrap">
-    <iframe id="mainFrame" class="active" src=""></iframe>
-
+    <iframe id="mainFrame" src=""></iframe>
     <iframe id="taskListFrame"  src="https://script.google.com/macros/s/AKfycbyHry8Kk9_0ZyCfy3nZhVIrxKrENmSf5vsnPW-xxoUUbxRuOg1wYcUjdnT9x3i9urw/exec"></iframe>
     <iframe id="planListFrame"  src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
     <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
@@ -513,85 +372,93 @@ iframe.active{
     <iframe id="DXVTFrame"         src="https://script.google.com/macros/s/AKfycbzrrIMJ4N5ymEMEV6EkOQy2qTH1ApZtdb4bn8h1sLPbCUE-upwxxlW-tvyNWOzAuwmX/exec"></iframe>
     <iframe id="MotorCurrentFrame" src="https://script.google.com/macros/s/AKfycbxpHonjPCZ9Vin42ZATGEPGD09XWZ8MI76MI1kuE3lwHKV09_Yb_XeL193SVvnrSthe/exec"></iframe>
     <iframe id="chamcongFrame"     src="https://script.google.com/macros/s/AKfycbxG7IU2Nvv4IFmmcZnu4N_SWaNAKRYnNzElRan5ZiAaNqjb2GRdRpg-yyYCIZ95Gc6y2w/exec"></iframe>
-    <iframe id="bearingFrame"      src="https://script.google.com/macros/s/AKfycbww7MA7xaZG2UJQWAc0NBwbl-bZPcjmic5XOUDFk_NR7OylFdv3OG2rxUUXRGy1w1BD/exec"></iframe>
+    <iframe id="bearingFrame" src="https://script.google.com/macros/s/AKfycbww7MA7xaZG2UJQWAc0NBwbl-bZPcjmic5XOUDFk_NR7OylFdv3OG2rxUUXRGy1w1BD/exec"></iframe>
     <iframe id="vbeltsFrame" src=""></iframe>
   </div>
 </div>
 
-<!-- BOTTOM NAV MOBILE -->
+<!-- ============================================
+     BOTTOM NAV – DÀNH CHO MOBILE
+     ============================================ -->
 <nav class="bottom-nav d-lg-none">
   <div class="bn-inner">
-    <a href="#" class="bn-btn active" data-target="mainFrame">
-      <i class="bi bi-house"></i>
-      <div>Trang chủ</div>
-    </a>
-    <a href="#" class="bn-btn" data-target="taskListFrame">
-      <i class="bi bi-card-checklist"></i>
-      <div>Công việc</div>
-    </a>
-    <a href="#" class="bn-btn" data-target="planListFrame">
-      <i class="bi bi-calendar-event"></i>
-      <div>Dự kiến</div>
-    </a>
-    <a href="#" class="bn-btn" data-target="maintListFrame">
-      <i class="bi bi-gear"></i>
-      <div>Bảo dưỡng</div>
-    </a>
-    <a href="#" class="bn-btn" data-target="TaskReportFrame">
-      <i class="bi bi-graph-up"></i>
-      <div>Báo cáo</div>
-    </a>
+    <a class="bn-btn" data-target="mainFrame"><i class="bi bi-house"></i><div>Trang chủ</div></a>
+    <a class="bn-btn" data-target="taskListFrame"><i class="bi bi-card-checklist"></i><div>Công việc</div></a>
+    <a class="bn-btn" data-target="planListFrame"><i class="bi bi-calendar-event"></i><div>Dự kiến</div></a>
+    <a class="bn-btn" data-target="maintListFrame"><i class="bi bi-gear"></i><div>Bảo dưỡng</div></a>
+    <a class="bn-btn" data-target="TaskReportFrame"><i class="bi bi-graph-up"></i><div>Báo cáo</div></a>
   </div>
 </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ============================================
+     SCRIPT NGOÀI – Bootstrap
+     ============================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-<script>
+<!-- ============================================
+     APP SCRIPT – ĐIỀU HƯỚNG IFRAME + HIỆU ỨNG
+     ============================================ -->
+<script defer>
+/* Điều khiển chuyển đổi giữa các iframe khi click menu */
 window.addEventListener('DOMContentLoaded', function () {
 
-  const menu   = document.querySelectorAll('.nav-link[data-target]');
-  const mob    = document.querySelectorAll('.bn-btn[data-target]');
+  const menuLinks = document.querySelectorAll('.iframe-link, .nav-link[data-target]');
+  const bottomBtns = document.querySelectorAll('.bottom-nav .bn-btn[data-target]');
   const frames = document.querySelectorAll('iframe');
 
-  function activateFrame(id){
-    frames.forEach(f=>f.classList.remove('active'));
-    const el=document.getElementById(id);
-    if(el) el.classList.add('active');
+  /* Collapse menu cho mobile */
+  const navbarCollapseEl = document.getElementById('navbar-content');
+  const navCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
 
-    menu.forEach(x=>x.classList.toggle('active', x.dataset.target===id));
-    mob.forEach(x=>x.classList.toggle('active', x.dataset.target===id));
-
-    try{ localStorage.setItem('lastFrameId', id); }catch(e){}
+  function collapseIfMobile(){
+    if(window.matchMedia('(max-width: 991.98px)').matches) navCollapse.hide();
   }
 
-  function createRipple(e, container){
-    const rect = container.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const circle = document.createElement('span');
-    circle.classList.add('ripple-circle');
-    circle.style.width = circle.style.height = size + 'px';
-    circle.style.left = (e.clientX - rect.left - size/2) + 'px';
-    circle.style.top  = (e.clientY - rect.top  - size/2) + 'px';
-    container.appendChild(circle);
-    setTimeout(()=>circle.remove(), 600);
+  /* Set trạng thái active cho menu */
+  function setActiveLink(targetId){
+    menuLinks.forEach(l=>{
+      l.classList.toggle('active', l.getAttribute('data-target')===targetId);
+    });
+    bottomBtns.forEach(b=>{
+      b.classList.toggle('active', b.getAttribute('data-target')===targetId);
+    });
   }
 
+  /* Hiển thị iframe tương ứng + hiệu ứng chuyển cảnh */
+  function activateFrame(targetId){
+    frames.forEach(f=>{
+      f.classList.remove('active');
+      f.classList.remove('fade-anim');
+    });
+    const t=document.getElementById(targetId);
+    if(t){
+      t.classList.add('active');
+      // restart animation
+      void t.offsetWidth;
+      t.classList.add('fade-anim');
+    }
+
+    try{ localStorage.setItem('lastFrameId',targetId);}catch(e){}
+    setActiveLink(targetId);
+  }
+
+  /* Xử lý click menu */
   function handleClick(e){
     e.preventDefault();
-    const targetId = this.dataset.target;
+    const targetId=this.getAttribute('data-target');
     if(!targetId) return;
-    createRipple(e, this);
     activateFrame(targetId);
+    collapseIfMobile();
   }
 
-  menu.forEach(x=>x.addEventListener('click', handleClick));
-  mob.forEach(x=>x.addEventListener('click', handleClick));
+  menuLinks.forEach(l=>l.addEventListener('click',handleClick));
+  bottomBtns.forEach(b=>b.addEventListener('click',handleClick));
 
-  // Khôi phục iframe cuối cùng
-  let defaultFrame = 'mainFrame';
+  /* Khôi phục iframe cuối cùng */
+  let defaultFrame='mainFrame';
   try{
-    const saved = localStorage.getItem('lastFrameId');
-    if(saved && document.getElementById(saved)) defaultFrame = saved;
+    const saved=localStorage.getItem('lastFrameId');
+    if(saved && document.getElementById(saved)) defaultFrame=saved;
   }catch(e){}
   activateFrame(defaultFrame);
 });
