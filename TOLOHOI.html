@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>TỔ LÒ HƠI - QUẢN LÝ</title>
+  <title>TỔ LÒ HƠI - QUẢN LÝ HỆ THỐNG</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
@@ -36,7 +36,7 @@
       color: var(--accent); text-shadow: 0 0 15px rgba(88,166,255,0.3);
     }
 
-    /* KHỐI LỊCH TRỰC KÍP (THAY CHO BANNER KAIZEN) */
+    /* BANNER LỊCH TRỰC - THAY THẾ KAIZEN */
     .shift-banner {
       padding: 8px 12px;
       background: var(--bg);
@@ -48,14 +48,17 @@
       border-radius: var(--radius);
       padding: 10px;
     }
-    .shift-title { font-size: 0.7rem; font-weight: 700; color: var(--accent); margin-bottom: 5px; text-transform: uppercase; }
-    .shift-info { font-size: 0.75rem; line-height: 1.4; color: #cbd5e1; }
-    .shift-date-picker { 
-        background: rgba(255,255,255,0.05); border: 1px solid var(--border); 
-        color: white; font-size: 0.75rem; border-radius: 5px; padding: 2px 5px;
+    .shift-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .shift-title { font-size: 0.7rem; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+    .shift-date-input {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      color: #fff; font-size: 0.75rem; border-radius: 4px; padding: 2px 5px; outline: none;
     }
+    .shift-info { font-size: 0.75rem; line-height: 1.5; color: #cbd5e1; }
+    .shift-info b { color: #fff; }
+    .ca-highlight { color: var(--accent); font-weight: 600; }
 
-    /* MENU NGANG (PC) */
+    /* NAVBAR (PC) */
     .navbar-dark {
       margin: 0 12px 8px 12px; border-radius: 10px;
       background: #161b22 !important; border: 1px solid var(--border);
@@ -68,7 +71,7 @@
     iframe.active { display: block; }
     
     .fade-anim { animation: fadeIn 0.3s ease-in-out; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.99); } to { opacity: 1; transform: scale(1); } }
 
     /* BOTTOM NAV (MOBILE) */
     .bottom-nav {
@@ -86,7 +89,8 @@
       font-size: 0.6rem; font-weight: 500; transition: 0.2s;
     }
     .bn-btn i { font-size: 1.2rem; margin-bottom: 2px; }
-    .bn-btn.active { color: var(--accent); }
+    .bn-btn.active { color: var(--accent); transform: translateY(-2px); }
+    .bn-btn.active i { filter: drop-shadow(0 0 5px var(--accent)); }
 
     @media (min-width: 992px) {
       .shift-banner { padding: 10px 100px; }
@@ -102,12 +106,12 @@
 
 <div class="shift-banner">
   <div class="shift-surface">
-    <div class="d-flex justify-content-between align-items-center mb-1">
-        <div class="shift-title"><i class="bi bi-clock-history"></i> Lịch trực kíp</div>
-        <input type="date" id="workDate" class="shift-date-picker">
+    <div class="shift-header">
+      <div class="shift-title"><i class="bi bi-calendar3"></i> Lịch trực kíp & ca</div>
+      <input type="date" id="workDate" class="shift-date-input">
     </div>
     <div id="shiftDisplay" class="shift-info">
-        Đang tải dữ liệu...
+      Đang tính toán lịch trực...
     </div>
   </div>
 </div>
@@ -117,9 +121,9 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item"><a class="nav-link" data-target="mainFrame" href="#">TRANG CHỦ</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="taskListFrame" href="#">CÔNG VIỆC</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="maintListFrame" href="#">BẢO TRÌ</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="overTimeFrame" href="#">TĂNG CA</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="taskListFrame" href="#">BẢNG CÔNG VIỆC</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="maintListFrame" href="#">BẢO TRÌ BẢO DƯỠNG</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="overTimeFrame" href="#">CHẤM TĂNG CA</a></li>
         <li class="nav-item"><a class="nav-link" data-target="a100Frame" href="#">XÚT & A100</a></li>
       </ul>
     </div>
@@ -136,37 +140,54 @@
 
 <nav class="bottom-nav d-lg-none">
   <div class="bn-inner">
-    <a href="#" class="bn-btn active" data-target="mainFrame"><i class="bi bi-house"></i><div>Trang chủ</div></a>
-    <a href="#" class="bn-btn" data-target="taskListFrame"><i class="bi bi-list-check"></i><div>Công việc</div></a>
-    <a href="#" class="bn-btn" data-target="maintListFrame"><i class="bi bi-tools"></i><div>Bảo trì</div></a>
-    <a href="#" class="bn-btn" data-target="overTimeFrame"><i class="bi bi-alarm"></i><div>Tăng ca</div></a>
-    <a href="#" class="bn-btn" data-target="a100Frame"><i class="bi bi-droplet-half"></i><div>Xút/A100</div></a>
+    <a href="#" class="bn-btn active" data-target="mainFrame"><i class="bi bi-house-door"></i><div>Trang chủ</div></a>
+    <a href="#" class="bn-btn" data-target="taskListFrame"><i class="bi bi-card-checklist"></i><div>Công việc</div></a>
+    <a href="#" class="bn-btn" data-target="maintListFrame"><i class="bi bi-gear-wide"></i><div>Bảo trì</div></a>
+    <a href="#" class="bn-btn" data-target="overTimeFrame"><i class="bi bi-stopwatch"></i><div>Tăng ca</div></a>
+    <a href="#" class="bn-btn" data-target="a100Frame"><i class="bi bi-droplet"></i><div>Xút/A100</div></a>
   </div>
 </nav>
 
 <script>
-  // --- PHẦN 1: LOGIC ĐIỀU KHIỂN GIAO DIỆN ---
+  // --- PHẦN 1: ĐIỀU KHIỂN CHUYỂN TRANG ---
   document.querySelectorAll('[data-target]').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const targetId = this.getAttribute('data-target');
       
-      document.querySelectorAll('iframe').forEach(iframe => iframe.classList.remove('active', 'fade-anim'));
+      // Ẩn tất cả iframe
+      document.querySelectorAll('iframe').forEach(iframe => {
+        iframe.classList.remove('active', 'fade-anim');
+      });
+      
+      // Hiện iframe được chọn
       const activeFrame = document.getElementById(targetId);
       activeFrame.classList.add('active', 'fade-anim');
       
+      // Cập nhật trạng thái nút (PC & Mobile)
       document.querySelectorAll('[data-target]').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll(`[data-target="${targetId}"]`).forEach(btn => btn.classList.add('active'));
       
-      localStorage.setItem('lastFrameBoiler', targetId);
+      localStorage.setItem('lastFrameLoiHoi', targetId);
     });
   });
 
-  // --- PHẦN 2: LOGIC TÍNH TOÁN KÍP/CA (GIỮ NGUYÊN TỪ BẢN CŨ) ---
-  const baseDate = new Date("2025-01-01");
-  const groupA = ["Mạnh Hiền","Quốc Thắng"], groupB = ["Cường Thịnh","Minh Tú"], groupC = ["Đức Thịnh","Ngọc Hiếu"];
-  const kipOrder = [groupA, groupB, groupC], caOrder = [["Ca A"], ["Ca B"]];
-  const baseKip = [groupB, groupC, groupA], baseCa = [["Ca B"], ["Ca A"]];
+  // --- PHẦN 2: LOGIC TÍNH TOÁN KÍP/CA (ĐÃ FIX LỖI TRÙNG CA) ---
+  const baseDate = new Date("2025-01-01"); // Mốc Thứ 2 đầu năm
+  
+  // Danh sách nhân sự theo nhóm
+  const groups = [
+    ["Mạnh Hiền", "Quốc Thắng"], // Nhóm 0 (Nhóm A cũ)
+    ["Cường Thịnh", "Minh Tú"],   // Nhóm 1 (Nhóm B cũ)
+    ["Đức Thịnh", "Ngọc Hiếu"]    // Nhóm 2 (Nhóm C cũ)
+  ];
+  
+  const caList = ["Ca A", "Ca B"];
+
+  // Chỉ số bắt đầu tại tuần đầu tiên (Tuần có ngày 2025-01-01)
+  // Lưu ý: Dựa trên code cũ của bạn: Tuần 1 Kíp 1=B, Kíp 2=C, Kíp 3=A | Sáng=B, Chiều=A
+  const startKipIdx = [1, 2, 0]; // Kíp 1: Nhóm 1, Kíp 2: Nhóm 2, Kíp 3: Nhóm 0
+  const startCaIdx = [1, 0];    // Sáng: Index 1 (Ca B), Chiều: Index 0 (Ca A)
 
   function startOfWeekMonday(date) {
     const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
@@ -176,18 +197,22 @@
     return d;
   }
 
-  function computeShifts(d) {
-    const monday = startOfWeekMonday(d);
-    const k = Math.floor((monday - startOfWeekMonday(baseDate)) / (7 * 24 * 60 * 60 * 1000));
+  function computeShifts(selectedDate) {
+    const monday = startOfWeekMonday(selectedDate);
+    const weeksDiff = Math.floor((monday - startOfWeekMonday(baseDate)) / (7 * 24 * 60 * 60 * 1000));
     
-    const getRotate = (base, order, steps) => order[(order.indexOf(base) + steps) % order.length];
+    // Xoay Kíp (Hệ vòng 3)
+    const getKip = (sIdx) => groups[(sIdx + weeksDiff) % 3].join(", ");
     
+    // Xoay Ca (Hệ vòng 2 - Đảm bảo Sáng/Chiều luôn khác nhau)
+    const getCa = (sIdx) => caList[(sIdx + weeksDiff) % 2];
+
     return {
-      k1: getRotate(baseKip[0], kipOrder, k).join(", "),
-      k2: getRotate(baseKip[1], kipOrder, k).join(", "),
-      k3: getRotate(baseKip[2], kipOrder, k).join(", "),
-      caS: getRotate(baseCa[0], caOrder, k),
-      caC: getRotate(baseCa[1], caOrder, k)
+      k1: getKip(startKipIdx[0]),
+      k2: getKip(startKipIdx[1]),
+      k3: getKip(startKipIdx[2]),
+      caS: getCa(startCaIdx[0]),
+      caC: getCa(startCaIdx[1])
     };
   }
 
@@ -195,25 +220,32 @@
     const s = computeShifts(date);
     document.getElementById('shiftDisplay').innerHTML = `
         <b>Kíp 1:</b> ${s.k1} | <b>Kíp 2:</b> ${s.k2} | <b>Kíp 3:</b> ${s.k3}<br>
-        <span style="color:var(--accent)"><b>Sáng:</b> ${s.caS} — <b>Chiều:</b> ${s.caC}</span>
+        <span class="ca-highlight">Sáng: ${s.caS} — Chiều: ${s.caC}</span>
     `;
   }
 
-  // Khởi tạo khi load trang
+  // KHỞI TẠO TRANG
   window.onload = () => {
-    // Phục hồi iframe cũ
-    const saved = localStorage.getItem('lastFrameBoiler') || 'mainFrame';
+    // 1. Khôi phục trang cuối cùng
+    const saved = localStorage.getItem('lastFrameLoiHoi') || 'mainFrame';
     const link = document.querySelector(`[data-target="${saved}"]`);
     if(link) link.click();
 
-    // Thiết lập ngày mặc định và tính kíp
+    // 2. Thiết lập ngày hôm nay và tính kíp
     const today = new Date();
-    document.getElementById('workDate').value = today.toISOString().split('T')[0];
+    const isoDate = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+    document.getElementById('workDate').value = isoDate;
     updateDisplay(today);
   };
 
+  // Lắng nghe sự kiện đổi ngày
   document.getElementById('workDate').addEventListener('change', (e) => {
-    updateDisplay(new Date(e.target.value));
+    if(e.target.value) {
+        // Fix lỗi lệch múi giờ khi tạo đối tượng Date từ chuỗi YYYY-MM-DD
+        const parts = e.target.value.split('-');
+        const selectedDate = new Date(parts[0], parts[1] - 1, parts[2]);
+        updateDisplay(selectedDate);
+    }
   });
 </script>
 </body>
