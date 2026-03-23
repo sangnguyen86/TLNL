@@ -1,285 +1,220 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TỔ LÒ HƠI - BỘ PHẬN CƠ ĐIỆN NƯỚC - LÒ HƠI - MÁY NÉN KHÍ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>TỔ LÒ HƠI - QUẢN LÝ</title>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
 
   <style>
-    html, body { height: 100%; margin: 0; display: flex; flex-direction: column; }
-    .content-wrapper { flex: 1; display: flex; flex-direction: column; background: #212529; }
-    iframe { width: 100%; height: 1000px; border: none; display: none; }
+    :root {
+      --bg: #0a1222;
+      --surface: #101827;
+      --text: #e8ecf5;
+      --primary: #3b82f6;
+      --accent: #58a6ff;
+      --border: rgba(80,120,180,0.2);
+      --radius: 12px;
+      --h-header: 56px;
+      --h-bottom-nav: 65px;
+    }
+
+    html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); overflow: hidden; }
+    body { display: flex; flex-direction: column; font-family: 'Inter', system-ui, sans-serif; }
+
+    /* HEADER */
+    .top-header {
+      height: var(--h-header);
+      display: flex; align-items: center; justify-content: center;
+      background: #0d1627; border-bottom: 1px solid var(--border);
+      z-index: 1040; flex-shrink: 0;
+    }
+    .top-header h1 {
+      margin: 0; font-size: 1.2rem; font-weight: 800; letter-spacing: 1px;
+      color: var(--accent); text-shadow: 0 0 15px rgba(88,166,255,0.3);
+    }
+
+    /* KHỐI LỊCH TRỰC KÍP (THAY CHO BANNER KAIZEN) */
+    .shift-banner {
+      padding: 8px 12px;
+      background: var(--bg);
+      flex-shrink: 0;
+    }
+    .shift-surface {
+      background: linear-gradient(145deg, #161b22, #0d1117);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px;
+    }
+    .shift-title { font-size: 0.7rem; font-weight: 700; color: var(--accent); margin-bottom: 5px; text-transform: uppercase; }
+    .shift-info { font-size: 0.75rem; line-height: 1.4; color: #cbd5e1; }
+    .shift-date-picker { 
+        background: rgba(255,255,255,0.05); border: 1px solid var(--border); 
+        color: white; font-size: 0.75rem; border-radius: 5px; padding: 2px 5px;
+    }
+
+    /* MENU NGANG (PC) */
+    .navbar-dark {
+      margin: 0 12px 8px 12px; border-radius: 10px;
+      background: #161b22 !important; border: 1px solid var(--border);
+    }
+    @media (max-width: 991px) { .navbar-dark { display: none; } }
+
+    /* NỘI DUNG IFRAME */
+    .content-wrapper { flex: 1; position: relative; width: 100%; background: #000; }
+    iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; display: none; }
     iframe.active { display: block; }
+    
+    .fade-anim { animation: fadeIn 0.3s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    .announce-wrap { width: 100%; background: #212529; }
-    #announcementFrame { width: 100%; height: 80px; border: 0; overflow: hidden; display: block; }
-
-    .mono { font-variant-numeric: tabular-nums; }
-    .week-range { font-size: .875rem; opacity: .8; }
-
-    /* Màu cho khối tuần */
-    .card-week { border-width: 1px; border-style: solid; border-radius: .75rem; }
-    .card-week.current {
-      background: #e8f5e9;
-      border-color: #a5d6a7;
+    /* BOTTOM NAV (MOBILE) */
+    .bottom-nav {
+      height: var(--h-bottom-nav);
+      background: rgba(15, 24, 43, 0.9);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      padding-bottom: env(safe-area-inset-bottom);
+      flex-shrink: 0;
     }
-    .card-week.next {
-      background: #fff8e1;
-      border-color: #ffe082;
+    .bn-inner { display: flex; height: 100%; align-items: center; justify-content: space-around; }
+    .bn-btn {
+      text-decoration: none; color: #8b949e;
+      display: flex; flex-direction: column; align-items: center;
+      font-size: 0.6rem; font-weight: 500; transition: 0.2s;
     }
+    .bn-btn i { font-size: 1.2rem; margin-bottom: 2px; }
+    .bn-btn.active { color: var(--accent); }
 
-    /* Alert khi chọn ngày */
-    .alert-chosen {
-      background: #e3f2fd;
-      border-color: #90caf9;
-      color: #0d47a1;
+    @media (min-width: 992px) {
+      .shift-banner { padding: 10px 100px; }
+      .bottom-nav { display: none; }
     }
   </style>
 </head>
+<body>
 
-<body class="bg-dark">
-  <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-    <div class="container-fluid text-center">
-      <h1 class="text-primary text-center mb-0">TỔ LÒ HƠI</h1>
+<header class="top-header">
+  <h1>TỔ LÒ HƠI</h1>
+</header>
+
+<div class="shift-banner">
+  <div class="shift-surface">
+    <div class="d-flex justify-content-between align-items-center mb-1">
+        <div class="shift-title"><i class="bi bi-clock-history"></i> Lịch trực kíp</div>
+        <input type="date" id="workDate" class="shift-date-picker">
     </div>
-  </nav>
-
-  <!-- DẢI THÔNG BÁO -->
-  <div class="announce-wrap">
-    <iframe id="announcementFrame" src="" scrolling="no" referrerpolicy="no-referrer"></iframe>
-  </div>
-
-  <!-- MENU (STICKY) -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top" style="z-index:1030;">
-    <div class="container-fluid">
-      <button class="navbar-toggler collapsed" type="button"
-              data-bs-toggle="collapse" data-bs-target="#navbar-content"
-              aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-content">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link iframe-link" href="#" data-target="mainFrame">TRANG CHỦ</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" href="#" data-target="taskListFrame">BẢNG CÔNG VIỆC</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" href="#" data-target="maintListFrame">BẢO TRÌ BẢO DƯỠNG</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" href="#" data-target="overTimeFrame">BẢNG CHẤM TĂNG CA</a></li>
-          <li class="nav-item"><a class="nav-link iframe-link" href="#" data-target="a100Frame">BẢNG THEO DÕI XÚT VÀ A100</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- KHỐI CHỌN NGÀY + KẾT QUẢ  -->
-  <div class="container-fluid bg-light text-dark py-3">
-  <div class="card shadow-sm">
-    <div class="card-body">
-        <!-- Hàng chọn ngày -->
-        <div class="d-flex align-items-center flex-nowrap gap-3 mb-3">
-          <label for="workDate" class="form-label fw-bold mb-0">Ngày:</label>
-          <input type="date" id="workDate" class="form-control" style="width: 180px;" />
-        </div>
-
-        <!-- Hai cột: Tuần hiện tại / Tuần kế tiếp -->
-        <div class="row g-3">
-          <div class="col-12 col-lg-6">
-            <div class="card-week current p-3 h-100">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5 class="mb-1 text-success">Tuần hiện tại</h5>
-                <div id="rangeThis" class="week-range mono"></div>
-              </div>
-              <div id="weekThis" class="mt-2"></div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="card-week next p-3 h-100">
-              <div class="d-flex justify-content-between align-items-start">
-                <h5 class="mb-1 text-warning">Tuần kế tiếp</h5>
-                <div id="rangeNext" class="week-range mono"></div>
-              </div>
-              <div id="weekNext" class="mt-2"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bảng thông báo cho tuần chứa ngày đã chọn -->
-        <div id="chosenAlert" class="alert alert-chosen d-none mt-3" role="alert">
-          <div class="d-flex justify-content-between align-items-start">
-            <div>
-              <strong>Kết quả cho tuần chứa ngày đã chọn</strong>
-              <div id="rangeChosen" class="week-range mono"></div>
-            </div>
-            <button type="button" class="btn-close" aria-label="Close"
-                    onclick="document.getElementById('chosenAlert').classList.add('d-none')"></button>
-          </div>
-          <div id="weekChosen" class="mt-2"></div>
-        </div>
-      </div>
+    <div id="shiftDisplay" class="shift-info">
+        Đang tải dữ liệu...
     </div>
   </div>
+</div>
 
-  <!-- KHU VỰC IFRAME -->
-  <div class="content-wrapper">
-    <iframe id="mainFrame"  src="https://script.google.com/macros/s/AKfycbylNzumSIzPj_pElw47T642qV7gv43gU8QMMX7iZU393zQK9d1-lqunu09b93jHano_/exec"></iframe>
-    <iframe id="taskListFrame"  src="https://script.google.com/macros/s/AKfycbw2aFX6nUXO8t_C9rueyi6GaB9FNkNmCnJygALjRqjeIdUzBduTzNIdn8pkne-BYrJCAQ/exec"></iframe>
-    <iframe id="planListFrame"  src=""></iframe>
+<nav class="navbar navbar-expand-lg navbar-dark shadow d-none d-lg-block">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" data-target="mainFrame" href="#">TRANG CHỦ</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="taskListFrame" href="#">CÔNG VIỆC</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="maintListFrame" href="#">BẢO TRÌ</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="overTimeFrame" href="#">TĂNG CA</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="a100Frame" href="#">XÚT & A100</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="content-wrapper">
+    <iframe id="mainFrame" src="https://script.google.com/macros/s/AKfycbylNzumSIzPj_pElw47T642qV7gv43gU8QMMX7iZU393zQK9d1-lqunu09b93jHano_/exec"></iframe>
+    <iframe id="taskListFrame" src="https://script.google.com/macros/s/AKfycbw2aFX6nUXO8t_C9rueyi6GaB9FNkNmCnJygALjRqjeIdUzBduTzNIdn8pkne-BYrJCAQ/exec"></iframe>
     <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
-    <iframe id="overTimeFrame"     src="https://script.google.com/macros/s/AKfycbxGkYnnZKs2HMTbEt1O3lzRGc2_87bZZ-mwsz6hcL2238b4Ygor015r_AByx4No08AVtQ/exec"></iframe>
-    <iframe id="a100Frame"  src="https://script.google.com/macros/s/AKfycbxQz6qG0AtY3jUS628oCD8GSDJtT2dWG9r-Gd6alzVJY7Y1FH-atFWx90TOgGRqLDYJ/exec"></iframe>
-    <iframe id="TaskReportFrame"   src=""></iframe>
-    <iframe id="DXVTFrame"         src=""></iframe>
-    <iframe id="MotorCurrentFrame" src=""></iframe>
+    <iframe id="overTimeFrame" src="https://script.google.com/macros/s/AKfycbxGkYnnZKs2HMTbEt1O3lzRGc2_87bZZ-mwsz6hcL2238b4Ygor015r_AByx4No08AVtQ/exec"></iframe>
+    <iframe id="a100Frame" src="https://script.google.com/macros/s/AKfycbxQz6qG0AtY3jUS628oCD8GSDJtT2dWG9r-Gd6alzVJY7Y1FH-atFWx90TOgGRqLDYJ/exec"></iframe>
+</div>
+
+<nav class="bottom-nav d-lg-none">
+  <div class="bn-inner">
+    <a href="#" class="bn-btn active" data-target="mainFrame"><i class="bi bi-house"></i><div>Trang chủ</div></a>
+    <a href="#" class="bn-btn" data-target="taskListFrame"><i class="bi bi-list-check"></i><div>Công việc</div></a>
+    <a href="#" class="bn-btn" data-target="maintListFrame"><i class="bi bi-tools"></i><div>Bảo trì</div></a>
+    <a href="#" class="bn-btn" data-target="overTimeFrame"><i class="bi bi-alarm"></i><div>Tăng ca</div></a>
+    <a href="#" class="bn-btn" data-target="a100Frame"><i class="bi bi-droplet-half"></i><div>Xút/A100</div></a>
   </div>
+</nav>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
-
-  <!-- SCRIPT CHÍNH -->
-  <script defer>
-    window.addEventListener('DOMContentLoaded', function () {
-      // ====== Điều khiển menu / iframe ======
-      const menuLinks = document.querySelectorAll('.iframe-link, .nav-link[data-target]');
-      const frames    = document.querySelectorAll('iframe');
-      const navbarCollapseEl = document.getElementById('navbar-content');
-      const navCollapse = new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
-
-      function collapseIfMobile() {
-        if (window.matchMedia('(max-width: 991.98px)').matches) navCollapse.hide();
-      }
-      function activateFrame(targetId) {
-        frames.forEach(f => f.classList.remove('active'));
-        const target = document.getElementById(targetId);
-        if (target) target.classList.add('active');
-        try { localStorage.setItem('lastFrameId', targetId); } catch (e) {}
-      }
-      menuLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('data-target');
-          if (!targetId) return;
-          menuLinks.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
-          activateFrame(targetId);
-          collapseIfMobile();
-        });
-      });
-      let defaultFrame = 'mainFrame';
-      try {
-        const saved = localStorage.getItem('lastFrameId');
-        if (saved && document.getElementById(saved)) defaultFrame = saved;
-      } catch (e) {}
-      activateFrame(defaultFrame);
-      const defaultLink = document.querySelector(`.nav-link[data-target="${defaultFrame}"]`);
-      if (defaultLink) defaultLink.classList.add('active');
-
-      // ====== Logic kíp/ca ======
-      const baseDate = new Date("2025-01-01");
-
-      const groupA = ["Mạnh Hiền","Quốc Thắng"];
-      const groupB = ["Cường Thịnh","Minh Tú"];
-      const groupC = ["Đức Thịnh","Ngọc Hiếu"];
-      const kipOrder = [groupA, groupB, groupC];
-
-      const caA = ["Ca A"];
-      const caB = ["Ca B"];
-      const caOrder = [caA, caB];
-
-      const baseKip = [groupB, groupC, groupA];
-      const baseCa  = [caB, caA];
-
-      const dateEl       = document.getElementById('workDate');
-      const weekThisEl   = document.getElementById('weekThis');
-      const weekNextEl   = document.getElementById('weekNext');
-      const rangeThisEl  = document.getElementById('rangeThis');
-      const rangeNextEl  = document.getElementById('rangeNext');
-      const chosenAlert  = document.getElementById('chosenAlert');
-      const weekChosenEl = document.getElementById('weekChosen');
-      const rangeChosenEl= document.getElementById('rangeChosen');
-
-      function asLocalDate(d) {
-        return new Date(d.getFullYear(), d.getMonth(), d.getDate());
-      }
-      function startOfWeekMonday(date) {
-        const d = asLocalDate(date);
-        let day = d.getDay();
-        if (day === 0) day = 7;
-        const diff = day - 1;
-        return new Date(d.getFullYear(), d.getMonth(), d.getDate() - diff);
-      }
-      function endOfWeekSunday(date) {
-        const mon = startOfWeekMonday(date);
-        return new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + 6);
-      }
-      function formatRange(mon, sun) {
-        const dd = n => String(n).padStart(2, '0');
-        const yyyy = d => d.getFullYear();
-        return `${dd(mon.getDate())}/${dd(mon.getMonth()+1)}/${yyyy(mon)} – ${dd(sun.getDate())}/${dd(sun.getMonth()+1)}/${yyyy(sun)}`;
-      }
-      function weeksBetweenMonday(d1, d2) {
-        const m1 = startOfWeekMonday(d1);
-        const m2 = startOfWeekMonday(d2);
-        return Math.floor((m1 - m2) / (7 * 24 * 60 * 60 * 1000));
-      }
-      function rotateByStart(startArr, orderArr, k){
-        const startIdx = orderArr.indexOf(startArr);
-        const pos = (startIdx + k) % orderArr.length;
-        return orderArr[pos];
-      }
-      function computeShifts(input){
-        const d = (input instanceof Date) ? input : new Date(input + 'T00:00');
-        if (isNaN(d)) return { k1:[],k2:[],k3:[], caS:[], caC:[] };
-        const k = weeksBetweenMonday(d, baseDate);
-        return {
-          k1: rotateByStart(baseKip[0], kipOrder, k),
-          k2: rotateByStart(baseKip[1], kipOrder, k),
-          k3: rotateByStart(baseKip[2], kipOrder, k),
-          caS: rotateByStart(baseCa[0],  caOrder,  k),
-          caC: rotateByStart(baseCa[1],  caOrder,  k)
-        };
-      }
-      function renderLine(r){
-        const kip1 = r.k1.join(", ");
-        const kip2 = r.k2.join(", ");
-        const kip3 = r.k3.join(", ");
-        const caS  = r.caS.join(", ");
-        const caC  = r.caC.join(", ");
-        return `Kíp 1: ${kip1}; Kíp 2: ${kip2}; Kíp 3: ${kip3}; Ca sáng: ${caS}; Ca chiều: ${caC}`;
-      }
-
-      // Khởi tạo hôm nay
-      const today = new Date();
-      const isoToday = new Date(today.getTime() - today.getTimezoneOffset()*60000)
-                        .toISOString().split('T')[0];
-      dateEl.value = isoToday;
-
-      const monThis = startOfWeekMonday(today);
-      const sunThis = endOfWeekSunday(today);
-      const monNext = new Date(monThis.getFullYear(), monThis.getMonth(), monThis.getDate() + 7);
-      const sunNext = new Date(monNext.getFullYear(), monNext.getMonth(), monNext.getDate() + 6);
-
-      rangeThisEl.textContent = formatRange(monThis, sunThis);
-      rangeNextEl.textContent = formatRange(monNext, sunNext);
-
-      weekThisEl.textContent = renderLine(computeShifts(monThis));
-      weekNextEl.textContent = renderLine(computeShifts(monNext));
-
-      // Khi đổi ngày
-      dateEl.addEventListener('change', () => {
-        const iso = dateEl.value;
-        if (!iso) return;
-        const d = new Date(iso + 'T00:00');
-        const mon = startOfWeekMonday(d);
-        const sun = endOfWeekSunday(d);
-
-        rangeChosenEl.textContent = formatRange(mon, sun);
-        weekChosenEl.textContent = renderLine(computeShifts(d));
-        chosenAlert.classList.remove('d-none');
-      });
+<script>
+  // --- PHẦN 1: LOGIC ĐIỀU KHIỂN GIAO DIỆN ---
+  document.querySelectorAll('[data-target]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('data-target');
+      
+      document.querySelectorAll('iframe').forEach(iframe => iframe.classList.remove('active', 'fade-anim'));
+      const activeFrame = document.getElementById(targetId);
+      activeFrame.classList.add('active', 'fade-anim');
+      
+      document.querySelectorAll('[data-target]').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll(`[data-target="${targetId}"]`).forEach(btn => btn.classList.add('active'));
+      
+      localStorage.setItem('lastFrameBoiler', targetId);
     });
-  </script>
+  });
+
+  // --- PHẦN 2: LOGIC TÍNH TOÁN KÍP/CA (GIỮ NGUYÊN TỪ BẢN CŨ) ---
+  const baseDate = new Date("2025-01-01");
+  const groupA = ["Mạnh Hiền","Quốc Thắng"], groupB = ["Cường Thịnh","Minh Tú"], groupC = ["Đức Thịnh","Ngọc Hiếu"];
+  const kipOrder = [groupA, groupB, groupC], caOrder = [["Ca A"], ["Ca B"]];
+  const baseKip = [groupB, groupC, groupA], baseCa = [["Ca B"], ["Ca A"]];
+
+  function startOfWeekMonday(date) {
+    const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    let day = d.getDay();
+    if (day === 0) day = 7;
+    d.setDate(d.getDate() - (day - 1));
+    return d;
+  }
+
+  function computeShifts(d) {
+    const monday = startOfWeekMonday(d);
+    const k = Math.floor((monday - startOfWeekMonday(baseDate)) / (7 * 24 * 60 * 60 * 1000));
+    
+    const getRotate = (base, order, steps) => order[(order.indexOf(base) + steps) % order.length];
+    
+    return {
+      k1: getRotate(baseKip[0], kipOrder, k).join(", "),
+      k2: getRotate(baseKip[1], kipOrder, k).join(", "),
+      k3: getRotate(baseKip[2], kipOrder, k).join(", "),
+      caS: getRotate(baseCa[0], caOrder, k),
+      caC: getRotate(baseCa[1], caOrder, k)
+    };
+  }
+
+  function updateDisplay(date) {
+    const s = computeShifts(date);
+    document.getElementById('shiftDisplay').innerHTML = `
+        <b>Kíp 1:</b> ${s.k1} | <b>Kíp 2:</b> ${s.k2} | <b>Kíp 3:</b> ${s.k3}<br>
+        <span style="color:var(--accent)"><b>Sáng:</b> ${s.caS} — <b>Chiều:</b> ${s.caC}</span>
+    `;
+  }
+
+  // Khởi tạo khi load trang
+  window.onload = () => {
+    // Phục hồi iframe cũ
+    const saved = localStorage.getItem('lastFrameBoiler') || 'mainFrame';
+    const link = document.querySelector(`[data-target="${saved}"]`);
+    if(link) link.click();
+
+    // Thiết lập ngày mặc định và tính kíp
+    const today = new Date();
+    document.getElementById('workDate').value = today.toISOString().split('T')[0];
+    updateDisplay(today);
+  };
+
+  document.getElementById('workDate').addEventListener('change', (e) => {
+    updateDisplay(new Date(e.target.value));
+  });
+</script>
 </body>
 </html>
