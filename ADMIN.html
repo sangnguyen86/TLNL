@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>ADMIN-XSX-CTY TLNL KHATOCO</title>
+  <title>HỆ THỐNG QUẢN TRỊ - KHATOCO</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
@@ -16,7 +16,6 @@
       --primary: #3b82f6;
       --accent: #58a6ff;
       --border: rgba(80,120,180,0.2);
-      --radius: 12px;
       --h-header: 56px;
       --h-nav-bottom: 65px;
     }
@@ -24,32 +23,41 @@
     html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); overflow: hidden; }
     body { display: flex; flex-direction: column; font-family: 'Inter', system-ui, sans-serif; }
 
-    /* HEADER */
+    /* TIÊU ĐỀ TRÊN CÙNG */
     .top-header {
       height: var(--h-header);
       display: flex; align-items: center; justify-content: center;
       background: #0d1627; border-bottom: 1px solid var(--border);
-      z-index: 1040; flex-shrink: 0;
+      z-index: 1050; flex-shrink: 0;
     }
     .top-header h1 {
-      margin: 0; font-size: 1.1rem; font-weight: 800; letter-spacing: 1px;
-      color: var(--accent); text-shadow: 0 0 15px rgba(88,166,255,0.3);
+      margin: 0; font-size: 1.1rem; font-weight: 800; color: var(--accent);
+      text-shadow: 0 0 15px rgba(88,166,255,0.3); text-transform: uppercase;
     }
 
-    /* MENU NGANG (PC) */
+    /* THANH MENU ĐIỀU HƯỚNG PC */
     .navbar-pc {
-      background: #161b22;
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem 1rem;
+      background: #161b22; border-bottom: 1px solid var(--border);
+      padding: 0; z-index: 1040;
     }
-    .navbar-pc .nav-link {
-      color: #8b949e; font-size: 0.85rem; font-weight: 600;
-      padding: 0.5rem 1rem !important; transition: 0.3s;
+    .nav-link {
+      color: #8b949e !important; font-size: 0.85rem; font-weight: 600;
+      padding: 12px 15px !important; transition: 0.3s;
     }
-    .navbar-pc .nav-link.active { color: var(--accent); }
+    .nav-link:hover, .nav-link.active { color: var(--accent) !important; background: rgba(59, 130, 246, 0.1); }
+    
+    /* Tùy chỉnh Dropdown Menu */
+    .dropdown-menu { 
+      background: #161b22; border: 1px solid var(--border); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .dropdown-item { color: #8b949e; font-size: 0.8rem; padding: 8px 20px; }
+    .dropdown-item:hover { background: var(--primary); color: white; }
+    .dropdown-item.active { background: var(--accent); color: var(--bg); }
+
     @media (max-width: 991px) { .navbar-pc { display: none; } }
 
-    /* VÙNG CHỨA IFRAME */
+    /* VÙNG HIỂN THỊ NỘI DUNG (IFRAME) */
     .content-wrapper { flex: 1; position: relative; background: #000; }
     iframe {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -57,99 +65,145 @@
     }
     iframe.active { display: block; animation: fadeIn 0.4s ease-in-out; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.99); }
-      to { opacity: 1; transform: scale(1); }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    /* BOTTOM NAV (MOBILE) */
+    /* THANH ĐIỀU HƯỚNG DƯỚI (MOBILE) */
     .bottom-nav {
       height: var(--h-nav-bottom);
-      background: rgba(15, 24, 43, 0.95);
-      backdrop-filter: blur(10px);
+      background: rgba(15, 24, 43, 0.95); backdrop-filter: blur(10px);
       border-top: 1px solid var(--border);
       padding-bottom: env(safe-area-inset-bottom);
-      flex-shrink: 0;
-      display: none;
+      flex-shrink: 0; display: none;
     }
     .bn-inner { display: flex; height: 100%; align-items: center; justify-content: space-around; }
     .bn-btn {
-      text-decoration: none; color: #8b949e;
+      text-decoration: none; color: #8b949e; flex: 1;
       display: flex; flex-direction: column; align-items: center;
-      font-size: 0.65rem; font-weight: 500; transition: 0.2s; flex: 1;
+      font-size: 0.65rem; transition: 0.2s;
     }
     .bn-btn i { font-size: 1.25rem; margin-bottom: 2px; }
     .bn-btn.active { color: var(--accent); }
+    
     @media (max-width: 991px) { .bottom-nav { display: block; } }
-
-    /* Custom scrollbar cho menu */
-    .navbar-nav { overflow-x: auto; white-space: nowrap; flex-direction: row !important; }
-    .navbar-nav::-webkit-scrollbar { display: none; }
   </style>
 </head>
 <body>
 
   <header class="top-header">
-    <h1>ADMIN - XSX KHATOCO</h1>
+    <h1>HỆ THỐNG QUẢN LÝ TỔNG HỢP</h1>
   </header>
 
-  <nav class="navbar-pc shadow-sm">
+  <nav class="navbar-pc navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" data-target="mainFrame" href="#"><i class="bi bi-house-door me-1"></i>TRANG CHỦ</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="1stFrame" href="#">BÁO CÁO SX</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="2ndFrame" href="#">BC THÁNG</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="compComProductFrame" href="#">TỈ LỆ THU HỒI</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="3rdFrame" href="#">NHIÊN LIỆU</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="coxFrame" href="#">NHẬP THAN</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="a100Frame" href="#">NAOH A100</a></li>
-        <li class="nav-item"><a class="nav-link" data-target="taskReportFrame" href="#">BC CÔNG VIỆC</a></li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="mainFrame" href="#"><i class="bi bi-house-door"></i> HOME</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">SẢN XUẤT</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-target="1stFrame" href="#">Báo cáo SX Ngày</a></li>
+            <li><a class="dropdown-item" data-target="2ndFrame" href="#">Báo cáo SX Tháng</a></li>
+            <li><a class="dropdown-item" data-target="compComProductFrame" href="#">Tỷ lệ thu hồi</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" data-target="sp_sx_1" href="#">Dự phòng SX 1</a></li>
+            <li><a class="dropdown-item" data-target="sp_sx_2" href="#">Dự phòng SX 2</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">CƠ ĐIỆN</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-target="taskReportFrame" href="#">Báo cáo công việc</a></li>
+            <li><a class="dropdown-item" data-target="sp_cd_1" href="#">Dự phòng Cơ điện 1</a></li>
+            <li><a class="dropdown-item" data-target="sp_cd_2" href="#">Dự phòng Cơ điện 2</a></li>
+            <li><a class="dropdown-item" data-target="sp_cd_3" href="#">Dự phòng Cơ điện 3</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">LÒ HƠI</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-target="a100Frame" href="#">NaOH & A100</a></li>
+            <li><a class="dropdown-item" data-target="3rdFrame" href="#">Nhiên liệu (Lò hơi)</a></li>
+            <li><a class="dropdown-item" data-target="sp_lh_1" href="#">Dự phòng Lò hơi 1</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">XƯỞNG</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-target="coxFrame" href="#">Nhập than</a></li>
+            <li><a class="dropdown-item" data-target="sp_xuong_1" href="#">Sửa chữa nhiên liệu</a></li>
+            <li><a class="dropdown-item" data-target="sp_xuong_2" href="#">Dự phòng Xưởng 2</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">VẬT TƯ</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-target="sp_vt_1" href="#">Quản lý kho vật tư</a></li>
+            <li><a class="dropdown-item" data-target="sp_vt_2" href="#">Đề xuất mua hàng</a></li>
+            <li><a class="dropdown-item" data-target="sp_vt_3" href="#">Dự phòng Vật tư 3</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
 
   <div class="content-wrapper">
     <iframe id="mainFrame" src=""></iframe>
+    
     <iframe id="1stFrame" src="https://script.google.com/macros/s/AKfycbz2YGpnLAygvfw5IRRFmUEBh3E3qiGr-mWYIWuspNBscSCwXRujAph0xZow_HKZtUbA/exec"></iframe>
     <iframe id="2ndFrame" src="https://script.google.com/macros/s/AKfycbyRvFLRqRPCra-DnTj0dg_9nsCtW_xDZRP2_ayn9BzmlBGwl6-_7CbU9n_41znza5FH/exec"></iframe>
+    <iframe id="compComProductFrame" src="https://script.google.com/macros/s/AKfycbyIe6sxzCP136Qn_aD5d92bNoOoBjTtPwOGJ-0lmjF82RKpvhhWbOGJt0n7p-4WfUA5/exec"></iframe>
     <iframe id="3rdFrame" src="https://script.google.com/macros/s/AKfycbxYFarABEEKIpSvSV3tvtsKKt9jNTTOmNEOQnMMlzip1QMewBrGBAUEheD-lGbdWf05KA/exec"></iframe>
     <iframe id="a100Frame" src="https://script.google.com/macros/s/AKfycbxQz6qG0AtY3jUS628oCD8GSDJtT2dWG9r-Gd6alzVJY7Y1FH-atFWx90TOgGRqLDYJ/exec"></iframe>
-    <iframe id="compComProductFrame" src="https://script.google.com/macros/s/AKfycbyIe6sxzCP136Qn_aD5d92bNoOoBjTtPwOGJ-0lmjF82RKpvhhWbOGJt0n7p-4WfUA5/exec"></iframe>
     <iframe id="coxFrame" src="https://script.google.com/macros/s/AKfycbwdN9117VAxGRZ_mppY1gNgGI8kmCeIyqjTZMhO3slY8dSXGDcZu7DL857LC2aa9-jO/exec"></iframe>
     <iframe id="taskReportFrame" src="https://script.google.com/macros/s/AKfycbzVWkClO69Y1-4mivhDHnWN7Lqj7qbZzNvE2hCxUIDMygU5o2XPLsJ4Rm3KfKAfMSG31A/exec"></iframe>
+
+    <iframe id="sp_sx_1" src=""></iframe>
+    <iframe id="sp_sx_2" src=""></iframe>
+    <iframe id="sp_cd_1" src=""></iframe>
+    <iframe id="sp_cd_2" src=""></iframe>
+    <iframe id="sp_vt_1" src=""></iframe>
   </div>
 
   <nav class="bottom-nav">
     <div class="bn-inner">
       <a href="#" class="bn-btn active" data-target="mainFrame"><i class="bi bi-house"></i><div>Home</div></a>
-      <a href="#" class="bn-btn" data-target="1stFrame"><i class="bi bi-file-earmark-bar-graph"></i><div>BC Ngày</div></a>
-      <a href="#" class="bn-btn" data-target="2ndFrame"><i class="bi bi-calendar-check"></i><div>BC Tháng</div></a>
-      <a href="#" class="bn-btn" data-target="compComProductFrame"><i class="bi bi-arrow-repeat"></i><div>Thu hồi</div></a>
-      <a href="#" class="bn-btn" data-target="taskReportFrame"><i class="bi bi-journal-text"></i><div>Công việc</div></a>
+      <a href="#" class="bn-btn" data-target="1stFrame"><i class="bi bi-bar-chart"></i><div>SX Ngày</div></a>
+      <a href="#" class="bn-btn" data-target="taskReportFrame"><i class="bi bi-tools"></i><div>Cơ Điện</div></a>
+      <a href="#" class="bn-btn" data-target="a100Frame"><i class="bi bi-fire"></i><div>Lò Hơi</div></a>
+      <a href="#" class="bn-btn" data-target="sp_vt_1"><i class="bi bi-box-seam"></i><div>Vật Tư</div></a>
     </div>
   </nav>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const links = document.querySelectorAll('[data-target]');
       const frames = document.querySelectorAll('iframe');
 
+      // Hàm chuyển đổi Iframe
       function activateFrame(targetId) {
-        // Ẩn tất cả frame và gỡ active class ở menu
+        // Ẩn tất cả và bỏ active menu
         frames.forEach(f => f.classList.remove('active'));
         links.forEach(l => l.classList.remove('active'));
 
-        // Hiện frame mục tiêu
+        // Hiện Iframe được chọn
         const targetFrame = document.getElementById(targetId);
         if (targetFrame) targetFrame.classList.add('active');
 
-        // Active các nút có cùng targetId (cả PC và Mobile)
+        // Đánh dấu active trên menu (Cả PC và Mobile)
         document.querySelectorAll(`[data-target="${targetId}"]`).forEach(el => el.classList.add('active'));
 
-        // Lưu vào LocalStorage
-        localStorage.setItem('adminLastFrame', targetId);
+        // Lưu trạng thái trang cuối cùng
+        localStorage.setItem('khatoco_last_frame', targetId);
       }
 
+      // Gán sự kiện click cho tất cả menu
       links.forEach(link => {
         link.addEventListener('click', function (e) {
           e.preventDefault();
@@ -158,8 +212,8 @@
         });
       });
 
-      // Khôi phục trang cuối cùng hoặc mặc định
-      const savedFrame = localStorage.getItem('adminLastFrame') || 'mainFrame';
+      // Mở lại trang cuối cùng người dùng đã xem
+      const savedFrame = localStorage.getItem('khatoco_last_frame') || 'mainFrame';
       activateFrame(savedFrame);
     });
   </script>
