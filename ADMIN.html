@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>HỆ THỐNG QUẢN LÝ XƯỞNG SẢN XUẤT - KHATOCO</title>
+  <title>QUẢN LÝ XƯỞNG SẢN XUẤT - KHATOCO</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/livecanvas-team/ninjabootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
@@ -115,10 +115,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">CƠ ĐIỆN</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" data-target="taskTechFrame" href="#">TaskList</a></li>
-            <li><a class="dropdown-item" data-target="planTechFrame" href="#">PlanList</a></li>
+            <li><a class="dropdown-item" data-target="taskTechFrame" href="#">Task</a></li>
+            <li><a class="dropdown-item" data-target="planTechFrame" href="#">Plan</a></li>
             <li><a class="dropdown-item" data-target="reportTechFrame" href="#">Report</a></li>
-            <li><a class="dropdown-item" data-target="timesheetTeckFrame" href="#">Timesheet</a></li>
+            <li><a class="dropdown-item" data-target="timesheetTechFrame" href="#">Timesheet</a></li>
             <li><a class="dropdown-item" data-target="sp_cd_2" href="#">Dự phòng Cơ điện 2</a></li>
             <li><a class="dropdown-item" data-target="sp_cd_3" href="#">Dự phòng Cơ điện 3</a></li>
           </ul>
@@ -127,6 +127,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">LÒ HƠI</a>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-target="taskBoilerFrame" href="#">Task</a></li>
+            <li><a class="dropdown-item" data-target="planBoilerFrame" href="#">Plan</a></li>
+            <li><a class="dropdown-item" data-target="timesheetBoilerFrame" href="#">Timesheet</a></li>
+            <li><a class="dropdown-item" data-target="reportBoilerFrame" href="#">Report</a></li>
             <li><a class="dropdown-item" data-target="a100Frame" href="#">NaOH & A100</a></li>
             <li><a class="dropdown-item" data-target="3rdFrame" href="#">Nhiên liệu (Lò hơi)</a></li>
             <li><a class="dropdown-item" data-target="sp_lh_1" href="#">Dự phòng Lò hơi 1</a></li>
@@ -156,19 +160,24 @@
 
   <div class="content-wrapper">
     <iframe id="mainFrame" src=""></iframe>
-    
+    <!Các Iframe SẢN XUẤT->
     <iframe id="1stFrame" src="https://script.google.com/macros/s/AKfycbz2YGpnLAygvfw5IRRFmUEBh3E3qiGr-mWYIWuspNBscSCwXRujAph0xZow_HKZtUbA/exec"></iframe>
     <iframe id="2ndFrame" src="https://script.google.com/macros/s/AKfycbyRvFLRqRPCra-DnTj0dg_9nsCtW_xDZRP2_ayn9BzmlBGwl6-_7CbU9n_41znza5FH/exec"></iframe>
     <iframe id="compComProductFrame" src="https://script.google.com/macros/s/AKfycbyIe6sxzCP136Qn_aD5d92bNoOoBjTtPwOGJ-0lmjF82RKpvhhWbOGJt0n7p-4WfUA5/exec"></iframe>
     <iframe id="3rdFrame" src="https://script.google.com/macros/s/AKfycbxYFarABEEKIpSvSV3tvtsKKt9jNTTOmNEOQnMMlzip1QMewBrGBAUEheD-lGbdWf05KA/exec"></iframe>
     <iframe id="a100Frame" src="https://script.google.com/macros/s/AKfycbxQz6qG0AtY3jUS628oCD8GSDJtT2dWG9r-Gd6alzVJY7Y1FH-atFWx90TOgGRqLDYJ/exec"></iframe>
     <iframe id="coxFrame" src="https://script.google.com/macros/s/AKfycbwdN9117VAxGRZ_mppY1gNgGI8kmCeIyqjTZMhO3slY8dSXGDcZu7DL857LC2aa9-jO/exec"></iframe>
-     // Các Iframe Tổ CƠ ĐIỆN
+    <!Các Iframe TỔ CƠ ĐIỆN->
     <iframe id="taskTechFrame" src="https://script.google.com/macros/s/AKfycbyhkBhsbFxcdjDmk4m01T9sxWOrAUGeSCYsmVvUHczsoE6MhqTHPsgDDLikbnW2liXVvA/exec"></iframe>
     <iframe id="planTechFrame" src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
     <iframe id="reportTechFrame" src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
-    <iframe id="timesheetTeckFrame" src="https://script.google.com/macros/s/AKfycbxG7IU2Nvv4IFmmcZnu4N_SWaNAKRYnNzElRan5ZiAaNqjb2GRdRpg-yyYCIZ95Gc6y2w/exec"></iframe>
+    <iframe id="timesheetTechFrame" src="https://script.google.com/macros/s/AKfycbxG7IU2Nvv4IFmmcZnu4N_SWaNAKRYnNzElRan5ZiAaNqjb2GRdRpg-yyYCIZ95Gc6y2w/exec"></iframe>
     <iframe id="sp_cd_2" src=""></iframe>
+    <!Các Iframe TỔ LÒ HƠI->
+     <iframe id="taskBoilerFrame" src="https://script.google.com/macros/s/AKfycbw2aFX6nUXO8t_C9rueyi6GaB9FNkNmCnJygALjRqjeIdUzBduTzNIdn8pkne-BYrJCAQ/exec"></iframe>
+    <iframe id="planBoilerFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
+    <iframe id="reportBoilerFrame" src=""></iframe>
+    <iframe id="timesheetBoilerFrame" src="https://script.google.com/macros/s/AKfycbxGkYnnZKs2HMTbEt1O3lzRGc2_87bZZ-mwsz6hcL2238b4Ygor015r_AByx4No08AVtQ/exec"></iframe>   
     <!Các Iframe dự phòng->
     <iframe id="sp_sx_1" src=""></iframe>
     <iframe id="sp_sx_2" src=""></iframe>
