@@ -93,9 +93,10 @@
     .bn-btn {
       text-decoration: none; color: #8b949e;
       display: flex; flex-direction: column; align-items: center;
-      font-size: 0.6rem; font-weight: 500; transition: 0.2s;
+      font-size: 0.55rem; font-weight: 500; transition: 0.2s;
+      flex: 1;
     }
-    .bn-btn i { font-size: 1.2rem; margin-bottom: 2px; }
+    .bn-btn i { font-size: 1.1rem; margin-bottom: 2px; }
     .bn-btn.active { color: var(--accent); transform: translateY(-2px); }
     .bn-btn.active i { filter: drop-shadow(0 0 5px var(--accent)); }
 
@@ -131,6 +132,7 @@
         <li class="nav-item"><a class="nav-link" data-target="planListFrame" href="#">DỰ KIẾN</a></li>
         <li class="nav-item"><a class="nav-link" data-target="maintListFrame" href="#">BẢO DƯỠNG</a></li>
         <li class="nav-item"><a class="nav-link" data-target="TaskReportFrame" href="#">BÁO CÁO</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="waterFrame" href="#">CHỈ SỐ NƯỚC</a></li>
         <li class="nav-item"><a class="nav-link" data-target="chamcongFrame" href="#">CHẤM CÔNG</a></li>
       </ul>
     </div>
@@ -139,23 +141,25 @@
 
 <div class="content-wrapper">
     <iframe id="nhiemvuFrame" src="https://script.google.com/macros/s/AKfycbyvP2XXX5mHC_wtxtj-GiUCTGa2veUcCqGepQF-150XpW4KILM3WHKqfgQQoDhlTVXk/exec"></iframe>
-    
     <iframe id="taskListFrame" src="https://script.google.com/macros/s/AKfycbyhkBhsbFxcdjDmk4m01T9sxWOrAUGeSCYsmVvUHczsoE6MhqTHPsgDDLikbnW2liXVvA/exec"></iframe>
     <iframe id="planListFrame" src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
     <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
     <iframe id="TaskReportFrame" src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
+    
+    <iframe id="waterFrame" src="https://script.google.com/macros/s/AKfycbwTbLHDiGjq4rcUwb6b6MLBM_junEEcJdVAlzZt1C25phiwIQG4uBnSEqpFu98I1wE/exec"></iframe>
+    
     <iframe id="chamcongFrame" src="https://script.google.com/macros/s/AKfycbxG7IU2Nvv4IFmmcZnu4N_SWaNAKRYnNzElRan5ZiAaNqjb2GRdRpg-yyYCIZ95Gc6y2w/exec"></iframe>
 </div>
 
 <nav class="bottom-nav d-lg-none">
   <div class="bn-inner">
     <a href="#" class="bn-btn" data-target="nhiemvuFrame"><i class="bi bi-briefcase"></i><div>Nhiệm vụ</div></a>
-    
-    <a href="#" class="bn-btn active" data-target="taskListFrame"><i class="bi bi-card-checklist"></i><div>Công việc</div></a>
+    <a href="#" class="bn-btn active" data-target="taskListFrame"><i class="bi bi-card-checklist"></i><div>C.Việc</div></a>
     <a href="#" class="bn-btn" data-target="planListFrame"><i class="bi bi-calendar-event"></i><div>Dự kiến</div></a>
-    <a href="#" class="bn-btn" data-target="maintListFrame"><i class="bi bi-gear-wide-connected"></i><div>Bảo dưỡng</div></a>
-    <a href="#" class="bn-btn" data-target="TaskReportFrame"><i class="bi bi-bar-chart-line"></i><div>Báo cáo</div></a>
-    <a href="#" class="bn-btn" data-target="chamcongFrame"><i class="bi bi-person-check"></i><div>Chấm công</div></a>
+    <a href="#" class="bn-btn" data-target="maintListFrame"><i class="bi bi-gear-wide-connected"></i><div>B.Dưỡng</div></a>
+    <a href="#" class="bn-btn" data-target="TaskReportFrame"><i class="bi bi-bar-chart-line"></i><div>B.Cáo</div></a>
+    <a href="#" class="bn-btn" data-target="waterFrame"><i class="bi bi-droplet"></i><div>Nước</div></a>
+    <a href="#" class="bn-btn" data-target="chamcongFrame"><i class="bi bi-person-check"></i><div>Công</div></a>
   </div>
 </nav>
 
