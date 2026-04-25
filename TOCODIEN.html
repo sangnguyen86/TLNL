@@ -88,13 +88,19 @@
       border-top: 1px solid var(--border);
       padding-bottom: env(safe-area-inset-bottom);
       flex-shrink: 0;
+      overflow-x: auto; /* Cho phép lướt ngang nếu màn hình nhỏ */
+      white-space: nowrap;
     }
-    .bn-inner { display: flex; height: 100%; align-items: center; justify-content: space-around; }
+    
+    /* Ẩn thanh cuộn trên webkit */
+    .bottom-nav::-webkit-scrollbar { display: none; }
+
+    .bn-inner { display: flex; height: 100%; align-items: center; justify-content: flex-start; padding: 0 5px; min-width: min-content;}
     .bn-btn {
       text-decoration: none; color: #8b949e;
-      display: flex; flex-direction: column; align-items: center;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
       font-size: 0.55rem; font-weight: 500; transition: 0.2s;
-      flex: 1;
+      flex: 1; min-width: 65px; /* Giữ độ rộng tối thiểu để không bị méo icon */
     }
     .bn-btn i { font-size: 1.1rem; margin-bottom: 2px; }
     .bn-btn.active { color: var(--accent); transform: translateY(-2px); }
@@ -134,6 +140,7 @@
         <li class="nav-item"><a class="nav-link" data-target="TaskReportFrame" href="#">BÁO CÁO</a></li>
         <li class="nav-item"><a class="nav-link" data-target="waterFrame" href="#">CHỈ SỐ NƯỚC</a></li>
         <li class="nav-item"><a class="nav-link" data-target="chamcongFrame" href="#">CHẤM CÔNG</a></li>
+        <li class="nav-item"><a class="nav-link" data-target="yeucauFrame" href="#">YÊU CẦU</a></li>
       </ul>
     </div>
   </div>
@@ -145,10 +152,10 @@
     <iframe id="planListFrame" src="https://script.google.com/macros/s/AKfycby6kstI0YU3rdAR7txXXudD_83JET2x7AzFzufPdOmxuz4xS0M35tsGn4i1z9CGXA-C/exec"></iframe>
     <iframe id="maintListFrame" src="https://script.google.com/macros/s/AKfycbxeuGMrHlOt03JdRXAeU-JBQn-hoOF0SOuX1_gH9VAGZ6dxQ8HOqnb9WGvn5ZOH1mCt9g/exec"></iframe>
     <iframe id="TaskReportFrame" src="https://script.google.com/macros/s/AKfycbzwCj7p9fYzDMmeoEMnmdSmG__XTMAdEoBi17GLPR-r5gPXpoiypiK7GVdK3yodP0iT/exec"></iframe>
-    
     <iframe id="waterFrame" src="https://script.google.com/macros/s/AKfycbwTbLHDiGjq4rcUwb6b6MLBM_junEEcJdVAlzZt1C25phiwIQG4uBnSEqpFu98I1wE/exec"></iframe>
-    
     <iframe id="chamcongFrame" src="https://script.google.com/macros/s/AKfycbxG7IU2Nvv4IFmmcZnu4N_SWaNAKRYnNzElRan5ZiAaNqjb2GRdRpg-yyYCIZ95Gc6y2w/exec"></iframe>
+    
+    <iframe id="yeucauFrame" src="https://script.google.com/macros/s/AKfycbzUBPh-827cpBwN-cFa_3Yg1p7FESwX36KZVsvsZRvwuuu1FtEH0rEWNQaZSKlc2vc7/exec"></iframe>
 </div>
 
 <nav class="bottom-nav d-lg-none">
@@ -160,6 +167,8 @@
     <a href="#" class="bn-btn" data-target="TaskReportFrame"><i class="bi bi-bar-chart-line"></i><div>B.Cáo</div></a>
     <a href="#" class="bn-btn" data-target="waterFrame"><i class="bi bi-droplet"></i><div>Nước</div></a>
     <a href="#" class="bn-btn" data-target="chamcongFrame"><i class="bi bi-person-check"></i><div>Công</div></a>
+    
+    <a href="#" class="bn-btn" data-target="yeucauFrame"><i class="bi bi-box-seam"></i><div>Yêu cầu</div></a>
   </div>
 </nav>
 
